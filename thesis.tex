@@ -1,0 +1,72 @@
+\documentclass[12pt,letterpaper]{ucbthesis}
+\usepackage[style=numeric,sorting=none]{biblatex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage[noabbrev]{cleveref}
+\usepackage[mathscr]{euscript}
+
+\graphicspath{{figures/}}
+\bibliography{citations.bib}
+
+\begin{document}
+
+\title{Solar Neutrinos and R\&D for Next-Generation Neutrino Detectors}
+\author{Benjamin J. Land}
+\degreesemester{Spring}
+\degreeyear{2019}
+\degree{Doctor of Philosophy}
+\chair{Professor Gabriel Orebi Gann}
+\othermembers{Professor Yury Kolomensky \\
+  Professor Kai Vetter}
+\numberofmembers{3}
+\prevdegrees{B.S. (Georgia Institute of Technology) 2012 \\
+  M.A. (University of California, Berkeley) 2015}
+\field{Physics}
+\campus{Berkeley}
+\maketitle
+\approvalpage
+\copyrightpage
+
+\include{abstract}
+
+\begin{frontmatter}
+
+\begin{dedication}
+\null\vfil
+\begin{center}
+A witty saying proves nothing. -Voltaire
+\end{center}
+\vfil\null
+\end{dedication}
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+
+\begin{acknowledgements}
+I want to thank my advisor for advising me.
+\end{acknowledgements}
+
+\end{frontmatter}
+
+\pagestyle{headings}
+
+\include{introduction}
+\include{neutrino_lifetime}
+\include{snoplus_solar}
+\include{chess_wbls}
+\include{cherenkov_source}
+
+\printbibliography
+
+\end{document}
+
