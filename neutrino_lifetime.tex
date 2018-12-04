@@ -1,8 +1,10 @@
-\chapter{Neutrino Lifetime}
+\chapter{Constraints on Neutrino Lifetime}
+\label{ch:lifetime}
+
 
 The initial proposal to use solar neutrinos as a handle on neutrino lifetime explored a few models of neutrino decay and estimated that solar neutrinos could put the best limit on non-radiative neutrino decay~\cite{beacombell}.
 The authors noted that the large uncertainty on the $^8B$ flux as well as uncertainties in the neutrino mass and mixing parameters would be a limiting factor.
-Relatively recent precise mixing parameters from KamLAND~\cite{kamland} and DayaBay~\cite{dayabay} and improved theoretical predictions for the $^8B$ flux~\cite{serenelli} mitigate this to some extent.
+Relatively recent precise mixing parameters from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} and improved theoretical predictions for the $^8B$ flux~\cite{serenelli} mitigate this to some extent.
 Further studies~\cite{berryman} using a simple disappearance model - where the neutrino decays into some non-active daughter(s) and the observable signal is an energy dependent distortion to the survival probability - were able to set respectable limits analyzing SNO~\cite{sno}, Super-Kamiokande~\cite{superk}, and Borexino~\cite{borexino} results.
 Various constraints such as the eccentricity of the Earth's orbit allowed this limit to be improved~\cite{picoreti}. 
 However, it was noted~\cite{berryman} that the published fits to the SNO data were not ideal for testing the simple disappearance model because the survival probabilities for electron neutrinos $P_{ee}$ and $P_{ea}$ were not treated as independent functions.
@@ -16,62 +18,15 @@ To fit for neutrino lifetime using SNO data one first needs a model of the survi
 The fit will minimize the negative SNO Enhanced Log Likelihood function~\cite{plthesis} using this model for the survival probability.
 The following sections discuss the model itself and the treatment of parameters.
 
-\subsection{MSW Effect + Decay Survival Probability}
+\subsection{Decaying Survival Probability}
 
-The flavor basis is related to the mass basis by the PMNS matrix $U_{\alpha i}$ as follows
-\begin{equation}
-\ket{\nu_{\alpha}} = \sum_i U^*_{\alpha i} \ket{\nu_i}.
-\end{equation}
-The free evolution of these states is most easily represented in the mass basis where the mass states have a diagonal Hamiltonian
-\begin{equation}
-\bra{\nu_i}H_{0}\ket{\nu_j} = \frac{1}{2E}\begin{bmatrix}
-m_1^2 & 0 & 0 \\
-0 & m_2^2 & 0 \\
-0 & 0 & m_3^2
-\end{bmatrix}
-\end{equation}
-The survival probability for flavor state $\ket{\nu_\alpha}$ to be detected as flavor state $\ket{\nu_\beta}$ at some time later under free evolution for a distance L is therefore
-\begin{equation}
-P_{\alpha\rightarrow\beta} = \left|\braket{\nu_\beta(t)}{\nu_\alpha}\right|^2 = \left|\sum_i U^*_{\alpha i} U_{\beta i} e^{- i m_i^2 L/(2E)} \right|^2.
-\end{equation}
-The MSW~\cite{wolfenstein,mikheyev} effect proposes that the coherent forward scatter of electron flavor neutrinos off of electrons in a material adds a potential $V_e$ to electron flavor neutrinos which depends on the local electron density $n_e$
-\begin{equation}
-V_e = \sqrt{2} G_F n_e.
-\end{equation}
-Written in the mass basis $H_{MSW}$ then takes the form
-\begin{equation}
-H_{MSW} = H_{0} + U\begin{bmatrix}
-V_e & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0
-\end{bmatrix}U^*.
-\end{equation}
-Notably the evolution of the states in the presence of matter is now much more complicated since the eigenstates now depend on the electron density.
-
-It is useful to introduce the matter mass basis $\ket{\nu_{mi}(V_e)}$ which are eigenstates of the Hamiltonian $H_{MSW}$ at a particular electron potential $V_e$.
-Note that if the electron density is zero the evolution is in vacuum so $\ket{\nu_{mi}(0)} \rightarrow \ket{\nu_{i}}$.
-In many cases the variation of $V_e$ is slow enough that the evolution is adiabatic meaning some state $\ket{\nu(t)}$ has a constant probability to be one of the instantaneous matter mass states at a later time. 
-\begin{equation}
-\left| \braket{\nu_{mi}(V_e(0))}{\nu(0)} \right|^2 = \left| \braket{\nu_{mi}(V_e(t))}{\nu(t} \right |
-\end{equation}
-
-This adiabatic evolution is realized in the Sun~\cite{3phase} so knowing where in the Sun a neutrino is produced, or more precisely the electron density at the production point, one can calculate the eigenstate composition for as long as the adiabatic condition is satisfied.
-Once the neutrino reaches the solar radius, vacuum propagation dominates. 
-As vacuum propagation does not change the mass state composition of a state, the neutrinos that arrive at earth have the same mass state composition as those exiting the Sun.
-Further due to the propagation distance between the Earth and the Sun these mass state fluxes can be assumed to be incoherent once they arrive at Earth~\cite{3phase}.
-Therefore, the flux $\phi_i$ of a neutrino mass state at earth due to solar neutrinos produced at an electron potential $V_e$ under the MSW effect can be calculated as
-\begin{equation}
-\phi_i = \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2.
-\label{rawflux}
-\end{equation}
-
-This flux of a particular mass state $\ket{\nu_i}$ could have some lifetime associated with it $\tau_i$ representing the decay of neutrinos of that mass state.
+The flux of a particular mass state $\ket{\nu_i}$ could have some lifetime associated with it $\tau_i$ representing the decay of neutrinos of that mass state.
 Since the actual neutrino masses are unknown the lifetime is often represented by an effective parameter $k_i$ scaled by the mass of the state
 \begin{equation}
 k_i = \frac{\tau_i}{m_i}.
 \end{equation}
 Since the Earth-Sun distance is so large compared to the solar radius any decay within the sun will be ignored. 
-Therefore, the detected flux $\psi_i$ of a neutrino mass state at earth can be given as 
+Therefore, using the formalism given in \Cref{ch:theory}, the detected flux $\psi_i$ of a neutrino mass state at earth can be given as 
 \begin{equation}
 \psi_i \approx  e^{-L_\odot / (E k_i)} \phi_i =  e^{-L_\odot / (E k_i)} \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2
 \label{decay}

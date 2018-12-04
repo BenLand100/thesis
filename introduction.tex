@@ -1,1 +1,126 @@
 \chapter{Introduction}
+
+The last 20 years of solar neutrino research have seen the resolution of the so-called "solar neutrino problem" highlighted by earlier experiments 
+
+In this thesis I describe two analyses of solar neutrino data from the Sudbury Neutrino Observatory (SNO) and its upgrade, SNO+.
+The first analysis, described in \Cref{ch:lifetime}, explores the possibility that neutrinos are unstable particles and can decay into more stable states.
+Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay. 
+The second analysis in \Cref{ch:es} uses commissioning data from SNO+ to measure the flux of $^8$B solar neutrinos. 
+To aid in understanding these topics, the theory of neutrinos and particulars of solar neutrinos are discussed in \Cref{ch:theory}, while \Cref{ch:detectors} discusses the steps necessary to measure and analyze solar neutrino fluxes.
+Paired with these analyses are, in \Cref{ch:chsrc}, the design and evaluation of an optical calibration source intended for later phases of SNO+, and, in \Cref{ch:wbls} an evaluation of the optical properties of a next-generation target material for the T\textsc{HEIA} detector.
+
+\chapter{Neutrino Theory}
+\label{ch:theory}
+
+\section{Neutrino Oscillation}
+
+Neutrinos are produced and interact in the flavor basis, $\ket{\nu_{\alpha}}$ where $\alpha = {e,\mu,\tau}$, however these are not eigenstates of the vacuum Hamiltonian, whose eigenstates (the eigenstates with definite mass) we denote as $\ket{\nu_i}$ where $i = {1,2,3}$. 
+The flavor basis is related to the mass basis by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix $U_{\alpha i}$ as follows:
+\begin{equation}
+\ket{\nu_{\alpha}} = \sum_i U^*_{\alpha i} \ket{\nu_i}.
+\end{equation}
+The free evolution of these states is most easily represented in the mass basis, as these are eigenstates of the Hamiltonian:
+\begin{equation}
+\bra{\nu_i}H_{0}\ket{\nu_j} = \frac{1}{2E}\begin{bmatrix}
+m_1^2 & 0 & 0 \\
+0 & m_2^2 & 0 \\
+0 & 0 & m_3^2
+\end{bmatrix}.
+\end{equation}
+The survival probability for flavor state $\ket{\nu_\alpha}$ to be detected as flavor state $\ket{\nu_\beta}$ at some later time after free evolution for a distance L is therefore
+\begin{equation}
+P_{\alpha\beta} = \left|\braket{\nu_\beta(t)}{\nu_\alpha}\right|^2 = \left|\sum_i U^*_{\alpha i} U^{}_{\beta i} e^{- i m_i^2 L/(2E)} \right|^2.
+\end{equation}
+
+\section{Solar Neutrinos}
+
+The sun produces neutrinos, we can detect them at earth to understand the sun.
+
+\subsection{Fusion Reactions}
+
+Certain cycles of fusion produce certain fluxes. The relative intensities are interesting.
+
+\subsection{Standard Solar Models}
+
+Bachall et al have used what we know about the sun to predict the internal dynamics, and hence the fusion rates.
+
+\subsection{The MSW Effect}
+
+The MSW~\cite{wolfenstein,mikheyev} effect proposes that the coherent forward scattering of electron flavor neutrinos off of electrons in a material adds a potential energy, $V_e$, to electron flavor neutrinos which depends on the local electron density, $n_e$:
+\begin{equation}
+V_e = \sqrt{2} G_F n_e.
+\end{equation}
+Written in the mass basis the Hamiltonian including this effect, $H_{MSW}$, then takes the form
+\begin{equation}
+H_{MSW} = H_{0} + U\begin{bmatrix}
+V_e & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}U^\dagger.
+\end{equation}
+Notably the evolution of the states in the presence of matter is now much more complicated since the eigenstates now depend on the electron density.
+
+It is useful to introduce the matter mass basis, $\ket{\nu_{mi}(V_e)}$, consisting of eigenstates of the Hamiltonian $H_{MSW}$ at a particular electron potential $V_e$.
+Note that if the electron density is zero, $H_{MSW}$ reduces to $H_0$. Therefore $\ket{\nu_{mi}(0)} \rightarrow \ket{\nu_{i}}$.
+In many cases the variation of $V_e$ is slow enough that the evolution is adiabatic, meaning some state $\ket{\nu(t)}$ has a constant probability to be one of the instantaneous matter mass states at a later time. 
+\begin{equation}
+\left| \braket{\nu_{mi}(V_e(0))}{\nu(0)} \right|^2 = \left| \braket{\nu_{mi}(V_e(t))}{\nu(t)} \right |^2
+\end{equation}
+
+The electron density within the sun varies sufficiently slowly for an adiabatic approximation to be made.
+Therefore, knowing where in the Sun a neutrino is produced (or more precisely the electron density at the production point), one can calculate the eigenstate composition for as long as the adiabatic condition is satisfied.
+Once the neutrino reaches the solar radius, vacuum propagation dominates. 
+As vacuum propagation does not change the mass state composition of a state, the neutrinos that arrive at Earth have the same mass state composition as those exiting the Sun.
+Due to the large distance between the Earth and the Sun, these mass state fluxes can be assumed to be incoherent once they arrive at Earth, and any regeneration of coherence in the Earth is ignored.
+Therefore, the arrival probability $\phi_i$ of neutrino mass state $\nu_i$ at Earth due to electron neutrinos produced at an electron potential $V_e$ in the Sun in the presence of the MSW effect can be calculated as
+\begin{equation}
+\phi_i = \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2.
+\label{rawflux}
+\end{equation}
+The analytic expression for this value is non-trivial and in practice $H_{MSW}$ is numerically diagonalized in the flavor basis to find $\bra{\nu_{m i}(V_e)}$ at a particular $V_e$ value and compute this projection.
+
+\chapter{Neutrino Detectors}
+\label{ch:detectors}
+
+Many types of detectors, earliest being radiochemical and identifying solar neutrino problem.
+Progressed to real-time detection with event level information.
+Focusing on SNO, SNO+, and Theia below as they are directly applicable to analyses presented later.
+
+\section{SNO}
+
+Neutrino interactions in heavy water, etc.
+Solved solar neutrino problem by detecting all flavors simultaneously.
+
+\subsection{Cherenkov Radiation}
+
+Discuss cherenkov angle and direction information.
+
+\subsection{Detector Design}
+
+Discuss AV, PSUP, PMTs, trigger system.
+
+\subsection{Vertex Reconstruction}
+
+Use PMT hit information to infer observables: energy, position, direction, isotropy.
+
+\subsection{Simulation and Analysis}
+
+Introduce SNOMAN and building PDFs of known signal types.
+Use a likelihood fit to extract counts/rates from data.
+
+
+\section{SNO+}
+
+Start with water, move to scintillator. Only ES now, primary goal 0$\nu\beta\beta$.
+
+\subsection{Scintillation Light}
+
+Implications on vertex reconstruction.
+
+\section{T\textsc{HEIA}}
+
+Large detector for interaction rate. 
+
+\subsection{Combined Scintillation and Cherenkov Signal}
+
+Implications for vertex reconstruction, background rejection, energy resolution.
