@@ -1,6 +1,11 @@
 \chapter{Constraints on Neutrino Lifetime}
 \label{ch:lifetime}
 
+Analysis of the SNO data was instrumental in solving the SNP, and with the leading order dynamics of neutrinos established as the MSW effect, one can now explore the SNO data to constrain second order effects. 
+Neutrino decay is one such effect, and was first explored as a possible explanation for the less-than-unity survival probability of electron flavor neutrinos \cite{bachall_stable}.
+Even though neutrino decay is now known not to be the dominant effect behind the SNP, solar neutrinos make an excellent test beam for investigating neutrino decay.
+Roughly speaking, this analysis will be searching for a deficite of neutrinos resulting from decay of neutrinos in flight from the Sun to the Earth.
+As will be shown in the following sections, this produces an energy dependent distortion to the MSW survival probability curves that can be fit for in an analysis of SNO data.
 
 The initial proposal to use solar neutrinos as a handle on neutrino lifetime explored a few models of neutrino decay and estimated that solar neutrinos could put the best limit on non-radiative neutrino decay~\cite{beacombell}.
 The authors noted that the large uncertainty on the $^8B$ flux as well as uncertainties in the neutrino mass and mixing parameters would be a limiting factor.
@@ -9,13 +14,13 @@ Further studies~\cite{berryman} using a simple disappearance model - where the n
 Various constraints such as the eccentricity of the Earth's orbit allowed this limit to be improved~\cite{picoreti}. 
 However, it was noted~\cite{berryman} that the published fits to the SNO data were not ideal for testing the simple disappearance model because the survival probabilities for electron neutrinos $P_{ee}$ and $P_{ea}$ were not treated as independent functions.
 In a decaying scenario the survival probabilities are modified by an energy dependent form that does not preserve $P_{ee} + P_{ea} = 1$, so the authors concluded a better limit could be set with a dedicated fit.
-This analysis aims to perform such a dedicated fit, specifically for the neutrino mass state 2 lifetime observed as an energy dependent modification to the standard Mikheyev - Smirnov - Wolfenstein (MSW)~\cite{wolfenstein,mikheyev} survival probability.
+This analysis aims to perform such a dedicated fit, specifically for the neutrino mass state 2 lifetime observed as an energy dependent modification to the standard MSW survival probability.
 
 \section{Lifetime Model}
 \label{lifetime_model}
 
 To fit for neutrino lifetime using SNO data one first needs a model of the survival probability curves.
-The fit will minimize the negative SNO Enhanced Log Likelihood function~\cite{plthesis} using this model for the survival probability.
+The fit will minimize the negative SNO Enhanced Log Likelihood function~\cite{3phase} using this model for the survival probability.
 The following sections discuss the model itself and the treatment of parameters.
 
 \subsection{Decaying Survival Probability}
@@ -31,7 +36,7 @@ Therefore, using the formalism given in \Cref{ch:theory}, the detected flux $\ps
 \psi_i \approx  e^{-L_\odot / (E k_i)} \phi_i =  e^{-L_\odot / (E k_i)} \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2
 \label{decay}
 \end{equation}
-The standard survival probabilities for electron and muon/tau flavor neutrinos may then be recovered with appropriate factors from the PMNS matrix and fed into QSigEx (the 3-phase fitter developed by Pierre-Luc Drouin~\cite{plthesis}).
+The survival probabilities for electron and muon/tau flavor neutrinos in a decaying scinareo may then be calculated with appropriate factors from the PMNS matrix.
 \begin{equation}
 \begin{array}{rcl}
 P_{ee} & = & \sum_i \psi_i |U_{ie}|^2  \\
@@ -149,30 +154,33 @@ Since this analysis is (only) proposing a survival probability model to be consi
 
 \subsection{QSigEx}
 
-Three phase fits to SNO data that treated $P_{ee}$ and $P_{ea}$ independent polynomials existed in the software package QSigEx~\cite{plthesis}.
-This package already implemented the SNO Enhanced Log Likelihood Function, and it was relatively easy to modify the fits to use the model described in \Cref{lifetime_model} instead of polynomials.
+A fit package for all three phases of SNO data that treated $P_{ee}$ and $P_{ea}$ independent polynomials existed in the software package QSigEx~\cite{plthesis}.
+This was used to produce previous SNO results which paramaterized the survival probabilites as Nth order polynomials.
+This package already implemented the SNO Enhanced Log Likelihood Function, and could be modified to use the model described in \Cref{lifetime_model} instead of polynomials.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
 For this analysis, then, the focus is on demonstrating that the fit in the updated code is an unbiased estimator of the neutrino lifetime of mass state two, given the assumptions discussed previously. 
 
 \subsection{Signal Extraction}
 
-This by and large follows the scheme layed out in Section 5 of Pierre-Luc's thesis~\cite{plthesis} where it is described in exquisite detail. 
-The deviation here occurs only in that instead of polynomial parameters, the parameters in discussed in \Cref{parameters} are used in the fit.
+[... rewrite ...]
+%This by and large follows the scheme layed out in Section 5 of Pierre-Luc's thesis~\cite{plthesis} where it is described in exquisite detail. 
+%The deviation here occurs only in that instead of polynomial parameters, the parameters in discussed in \Cref{parameters} are used in the fit.
 
 \subsection{Neutrino Energy Binning}
 
-Pierre-Luc discussed two varieties of fit in his thesis.
+There are two options for handling the neutrino energy dependence in such a fit:
 \begin{itemize}
 \item Binned neutrino energy fits where where the neutrino monte-carlo is binned into $N$ PDFs by neutrino energy prior to the fit, and the average value of the survival probability across that entire bin is applied to each of the $N$ PDFs when stepping though the minimization.
 \item Unbinned neutrino energy fits where each of the $M >> N$ neutrino monte-carlo events are reweighted by the value of the survival probability at their exact energy when stepping through the minimization to build the neutrino PDFs.
 \end{itemize}
-Clearly the binned fit will perform more poorly as an average value of the survival probability across a neutrino energy bin is applied to all neutrinos in that bin, however this method is much faster being computationally far simpler than rebuilding the PDFs at each minimization step. 
+Clearly the binned fit will perform more poorly as an average value of the survival probability across a neutrino energy bin is applied to all neutrinos in that bin, however this method is much faster, being computationally far simpler than rebuilding the PDFs at each minimization step. 
 For polynomial fits this poorer performance was not significant and allowed the systematic scans along with the shifts and refits to benefit from the speed increase.
-Unfortunately as discussed in \Cref{polynomial_tests} the binned fit performed very poorly at capturing the shape of the lifetime model survival probabilities.
+Unfortunately preliminary tests of the binned fit had very poor results regarding at capturing the shape of the lifetime model survival probabilities.
 Because of this, only the unbinned neutrino energy fit is considered in the following sections.
 
 \section{Fit Strategy}
 \label{strategy}
+[... needs some work ...]
 Ideally all neutrino parameters would be floated with priors in this fit. 
 In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux (see \Cref{lifetime_and_flux}).
 Previous analyses \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced fit and then performing further fits and statistical studies with the flux fixed.
@@ -190,7 +198,6 @@ With that in mind, the current strategy is:
 \label{ensemble_tests}
 
 The purpose here is to demonstrate that the fit is unbiased and correctly estimating errors on the fitted parameters. 
-These tests were heavily inspired by Section 6 of Pierre-Luc's thesis~\cite{plthesis}.
 Figures of merit shown here include the pull, the bias, and the relative uncertainty.
 \begin{equation}
 Pull = \frac{Fit\,\,\,value - Actual\,\,\,value}{Fit\,\,\,uncertainty}
@@ -212,7 +219,8 @@ Events from each class and phase are partitioned into $N$ sets with $M$ samples 
 The remaining unused MC data for each phase and class is used for PDFs in the fit, so $N$ must be chosen to leave sufficient uncorrelated data for PDF generation.
 $M$ is chosen from a Poisson distribution with a mean equal to the expected number of events for that event class and phase from previous SNO analyses~\cite{leta,ncd,3phase}.
 For solar neutrino signals the BS05(OP)~\cite{bs05op} flux predictions were used in generating these fake data sets.
-The full list of Poisson means $M$ and the number of generated sets $N$ are given in Appendix C of Pierre-Luc's thesis~\cite{plthesis}.
+%Going to need to copy this from P-L?
+%The full list of Poisson means $M$ and the number of generated sets $N$ are given in Appendix C of Pierre-Luc's thesis~\cite{plthesis}.
 These sets can then be combined into fake datasets with realistic statistics containing only the event classes and phases desired.
 
 %\begin{figure}
@@ -358,7 +366,7 @@ Comparing the results of these two datasets gives some information on statistica
 If the bias or pull looks particularly bad in one dataset but acceptable in the other, one can conclude that this effect is due to statistical fluctuations and not to errors in the fit procedure.
 The figures of merit for these tests are shown in \Cref{fig:allbg_bias,fig:allbg_pull,fig:allbg_reluncert}. 
 While fluctuations are larger, comparison between the two datasets looks more reasonable. 
-Notably these results are comparable to ensemble testing of the published SNO 3-phase results as shown in Pierre-Luc's thesis~\cite{plthesis}.
+Notably these results are comparable to ensemble testing of the published SNO 3-phase results \cite{3phase}.
 One can therefore conclude that the fit is unbiased and properly predicting errors.
 
 \begin{figure}
@@ -393,8 +401,8 @@ The relative uncertainty of all fitted parameters with signal + all backgrounds 
 \section{Detector Systematic Effects}
 \label{systematics} 
 
-Section 5.4 of Pierre-Luc's thesis~\cite{plthesis} covers the strategy used here in great detail. 
-A summary of that strategy follows. A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. For each set of parameters, the fit is minimized again and the most likely value of each parameter is recorded. The RMS of these shift-and-refit $k_2$ values on each side of the central value for $k_2$ are calculated as the systematic effect. Both positive and negative uncertainties are quoted but it is important to note that this analysis is expected to produce a lowerbound on $k_2$ making the positive error rather meaningless.
+%Take the bit about strategy from the lifetime unidoc appendix and put here
+A summary of the strategy for handling systematic parameters follows. A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. For each set of parameters, the fit is minimized again and the most likely value of each parameter is recorded. The RMS of these shift-and-refit $k_2$ values on each side of the central value for $k_2$ are calculated as the systematic effect. Both positive and negative uncertainties are quoted but it is important to note that this analysis is expected to produce a lowerbound on $k_2$ making the positive error rather meaningless.
 
 The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset. This fake dataset was seeded with $k_2 = 10^{-4}$ and had the $^8$B flux seeded and fixed at the SSM central value.
 

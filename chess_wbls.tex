@@ -3,36 +3,34 @@
 
 \section{Introduction}
 
-Optical photon detection has been a common detection mechanism in neutrino experiments for many decades~\cite{imb,superk,sno,kamland,borexino,lsnd} and the technology is well developed. Experiments have historically been optimized to detect one of two types of optical radiation: Cherenkov~\cite{cherenkov} or scintillation~\cite{birks} light.  Directional Cherenkov light has been successfully used in both high energy and nuclear physics by large ultra-pure water experiments such as SuperKamiokande~\cite{superk} and SNO~\cite{sno}, while the more abundant, isotropic scintillation is more commonly used in low-energy detectors such as KamLAND~\cite{kamland} and Borexino~\cite{borexino}.  A brief summary of the advantages and limitations of each technique can be found in \Cref{tab:chervsscint}.
+Optical photon detection has been a common detection mechanism in neutrino experiments for many decades~\cite{imb,superk,sno,kamland,borexino,lsnd} and the technology is well developed.
+Experiments have historically been optimized to detect one of two types of optical radiation: Cherenkov~\cite{cherenkov} or scintillation~\cite{birks} light.  
+Directional Cherenkov light has been successfully used in both high energy and nuclear physics by large ultra-pure water experiments such as SuperKamiokande~\cite{superk} and SNO~\cite{sno}, while the more abundant, isotropic scintillation is more commonly used in low-energy detectors such as KamLAND~\cite{kamland} and Borexino~\cite{borexino}.  
+A brief summary of the advantages and limitations of each technique can be found in \Cref{tab:chervsscint}.
 
-\bgroup
-\def\arraystretch{1.6}
-\begin{table}[th!]
-{\scriptsize 
-	\def\tabularxcolumn#1{m{#1}}
-	\begin{tabularx}{\linewidth}{*{2}{c}}
-	   Cherenkov & Scintillation \\
-	\hline
-	\hline
-	  Directional & Isotropic\\
-	\hline
-	  Very well understood  & Strong dependence on material properties  \\
-	\hline
-	  Good shower/MIP separation & Reasonable particle ID  \\
-	\hline
-	  Minimum energy threshold for light production & No energy threshold for light production  \\
-	\hline
-	  Low light yield & High light yield results in lower detector threshold and improved energy resolution \\
-	\hline
-	  Occurs in all dielectric materials, some with very good optical properties & Scintillating materials tend to have substantially shorter attenuation lengths  \\
-	\hline
-	  Cost-effective & More expensive materials \\
-	\end{tabularx}
-}
+\begin{table}[]
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{CC}
+Cherenkov & Scintillation \\
+\hline
+\hline
+Directional & Isotropic\\
+\hline
+Very well understood  & Strong dependence on material properties  \\
+\hline
+Good shower/MIP separation & Reasonable particle ID  \\
+\hline
+Minimum energy threshold for light production & No energy threshold for light production  \\
+\hline
+Low light yield & High light yield results in lower detector threshold and improved energy resolution \\
+\hline
+Occurs in all dielectric materials, some with very good optical properties & Scintillating materials tend to have substantially shorter attenuation lengths  \\
+\hline
+Cost-effective & More expensive materials \\
+\end{tabularx}
 \caption{Comparison of Cherenkov and scintillation light in the context of optical particle detection.}
 \label{tab:chervsscint}
 \end{table}
-\egroup
 
 The LSND experiment~\cite{lsnd} used a mineral-oil-based scintillator designed to allow detection of both scintillation and Cherenkov light, opening up  sensitivity to low-energy particles  below  Cherenkov threshold. The ratio of created photoelectrons for the two sources of light was approximately 5 to 1 (scintillation to Cherenkov) for a 45~MeV electron created in the detector. Photon timing and charge was used for particle identification and to reconstruct vertex and angle information. Particles emitting Cherenkov radiation produced significant fractions of prompt light and thus particle identification techniques relied on the fraction of prompt light as a tool for discrimination. \\
 Separation of Cherenkov- and scintillation-light components on an event-by-event basis enables a single detector to exploit the advantages of each technique.  If this separation can be achieved in a pure liquid scintillator (LS) detector it would substantially improve the sensitivity of low-energy physics programs by adding directional reconstruction capability to a low-threshold detector. Searches for neutrinoless double beta decay (NLDBD) would benefit from rejection of the directional solar neutrino signal, the dominant background in experiments such as SNO+~\cite{snop}.  Precision solar neutrino measurements would benefit from  separation of the directional signal from isotropic radioactive background events. 
@@ -53,7 +51,7 @@ Separation of scintillation and Cherenkov components can occur in three domains:
 
 \begin{figure}
 	\centering
-	\includegraphics[width=.45\textwidth]{optics.pdf}
+	\includegraphics[width=.8\textwidth]{optics.pdf}
 	\caption{\label{fig:optics} PMT H11934 quantum efficiency~\cite{h11934} and UVT acrylic absorption length compared to the Cherenkov and scintillation emission spectra for pure LAB~\cite{lab_emission} and LAB loaded with 2~g/L PPO~\cite{snop_private}. The normalization of the emission spectra are shown in arbitrary units.}
 \end{figure}
 
@@ -66,17 +64,23 @@ Section~\ref{s:analysis} describes the general approach to data analysis.  Secti
 \section{The CHESS Detector}\label{s:desc}
 
 The primary goal of the CHESS experiment is to demonstrate Cherenkov / scintillation  separation by Cherenkov ring imaging in both charge (detected photoelectron density) and time, for different scintillating liquids.  
-A schematic of CHESS is shown in \Cref{fig:timing-setup}.  An acrylic target vessel is viewed by an array of small, fast PMTs. 
+A schematic of CHESS is shown in \Cref{fig:timing-setup,fig:timing-setup-2}.  An acrylic target vessel is viewed by an array of small, fast PMTs. 
 The setup is designed to detect either cosmic muons or events from deployed radioactive sources.  The primary ring imaging measurement is performed using through-going muons.  Vertical-going events are selected via a 1-cm diameter coincidence tag, ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring. 
 The muons produce Cherenkov and scintillation light in the target material, which is detected on the PMT array. The apparatus has been optimized using a full Monte Carlo simulation (Sec.~\ref{sec:simulation}), complete with optical ray tracing, such that direct Cherenkov light from vertical muons falls on a distinct set of PMTs, forming a clear ring in the PMT array.  This yields two distinct groups of PMTs by construction: those with pure scintillation hits and those with both scintillation and Cherenkov hits. The earliest hits on each PMT can thus be identified as being caused by either Cherenkov or scintillation photons, and demonstrate the time separation between these two signals to high precision. 
 A  measurement of the clarity of the Cherenkov ring imaged in charge on top of the isotropic scintillation light background is also possible.
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{timing-schematic}
-\includegraphics[width=0.89\columnwidth]{chess_timing_setup}
-\caption{The CHESS apparatus.  (a) Detailed schematic view with dimensions and (b) demonstration of ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and LAB/PPO. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
+\includegraphics[width=0.8\columnwidth]{timing-schematic}
+\caption{Detailed schematic view of the CHESS aparatus with dimensions.}
 \label{fig:timing-setup}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\columnwidth]{chess_timing_setup}
+\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and LAB/PPO. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
+\label{fig:timing-setup-2}
 \end{figure}
 
 \subsection{Target Vessel}
@@ -114,7 +118,7 @@ Each panel is instrumented with a PMT~\cite{9102ksb} which is read out for each 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\columnwidth]{veto_panels2}
+\includegraphics[width=0.7\columnwidth]{veto_panels2}
 \caption{Layout of veto panels around the CHESS apparatus. }
 \label{f:veto}
 \end{figure}
@@ -135,7 +139,7 @@ A schematic diagram of the data acquisition (DAQ) hardware is shown in \Cref{fig
 The DAQ software~\cite{wblsdaq} utilizes the CAEN VME library~\cite{caen-vme} to configure and read out the digitizers and high voltage supplies, and outputs HDF5~\cite{hdf5} formatted files containing raw digitized data and metadata for each triggered event.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{daq}
+\includegraphics[width=0.7\columnwidth]{daq}
 \caption{A schematic diagram of how the DAQ and hardware are connected together with signal and data paths labeled. Omitted are the high voltage supplies, which are connected to the VME backplane, and all PMTs.}
 \label{fig:daq}
 \end{figure}
@@ -271,7 +275,7 @@ The stability of the PMT gains was checked by taking a second set of water calib
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\columnwidth]{spe_ring}
+	\includegraphics[width=0.7\columnwidth]{spe_ring}
 	\caption{SPE charge distribution for a single PMT. Data is shown as black points with error bars, and the red dashed line is the result of the fit used to extract the shape of the SPE distribution. }
 	\label{fig:spe_data}
 \end{figure}
@@ -290,9 +294,9 @@ and the resulting fit parameters were used in the simulation to model PMT pulse 
 	
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=\columnwidth]{pulse_shape_ring1}
-	\includegraphics[width=\columnwidth]{pulse_shape_norm_ring}
-	\includegraphics[width=\columnwidth]{pulse_shape_lognorm_fit}
+	\includegraphics[width=0.5\columnwidth]{pulse_shape_ring1}
+	\includegraphics[width=0.5\columnwidth]{pulse_shape_norm_ring}
+	\includegraphics[width=0.5\columnwidth]{pulse_shape_lognorm_fit}
 	\caption{PMT pulse shape characterization.   (a) 
 	Mean and RMS spread for one PMT, showing excellent stability in the pulse region.  (b) Averaged pulse shapes for SPE pulses for each individual PMT. 
 	(c) Log-normal fit to the average pulse shape across all PMTs. 
@@ -317,8 +321,8 @@ The MC-corrected LED data set is used to define the time delays for the final se
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\columnwidth]{time_delays_ledtop_singlepmt}
-	\includegraphics[width=\columnwidth]{time_delays_ledaverage_muon}
+	\includegraphics[width=0.6\columnwidth]{time_delays_ledtop_singlepmt}
+	\includegraphics[width=0.6\columnwidth]{time_delays_ledaverage_muon}
 	\caption{(a) Time distribution for a single channel relative to a reference channel, overlaid with the Gaussian fit used to extract the relative time delay.  (b) Mean and uncertainty on the mean for the per-channel time delays.}
 	\label{fig:time_delay}
 \end{figure}
@@ -375,8 +379,8 @@ typically create between 30 and 400 PEs in the innermost PMTs, making their iden
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{cosmic_water_clipping}
-\includegraphics[width=\columnwidth]{cosmic_labppo_clipping}
+\includegraphics[width=0.6\columnwidth]{cosmic_water_clipping}
+\includegraphics[width=0.6\columnwidth]{cosmic_labppo_clipping}
 \caption{ Monte Carlo simulation of the summed PE distribution on the inner PMT group due to cosmic muon events with perfect rings (turquoise, right diagonal hatching), muon contamination (orange, left diagonal hatching), electron contamination (purple, right diagonal dashed hatching), and the total (red, solid).  (a) Water target, with water data overlaid to show the agreement, and (b) LAB/PPO target.  The vertical black dashed line represents the chosen cut value, with arrows to illustrate the acceptance region.}
 \label{f:clipMC}
 \end{figure}
@@ -402,8 +406,8 @@ A Gaussian correction of $\sigma=214$~ps is included in the Monte Carlo in order
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\columnwidth]{cosmic_water_timeres_trtime_dt_mc}
-	\includegraphics[width=0.9\columnwidth]{cosmic_water_timeres_dt_mc_smear}
+	\includegraphics[width=0.6\columnwidth]{cosmic_water_timeres_trtime_dt_mc}
+	\includegraphics[width=0.6\columnwidth]{cosmic_water_timeres_dt_mc_smear}
 	\caption{Distribution of hit-time residuals 
 	for ring candidate events in water for middle PMTs, where the Cherenkov ring is expected. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). 
 	(a) Hit times with respect to the lower muon tag time and (b) hit times with respect to the reconstructed event time.}
@@ -439,7 +443,7 @@ The middle PMTs are the only ones detecting a sizable amount of light, and their
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\columnwidth]{cosmic_water_25pctpe_time_smear}
+	\includegraphics[width=0.7\columnwidth]{cosmic_water_25pctpe_time_smear}
 	\caption{Distribution of hit time residuals for ring candidate events in water for each PMT grouping. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). }
 	\label{fig:cosmics_water}
 \end{figure}

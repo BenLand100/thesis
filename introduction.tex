@@ -1,20 +1,42 @@
 \chapter{Introduction}
+The neutrino was originally proposed by Pauli in 1930 \cite{pauli} to conserve energy and momentum in the beta decay process,
+\begin{equation}
+n \rightarrow p + e^- + \bar{\nu}_e,
+\end{equation}
+for which the electron was earlier shown to have a continuous energy spectrum \cite{chadwick}.
+Being a low mass, neutral particle, it was some 25 years before the first detection of neutrino interactions in the Cowan-Reines experiment \cite{cowan-reines} through inverse beta decay,
+\begin{equation}
+\bar{\nu}_e + p \rightarrow n + e^+.
+\end{equation}
+Later, the fact that neutrinos come in three flavors was established with the detection of muon neutrinos \cite{danby} and tau neutrinos \cite{donut}, with the earlier discovered particles identified as electron (anti-) neutrinos.
 
-The last 20 years of solar neutrino research have seen the resolution of the so-called "solar neutrino problem" highlighted by earlier experiments. [...]
+As neutrinos were known to be produced in nuclear reactions, the Homestake experiment \cite{homestake} was proposed in the 1960s to measure the flux of neutrinos produced in the core of the Sun.
+This experiment measured significantly lower flux than was expected from theoretical calculations, becoming the so-called "solar neutrino problem" (SNP).
+Many experiments \cite{solarstuff} confirmed this deficit, and it persisted until the turn of the century when the SNO experiment \cite{3phase} made a measurement of the solar neutrino flux including all neutrino flavors finding that the initially electron-flavor solar neutrinos were transformed into muon- or tau-flavor neutrinos before arriving at Earth.
+Flavor change in the neutrino sector was confirmed by the Super-Kamiokande \cite{superk} experiment by observing an up/down anisotropy in atmospheric muon neutrinos that would not be expected if muon neutrinos remained muon flavor.
+This discovery of flavor change implied a nonzero neutrino mass, and a set of massive neutrino states.
+Superpositions of the mass states form the flavor states described earlier.
+
+Determining the parameters of the mixing matrix that relates the flavor and mass basis has been the forefront of neutrino research for the last 20 years, and has seen great success measuring the rotation between the two bases and the magnitude of mass difference between mass states. 
+Currently, the absolute masses of the neutrino states have yet to be determined, with the best constraints coming from cosmology, which still only sets a limit on the sum of the mass states \cite{cosmo_neutrinos}.
+Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as SNO+ \cite{snop}, Cuore \cite{cuore}, and Majorana/Legend \cite{majoranalegend}, by studying a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state).
+
 
 In this thesis I describe two analyses of solar neutrino data from the Sudbury Neutrino Observatory (SNO) and its upgrade, SNO+.
 The first analysis, described in \Cref{ch:lifetime}, explores the possibility that neutrinos are unstable particles and can decay into more stable states.
 Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay. 
 The second analysis in \Cref{ch:es} uses commissioning data from SNO+ to measure the flux of $^8$B solar neutrinos. 
-To aid in understanding these topics, the theory of neutrinos and particulars of solar neutrinos are discussed in \Cref{ch:theory}, while \Cref{ch:detectors} discusses the steps necessary to measure and analyze solar neutrino fluxes.
+To aid in understanding these topics, the remainder of this chapter is devoted to the theory of neutrinos and particulars of solar neutrinos, while \Cref{ch:detectors} discusses the steps necessary to detect and analyze solar neutrino fluxes.
 Paired with these analyses are, in \Cref{ch:chsrc}, the design and evaluation of an optical calibration source intended for later phases of SNO+, and, in \Cref{ch:wbls} an evaluation of the optical properties of a next-generation target material for the T\textsc{HEIA} detector.
+But first, the theory.
 
-\chapter{Neutrino Theory}
-\label{ch:theory}
+\section{Standard Model Neutrinos}
+[... maybe ...]
 
 \section{Neutrino Oscillation}
+\label{ch:theory}
 
-Neutrinos are produced and interact in the flavor basis, $\ket{\nu_{\alpha}}$ where $\alpha = {e,\mu,\tau}$, however these are not eigenstates of the vacuum Hamiltonian, whose eigenstates (the eigenstates with definite mass) we denote as $\ket{\nu_i}$ where $i = {1,2,3}$. 
+Neutrinos are produced and interact in the flavor basis, $\ket{\nu_{\alpha}}$ where $\alpha = {e,\mu,\tau}$, however these are not eigenstates of the vacuum Hamiltonian, whose eigenstates (the eigenstates with definite mass) are denoted as $\ket{\nu_i}$ where $i = {1,2,3}$. 
 The flavor basis is related to the mass basis by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix $U_{\alpha i}$ as follows:
 \begin{equation}
 \ket{\nu_{\alpha}} = \sum_i U^*_{\alpha i} \ket{\nu_i}.
@@ -34,15 +56,36 @@ P_{\alpha\beta} = \left|\braket{\nu_\beta(t)}{\nu_\alpha}\right|^2 = \left|\sum_
 
 \section{Solar Neutrinos}
 
-The sun produces neutrinos, we can detect them at earth to understand the sun.
+The Sun is powered by thermonuclear reactions that fuse light nuclei into heavier nuclei, releasing energy.
+Much of this energy is in the form of electromagnetic radiation or energetic charged particles which thermalizes and is radiated away long after the initial reaction.
+However, energetic neutrinos produced in this reactions escape quickly and relatively unhindered, making solar neutrinos an excellent probe of the internal dynamics of the Sun.
+The following sections discuss the specific processes resulting in solar neutrinos, how the fluxes of solar neutrinos are predicted, and what other considerations must be taken into account to understand the solar neutrino fluxes at Earth.
 
 \subsection{Fusion Reactions}
 
-Certain cycles of fusion produce certain fluxes. The relative intensities are interesting.
+The primary reaction in the Sun is the proton-proton ($pp$) reaction,
+\begin{equation}
+p+p \rightarrow ^2\mathrm{H}+e^++\nu_e,
+\end{equation}
+which produces the most neutrinos, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
+The $^2$He from this reaction is involved in further reactions in the proton-proton chain, resulting in other neutrino fluxes.
+Notable among these is the $^8$B reaction which produces neutrinos that are both high energy and relatively high flux, making them an ideal candidate for detection in water Cherenkov detectors.
+Beyond the proton-proton chain, there is also the so called CNO process, involving carbon, oxygen, and nitrogen nuclei. 
+Neutrinos produced from the CNO process have energies and fluxes between $pp$ and $^8$B neutrinos.
+\Cref{neutrino_spectra} shows the energy spectra and total flux of all known solar neutrinos, where the fluxes represent theoretical predictions.
+
+\begin{figure}
+\centering
+Here be Bachall's figure.
+\caption{\label{neutrino_spectra}Shown here are the fluxes and spectra of solar neutrinos as calculated in \cite{bs05op}.}
+\end{figure}
 
 \subsection{Standard Solar Models}
 
-Bachall et al have used what we know about the sun to predict the internal dynamics, and hence the fusion rates.
+The fluxes shown in \Cref{neutrino_spectra} are from a theoretical calculation of the equilibrium state of the Sun known as a Standard Solar Model (SSM).
+These calculations use hydrodynamic equations of state, contemporary solar observations, and estimations of the primordial composition of the solar system to infer the properties of the solar core.
+These properties, such as temperature, density, and isotope content, directly control the rates of the various fusion reactions, and therefore predict the fluxes of solar neutrinos.
+These rates depend strongly on predictions for nuclear cross sections at densities and temperatures consistent with the solar core, and uncertainties here drive the uncertainties in the neutrino fluxes.
 
 \subsection{The MSW Effect}
 
@@ -79,25 +122,149 @@ Therefore, the arrival probability $\phi_i$ of neutrino mass state $\nu_i$ at Ea
 \end{equation}
 The analytic expression for this value is non-trivial and in practice $H_{MSW}$ is numerically diagonalized in the flavor basis to find $\bra{\nu_{m i}(V_e)}$ at a particular $V_e$ value and compute this projection.
 
-\chapter{Neutrino Detectors}
+Ultimately the MSW effect is the leading order effect responsible for the observed survival probabilities of solar neutrinos.
+\Cref{fig:global_solar} shows all the solar neutrino flux measurements made to date overlaying the expected MSW survival probability.
+With the leading order effects now understood, the door is open for precision measurements of neutrino, and particular solar neutrino, interactions.
+
+\begin{figure}
+\centering
+A figure goes here
+\caption{\label{fig:global_solar}Shown here are the measured fluxs of solar neutrinos at various energies by many solar experiments to date.}
+\end{figure}
+
+\chapter{Solar Neutrino Detectors}
 \label{ch:detectors}
 
-Many types of detectors, earliest being radiochemical and identifying solar neutrino problem.
-Progressed to real-time detection with event level information.
-Focusing on SNO, SNO+, and Theia below as they are directly applicable to analyses presented later.
+Neutrinos only interact weakly with normal matter, so the interaction cross sections are quite small, being less than $10^{-40}$ cm$^2$ for energies relevant to solar neutrinos.
+Even with expected fluxes of detectable solar neutrinos exceeding $10^6$ cm$^{-2}$s$^{-1}$, the interaction rates are minuscule.
+Because of this, neutrino detectors typically rely on large masses of target material to achieve a reasonable interaction rate, with a solar neutrino event a day being quite respectable.
+These low rates mean that neutrino detectors must be isolated from cosmic radiation by being constructed deep underground, or lose the neutrino events in the noise.
+Even then the materials used to construct the detector must have very low intrinsic radioactivity or suffer the same fate.
+
+The earliest neutrino detectors relied on the transmutation of nuclei by neutrino interactions. 
+In the Homestake \cite{homestake} experiment, chlorine nuclei were transformed to argon nuclei via a neutrino capture,
+\begin{equation}
+\nu_e + ^{37}\mathrm{Cl} \rightarrow ^{37}\mathrm{Ar} + e^-,
+\end{equation}
+and the created argon was periodically collected its decays counted to estimate the interaction rate in the target volume.
+The gallium experiments GNO \cite{gno}, GALLEX \cite{gallex}, and SAGE \cite{sagecombo}, relied on a similar method with gallium:
+\begin{equation}
+\nu_e + ^{71}\mathrm{Ga} \rightarrow ^{71}\mathrm{Ge} + e^-.
+\end{equation}
+Notably detectors relying on these radiochemical methods were only sensitive to $\nu_e$ and the solar neutrinos that had oscillated into another flavor were not detected, resulting in the SNP.
+Also of note is that these detectors provide no information about the neutrinos that interact besides their rate: energy and direction information is totally lost in the radiochemical detection scheme.
+
+The next generation of neutrino detectors progressed to real time detection of neutrino interactions.
+These were the water Cherenkov detectors, such as SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neturino interaction.
+Pure water detectors like Super-Kamiokande are dominated by an elastic scatter interaction,
+\begin{equation}
+\nu_e + e^- \rightarrow \nu_e + e^-,
+\end{equation}
+where the final state electron has a momentum highly correlated with the incident neutrino.
+Analysis of data collected by such detectors allows for a statistical determination of the properties of the neutrino flux that produced such interactions.
+Real time detection also allows for different interaction channels to be distinguished, a feature leveraged by the SNO detector, which was instrumental in solving the SNP.
+From water Cherenkov detectors, the field has progressed to target media other than water, such as the use of liquid scintillators in Borexino \cite{borexino}, which can provide complementary information and lower energy thresholds compared to water. 
+
+In the following sections I will focus on SNO, SNO+, and Theia as they are directly applicable to analyses presented later.
+As mentioned, the SNO detector was a water Cherenkov detector, but using heavy water. 
+Its upgrade, SNO+, aims to replace the water target with a pure liquid scintillator.
+Finally, the Theia detector is a proposed next-generation neutrino detector using a target medium that combines the best features of water and liquid scintillator.
 
 \section{SNO}
 
-Neutrino interactions in heavy water, etc.
-Solved solar neutrino problem by detecting all flavors simultaneously.
+The SNO detector is located deep underground near Sudbury, ON, CA in the Creighton mine, an active nickle mine.
+This location is one of the deepest laboratories in the world at $2$ km underground providing a 5800 m.w.e. overburden to shield from cosmic rays.
+The detector itself is composed of a 6 m radius acrylic vessel (AV) in the shape of a spherical shell containing 1 kT of heavy water ($^2$H$_2$O or D$_2$O) as the active volume.
+The AV was accessible by a large tube through which calibration sources could be deployed.
+
+Surrounding the AV is a 9 m radius steel geodesic structure containing 9500 inward-facing photomultiplier tubes (PMTs) called the PMT support structure (PSUP).
+These PMTs are sensitive to single photons and are intended to capture the Cherenkov radiation from energetic charged particles within the AV.
+The entire structure is submerged in a large barrel shaped cavity of light water (H$_2$O) to shield the heavy water in the AV from the natural radioactivity of the mine and other detector materials.
+Both the heavy water inside the AV and the light water of the cavity were continually purified to keep intrinsic radioactivity low and cooled to minimize biological growth.
+
+The PMTs used in SNO were 8-inch Hamamatsu R1408 created with low-radioactivity glass. 
+These PMTs had a time resolution for detected photons of 1.5 ns, and a peak quantum efficiency of 21.5\% at 440 nm.
+Each PMT was outfitted with non-imaging light-concentrating reflectors to increase the effective coverage of light-sensitive elements to 55\%.
+To assist in vetoing cosmic rays, 91 additional PMTs were mounted to the PSUP looking outward into the light water of the cavity. 
+
+Whenever a PMT detected a photon, a discriminator would fire on the corresponding voltage fluctuation and register a hit.
+This hit started a voltage ramp on a time-to-amplitude converter (TAC) to track the hit time, and integrated the total charge collected by the PMT.
+Additionally, the PMT readout electronics would emit two $10mV$ square pulses of configurable widths which are summed across the entire detector and act as a count of coincidentally hit PMTs within each window.
+For SNO these windows were set to 20ns and 100ns.
+The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
+For SNO the discriminator threshold on trigger sums corresponded roughly to 17 hit PMTs.
+The hits from each GT are built into a single event for further analysis.
+
+\subsection{Interactions}
+
+The deuterium in the heavy water target used in SNO allows for multiple types of interactions sensitive to different combinations of neutrino flavors.
+Most important is the neutral current interaction NC due to a neutrino scattering off a quark as shown in \Cref{fig:NC}.
+NC is equally sensitive to all flavor of neutrino, allowing for an oscillation-agnostic measure of the total neutrino flux.
+In practice the energy deposited in the quark results in a detectable signal if it exceeds the binding energy of the proton and neutron forming a deuteron.
+The liberated neutron will eventually capture on some nuclei, resulting in a cascade of gammas which can scatter electrons with sufficient energy to produce Cherenkov light.
+Due to the detection scheme, much of the information of the initial neutrino is lost in NC interactions.
+
+\begin{figure}
+\centering
+\caption{\label{fig:NC}The Feynman diagram for neutral current (NC) interactions with quarks.}
+\end{figure}
+
+A charged current (CC) interaction with quarks in a deuteron as in \Cref{fig:CC} can convert the neutron into a proton and break up the deuteron with sufficient energy.
+This interaction converts the neutrino into an energetic electron with an energy correlated with the incident neutrino.
+In principle any neutrino flavor could participate in this interaction with sufficient energy to create heavier leptons, however solar neutrinos only have enough energy for electron flavor neutrinos to participate here.
+The energetic electron then produces Cherenkov light to be detected.
+This interaction channel allows for the recovery of spectral information due to the correlation of the electron energy to the neutrino.
+
+\begin{figure}
+\centering
+\caption{\label{fig:CC}The Feynman diagram for charged current (CC) interactions with quarks.}
+\end{figure}
+
+Finally, there is the elastic scatter (ES) of electrons present in other water Cherenkov detectors and shown in \Cref{fig:ES}.
+For electron neutrinos, both W and Z bosons can be exchanged.
+However, like the CC interaction, solar neutrinos do not have enough energy to produce heavier leptons, so only Z exchange is possible.
+This means the ES interaction is sensitive to all flavors of neutrinos, however non-electron flavor neutrinos have a lower cross section.
+Due to kinematics, the final state electron energy is correlated with the incident neutrino energy.
+Additionally, the direction (momentum) of ES electrons is highly correlated with the incident neutrino direction.
+This means that ES interactions give both spectral and pointing information, allowing for neutrino sources to be distinguished not only by their energy signature, but based on their origin in space.
+For solar neutrinos, this means ES electrons will point away from the Sun.
+
+\begin{figure}
+\centering
+\caption{\label{fig:ES}The Feynman diagrams for elastic scatter (ES) interactions with electrons.}
+\end{figure}
+
+
+\subsection{Experimental Phases}
+
+SNO operated in three distinct phases differing in their neutron detection capabilities, and hence their sensitivity to the NC interaction.
+These phases are described in the following sections along with the neutron detection mode in each phase.
+
+\subsubsection{D$_2$O}
+
+The first phase consisted of pure D$_2$O. 
+Neutrons produced in the NC interaction primarily captured on other deuterons in the target.
+The produced $^3$H then decayed, releasing a 6.26 MeV gamma.
+This gamma could either scatter electrons in the target or create energetic electron-positron pairs, either mode being detected by Cherenkov light.
+
+\subsubsection{Salt}
+
+In the second phase, NaCl was added to the D$_2$O.
+Chlorine has a much greater neutron capture cross section than deuterium, resulting in a significant increase in neutron detection efficiency.
+The decay scheme after a neutron capture on Cl is quite complicate, releasing many gammas, and giving these events a distinct topology compared to other interactions.
+Neutron detection was further enhanced by an increase in total energy released in the gamma cascade to 8.6 MeV.
+
+\subsubsection{NCD}
+
+Finally, in the third phase, the NaCl was removed and neutron counting devices (NCDs) were added inside the AV.
+These were essentially independent detectors, allowing for an independent measure of the neutron production rate.
+A single NCD was a high purity nickel tube containing $^3$He gas, and was instrumented to utilize the $^3$He as a proportional counter for thermal neutrons~\cite{ncd}.
+In total, 40 NCDs were added, two of which were modified to contain $^4$He (insensitive to neutrons) to understand instrumental backgrounds.
+The NCD data is not directly used in the analysis described in the next chapter, however it was independently analyzed to constrain the analysis of the PMT data \cite{psa}.
 
 \subsection{Cherenkov Radiation}
 
 Discuss cherenkov angle and direction information.
-
-\subsection{Detector Design}
-
-Discuss AV, PSUP, PMTs, trigger system.
 
 \subsection{Vertex Reconstruction}
 
