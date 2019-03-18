@@ -1,4 +1,4 @@
-\chapter{Constraints on Neutrino Lifetime}
+\chapter{Constraints on Neutrino Lifetime from SNO}
 \label{ch:lifetime}
 
 Analysis of the SNO data was instrumental in solving the SNP, and with the leading order dynamics of neutrinos established as the MSW effect, one can now explore the SNO data to constrain second order effects. 
@@ -8,19 +8,19 @@ Roughly speaking, this analysis will be searching for a deficite of neutrinos re
 As will be shown in the following sections, this produces an energy dependent distortion to the MSW survival probability curves that can be fit for in an analysis of SNO data.
 
 The initial proposal to use solar neutrinos as a handle on neutrino lifetime explored a few models of neutrino decay and estimated that solar neutrinos could put the best limit on non-radiative neutrino decay~\cite{beacombell}.
-The authors noted that the large uncertainty on the $^8B$ flux as well as uncertainties in the neutrino mass and mixing parameters would be a limiting factor.
-Relatively recent precise mixing parameters from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} and improved theoretical predictions for the $^8B$ flux~\cite{serenelli} mitigate this to some extent.
+The authors noted that the large uncertainty on the $^8$B flux as well as uncertainties in the neutrino mass and mixing parameters would be a limiting factor.
+Relatively recent precise mixing parameters from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} and improved theoretical predictions for the $^8$B flux~\cite{serenelli} mitigate this to some extent.
 Further studies~\cite{berryman} using a simple disappearance model - where the neutrino decays into some non-active daughter(s) and the observable signal is an energy dependent distortion to the survival probability - were able to set respectable limits analyzing SNO~\cite{sno}, Super-Kamiokande~\cite{superk}, and Borexino~\cite{borexino} results.
 Various constraints such as the eccentricity of the Earth's orbit allowed this limit to be improved~\cite{picoreti}. 
 However, it was noted~\cite{berryman} that the published fits to the SNO data were not ideal for testing the simple disappearance model because the survival probabilities for electron neutrinos $P_{ee}$ and $P_{ea}$ were not treated as independent functions.
 In a decaying scenario the survival probabilities are modified by an energy dependent form that does not preserve $P_{ee} + P_{ea} = 1$, so the authors concluded a better limit could be set with a dedicated fit.
-This analysis aims to perform such a dedicated fit, specifically for the neutrino mass state 2 lifetime observed as an energy dependent modification to the standard MSW survival probability.
+This analysis aims to perform such a dedicated fit, specifically for the $\nu_2$ lifetime observed as an energy dependent modification to the standard MSW survival probability.
 
 \section{Lifetime Model}
 \label{lifetime_model}
 
 To fit for neutrino lifetime using SNO data one first needs a model of the survival probability curves.
-The fit will minimize the negative SNO Enhanced Log Likelihood function~\cite{3phase} using this model for the survival probability.
+The fit will minimize the negative SNO Extended Log Likelihood function~\cite{3phase} using this model for the survival probability.
 The following sections discuss the model itself and the treatment of parameters.
 
 \subsection{Decaying Survival Probability}
@@ -86,7 +86,7 @@ Fundamental constants are taken from the PDG~\cite{pdg}.
 
 \subsubsection{Neutrino Lifetime}
 The three neutrino mass states each have a lifetime associated with them $k_i = \tau_i / m_i$. 
-For this analysis the lifetimes of mass state 1 and 3 are fixed at infinity because the $^8B$ flux exits the sun as a nearly pure $\nu_2$ mass state, so the data taken by SNO for $^8$B neutrinos is nominally insensitive to $\nu_1$ or $\nu_3$ decay.
+For this analysis the lifetimes of mass state 1 and 3 are fixed at infinity because the $^8$B flux exits the sun as a nearly pure $\nu_2$ mass state, so the data taken by SNO for $^8$B neutrinos is nominally insensitive to $\nu_1$ or $\nu_3$ decay.
 This is shown in \Cref{fig:frac_not_nu_2} which uses the central values from the following section to compute the fraction of $^8$B neutrinos exiting the sun that are not $\nu_2$.
 
 \begin{figure}
@@ -99,7 +99,7 @@ The fraction of $^8$B neutrinos that are not mass state $\nu_2$ upon exiting the
 \end{figure}
 
 \subsubsection{Neutrino Mixing}
-Neutrino mixing parameters taken from KamLAND~\cite{kamland} and DayaBay~\cite{dayabay} are reproduced in \Cref{tbl:mixing_params}. 
+Neutrino mixing parameters taken from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} are reproduced in \Cref{tbl:mixing_params}. 
 Parameters from KamLAND and DayaBay were used to avoid bias from using SNO results in this analysis.
 As these measurements were done at Earth with neutrinos produced on Earth they are expected to be uncorrelated with effects of $\nu_2$ decay.
 The current limit on $k_2$ constrains it to be greater than $\approx7\times10^{-4}$~\cite{picoreti} which means at length scales comparable to the diameter of the earth the maximum flux lost by $\nu_2$ decay for a $10$ MeV neutrino is given by
@@ -150,23 +150,31 @@ See \Cref{strategy} for further discussion of how the flux is treated in the fit
 \section{Fit Implementation}
 \label{fit_impl}
 
-Since this analysis is (only) proposing a survival probability model to be considered when fitting SNO data, and many analyses have already been written and vetted for fitting survival probability models, it was decided to build off an existing and vetted fit that properly handled nuisance parameters, pdf generation, data binning, and likelihood function implementation.
+For this analysis, I have built off the existing QSigEx code which properly handled nuisance parameters, pdf generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
+The following sections describe QSigEx and the work that was necessary to implement the neutrino lifetime model in this framework.
 
 \subsection{QSigEx}
 
 A fit package for all three phases of SNO data that treated $P_{ee}$ and $P_{ea}$ independent polynomials existed in the software package QSigEx~\cite{plthesis}.
-This was used to produce previous SNO results which paramaterized the survival probabilites as Nth order polynomials.
-This package already implemented the SNO Enhanced Log Likelihood Function, and could be modified to use the model described in \Cref{lifetime_model} instead of polynomials.
+This package already implemented the SNO Extended Log Likelihood Function, and could be modified to use the model described in \Cref{lifetime_model} instead of polynomials.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
-For this analysis, then, the focus is on demonstrating that the fit in the updated code is an unbiased estimator of the neutrino lifetime of mass state two, given the assumptions discussed previously. 
 
-\subsection{Signal Extraction}
+\subsection{SNO Extended Log Likelihood}
 
-[... rewrite ...]
-%This by and large follows the scheme layed out in Section 5 of Pierre-Luc's thesis~\cite{plthesis} where it is described in exquisite detail. 
-%The deviation here occurs only in that instead of polynomial parameters, the parameters in discussed in \Cref{parameters} are used in the fit.
+QSigEx finds the model parameters best describing the data by maximizing the Poisson likelihood of the observed data.
+This is done by minimizing the well known form of the log likelihood:
+\begin{equation}
+    \mathcal{L} = -\nu + \sum_{i=1}^{n_{events}} \log \left[ \nu f(\vec{x_i}) \right],
+\end{equation}
+where $\nu$ is a Poisson mean number of observed events and $f(\vec{x_i})$ is a PDF evaluated $\vec{x_i}$ which is a vector of quantities describing event $i$.
+In the case of many classes of events with poission parameters $\nu_j$ decribed by PDFs $f_j$ this log likelihood this can be written as:
+\begin{equation}
+    \mathcal{L} = -\sum_{j=1}^{n_{classes}} \nu_j + \sum_{i=1}^{n_{events}} \log \left[ \sum_{j=1}^{n_{classes}} \nu_j f_j(\vec{x_i}) \right].
+\end{equation}
+With PDFs provided from SNOMAN, and data from the detector, carrying out such a fit is relatively straightforward.
+The results relavent to this thesis are obtained by the construction of the PDFs for the solar signals.
 
-\subsection{Neutrino Energy Binning}
+\subsection{Neutrino Energy}
 
 There are two options for handling the neutrino energy dependence in such a fit:
 \begin{itemize}
@@ -176,18 +184,17 @@ There are two options for handling the neutrino energy dependence in such a fit:
 Clearly the binned fit will perform more poorly as an average value of the survival probability across a neutrino energy bin is applied to all neutrinos in that bin, however this method is much faster, being computationally far simpler than rebuilding the PDFs at each minimization step. 
 For polynomial fits this poorer performance was not significant and allowed the systematic scans along with the shifts and refits to benefit from the speed increase.
 Unfortunately preliminary tests of the binned fit had very poor results regarding at capturing the shape of the lifetime model survival probabilities.
-Because of this, only the unbinned neutrino energy fit is considered in the following sections.
+Because of this, an unbinned neutrino energy fit was adopted.
 
 \section{Fit Strategy}
 \label{strategy}
-[... needs some work ...]
 Ideally all neutrino parameters would be floated with priors in this fit. 
-In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux (see \Cref{lifetime_and_flux}).
-Previous analyses \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced fit and then performing further fits and statistical studies with the flux fixed.
+In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux.
+Previous analyses \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced fit and then performing further fits and statistical studies with the flux fixed, and incorporating uncertainty from flux variations as a final step.
 In this analysis since there is only one model parameter of interest, $k_2$, a strategy of scanning $k_2$ manually while floating all other parameters seems to be ideal. 
 With that in mind, the current strategy is:
 \begin{enumerate}
-\item Perform a scan over $k_2$ minimizing floated parameters at each point. For data fits this can be done along with the other scanned nusiance parameters. (See Section 5.4.2 in \cite{plthesis})
+\item Perform a scan over $k_2$ minimizing floated parameters at each point. For data fits this can be done along with the other scanned nusiance parameters.
 \item At the best $\chi^2$ value, use MINOS fit errors (implicitly with $k_2$ fixed) as the total uncertainty on all parameters except the highly correlated $k_2$ and $^8$B flux.
 \item For $k_2$ find the total uncertainty by at the point where $\Delta(-LL)$ in the scan is $0.5$.
 \item For the total uncertainty on $^8$B flux this value is scanned the same way as $k_2$ to properly account for the correlations in with $k_2$.
@@ -219,25 +226,9 @@ Events from each class and phase are partitioned into $N$ sets with $M$ samples 
 The remaining unused MC data for each phase and class is used for PDFs in the fit, so $N$ must be chosen to leave sufficient uncorrelated data for PDF generation.
 $M$ is chosen from a Poisson distribution with a mean equal to the expected number of events for that event class and phase from previous SNO analyses~\cite{leta,ncd,3phase}.
 For solar neutrino signals the BS05(OP)~\cite{bs05op} flux predictions were used in generating these fake data sets.
-%Going to need to copy this from P-L?
-%The full list of Poisson means $M$ and the number of generated sets $N$ are given in Appendix C of Pierre-Luc's thesis~\cite{plthesis}.
 These sets can then be combined into fake datasets with realistic statistics containing only the event classes and phases desired.
 
-%\begin{figure}
-%\centering
-%\begin{tabular}{l||c|c|c|c}
-%Phase/Class & Total Events & Poisson Mean & Gen'd Sets & Remaining \\ \hline
-%& & & & \\ \hline 
-%& & & & \\ 
-%\end{tabular}
-%\caption{
-%The poisson means used in generating fake data sets along with the total number of generated sets for each signal class and phase.
-%Additionally shows the total number of events generated in SNO MC and the number of uncorrelated events remaining for PDFs in the fits.
-%}
-%\label{tbl:fake_means}
-%\end{figure}
-
-The solar neutrino signals from SNO monte-carlo, which were generated with a flat survival probability spectrum, were reweighted with the lifetime model as described in \ref{lifetime_model}. 
+The solar neutrino signals from SNO monte-carlo, which were generated with a flat survival probability spectrum, were reweighted with the lifetime model as described in \ref{lifetime_model} 
 A representative value of $k_2 = 10^{-4}$ s/eV was seeded into the fake sets to test the fit performance near the current limit of $\approx7\times10^{-4}$~\cite{picoreti}.
 
 \subsection{Solar-Signal Only}
@@ -401,37 +392,48 @@ The relative uncertainty of all fitted parameters with signal + all backgrounds 
 \section{Detector Systematic Effects}
 \label{systematics} 
 
-%Take the bit about strategy from the lifetime unidoc appendix and put here
-A summary of the strategy for handling systematic parameters follows. A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. For each set of parameters, the fit is minimized again and the most likely value of each parameter is recorded. The RMS of these shift-and-refit $k_2$ values on each side of the central value for $k_2$ are calculated as the systematic effect. Both positive and negative uncertainties are quoted but it is important to note that this analysis is expected to produce a lowerbound on $k_2$ making the positive error rather meaningless.
+Each of the observables has many systematic parameters associated with it representing possible descrepancies between simulated and real data.
+Many of these parameters are best constrained with the data itself, and central values along with their uncertanties are determined with a brute-force initial iterative scan of the data.
+These scanned parameters, along with the other systematics, were held fixed during the central fit, and their errors were propagated with a shift and refit algorithm.
+
+The initial iterative minimization used here proceeds as follows:
+\begin{enumerate}
+\item A parameter is scanned around its current best guess
+\item An asymmetric gaussian is fit to the scan $-\log{L}$ to determine the central and upper/lower uncertainties.
+\item The best guess for that parameter is updated to the fitted values just determined.
+\item The next parameter is considered at step 1 until all parameters have been scanned.
+\item If any parameter central value has shifted relative to the previous iteration, the algorithm repeats until stable minima are found.
+\end{enumerate}
+
+Other systematic uncertainties are constrained with in-situ and ex-situ measurements.
+These scanned parameters, along with the other systematics, were held fixed during the central fit, and their errors were propagated with a shift and refit algorithm:
+\begin{enumerate}
+    \item A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. 
+    \item For each set of parameters, the fit is minimized again and the most likely value of each floated parameter is recorded.
+    \item The RMS of these shift-and-refit $k_2$ values on each side of the central value for $k_2$ are calculated as the systematic effect. 
+    \item The likelihood profile for $k_2$ from the central fit is shifted by the $k_2$ shift-and-refit distribution, and the average likelihood is used to set the final limits
+\end{enumerate}
+
+Both positive and negative uncertainties are quoted but it is important to note that this analysis is expected to produce a lowerbound on $k_2$ making the positive error rather meaningless.
 
 The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset. This fake dataset was seeded with $k_2 = 10^{-4}$ and had the $^8$B flux seeded and fixed at the SSM central value.
 
-The parameters considered here include nuisance parameters and all parameters scanned as the preliminary step in the fit. The scans are reproduced in \Cref{fake_scan} while \Cref{fig:detector_systematics1,fig:detector_systematics2} show the individual contributions of the scanned parameters to the detector systematic uncertainty on $k_2$: $^{+13.4\%}_{-9.03\%}$.
+The parameters considered here include nuisance parameters and all parameters scanned as the preliminary step in the fit. \Cref{fig:detector_systematics1,fig:detector_systematics2} show the individual contributions of the scanned parameters to the detector systematic uncertainty on $k_2$: $^{+13.4\%}_{-9.03\%}$.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{basic_1_2}
+\includegraphics[width=0.8\columnwidth]{basic_1_2}
 \caption{The calculated systematic effect on $k_2$ from the first half of the detector systematic parameters in the fit is shown here. Red represents positive (blue, negative) fractional error.}
 \label{fig:detector_systematics1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{basic_2_2}
+\includegraphics[width=0.8\columnwidth]{basic_2_2}
 \caption{The calculated systematic effect on $k_2$ from the second half of the detector systematic parameters in the fit is shown here. Red represents positive (blue, negative) fractional error.}
 \label{fig:detector_systematics2}
 \end{figure}
 
-
-%\section{Injected Signal}
-%
-%The plan here is to inject a fake signal into real data by removing events from the $1/3$ dataset.
-%To decide which events to remove, a fake (Monte-Carlo) dataset comprising of only the solar-signal event classes with a mean number of events for each event class set to correspond to the $1/3$ dataset will be reweighted into two distinct datasets: one with infinite lifetime and one with a finite and small lifetime ($10^{-4}$ s/eV). 
-%These two datasets will be binned as in the actual fit producing a PDF for each lifetime condition for each signal of each phase.
-%The PDFs for the finite and infinite lifetime cases will be summed across the solar-signal classes for each phase, producing a finite and infinite lifetime solar-signal PDF for each phase.
-%The deficit of events in the finite lifetime PDF relative to the infinite lifetime PDF for a particular phase determines how many events should be removed from the $1/3$ dataset in the same bin to inject that signal into that dataset.
-%The fit can then be run on the signal-injected $1/3$ dataset to check the bias and pull of the fit.
-%This will demonstrate that the fit works on real data without actually fitting to a real signal in the data.
 
 \clearpage
 
@@ -439,7 +441,7 @@ The parameters considered here include nuisance parameters and all parameters sc
 \label{third}
 
 Using 1/3 of the SNO dataset --- the same 1/3 dataset used in testing the historical 3-phase fits --- the fit was run as described in \Cref{strategy}. 
-To reduce computational power required for this test, the central values of scanned nuisance parameters from Pierre-Luc's 3-phase Pee+Pea fit were used. 
+To reduce computational power required for this test, the central values of scanned nuisance parameters from the 3-phase Pee+Pea fit \cite{3phase} were used. 
 These are nominally uncorrelated with neutrino parameters, and would take a very long time to iteratively scan with little gain.
 This scan will, of course, be done for the full dataset.
 The scan of $k_2$ and the $^8$B flux are shown in \Cref{fig:third_scans}.
@@ -475,11 +477,7 @@ Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{
 
 Now with the entire SNO dataset, the fit was run as described in \Cref{strategy}. 
 As a preliminary step, the systematics identified in the previous 3-phase analysis as requiring scanning were scanned iteratively until a global minimum was found.
-An important caveat to point out is that a $\beta_{14}$ scale parameter became stuck on a non-physical discontinuity in the likelihood space for two iterations of the scan (the second and third).
-By nonphysical I mean that the scanned range of this systematic was large enough to shift the $\beta_{14}$ cut applied when skimming the MC into the the $\beta_{14}$ ROI, ultimately resulting in a discontinuous jump in the likelihood.
-Manually correcting this fit and limiting the scanned range of this parameter resulted in successful minimization and convergence for the remaining scans.
-For clarity, the scans shown in \Cref{final_syst_scan_omit} omit the second and third scans, while for completeness, \Cref{final_syst_scan} shows all the scans. 
-Using the central values for the systemtics shown in the scan, both $k_2$ and $^8$B flux were then scanned with the systematic parameters fixed at their central values, and are shown in \Cref{fig:final_scans}.
+Using the central values for the systemtics, both $k_2$ and $^8$B flux were then scanned with the systematic parameters fixed at their central values, and are shown in \Cref{fig:final_scans}.
 The neutrino parameters are shown relative to their priors at the minimum of this scan in \Cref{fig:priors_final}.
 The observable projections for the minimum and with $k_2$ fixed to infinity are shown in \Cref{final_observables}.
 

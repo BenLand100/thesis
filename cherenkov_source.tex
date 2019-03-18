@@ -1,7 +1,7 @@
 \newcommand{\Li}{$^{8}$Li }
 \renewcommand{\bf}{\bfseries}
 
-\chapter{Cherenkov Optical Calibration Source}
+\chapter{Cherenkov Optical Calibration Source for SNO+}
 \label{ch:chsrc}
 
 \label{chap:execsummary}
@@ -34,7 +34,7 @@ In addition, when using a new decay chamber made from UV-transparent acrylic, we
 
 \subsection{Analysis plan}
 The potential of the Cherenkov source in obtaining measures of the overall light collection efficiency has been investigated using RAT simulations. The effect and elimination of scintillation light resulting from unwanted bremsstrahlung $\gamma s$  was studied.  In all of the simulations, the Cherenkov source was positioned at the center of the detector, and the source
-was assumed to be constructed from UV-absorbent (UVA) acrylic. This section summarizes the work done by B. Heintzelman, which is reported in detail in~\cite{Heintzelman:2013}.
+was assumed to be constructed from UV-absorbent (UVA) acrylic.
  
  \begin{figure}
  \begin{subfigure}{.48\textwidth}
@@ -53,7 +53,12 @@ was assumed to be constructed from UV-absorbent (UVA) acrylic. This section summ
  \end{figure}
  
 \subsubsection{Cutting Bremsstrahlung Events}
-The decay of \Li in the Cherenkov source produces $\beta$s with an end-point energy of about 13\,MeV (see Appendix~\ref{chap:decay} for the decay scheme). In addition to producing Cherenkov light in the acrylic, bremsstrahlung $\gamma s$ are also produced in a significant number of events.  These $\gamma s$  exit the source and are likely to Compton-scatter in the scintillator or water inside the AV.  Simulations indicate that Compton-scatter electrons are produced in about 1/3 of the events.  Although such events are not much different from non-bremsstrahlung events in either total light produced or PMT hit timing when the detector is filled with water, in scintillator fill they produce much more light and have a different timing profile.  In addition, their characteristics depend heavily on scintillator properties. It is therefore desirable to eliminate such bremsstrahlung events from the data-set. For this, a cut based on the likelihood ratio of the distribution of PMT hit-time residuals was found to be particularly effective. A time-only fitter, which uses the knowledge of the source position, was developed to do determine the event time from the event data.
+
+\begin{figure}[]
+\center{\includegraphics[width=.7\textwidth]{Ais8DecayScheme.png}}
+\caption{\label{fig:decayscheme} A=8 decay scheme. Taken from~\cite{Tagg:2001}.}
+\end{figure}
+The decay of \Li in the Cherenkov source produces $\beta$s with an end-point energy of about 13\,MeV (see \Cref{fig:decayscheme} for the decay scheme). In addition to producing Cherenkov light in the acrylic, bremsstrahlung $\gamma s$ are also produced in a significant number of events.  These $\gamma s$  exit the source and are likely to Compton-scatter in the scintillator or water inside the AV.  Simulations indicate that Compton-scatter electrons are produced in about 1/3 of the events.  Although such events are not much different from non-bremsstrahlung events in either total light produced or PMT hit timing when the detector is filled with water, in scintillator fill they produce much more light and have a different timing profile.  In addition, their characteristics depend heavily on scintillator properties. It is therefore desirable to eliminate such bremsstrahlung events from the data-set. For this, a cut based on the likelihood ratio of the distribution of PMT hit-time residuals was found to be particularly effective. A time-only fitter, which uses the knowledge of the source position, was developed to do determine the event time from the event data.
 
 \subsubsection{Extracting the light collection efficiency}
 In order to monitor the light collection efficiency, the distribution of the number of photons exiting the Cherenkov
@@ -126,7 +131,7 @@ The housing (\cite{wallig:2015}, page 12) and the gas connections (\cite{wallig:
 \subsection{Deployment hardware}
 This section discusses the interface of the source with the SNO+ deployment hardware. 
 \subsubsection{Umbilical and connection}
-For deployment during the SNO+ water-phase, the SNO \Li umbilical will be re-used. Figure~\ref{fig:sno_umbilical} shows the cross-section of this umbilical. It contains the required gas-transport lines in addition to the electrical wires; one for the PMT signal and three for the low-voltage for the PMT (ground, power, control voltage). The umbilical currently has no connector. Just as was done for SNO, the plan is to connect the gas hoses and wiring for the PMT by hand while the top of the source (steel housing) is exposed. Then the sealing pressure plates (Figure~\ref{fig:pressureplates}) are slid down and bolted together. The so-called 'lighthouse' attachment, see Figure~\ref{fig:connection}, sits on the endcap and is used to attach the source to the weight (if needed) and the manipulator carriage. The umbilical is currently being located. It will be visually inspected and all wires will be tested for continuity.
+For deployment during the SNO+ water-phase, the SNO \Li umbilical will be re-used. Figure~\ref{fig:sno_umbilical} shows the cross-section of this umbilical. It contains the required gas-transport lines in addition to the electrical wires; one for the PMT signal and three for the low-voltage for the PMT (ground, power, control voltage). The umbilical currently has no connector. Just as was done for SNO, the plan is to connect the gas hoses and wiring for the PMT by hand while the top of the source (steel housing) is exposed. Then the sealing pressure plates (Figure~\ref{fig:pressureplates}) are slid down and bolted together. The so-called 'lighthouse' attachment, see Figure~\ref{fig:connection}, sits on the endcap and is used to attach the source to the weight (if needed) and the manipulator carriage.
 
 \begin{figure}
 \begin{subfigure}{.57\textwidth}
@@ -148,12 +153,12 @@ For deployment during the SNO+ water-phase, the SNO \Li umbilical will be re-use
 \caption{\label{fig:connection}Detail of the SNO \Li technical drawing, showing the top assembly with the pressure plates and the 'lighthouse'. Taken from~\cite{Tagg:2001}.}
 \end{figure}
 
-The umbilical that will be used for deployment in the liquid scintillator still needs to be produced. It is expected to be of a similar design as the SNO \Li umbilical with the difference that there will be a source connector permanently attached to the umbilical. An adapter needs to be designed to connect to the Cherenkov source. Discussion with the calibration hardware group regarding the requirements for the scintillator phase umbilical and connector is underway.
+The umbilical that will be used for deployment in the liquid scintillator still needs to be produced. It is expected to be of a similar design as the SNO \Li umbilical with the difference that there will be a source connector permanently attached to the umbilical. An adapter needs to be designed to connect to the Cherenkov source. 
 \subsubsection{Source storage box}
-The storage box for the liquid scintillator phase is currently under design. It is being designed as tall as possible and the current height is estimated at 70\,cm. It is recommended that there is at least 10\,cm clearance for the sources. This means that the steel housing needs to be reduced in length by at least 8\,cm.
+The storage box for the liquid scintillator phase is currently under design. It is being designed as tall as possible and the current height is estimated at 70\,cm. It is recommended that there is at least 10\,cm clearance for the sources.
 \subsection{Weight and length estimates}
 The source is very buoyant. The weights of the current source (with the original steel housing) were calculated in water and LAB-PPO. The weight can be changed by adding weights or by removing part of the steel housing. The weight in air is estimated to be 15.3\,kg. The deployed weight is 3.77\,kg in UPW and 5.34\,kg in LAB. In addition, the weights in particular failure-modes were also calculated. See Table~\ref{tab:weights} for the details of the expected weight in these situations.
-The source can be shortened by cutting the steel housing. This can be done quickly and on short notice. We are holding off until the weight and length requirements are determined for both the water and the liquid scintillator phase. 
+The source can be shortened by cutting the steel housing. This can be done quickly and on short notice. For water phase deployment the source was shortened to minimum length in order to meet weight requirements for the deployment system. 
 
 \begin{table}[h!]
 \centering
@@ -174,21 +179,21 @@ both          & 18.79         & 7.33              & 18.30         & 8.41        
 \label{chap:construction}
 
 \subsection{Overview}
-The Cherenkov source decay chamber is a hollow acrylic sphere. It is formed out of two acrylic slabs that are bonded together. The steps of the UHV (Ultra-High-Vacuum) cleaning procedure are described in Appendix~\ref{chap:uhv}. The annealing, bonding, decay chamber lining and PMT potting are described in the next sections. The bonding, painting and storage of the decay chamber was done inside a class-1000 clean room at LBNL.
+The Cherenkov source decay chamber is a hollow acrylic sphere. It is formed out of two acrylic slabs that are bonded together. The annealing, bonding, decay chamber lining and PMT potting are described in the next sections. The bonding, painting and storage of the decay chamber was done inside a class-1000 clean room at LBNL.
 The construction of the Cherenkov source decay chamber has roughly the following steps:
 \begin{enumerate}
     \item Pre-anneal: the acrylic is pre-annealed at the production site (RPT).
     \item Machine cycle 1 (see~\cite{wallig:2015}, page 2): hollow out the decay chamber and neck from the two slabs. Machine holes for alignment pins. 
     \item Polish: the inside of the decay chamber is polished using NOVUS heavy and fine scratch remover (Diatomaceous earth/Silica)~\cite{polish}. 
     \item Sand: the bond-plane is sanded to prepare for the bond using NORTON Blue-Bak waterproof paper (Silicon carbide) grit, 220, 320, 400, 600~\cite{sand}.
-    \item UHV cleaning.
+    \item Ultra high vacuum cleaning.
     \item Anneal: the two machined slabs are annealed.
-    \item UHV cleaning.
+    \item Ultra high vacuum cleaning.
     \item Mask: masking paint (Micro Mask MI-7~\cite{masking}) is used to protect the inside of the decay chamber from the cement. This product is easily removed with water.
     \item Bonding: bond the two halves together using Weld-on \#40, an acrylic cement. 
     \item Remove masking: once the cement has set, remove the masking from the inside of the decay chamber.
     \item Machine cycle 2 (see~\cite{wallig:2015}, pages 5 and 6): remove excess acrylic to form sphere, drill the gas inlet/outlet holes, machine o-ring groove.
-    \item UHV cleaning.
+    \item Ultra high vacuum cleaning.
     \item Decay chamber lining: use paints and TPB to line the inside of the decay chamber. This also requires potting of the neck sleeve and gas inlet and outlet sleeves.
     \item PMT potting: pot the tag PMT inside the PMT sleeve.
     \item Assembly and testing.
@@ -502,13 +507,13 @@ Tag PMT test, see~\ref{sec:tagpmt}
 
 \subsection{Radon emanation and Backgrounds}
 \label{sec:emanation}
-A first pass radon emanation estimate can be calculated by considering the surface area of stainless steel and acrylic that will be exposed to the cover gas and target material. Estimates for the radon emanation of the UI used a measurement of $4.60$ $\mu$Bq m$^{-2}$ for stainless steel \cite{kormos:2015}. The SNO stainless steel limit was $< 5$ mBq m$^{-2}$ and for acrylic $< 1.6$ mBq m$^{-2}$ \cite{Liu:1993}. The source, assuming a full size stainless steel housing, has an exposed stainless steel surface area of $0.15$ m$^2$, and exposed acrylic surface area of 0.20 m$^2$. Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the UI emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$ atoms/day where this limit is grossly dominated by the limit on the acrylic radon emanation. The radon emanation rate for stainless steel is significantly lower in the source used by the UI document than number used by SNO, which either means the UI estimation is unrealistic or the SNO limit was very conservative. Using the limits from the SNO measurements we would expect $<92.5$ atoms/day. The acrylic is also scheduled for Rn emanation in the underground detector at SNOLAB.
+A first pass radon emanation estimate can be calculated by considering the surface area of stainless steel and acrylic that will be exposed to the cover gas and target material. Estimates for the radon emanation of the UI used a measurement of $4.60$ $\mu$Bq m$^{-2}$ for stainless steel \cite{kormos:2015}. The SNO stainless steel limit was $< 5$ mBq m$^{-2}$ and for acrylic $< 1.6$ mBq m$^{-2}$ \cite{Liu:1993}. The source, assuming a full size stainless steel housing, has an exposed stainless steel surface area of $0.15$ m$^2$, and exposed acrylic surface area of 0.20 m$^2$. Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the UI emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$ atoms/day where this limit is grossly dominated by the limit on the acrylic radon emanation. The radon emanation rate for stainless steel is significantly lower in the source used by the UI document than number used by SNO, which either means the UI estimation is unrealistic or the SNO limit was very conservative. Using the limits from the SNO measurements we would expect $<92.5$ atoms/day.
 
 Since the source construction did not involve any explicit sources of radioactivity and was done in a clean room environment, the surface of the source is expected to be free of any gross radioactive contamination. Further, the acrylic sphere has been stored in nitrogen flushed radon proof bags to limit the plating of radon daughters onto these surfaces, so leaching into the target material is not expected to be a large effect.
 
 \subsection{Material counting}
 \label{sec:matcounting}
-See Table \ref{tab:counting} for counting results for materials used in the source. The nuclear activation analysis (NAA) results were exposed at the McClellan Nuclear Research Center (http://mnrc.ucdavis.edu/) and counted at UC Davis by C. Grant. The low background counting facility at LBL (http://lbf.lbl.gov/) directly counted the UVA acrylic.
+See Table \ref{tab:counting} for counting results for materials used in the source. The nuclear activation analysis (NAA) results were exposed at the McClellan Nuclear Research Center and counted at UC Davis. The low background counting facility at LBNL directly counted the UVA acrylic.
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|} \hline
@@ -527,7 +532,7 @@ From all the materials, only the potassium levels for the TiO white paint and th
 
 \subsection{Material compatibility tests}
 \label{sec:comptest}
-Three samples were tested for compatibility with LAB-PPO by the technical support team at SNOLAB: the potting material (Sylgard~184), a UVA acrylic sample with black paint and one with both black and white paint. The white paint has TPB mixed in. The materials were soaked in a few 100\,mL of 2g/L PPO-LAB for 1 month. A control sample consisting of the default 2g/L PPO-LAB was scanned with the samples and used as a comparison. Deviation from the control is observed in all of the samples indicating incompatibility. The samples will be re-tested in another month to see how they evolved. None of the materials tested will be in contact with the UPW or LAB in normal operation mode.
+Three samples were tested for compatibility with LAB-PPO by the technical support team at SNOLAB: the potting material (Sylgard~184), a UVA acrylic sample with black paint and one with both black and white paint. The white paint has TPB mixed in. The materials were soaked in a few 100\,mL of 2g/L PPO-LAB for 1 month. A control sample consisting of the default 2g/L PPO-LAB was scanned with the samples and used as a comparison. Deviation from the control is observed in all of the samples indicating incompatibility. None of the materials tested will be in contact with the UPW or LAB in normal operation mode.
 \begin{enumerate}
     \item Sylgard~184, tested for deformation, specifically swelling and LAB-PPO absorbance changes.
     \begin{itemize}

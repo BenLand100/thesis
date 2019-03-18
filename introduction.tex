@@ -27,7 +27,7 @@ The first analysis, described in \Cref{ch:lifetime}, explores the possibility th
 Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay. 
 The second analysis in \Cref{ch:es} uses commissioning data from SNO+ to measure the flux of $^8$B solar neutrinos. 
 To aid in understanding these topics, the remainder of this chapter is devoted to the theory of neutrinos and particulars of solar neutrinos, while \Cref{ch:detectors} discusses the steps necessary to detect and analyze solar neutrino fluxes.
-Paired with these analyses are, in \Cref{ch:chsrc}, the design and evaluation of an optical calibration source intended for later phases of SNO+, and, in \Cref{ch:wbls} an evaluation of the optical properties of a next-generation target material for the T\textsc{HEIA} detector.
+Paired with these analyses are, in \Cref{ch:chsrc}, the design and evaluation of an optical calibration source intended for later phases of SNO+, and, in \Cref{ch:wbls} an evaluation of the optical properties of a next-generation target material for the \textsc{Theia} detector.
 But first, the theory.
 
 %\section{Standard Model Neutrinos}
@@ -76,8 +76,9 @@ Neutrinos produced from the CNO process have energies and fluxes between $pp$ an
 
 \begin{figure}
 \centering
-Here be Bachall's figure.
-\caption{\label{neutrino_spectra}Shown here are the fluxes and spectra of solar neutrinos as calculated in \cite{bs05op}.}
+\includegraphics[angle=-90,origin=c,width=0.8\columnwidth]{bachall_bs05op}
+\caption{\label{neutrino_spectra}Shown here are the fluxes and spectra of solar neutrinos as calculated in \cite{bs05op}.
+    Solid lines show the proton-proton chain neutrinos, while dashed lines show the CNO cycle neutrinos.}
 \end{figure}
 
 \subsection{Standard Solar Models}
@@ -128,8 +129,8 @@ With the leading order effects now understood, the door is open for precision me
 
 \begin{figure}
 \centering
-A figure goes here
-\caption{\label{fig:global_solar}Shown here are the measured fluxs of solar neutrinos at various energies by many solar experiments to date.}
+\includegraphics[width=0.8\columnwidth]{all_solar}
+\caption{\label{fig:global_solar}Shown here are the measured fluxs of solar neutrinos at various energies by many solar experiments to date as given in \cite{nonstandard_interactions}.}
 \end{figure}
 
 \chapter{Solar Neutrino Detectors}
@@ -165,12 +166,18 @@ Analysis of data collected by such detectors allows for a statistical determinat
 Real time detection also allows for different interaction channels to be distinguished, a feature leveraged by the SNO detector, which was instrumental in solving the SNP.
 From water Cherenkov detectors, the field has progressed to target media other than water, such as the use of liquid scintillators in Borexino \cite{borexino}, which can provide complementary information and lower energy thresholds compared to water. 
 
-In the following sections I will focus on SNO, SNO+, and Theia as they are directly applicable to analyses presented later.
+In the following sections I will focus on SNO, SNO+, and \textsc{Theia} as they are directly applicable to analyses presented later.
 As mentioned, the SNO detector was a water Cherenkov detector, but using heavy water. 
 Its upgrade, SNO+, aims to replace the water target with a pure liquid scintillator.
-Finally, the Theia detector is a proposed next-generation neutrino detector using a target medium that combines the best features of water and liquid scintillator.
+Finally, the \textsc{Theia} detector is a proposed next-generation neutrino detector using a target medium that combines the best features of water and liquid scintillator.
 
 \section{SNO}
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\columnwidth]{sno}
+    \caption{\label{fig:sno}The SNO detector \cite{3phase}}
+\end{figure}
 
 The SNO \cite{sno} detector is located deep underground near Sudbury, ON, CA in the Creighton mine, an active nickle mine.
 This location is one of the deepest laboratories in the world at $2$ km underground providing a 5800 m.w.e. overburden to shield from cosmic rays.
@@ -206,7 +213,8 @@ Due to the detection scheme, much of the information of the initial neutrino is 
 
 \begin{figure}
 \centering
-\caption{\label{fig:NC}The Feynman diagram for neutral current (NC) interactions with quarks.}
+    \includegraphics[width=0.6\columnwidth]{feyn_nc}
+    \caption{\label{fig:NC}The Feynman diagram for neutral current (NC) interactions with quarks.}
 \end{figure}
 
 A charged current (CC) interaction with quarks in a deuteron as in \Cref{fig:CC} can convert the neutron into a proton and break up the deuteron with sufficient energy.
@@ -217,6 +225,7 @@ This interaction channel allows for the recovery of spectral information due to 
 
 \begin{figure}
 \centering
+\includegraphics[width=0.6\columnwidth]{feyn_cc}
 \caption{\label{fig:CC}The Feynman diagram for charged current (CC) interactions with quarks.}
 \end{figure}
 
@@ -231,7 +240,9 @@ For solar neutrinos, this means ES electrons will point away from the Sun.
 
 \begin{figure}
 \centering
-\caption{\label{fig:ES}The Feynman diagrams for elastic scatter (ES) interactions with electrons.}
+\includegraphics[width=\columnwidth]{feyn_es}
+\caption{\label{fig:ES}The Feynman diagrams for elastic scatter (ES) interactions with electrons. 
+    Note that all neutrino flavors can exchange a Z boson, but only electron flavor neutrinos can exchange a W boson.}
 \end{figure}
 
 
@@ -310,7 +321,7 @@ This will be discussed further in \Cref{ch:lifetime} focusing on the specifics o
 
 \section{SNO+}
 
-The SNO experiment finished taking data in the early 2000s, and an upgrade of the detector was planned which ultimately led to SNO+ \cite{sno+}.
+The SNO experiment finished taking data in the early 2000s, and an upgrade of the detector was planned which ultimately led to SNO+ \cite{snop}.
 The primary goal of SNO+ is to perform a neutrinoless double beta decay measurement (0$\nu\beta\beta$) using the isotope $Te_{130}$, however that is beyond the scope of this thesis.
 What is relevant is the change in target media from SNO to SNO+: heavy water will be substituted for a light water calibration phase and a scintillator data taking phase.
 
@@ -346,9 +357,9 @@ In the case of scintillation, both alphas and betas are visible, and analysis th
 For solar neutrinos, these lower thresholds give access to virtually all types of neutrino fluxes, not just the $^8$B neutrinos accessible by water Cherenkov detectors.
 The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made excellent solar neutrino measurements with scintillator, and SNO+ plans similar analyses for scintillator phase.
 
-\section{T\textsc{HEIA}}
+\section{\textsc{Theia}}
 
-T\textsc{HEIA} \cite{asdc_paper} is a proposed large scale (50-100kT) neutrino detector which aims to support a diverse platform of neutrino physics. 
+\textsc{Theia} \cite{asdc_paper} is a proposed large scale (50-100kT) neutrino detector which aims to support a diverse platform of neutrino physics. 
 Of particular relevance to this thesis is the goal of doing high precision measurements of solar neutrinos \cite{theia_solar}.
 The detector design is still in the conceptual phase, but lessons learned from SNO+ and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.

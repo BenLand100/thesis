@@ -1,4 +1,4 @@
-\chapter{Water-Based Liquid Scintillator Characterization}
+\chapter{CHESS Liquid Scintillator Characterization for \textsc{Theia}}
 \label{ch:wbls}
 
 \section{Introduction}
@@ -32,7 +32,8 @@ Cost-effective & More expensive materials \\
 \label{tab:chervsscint}
 \end{table}
 
-The LSND experiment~\cite{lsnd} used a mineral-oil-based scintillator designed to allow detection of both scintillation and Cherenkov light, opening up  sensitivity to low-energy particles  below  Cherenkov threshold. The ratio of created photoelectrons for the two sources of light was approximately 5 to 1 (scintillation to Cherenkov) for a 45~MeV electron created in the detector. Photon timing and charge was used for particle identification and to reconstruct vertex and angle information. Particles emitting Cherenkov radiation produced significant fractions of prompt light and thus particle identification techniques relied on the fraction of prompt light as a tool for discrimination. \\
+The LSND experiment~\cite{lsnd} used a mineral-oil-based scintillator designed to allow detection of both scintillation and Cherenkov light, opening up  sensitivity to low-energy particles  below  Cherenkov threshold. The ratio of created photoelectrons for the two sources of light was approximately 5 to 1 (scintillation to Cherenkov) for a 45~MeV electron created in the detector. Photon timing and charge was used for particle identification and to reconstruct vertex and angle information. Particles emitting Cherenkov radiation produced significant fractions of prompt light and thus particle identification techniques relied on the fraction of prompt light as a tool for discrimination.
+
 Separation of Cherenkov- and scintillation-light components on an event-by-event basis enables a single detector to exploit the advantages of each technique.  If this separation can be achieved in a pure liquid scintillator (LS) detector it would substantially improve the sensitivity of low-energy physics programs by adding directional reconstruction capability to a low-threshold detector. Searches for neutrinoless double beta decay (NLDBD) would benefit from rejection of the directional solar neutrino signal, the dominant background in experiments such as SNO+~\cite{snop}.  Precision solar neutrino measurements would benefit from  separation of the directional signal from isotropic radioactive background events. 
 However, the high scintillation light yield and fast timing of commonly used LS such as LAB (linear alkyl benzene) makes this separation extremely challenging.  In addition, liquid scintillator detectors are limited to kiloton scales by the attenuation of light in the scintillator material and also by cost.
 
@@ -57,8 +58,9 @@ Separation of scintillation and Cherenkov components can occur in three domains:
 
 Each option has the potential to enhance signal separation, but each comes with a cost, such as: reduced light yield, reduced light collection efficiency, high-cost photosensors, or limitations on detector size.  The challenge for time-based separation is the timing precision of  available photosensors. Large photomultiplier Tubes (PMTs) typically have worse than ns  time precision, making Cherenkov light identification in a scintillation medium extremely difficult. However, newly developed small PMTs~\cite{h11934} can achieve  timing precisions of $\lesssim$ 300~ps and new micro-channel plate (MCP) photosensor technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps. In addition, fast and precise commercial electronics are available to digitize these signals without significantly degrading the time resolution. This makes  separation in the time domain a  theoretical possibility.
 
-This paper describes the CHESS detector and its sensitivity to Cherenkov / scintillation separation in  the time domain.  Section~\ref{s:desc} describes the detector itself.  Section~\ref{sec:simulation} describes the detailed Monte Carlo simulation used to model the detector. 
-Section~\ref{s:analysis} describes the general approach to data analysis.  Section~\ref{sec:calibration} describes detector calibrations.  Section~\ref{s:event} describes event selection and techniques for rejection of instrumental and physics background events.  Section~\ref{s:prospects} describes the predicted sensitivity in a pure LS target: for both pure LAB and LAB loaded with 2~g/L of PPO (hereafter referred to as LAB/PPO); and Section~\ref{s:conc} concludes the paper.
+This chapter describes the CHESS detector and its sensitivity to Cherenkov / scintillation separation in  the time domain.  Section~\ref{s:desc} describes the detector itself.  Section~\ref{sec:simulation} describes the detailed Monte Carlo simulation used to model the detector. 
+Section~\ref{s:analysis} describes the general approach to data analysis.  Section~\ref{sec:calibration} describes detector calibrations.  Section~\ref{s:event} describes event selection and techniques for rejection of instrumental and physics background events.
+Results are presented in \Cref{sec:water,sec:lab,sec:labppo,sec:wbls}.
 
 
 \section{The CHESS Detector}\label{s:desc}
@@ -97,7 +99,7 @@ The PMTs are held in an array that consists of a 7x7 grid, with four additional 
 The unfilled locations on the grid can be populated with additional PMTs for future expansion. 
 
 \subsection{Optical Propagation}
-The target vessel is optically coupled to a propagation medium made of UVT acrylic (30~cm$\times$30~cm$\times$6.5~cm). This coupling eliminates an acrylic/air boundary which would otherwise block all Cherenkov light due to total internal reflection. The propagation medium acts as a light guide to allow photons to propagate from the bottom of the target vessel towards the PMT array. The PMTs in the array are similarly optically coupled to the bottom of the propagation medium. The propagation medium and target vessel have been polished for a better optical coupling and a more accurate simulation of refracted light at the boundaries. 
+The target vessel is optically coupled to a propagation medium made of UVT acrylic (30~cm $\times$ 30~cm $\times$ 6.5~cm). This coupling eliminates an acrylic/air boundary which would otherwise block all Cherenkov light due to total internal reflection. The propagation medium acts as a light guide to allow photons to propagate from the bottom of the target vessel towards the PMT array. The PMTs in the array are similarly optically coupled to the bottom of the propagation medium. The propagation medium and target vessel have been polished for a better optical coupling and a more accurate simulation of refracted light at the boundaries. 
 
 A vertical cylindrical hole 1~cm in diameter is machined through the center of the propagation medium aligned with the center of the target vessel and cosmic tags in order to allow  vertical-going  muons to interact with the target material, but pass through the propagation medium without producing additional Cherenkov light in the acrylic block that would contaminate the measurement.
 
@@ -139,6 +141,7 @@ A schematic diagram of the data acquisition (DAQ) hardware is shown in \Cref{fig
 The DAQ software~\cite{wblsdaq} utilizes the CAEN VME library~\cite{caen-vme} to configure and read out the digitizers and high voltage supplies, and outputs HDF5~\cite{hdf5} formatted files containing raw digitized data and metadata for each triggered event.
 
 \begin{figure}
+\centering
 \includegraphics[width=0.7\columnwidth]{daq}
 \caption{A schematic diagram of how the DAQ and hardware are connected together with signal and data paths labeled. Omitted are the high voltage supplies, which are connected to the VME backplane, and all PMTs.}
 \label{fig:daq}
@@ -159,12 +162,12 @@ The V1742 card is capable of sub-$100$~ps resolution, which exceeds the TTS of t
 A LeCroy 606Zi~\cite{lecroy606zi} oscilloscope is used to produce low-latency trigger signals for the setup with programmable coincidence logic. 
 Depending on the operating mode one of the following three trigger configurations are used:
 \begin{description}
-\item [Bottom-only Trigger] A threshold condition is applied to the lower cosmic tag only. 
+\item [\rm\it Bottom-only Trigger] A threshold condition is applied to the lower cosmic tag only. 
 This is the normal operating mode for cosmic data, with the coincidence requirement applied offline.  
 A rate of 4 $\mu$/day is expected after the coincidence trigger.
-\item [Or Trigger] A threshold condition is applied to both of the cosmic tags, and the logical OR of the two is allowed to generate a trigger. 
+\item [\rm\it Or Trigger] A threshold condition is applied to both of the cosmic tags, and the logical OR of the two is allowed to generate a trigger. 
 This mode is used to acquire unbiased charge distributions for each cosmic tag simultaneously.
-\item [Source Trigger] A threshold condition is applied to the source tag. 
+\item [\rm\it Source Trigger] A threshold condition is applied to the source tag. 
 This is the configuration used during radioactive source deployment.
 \end{description}
 The oscilloscope trigger signal is fanned out to the external trigger input on the V1730 and the low-latency trigger inputs on the V1742.
@@ -416,6 +419,8 @@ A Gaussian correction of $\sigma=214$~ps is included in the Monte Carlo in order
 
 \section{Cherenkov Ring Imaging in Water}
 
+\label{sec:water}
+
 After application of the event selection criteria described in Sec.~\ref{s:event}, 137 ring candidates were selected in the water dataset.  The number of detected PEs and first photon hit-time residuals for a typical event are shown in \Cref{fig:cosmics_water_ring_candidate}. The averages across the data set for both the number of detected PEs per PMT and the hit-time residuals are shown in \Cref{fig:cosmics_water_npes}; both show a clear ring structure. 
 
 
@@ -452,6 +457,8 @@ The middle PMTs are the only ones detecting a sizable amount of light, and their
 The characteristic sharp time distribution of  Cherenkov light provides an excellent source for estimating the CHESS time resolution. The time distribution of the observed Cherenkov rings provides a measurement of $338\pm 12$~ps FWHM for the time precision of the CHESS detector. The limiting factor in this precision is the PMT TTS (300~ps FWHM). 
 
 \section{LAB Results}
+
+\label{sec:lab}
 
 After applying event selection criteria, $117$ ring candidates were identified in the LAB data set. An example event is shown in \Cref{fig:lab_ring} for both time and charge, with the average across the data set shown in \Cref{fig:lab2}. A clear ring structure can be observed in both cases. 
 
@@ -502,6 +509,7 @@ A threshold of $Q_{\rm ratio}=0.09$ gives a Cherenkov detection efficiency of $9
 \end{figure}
 
 \section{LAB/PPO Results}
+\label{sec:labppo}
 
 After applying event selection criteria, $103$ ring candidates were identified in the LAB/PPO data set. 
 The topology of a typical event, and the average across the data set, are shown in \Cref{fig:labppo_ring}.  Again a clear ring structure can be observed. 
@@ -543,4 +551,5 @@ The LAB/PPO  data  is  inconsistent with zero rise time, and consistent with a r
 
 
 \section{WbLS Results}
-
+\label{sec:wbls}
+[...pending...]

@@ -1,11 +1,11 @@
-\chapter{Elastic Scatter of $^8$B Solar Neutrinos}
+\chapter{Elastic Scatter of $^8$B Solar Neutrinos in SNO+}
 \label{ch:es}
 
 \section{Introduction}
 \label{sec:solar:intro}
 
 This analysis aims to measure the flux of $^8$B solar neutrinos by identifying
-elastic scatter (ES) events in water phase.
+elastic scatter (ES) events in the water phase of SNO+.
 This is achieved with a one dimensional fit to the projection of reconstructed
 event direction onto the direction of the sun at the time of each event
 $\cos{\theta_{sun}}$.
@@ -24,11 +24,12 @@ resolution of SNO+ showing that the solar monte-carlo agrees with solar data.
 \label{fig:solar:backgrounds}
 \end{figure}
 
-\section{Inputs}
+\section{Solar Signals}
 \label{sec:solar:inputs}
 
-RAT MC for both $\nu_e$ and $\nu_a$ events generated run-by-run with a known
-flux and flat ($100\%$) survival/transition probability is the primary input to this
+The SNOMAN MC from SNO is replaced by RAT MC for SNO+, however both operate very similarly.
+Both $\nu_e$ and $\nu_a$ ($\nu_\mu$ and $\nu_\tau$) events generated with a known
+flux and flat ($100\%$) survival/transition probability are the primary input to this
 analysis.
 RAT is trusted to properly simulate the $^8$B spectrum weighted by the ES cross
 section and compute the total number of electrons (correct event rate) such
@@ -36,13 +37,13 @@ that the MC can be reweighted by some survival probability with
 $P_{ee}+P_{ea}=1$ and, with ROI cuts applied, accurately predict the number of
 expected events.
 RAT MC was generated with the $^8$B flux from BS05(OP), but this was rescaled 
-to a more up-to-date measured value  \cite{GlobalSolarFlux}.
-RUN and LIVETIME tables from RATDB are used to account for the discrepancy in
+to a more up-to-date measured value \cite{GlobalSolarFlux}.
 livetime between MC and data.
 RAT is additionally trusted to correctly calculate the solar angle at any
-universal time.
+event time.
 
 The other main input to this analysis are MSW survival probability curves.
+The code from the neutrino lifetime analysis presented earlier was levereged here to produce survival probabilities corresponding to the most up-to-date neutrino parameters available.
 Physical constants and mixing parameters from PDG2016 are used in the MSW
 calculation, and the $^8$B production regions and solar electron densities come
 from BS05(OP).
@@ -67,38 +68,39 @@ These curves are shown in Figure \ref{fig:solar:msw}.
 \label{fig:solar:msw}
 \end{figure}
 
-Finally, various analyses to calculate the systematic uncertainties on energy,
-position, and direction are incorporated into the systematic uncertainty 
-estimates. These analyses all used N16 data compared to MC to provide central
-values and uncertainties on the systematic parameters.
-
 \section{Open Data Analysis}
 \label{sec:solar:opendata}
+
+To understand detector data, constrain backgrounds, and aid in the development of analyses, SNO+ provided about 16 days of detector livetime with no blinding applied.
+The remaining data was withheld until analyses were developed and demonstrated to be unbiased. 
+The following sections describe the development of this analysis on this open data.
+Note that this was a preliminary step in the analysis, and as such not all constraints for systematic uncertanties were available.
 
 \subsection{Analysis Cuts}
 \label{sec:solar:open_cuts}
 
-Low level event selection requires that the trigger word include a physics
-trigger and excludes any external triggers.
+The SNO+ trigger system records a 32 bit integer where each bit is a boolean mask of the state of the trigger system for each event.
+This trigger word identifies, at a very low level, what caused the detector to take data.
+Low level event selection requires that the trigger word include a physics trigger based on the number of coincidentally hit PMTs, and excludes any externally forced triggers that may be in the data.
 The following expression evaluates to logical false for selected events.
 
 \begin{verbatim}
 !(trig_word & 0x3F) || (trig_word & 0xBFF9400)
 \end{verbatim}
 
-A check of the data cleaning word requires that all standard data cleaning
-classifiers did not mark the event as dirty using the analysis mask 0x7FFE.
+Various data cleaning classifiers are run over the raw data as part of reconstruction, with the goal of identifying instrumental backgrounds or other non-physics events.
+These classifiers produce another 32 bit word which can be checked for event quality.
+A check of the data cleaning word requires that all standard data cleaning classifiers did not mark the event as dirty using the analysis mask 0x7FFE.
 The following expression evaluates to logical false for selected events.
 
 \begin{verbatim}
 ((dc_applied & ANALYSIS_MASK) & dc_flagged ) != (dc_applied & ANALYSIS_MASK)
 \end{verbatim}
 
-A valid water fitter result is then required.
+A valid reconstruction result is then required, meaning the reconstruction algorithms successfully converged to some value.
 High level cuts are applied on the in time ratio (ITR) and isotropy ($\beta_{14}$).
-The ROI is then selected cuts on energy and radius.
-Following the detailed analysis of the hotspot going into the nucleon decay
-analysis, a z-dependent radius cut is used for that time bin.
+The ROI is then selected with cuts on energy and radius.
+Other analyses of this data identified a region of high radioactivity near the top of the detector, and for this a z dependent radial cut was adopted.
 These high level cuts are summarized per time bin in Table \ref{tbl:solar:roi}.
 
 \begin{table}[]
@@ -134,10 +136,6 @@ $R <= 5.3$ & $R <= 5.3$ & $R <= 5.3$ \\
 \label{tbl:solar:openev}
 \end{table}
 
-Open data here refers to all fully unblinded runs in the nucleon decay analysis
-lists as determined by inspecting the BLINDNESS\_RUN\_LEVEL table in RATDB.
-This dataset has 16.607 days of live time as determined from the LIVETIME table
-in RATDB.
 There are 5 candidate ES events selected by the analysis cuts which are shown
 with various parameters in Table \ref{tbl:solar:openev}.
 The SNO+ date for the runs included along with the 5 selected events is shown
@@ -164,17 +162,13 @@ is shown in Figure \ref{fig:solar:tod}.
 \label{fig:solar:tod}
 \end{figure}
 
-All of the open data runs had the correct run-by-run MC included, and only the 
-run-by-run MC for those runs was included.
+\subsection{PDF Generation}
+
 The MC for $\nu_e$ and $\nu_a$ events passing cuts are added to separate
 $\cos{\theta_{sun}}$ histograms and weighted by the survival probability at the
 true neutrino energy.
-These histograms are binned at intervals of $0.2$.
+These histograms are binned at intervals of $0.2$ and normalized by MC livetime.
 
-Since the MC is generated run-by-run the total MC livetime is calculated by
-adding the interval between the stop and start time of each MC run as recorded
-in the RUN table in RATDB, and each histogram is scaled by the inverse of this
-MC livetime.
 The MC for $\nu_e$,$\nu_a$ events are respectively generated at 1700, 9600 times
 the nominal flux of $5.69\times10^{6}$ cm$^{-2}$s$^{-1}$, and each histogram is
 scaled by the inverse of these flux scales.
@@ -191,7 +185,10 @@ $6.08$ events.
 
 The $\nu_e$,$\nu_a$ histograms are added together and normalized to obtain the
 total ES histogram.
-With the data binned in the same way, $0.2$ $\cos{\theta_{sun}}$ intervals, a
+
+\subsection{Central Fit}
+
+With the data binned in the same way as the PDFs, $0.2$ $\cos{\theta_{sun}}$ intervals, a
 $\chi^2$ fit is performed to the number of background events using a flat
 histogram and the number of signal events using the normalized ES histogram.
 For the open dataset, a flux scale of $0.54\pm0.37$ (stat.) $^{+0.09}_{-0.05}$ 
@@ -210,9 +207,10 @@ This fit is shown plotted with the binned data in Figure \ref{fig:solar:openfit}
 
 \subsection{Systematic Effects}
 Systematics considered here include: energy scale, energy resolution, position 
-scale, position resolution, and direction resolution. 
+scale, position resolution, and direction resolution.
+These are estimated from analyses of SNO+ calibration data, primarily from the $^{16}$N source.
 As of writing, input values for position scale and direction resolution are not
-available, so these uncertainties are omitted.
+available, so these uncertainties are omitted from this segment of the analysis.
 
 Energy scale uncertainty was determined to be $0.75\%$. To evaluate the impact,
 MC reconstruced energies were scaled up and down by this amount, the MC histograms 
@@ -220,19 +218,15 @@ were recreated using the nominal ROI, and the expected number of signal events
 were compared to the nominal (unscaled energy) case. The uncertainty on the 
 expected number of events was determined to be $^{+0.05}_{-0.06}$.
 
-Energy resolution was determined to be $21.0^{+5.0}_{-9.2}\%$ at 5MeV. The method for 
-evaluating this systematic is in flux, but, following the suggested method as 
-of writing, this is applied as a gaussian smear to the MC truth electron energies
-and compares the nominal resolution to the worst and best case resolution. In 
+Energy resolution was determined to be $21.0^{+5.0}_{-9.2}\%$ at 5MeV.
+Following the suggested method for propagating this systematic, a gaussian smear is applied to the MC truth electron energies
+and the expected number of events is compared between the nominal resolution to the worst and best case resolution. In 
 only this case, the smeared MC truth energy is substituted for the MC reconstructed
 energy when applying ROI cuts. The smearing applied as a function of energy is
 $E_{res\,E} = E_{res\,5MeV} \sqrt{(5 MeV) \times E}$. The shift in the expected 
 number of events after creating MC histograms with the nominal ROI is taken as 
 the systematic effect $^{+0.25}_{-0.55}$.
 
-Position scale will be evaluated in a similar way to energy scale, pending a
-number from the N16 analysis. It is also possible to support a coordinate 
-dependent scale.
 
 Position resolution was determined to be approximately $10$cm. This analysis
 is in flux as of writing, but this approximate value is expected to be near
@@ -304,6 +298,10 @@ The shaded regions show the fit uncertainty, with the selected events shown in b
 \section{Unblinded Analysis}
 \label{sec:solar:unblinded}
 
+Following a review of the open data analysis as described in the previous section, the SNO+ Analysis Committee approved the analysis procedure to move ahead with the entire SNO+ water phase dataset.
+These sections describe refinements made to the analysis and updated constraints from the systematic analyses of SNO+ water data.
+Most notably, the additional livetime (approximately 114 days) and additional events this implies allows for finer data binning, and the underlying fit was changed to be a Poisson likelihood rather than a $\chi^2$ fit.
+
 \subsection{Analysis Cuts}
 \label{sec:solar:unblind_cuts}
 
@@ -332,8 +330,6 @@ The following expression evaluates to logical false for selected events.
 A valid water fitter result is then required.
 High level cuts are applied on the in time ratio (ITR) and isotropy ($\beta_{14}$).
 The ROI is then selected cuts on energy and radius.
-Following the detailed analysis of the hotspot going into the nucleon decay
-analysis, a z-dependent radius cut is used for that time bin.
 These high level cuts are summarized per time bin in Table \ref{tbl:solar:unblind_roi}.
 
 \begin{table}[]
@@ -365,20 +361,14 @@ $R <= 5.3$ & $R <= 5.3$ & $R <= 5.3$ \\
 \subsection{Fit Strategy}
 \label{sec:solar:fit_strategy}
 
-All runs on the nucleon decay runlist were considered here.
-Each run had the correct run-by-run MC incorporating run-detector effects included.
 The MC for $\nu_e$ and $\nu_a$ events passing cuts are added to separate
 $\cos{\theta_{sun}}$ histograms and weighted by the survival probability at the
 true neutrino energy.
 These histograms are binned at intervals of $0.05$.
 
-Since the MC is generated run-by-run the total MC livetime is calculated by
-adding the interval between the stop and start time of each MC run as recorded
-in the RUN table in RATDB, and each histogram is scaled by the inverse of this
-MC livetime.
 The MC for $\nu_e$,$\nu_a$ events are respectively generated at 1700,9600 times
 the nominal flux of $5.69\times10^{6}$ cm$^{-2}$s$^{-1}$, and each histogram is
-scaled by the inverse of these flux scales.
+scaled by the inverse of these flux scales, and normalized by MC livetime.
 By integrating these histograms and scaling by the data livetime, $114.653$ days,
 the total number of expected ES events in the ROI for the unnblinded data is 
 calculated to be $95.09$ events.
@@ -466,7 +456,7 @@ $\beta_{14}$ & $\pm 3.1\%$ & $^{+0.50}_{-0.09}$ events & Ryan B. N16 Internal\\ 
 
 \subsubsection{Expected ES Events (Energy and Position)}
 
-The energy scale and resolution were determined by Logan L. by comparing 
+The energy scale and resolution were determined by comparing 
 internal N16 data to MC. This yielded a $2.9\%$ uncertainty on the energy
 scale, and a nominal $10.2\%$ smearing at $5$MeV to be applied to MC to match
 the data.
@@ -489,7 +479,7 @@ position resolution is small, smearing the position by this resolution has a
 negligible effect on the expected number of events.
 The important position systematic is the vertex scale as this changes the 
 fiducial volume.
-Ed L. determined the vertex scale systematic for each axis by comparing
+The vertex scale systematic is determined for each axis by comparing
 internal N16 data to MC and found uncertainties of
 $(^{+0.03}_{-0.19}\%,^{+0.03}_{-0.38}\%,^{+0.03}_{-0.37}\%)$.
 To propagate these systematics the axes were simultaneously scaled up and down
@@ -501,7 +491,7 @@ systematic effects above in quadrature: $^{+4.03}_{-3.81}$.
 
 \subsubsection{Fitted ES Events (Angular Resolution)}
 
-The angular resolution was determined by Ed. L by comparing internal N16 
+The angular resolution was determined by comparing internal N16 
 data to MC. As mentioned, this systematic does not affect the expected 
 number of events, but does strongly affect the shape of the ES PDF as 
 described by Equation \ref{solar:eq:dirres}.
@@ -529,11 +519,11 @@ $5.16 \times 10^6$ cm$^{-2}$ s$^{-1}$.
 This measurement is 1.20 $\sigma$ from that, giving a P-value of $23.0\%$.
 
 
-\section{Updated Analysis}
+\section{Final Analysis}
 \label{sec:solar:updated}
 The results of the unblinded analysis described above was show at conferences and so that section remains as-is for historical purposes. 
 The solar ES results were later deemed worthy of publication and some additional effort was put into this analysis.
-The remaining discussion centers around differences from the previous unblind analysis, however it is important to note that this analysis is using the same data and runlist as the previous analysis --- despite changes to the nucleon decay runlist in the interim --- as the solar analysis has not yet been approved to look at the fully unblinded data and the open data does not provide enough statistics for a meaningful test.
+The remaining discussion centers around differences from the previous unblind analysis.
 
 Not discussed in detail is a thorough rewriting of the underlying analysis code to be significantly more efficient, however the statement can be made that the new code was vetted to reproduce the previous results.
 In the time since the unblinded analysis, a more detailed calculation of data livetime results in a different lifetime for this fit relative to previous fits.
@@ -541,18 +531,17 @@ Other changes relative to the previous unblinded analysis are documented in the 
 
 
 \subsection{Reconstructed Energy}
-Comparison of the N16 calibration data to MC demonstrated that the RSP energy reconstruction algorithm was not performing optimally.
+Comparison of the N16 calibration data to MC demonstrated that the energy reconstruction algorithm was not performing optimally.
 From this calibration data an energy correction lookup table applied to both data and MC was derived.
-Further analysis of N16 calibration data demonstrated radius- and z-dependent energy scale bias in the RSP algorithm that was corrected by applying the following scaling to the reconstructed energy
+Further analysis of N16 calibration data demonstrated radius- and z-dependent energy scale bias in the energy reconstruction algorithm that was corrected by applying the following scaling to the reconstructed energy
 \begin{equation}
 1 + A + ( (1 + B \rho^2)(1 + Cz + D*z^2 + Ez^3) - 1 )
 \end{equation}
 where $A$, $B$, $C$, $D$, and $E$ were determined separately for data and MC.
-See Section~\ref{sec:Ecalib} for more information.
 
 \subsection{Angular Systematic}
 Previously the uncertainty in angular resolution was accounted for with the functional form  \ref{solar:eq:dirres} applied directly the $\cos \theta_{sun}$ PDF. 
-For the solar ES analysis this was probably fine, however the nucleon decay likelihood analysis noted that this results in events being pushed into non-physical values ($\cos \theta_{sun} < -1$) or leaving a void of zero probability near $\cos \theta_{sun} = 1$.
+For the solar ES analysis this was probably fine, however it was noted that this results in events being pushed into non-physical values ($\cos \theta_{sun} < -1$) or leaving a void of zero probability near $\cos \theta_{sun} = 1$.
 To handle this better, it was proposed to instead adjust the reconstructed direction of each MC event to be further or nearer the MC truth direction (as determined by  \ref{solar:eq:dirres}) and finally recomputing the $\cos \theta_{sun}$ PDF using these new directions.
 This method was adopted in this analysis.
 
@@ -570,18 +559,18 @@ The fitted solar flux scale - the ratio between fitted and expected events - the
 Since the previous analysis the uncertainties on most systematic parameters have been revised. 
 Due to low impact the $\beta_{14}$ systematic was dropped.
 Both a position resolution and position shift systematic were added, however neither has significant impact.
-See Table \ref{tbl:solar:updated_syst} for the values used here and Section \ref{sec:reconSystematics} for more discussion.
+See Table \ref{tbl:solar:updated_syst} for the values used here.
 
 \begin{table}[]
 \begin{center}
 \begin{tabular}{c|c|c|c}
 Systematic & Uncertainty & Application & Origin \\ \hline
-$E_{scale}$     & $\pm 2.0\%$ & shift-refit $^{+0.0217}_{-0.0204}$ & Logan L. N16 Internal \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-$E_{res}$       & $\sqrt{(1+0.0018)^2-1.0}\sqrt{E}$ & shift-refit $\pm 0.0005$ & Logan L. N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{scale}$ & $(^{+0.91}_{-1.01},^{+0.92}_{-1.02},^{+0.91}_{-0.99}) \%$ & shift-refit $^{+0.0261}_{-0.0284}$ & Ed L. N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$ mm & shift-refit $^{+0.0002}_{-0.0001}$ & Ed L. N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{res}$ & $(104.0,98.2,106.2)$ mm & shift-refit $\pm 0.0002$ & Ed L. N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & Ed L. N16 Internal \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
+$E_{scale}$     & $\pm 2.0\%$ & shift-refit $^{+0.0217}_{-0.0204}$ & N16 Internal \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+$E_{res}$       & $\sqrt{(1+0.0018)^2-1.0}\sqrt{E}$ & shift-refit $\pm 0.0005$ & N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{scale}$ & $(^{+0.91}_{-1.01},^{+0.92}_{-1.02},^{+0.91}_{-0.99}) \%$ & shift-refit $^{+0.0261}_{-0.0284}$ & N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$ mm & shift-refit $^{+0.0002}_{-0.0001}$ & N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{res}$ & $(104.0,98.2,106.2)$ mm & shift-refit $\pm 0.0002$ & N16 Internal  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & N16 Internal \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
 \end{tabular}
 \caption{ Systematic uncertainties considered on the updated solar ES analysis are shown here. 
 The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $4.5-15.0$ MeV.
@@ -600,6 +589,6 @@ For the livetime considered in this analysis approximately 100 solar ES events a
 \label{fig:solar:unpdated_fit_4.5}
 \end{figure}
 
-\subsubsection{Full Energy Range}
-Using the previously unblinded solar data that does not contain energy information within the nucleon decay ROI, the full energy range $4.5-15.0$ MeV can be fit. 
-The results of this fit is shown in Figure \ref{fig:solar:unpdated_fit_4.5}.
+Using the previously unblinded solar data, the full energy range $4.5-15.0$ MeV can be fit. 
+The results of this fit is shown in Figure \ref{fig:solar:unpdated_fit_4.5} and can be found in \cite{snoplus_solar}.
+Notably this fit is consistent with the current global best fit for the $^8$B neutrino flux, and demonstrates that SNO+ has achieved very low backgrounds as evidenced by the clear ES peak in the solar direction.
