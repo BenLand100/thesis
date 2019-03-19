@@ -12,8 +12,9 @@ Later, the fact that neutrinos come in three flavors was established with the de
 
 As neutrinos were known to be produced in nuclear reactions, the Homestake experiment \cite{homestake} was proposed in the 1960s to measure the flux of neutrinos produced in the core of the Sun.
 This experiment measured significantly lower flux than was expected from theoretical calculations, becoming the so-called "solar neutrino problem" (SNP).
-Many experiments \cite{sage,gallex,gno} confirmed this deficit, and it persisted until the turn of the century when the SNO experiment \cite{3phase} made a measurement of the solar neutrino flux including all neutrino flavors finding that the initially electron-flavor solar neutrinos were transformed into muon- or tau-flavor neutrinos before arriving at Earth.
-Flavor change in the neutrino sector was confirmed by the Super-Kamiokande \cite{superk} experiment by observing an up/down anisotropy in atmospheric muon neutrinos that would not be expected if muon neutrinos remained muon flavor.
+Many experiments \cite{sage,gallex,gno} confirmed this deficit.
+The first hints of a solution to the SNP were found in an an up/down anisotropy in atmospheric muon neutrinos observed by Super-Kamiokande \cite{superk} that would not be expected if muon neutrinos remained muon flavor. 
+This flavor change was confirmed for solar neutrinos around the turn of the century when the Sudbury Neutrino Observatory (SNO) experiment \cite{3phase} made a measurement of the solar neutrino flux including all neutrino flavors, finding that the initially electron-flavor solar neutrinos were transformed into muon- or tau-flavor neutrinos before arriving at Earth.
 This discovery of flavor change implied a nonzero neutrino mass, and a set of massive neutrino states.
 Superpositions of the mass states form the flavor states described earlier.
 
@@ -21,13 +22,19 @@ Determining the parameters of the mixing matrix that relates the flavor and mass
 Currently, the absolute masses of the neutrino states have yet to be determined, with the best constraints coming from cosmology, which still only sets a limit on the sum of the mass states \cite{pdg}.
 Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as SNO+ \cite{snop}, Cuore \cite{cuore}, and LEGEND \cite{legend}, by studying a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state).
 
-
-In this thesis I describe two analyses of solar neutrino data from the Sudbury Neutrino Observatory (SNO) and its upgrade, SNO+.
-The first analysis, described in \Cref{ch:lifetime}, explores the possibility that neutrinos are unstable particles and can decay into more stable states.
-Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay. 
-The second analysis in \Cref{ch:es} uses commissioning data from SNO+ to measure the flux of $^8$B solar neutrinos. 
+In this thesis I describe the experimental efforts to fully characterize the flux of neutrinos from the Sun.
+Included in particular are a physics analysis from both SNO and its upgrade SNO+, along with calibration and R\&D efforts supporting solar neutrino measurements.
+The first analysis, described in \Cref{ch:lifetime}, explores the possibility that neutrinos are unstable particles and could decay into more stable states.
+There the well understood flux of $^8$B neutrinos, and the established framework of neutrino oscillations, provides a constraint on the lifetime of neutrino mass states.
+Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay.
+The currently operating SNO+ experiment aims to measure the solar neutrino flux at lower energies in its scintillator phase than SNO was able to observe.
+To aid in this effort, \Cref{ch:chsrc} describes the design and evaluation of an optical calibration source for SNO+ which will be crucial for understanding the photon detection efficiency (energy scale) for solar neutrino measurements.
+The second physics analysis in \Cref{ch:es} uses the initial light water phase data from SNO+ to measure the flux of $^8$B solar neutrinos using the kinematics of the elastic scatter of neutrinos off of electrons in the light water.
+Looking toward the future, the \textsc{Theia} \cite{asdc} experiment aims to make precision measurements of the lower energy solar neutrino fluxes, as well as support a broader platform of neutrino physics.
+This would allow \textsc{Theia} to probe open questions about the Sun, such as the concentration of elements heavier than helium in the core, which affects the relative fluxes of different types of solar neutrinos. 
+To achieve such a goal, \textsc{Theia} requires a next-generation target material that combines the positive aspects of experiments like SNO and SNO+. 
+In \Cref{ch:wbls} a benchtop experiment to evaluate the optical properties of such a target material is described.
 To aid in understanding these topics, the remainder of this chapter is devoted to the theory of neutrinos and particulars of solar neutrinos, while \Cref{ch:detectors} discusses the steps necessary to detect and analyze solar neutrino fluxes.
-Paired with these analyses are, in \Cref{ch:chsrc}, the design and evaluation of an optical calibration source intended for later phases of SNO+, and, in \Cref{ch:wbls} an evaluation of the optical properties of a next-generation target material for the \textsc{Theia} detector.
 But first, the theory.
 
 %\section{Standard Model Neutrinos}
@@ -67,9 +74,10 @@ The primary reaction in the Sun is the proton-proton ($pp$) reaction,
 \begin{equation}
 p+p \rightarrow ^2\mathrm{H}+e^++\nu_e,
 \end{equation}
-which produces the most neutrinos, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
+which produces the most neutrinos, with a flux of roughly $10^10$ cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
 The $^2$He from this reaction is involved in further reactions in the proton-proton chain, resulting in other neutrino fluxes.
-Notable among these is the $^8$B reaction which produces neutrinos that are both high energy and relatively high flux, making them an ideal candidate for detection in water Cherenkov detectors.
+Notable among these is the $^8$B reaction which produces neutrinos that are both high energy, around 10 MeV, and relatively high flux, at roughly $10^6$ cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
+$hep$ neutrinos are higher energy, but the much lower flux of roughly $10^4$ cm$^{-2}$s$^{-1}$ makes the already rare neutrino interactions much harder to identify on top of backgrounds.
 Beyond the proton-proton chain, there is also the so called CNO process, involving carbon, oxygen, and nitrogen nuclei. 
 Neutrinos produced from the CNO process have energies and fluxes between $pp$ and $^8$B neutrinos.
 \Cref{neutrino_spectra} shows the energy spectra and total flux of all known solar neutrinos, where the fluxes represent theoretical predictions.
@@ -124,14 +132,31 @@ Therefore, the arrival probability $\phi_i$ of neutrino mass state $\nu_i$ at Ea
 The analytic expression for this value is non-trivial and in practice $H_{MSW}$ is numerically diagonalized in the flavor basis to find $\bra{\nu_{m i}(V_e)}$ at a particular $V_e$ value and compute this projection.
 
 Ultimately the MSW effect is the leading order effect responsible for the observed survival probabilities of solar neutrinos.
-\Cref{fig:global_solar} shows all the solar neutrino flux measurements made to date overlaying the expected MSW survival probability.
-With the leading order effects now understood, the door is open for precision measurements of neutrino, and particular solar neutrino, interactions.
+These expressions give the probability of electron neutrinos from the Sun interacting elsewhere as electron neutrinos, $P_{ee}$, or as another flavor neutrino, $P_{ea}$:
+\begin{equation}
+\begin{array}{rcl}
+P_{ee} & = & \sum_i \phi_i |U_{ie}|^2  \\
+P_{ea} & = & \sum_i \phi_i |U_{i\mu}|^2 + \phi_i |U_{i\tau}|^2
+\end{array}
+\label{survive}
+\end{equation}
+
+For $^8$B neutrino energies in particular, the MSW effect is very important with $\phi_1 \approx \phi_3 \approx 0$, and $\phi_2 \approx 1$ meaning this flux is a quite pure sample of $\nu_2$ neutrinos. 
+Lower energy solar neutrinos are not so affected, leading to dynamics closer to vacuum with $\ket{\nu_{mi}(V_e)} \approx \ket{\nu_i}$.
+\Cref{fig:global_solar} shows all the solar neutrino flux measurements made to date overlaying the MSW survival probability.
+With the leading order effects now understood, the door is open for precision measurements of neutrino, and in particular solar neutrino, interactions.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{all_solar}
 \caption{\label{fig:global_solar}Shown here are the measured fluxs of solar neutrinos at various energies by many solar experiments to date as given in \cite{nonstandard_interactions}.}
 \end{figure}
+
+\subsection{Open Questions}
+-CNO neutrinos
+-Solar metalicity
+-nonstandard interactions
+-precise survival probability
 
 \chapter{Solar Neutrino Detectors}
 \label{ch:detectors}
@@ -156,20 +181,63 @@ Notably detectors relying on these radiochemical methods were only sensitive to 
 Also of note is that these detectors provide no information about the neutrinos that interact besides their rate: energy and direction information is totally lost in the radiochemical detection scheme.
 
 The next generation of neutrino detectors progressed to real time detection of neutrino interactions.
-These were the water Cherenkov detectors, such as SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neturino interaction.
+These were the water Cherenkov detectors, the most recent of which include SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neturino interaction.
 Pure water detectors like Super-Kamiokande are dominated by an elastic scatter interaction,
 \begin{equation}
 \nu_e + e^- \rightarrow \nu_e + e^-,
 \end{equation}
 where the final state electron has a momentum highly correlated with the incident neutrino.
-Analysis of data collected by such detectors allows for a statistical determination of the properties of the neutrino flux that produced such interactions.
-Real time detection also allows for different interaction channels to be distinguished, a feature leveraged by the SNO detector, which was instrumental in solving the SNP.
-From water Cherenkov detectors, the field has progressed to target media other than water, such as the use of liquid scintillators in Borexino \cite{borexino}, which can provide complementary information and lower energy thresholds compared to water. 
 
-In the following sections I will focus on SNO, SNO+, and \textsc{Theia} as they are directly applicable to analyses presented later.
-As mentioned, the SNO detector was a water Cherenkov detector, but using heavy water. 
-Its upgrade, SNO+, aims to replace the water target with a pure liquid scintillator.
-Finally, the \textsc{Theia} detector is a proposed next-generation neutrino detector using a target medium that combines the best features of water and liquid scintillator.
+In the following sections I will describe the real-time signals of neutrino interactions and will focus on the detection methods used in SNO, SNO+, and \textsc{Theia} as they are directly applicable to analyses presented later.
+
+\section{Real-Time Neutrino Detection}
+
+Real-time detectors measure properties about each neutrino interaction as they occur instead of simply counting the number of interactions that happened within a given amount of time.
+Analysis of data collected by real-time detectors allows for a statistical determination of the properties of the neutrino flux that produced such interactions.
+Real time detection also allows for different interaction channels to be distinguished, a feature leveraged by the SNO detector, which was instrumental in solving the SNP.
+
+From water Cherenkov detectors, the field has progressed to target media other than water, such as the use of liquid scintillators in Borexino \cite{borexino}, which can provide complementary information and lower energy thresholds compared to water.
+As this progression is an important theme in this thesis, the following sections go into some details about the merits of each.
+
+\subsection{Cherenkov Radiation}
+
+Ultimately all light detected in water Cherenkov detectors was the result of electrons being scattered with sufficient energy to exceed the local speed of light, commonly called Cherenkov radiation \cite{cherenkov}.
+This light is emitted at an angle dependent on the index of refraction of the material and the momentum (direction) of the particle. 
+Because of this, the geometry of the detected hits from Cherenkov radiation can be used to infer the average direction of the electron with resolution of order 10 degrees.
+In the cases of ES or CC events, where the electron direction is correlated to the primary neutrino direction, this information can be used to disentangle solar neutrino events from backgrounds.
+This was leveraged in analyses of SNO data and is a very beneficial feature when dealing with directional sources.
+
+\subsection{Scintillation Light}
+
+As a charged particle moves through a scintillator, electronic energy levels in the scintillator are excited which can subsequently relax by emitting a visible photon.
+In the case of LAB+PPO in SNO+, this results in about 500 detected photons per MeV of deposited energy compared to the roughly 10 photons per MeV in light water.
+The much larger number of photons results in much better energy resolution c.f. a water detector, which is very advantageous to analyses that rely heavily on energy reconstruction.
+
+Unlike Cherenkov light, scintillation light is emitted isotropically, since the relaxing of the vibrational state is uncorrelated with the direction of the incident particle.
+In a similar vein, scintillators are optically less transparent than water (typically) leading to increased scatter (isotropy) in the emitted light.
+With much of the Cherenkov light scattered by the scintillator, and the remaining Cherenkov photons buried under two orders of magnitude more scintillation photons, there is effectively no detectable Cherenkov light in the events.
+This leads to the significant downside of being unable to reconstruct direction, and therefore being unable to disentangle events based on directionality. 
+For solar neutrinos this is a significant loss, because typically there is no other class of events correlated with the direction of the sun.
+This is applicable both in analyses where solar neutrinos are of interest and should be selected, and also where solar neutrinos would be considered a background and should be rejected.
+
+The final significant difference between Cherenkov and scintillation light is the minimum energy threshold.
+Cherenkov light relies on the charged particle being very relativisitic (exceeding the local speed of light), meaning that $\alpha$ particles are typically invisible, while betas must exceed 0.7 MeV, to emit any light.
+Scintillation, on the other hand, has a much lower threshold such that typically the maximum rate of the detector electronics are the limiting factor for data acquisition, not the threshold of the medium.
+In the case of scintillation, both alphas and betas are visible, and analysis thresholds of hundreds of keV of visible energy are not unreasonable. 
+For solar neutrinos, these lower thresholds give access to virtually all types of neutrino fluxes, not just the $^8$B neutrinos accessible by water Cherenkov detectors.
+The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made excellent solar neutrino measurements with scintillator, and SNO+ plans similar analyses for scintillator phase.
+
+\subsection{Combined Scintillation and Cherenkov Signal}
+
+There are multiple technologies in development with the goal of having simultaneously detectable Cherenkov and scintillation signals, however for this thesis I will focus on one in particular: water-based liquid scintillators (WbLS).
+WbLS mixes a traditional scintillator, LAB+PPO, an oil, with water at some configurable ratio that is in large part water.
+In principle the fraction of scintillator results in a fraction of total light output from a pure scintillator, so low scintillator fractions will have a comparable number of scintillation photons to cherenkov photons. 
+This leads to enhanced energy resolution compared to only Cherenkov light, while allowing for the possibility of observing Cherenkov geometry in the pattern of detected photons, and thereby obtaining direction information.
+At higher scintillation fractions, the relatively fewer Cherenkov photons might be difficult to identify on top of the isotropic scintillation light.
+In this case one may leverage the fact that Cherenkov light is very prompt (picoseconds) compared to scintillators (LAB+PPO has a short time constant of a few nanoseconds) to potentially identify Cherenkov photons as the most prompt hits.
+Finally, being mostly water, WbLS should have longer scattering and attenuation lengths than a pure scintillator, allowing larger volumes to be built before either effect becomes a limiting factor.
+This seems to identify WbLS as an ideal material for combining the long attenuation lengths of water with the directionality of Cherenkov light and higher energy resolutions of scintillating materials.
+Further discussion of WbLS and a characterization of low scintillator fractions can be found in \Cref{ch:wbls}.
 
 \section{SNO}
 
@@ -179,12 +247,86 @@ Finally, the \textsc{Theia} detector is a proposed next-generation neutrino dete
     \caption{\label{fig:sno}The SNO detector \cite{3phase}}
 \end{figure}
 
-The SNO \cite{sno} detector is located deep underground near Sudbury, ON, CA in the Creighton mine, an active nickle mine.
+The SNO \cite{sno} detector is located deep underground near Sudbury, Canada in the Creighton mine, an active nickle mine.
 This location is one of the deepest laboratories in the world at $2$ km underground providing a 5800 m.w.e. overburden to shield from cosmic rays.
-The detector itself is composed of a 6 m radius acrylic vessel (AV) in the shape of a spherical shell containing 1 kT of heavy water ($^2$H$_2$O or D$_2$O) as the active volume.
-The AV was accessible by a large tube through which calibration sources could be deployed.
+The detector itself is composed of a 6 m radius acrylic vessel (AV) in the shape of a spherical shell containing 1-kT of heavy water ($^2$H$_2$O or D$_2$O) as the active volume.
+Heavy water was chosen because the loosely bound neutron in the deturons enabled both neutral current and charged current interactions enabling flavor selective measurements of the solar neutrino flux.
 
-Surrounding the AV is a 9 m radius steel geodesic structure containing 9500 inward-facing photomultiplier tubes (PMTs) called the PMT support structure (PSUP).
+\subsection{Neutrino Detection}
+
+As in other water Cherenkov detectors, SNO is sensitive to the elastic scatter (ES) of neutrinos off electrons in the water as shown in \Cref{fig:ES}.
+For electron neutrinos, both W and Z bosons can be exchanged.
+However, solar neutrinos do not have enough energy to produce heavier leptons, so only Z exchange is possible.
+This means the ES interaction is sensitive to all flavors of neutrinos, however non-electron flavor neutrinos have a lower cross section.
+Due to kinematics, the final direction of the scattered electron is highly correlated with the initial direction of the neutrino.
+However, the energy is shared between the outgoing neutrino and scattered electron, meaning that the observed electron energy is only loosely correlated with the neutrino energy.
+This means that ES interactions give poor spectral information, but very precise direction information.
+For solar neutrinos, this means ES electrons will point away from the Sun.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{feyn_es}
+\caption{\label{fig:ES}The Feynman diagrams for elastic scatter (ES) interactions with electrons. 
+    Note that all neutrino flavors can exchange a Z boson, but only electron flavor neutrinos can exchange a W boson.}
+\end{figure}
+
+The deuterium in the heavy water target used in SNO allows other multiple types of interactions sensitive to different combinations of neutrino flavors.
+Most important is the neutral current interaction (NC) due to a neutrino scattering off a quark as shown in \Cref{fig:NC}.
+NC is equally sensitive to all flavor of neutrino, allowing for an oscillation-agnostic measure of the total neutrino flux.
+In practice the energy deposited in the quark results in a detectable signal if it exceeds the binding energy of the proton and neutron forming a deuteron.
+The liberated neutron will eventually capture on some nuclei, resulting in a cascade of gammas which can scatter electrons with sufficient energy to produce Cherenkov light.
+Due to the detection scheme, information about the energy and direction of the initial neutrino is lost in NC interactions.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.6\columnwidth]{feyn_nc}
+    \caption{\label{fig:NC}The Feynman diagram for neutral current (NC) interactions with quarks.}
+\end{figure}
+
+A charged current (CC) interaction with quarks in a deuteron as in \Cref{fig:CC} can convert the neutron into a proton and break up the deuteron with sufficient energy.
+This interaction converts the neutrino into an energetic electron with an energy correlated with the incident neutrino.
+In principle any neutrino flavor could participate in this interaction with sufficient energy to create heavier leptons.
+Like the ES interaction, however, solar neutrinos only have enough energy for electron flavor neutrinos to exchange a W boson.
+The energetic electron then produces Cherenkov light to be detected.
+This interaction channel allows for the recovery of spectral information due to the correlation of the electron energy to the neutrino, and provides an exclusive measurement of the electron-neutrino flux. 
+In this way, the ratio of CC to NC interactions can directly give the average electron neutrino survival probability.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\columnwidth]{feyn_cc}
+\caption{\label{fig:CC}The Feynman diagram for charged current (CC) interactions with quarks.}
+\end{figure}
+
+\subsection{Experimental Phases}
+
+SNO operated in three distinct phases differing in their neutron detection capabilities, and hence their sensitivity to the NC interaction.
+These phases are described in the following sections along with the neutron detection mode in each phase.
+
+\subsubsection{D$_2$O}
+
+The first phase consisted of pure D$_2$O. 
+Neutrons produced in the NC interaction primarily captured on other deuterons in the target.
+The produced $^3$H then decayed, releasing a 6.26-MeV gamma.
+This gamma could either scatter electrons in the target or create energetic electron-positron pairs, either mode being detected by Cherenkov light.
+
+\subsubsection{Salt}
+
+In the second phase, NaCl was added to the D$_2$O.
+Chlorine has a much greater neutron capture cross section than deuterium, resulting in a significant increase in neutron detection efficiency.
+The decay scheme after a neutron capture on Cl is quite complicated, releasing many gammas, and giving these events a distinct topology compared to other interactions.
+Neutron detection was further enhanced by an increase in total energy released in the gamma cascade to 8.6 MeV.
+
+\subsubsection{NCD}
+
+Finally, in the third phase, the NaCl was removed and neutron counting devices (NCDs) were added inside the AV.
+These were essentially independent detectors, allowing for an independent measure of the neutron production rate.
+A single NCD was a high purity nickel tube containing $^3$He gas, and was instrumented to utilize the $^3$He as a proportional counter for thermal neutrons~\cite{ncd}.
+In total, 40 NCDs were added, two of which were modified to contain $^4$He (insensitive to neutrons) to understand instrumental backgrounds.
+The NCD data is not directly used in the analysis described in the next chapter, however it was independently analyzed to constrain the analysis of the PMT data \cite{sno_ncd_psa,3phase}.
+
+\subsection{Detector Design}
+
+Surrounding the AV is a 9-m radius steel geodesic structure containing 9500 inward-facing photomultiplier tubes (PMTs) called the PMT support structure (PSUP).
 These PMTs are sensitive to single photons and are intended to capture the Cherenkov radiation from energetic charged particles within the AV.
 The entire structure is submerged in a large barrel shaped cavity of light water (H$_2$O) to shield the heavy water in the AV from the natural radioactivity of the mine and other detector materials.
 Both the heavy water inside the AV and the light water of the cavity were continually purified to keep intrinsic radioactivity low and cooled to minimize biological growth.
@@ -196,90 +338,11 @@ To assist in vetoing cosmic rays, 91 additional PMTs were mounted to the PSUP lo
 
 Whenever a PMT detected a photon, a discriminator would fire on the corresponding voltage fluctuation and register a hit.
 This hit started a voltage ramp on a time-to-amplitude converter (TAC) to track the hit time, and integrated the total charge collected by the PMT.
-Additionally, the PMT readout electronics would emit two $10mV$ square pulses of configurable widths which are summed across the entire detector and act as a count of coincidentally hit PMTs within each window.
-For SNO these windows were set to 20ns and 100ns.
-The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
+Additionally, the PMT readout electronics would emit two  10-mV square pulses of configurable widths which are summed across the entire detector and act as a count of coincidentally hit PMTs within each window.
+For SNO these windows were set to approximately 20 ns and 100 ns.
+The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400 ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
 For SNO the discriminator threshold on trigger sums corresponded roughly to 17 hit PMTs.
 The hits from each GT are built into a single event for further analysis.
-
-\subsection{Interactions}
-
-The deuterium in the heavy water target used in SNO allows for multiple types of interactions sensitive to different combinations of neutrino flavors.
-Most important is the neutral current interaction NC due to a neutrino scattering off a quark as shown in \Cref{fig:NC}.
-NC is equally sensitive to all flavor of neutrino, allowing for an oscillation-agnostic measure of the total neutrino flux.
-In practice the energy deposited in the quark results in a detectable signal if it exceeds the binding energy of the proton and neutron forming a deuteron.
-The liberated neutron will eventually capture on some nuclei, resulting in a cascade of gammas which can scatter electrons with sufficient energy to produce Cherenkov light.
-Due to the detection scheme, much of the information of the initial neutrino is lost in NC interactions.
-
-\begin{figure}
-\centering
-    \includegraphics[width=0.6\columnwidth]{feyn_nc}
-    \caption{\label{fig:NC}The Feynman diagram for neutral current (NC) interactions with quarks.}
-\end{figure}
-
-A charged current (CC) interaction with quarks in a deuteron as in \Cref{fig:CC} can convert the neutron into a proton and break up the deuteron with sufficient energy.
-This interaction converts the neutrino into an energetic electron with an energy correlated with the incident neutrino.
-In principle any neutrino flavor could participate in this interaction with sufficient energy to create heavier leptons, however solar neutrinos only have enough energy for electron flavor neutrinos to participate here.
-The energetic electron then produces Cherenkov light to be detected.
-This interaction channel allows for the recovery of spectral information due to the correlation of the electron energy to the neutrino.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.6\columnwidth]{feyn_cc}
-\caption{\label{fig:CC}The Feynman diagram for charged current (CC) interactions with quarks.}
-\end{figure}
-
-Finally, there is the elastic scatter (ES) of electrons present in other water Cherenkov detectors and shown in \Cref{fig:ES}.
-For electron neutrinos, both W and Z bosons can be exchanged.
-However, like the CC interaction, solar neutrinos do not have enough energy to produce heavier leptons, so only Z exchange is possible.
-This means the ES interaction is sensitive to all flavors of neutrinos, however non-electron flavor neutrinos have a lower cross section.
-Due to kinematics, the final state electron energy is correlated with the incident neutrino energy.
-Additionally, the direction (momentum) of ES electrons is highly correlated with the incident neutrino direction.
-This means that ES interactions give both spectral and pointing information, allowing for neutrino sources to be distinguished not only by their energy signature, but based on their origin in space.
-For solar neutrinos, this means ES electrons will point away from the Sun.
-
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{feyn_es}
-\caption{\label{fig:ES}The Feynman diagrams for elastic scatter (ES) interactions with electrons. 
-    Note that all neutrino flavors can exchange a Z boson, but only electron flavor neutrinos can exchange a W boson.}
-\end{figure}
-
-
-\subsection{Experimental Phases}
-
-SNO operated in three distinct phases differing in their neutron detection capabilities, and hence their sensitivity to the NC interaction.
-These phases are described in the following sections along with the neutron detection mode in each phase.
-
-\subsubsection{D$_2$O}
-
-The first phase consisted of pure D$_2$O. 
-Neutrons produced in the NC interaction primarily captured on other deuterons in the target.
-The produced $^3$H then decayed, releasing a 6.26 MeV gamma.
-This gamma could either scatter electrons in the target or create energetic electron-positron pairs, either mode being detected by Cherenkov light.
-
-\subsubsection{Salt}
-
-In the second phase, NaCl was added to the D$_2$O.
-Chlorine has a much greater neutron capture cross section than deuterium, resulting in a significant increase in neutron detection efficiency.
-The decay scheme after a neutron capture on Cl is quite complicate, releasing many gammas, and giving these events a distinct topology compared to other interactions.
-Neutron detection was further enhanced by an increase in total energy released in the gamma cascade to 8.6 MeV.
-
-\subsubsection{NCD}
-
-Finally, in the third phase, the NaCl was removed and neutron counting devices (NCDs) were added inside the AV.
-These were essentially independent detectors, allowing for an independent measure of the neutron production rate.
-A single NCD was a high purity nickel tube containing $^3$He gas, and was instrumented to utilize the $^3$He as a proportional counter for thermal neutrons~\cite{ncd}.
-In total, 40 NCDs were added, two of which were modified to contain $^4$He (insensitive to neutrons) to understand instrumental backgrounds.
-The NCD data is not directly used in the analysis described in the next chapter, however it was independently analyzed to constrain the analysis of the PMT data \cite{sno_ncd_psa,3phase}.
-
-\subsection{Cherenkov Radiation}
-
-Ultimately all light detected in SNO was the result of electrons being scattered with sufficient energy to exceed the local speed of light, commonly called Cherenkov radiation \cite{cherenkov}.
-This light is emitted at an angle dependent on the index of refraction of the material and the momentum (direction) of the particle. 
-Because of this, the geometry of the detected hits from Cherenkov radiation can be used to infer the average direction of the electron with resolution of order 10 degrees.
-In the cases of ES or CC events, where the electron direction is correlated to the primary neutrino direction, this information can be used to disentangle solar neutrino events from backgrounds.
-This was leveraged in analyses of SNO data and is a very benificial feature when dealing with directional sources.
 
 \subsection{Vertex Reconstruction}
 
@@ -287,75 +350,50 @@ To perform an analysis of SNO data it is first necessary to extract physical obs
 This is done using pattern recognition algorithms which take into account the geometry of cherenkov light to reconstruct the direction, position, and time of each event.
 Using that information, along with the total number of hits, other algorithms can estimate the energy deposited in the detector. 
 In SNO there were roughly 10 detected hits per 1 MeV of deposited energy.
-Further quantities can be extracted, such as a measure of the isotropy of the event, $\beta_{14}$, and the ratio of hits within a prompt time window to all hits, ITR, encode additional information about the event that can, for instance, be useful for selecting physics events from instrumental events.
+Further quantities can be extracted, such as a measure of the isotropy of the event and the ratio of hits within a prompt time window to all hits, encode additional information about the event that can, for instance, be useful for selecting physics events from instrumental events.
+Cherenkov light has a very specific geometry, so good physics events will have a characteristic spatial distribution of detected photons, allowing isotropy to be used to cut instrumental backgrounds.
+Similarly Cherenkov light is very prompt, meaning all photons from a physics event are expected to arrive within tens of nanoseconds, and making the ratio of in-time hits a useful metric for identifying candidate physics events. 
 
-\subsection{Simulation and Analysis}
-
-The physical observables determined from vertex reconstruction can then used to statistically sort events into different classes of interactions.
-This statistical sorting is done with a maximum likelihood fit where the number of events in each class of interaction is floated, and each class of event is described by a probability distribution function (PDF) of some observable quantities.
-In SNO the observable quantities of choice are:
-\begin{enumerate}
-    \item Energy - the estimated deposited energy assuming Cherenkov light from an electron.
-    \item Radius - the volume weighted radius of the event estimated from reconstruction.
-    \item Isotropy - the $\beta_{14}$ parameter based on Legendra polynomials giving a direction independent measure of isotropy of hits.
-    \item Direction - the cosine of the angle between the event direction and the direction to the Sun at the time of the event.
-\end{enumerate}
-These observables were chosen to maximize separation between different types of physics interactions (NC, CC, ES) and of physics, backgrounds, and instrumentals. 
-To properly take into account correlations between these parameters, 4D PDFs were used instead of four separate 1D PDFs for each event class.
-
-The likelihood fit determines the realitive contribution of each event class necessary to best match the observed data.
-To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a Monte Carlo method.
-SNOMAN \cite{sno_nim} was a fortran simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
-The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
-Because there may be systematic differences between simulated data and real data, even after calibration, systematic uncertainties on the scale and offset of each axis were considered.
-For some types of events, such as the radioactivity of the PMT glass, it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
-In these cases, analytical forms were used instead, and the parameters controling these analytical forms were estimated from the data.
-
-\subsubsection{Solar Event Classes}
-
-Solar neutrino events (ES, CC, NC) were generated for particular neutrino energies, however neutrino energy is not an observable of the data.
-To extract information that depends on neutrino energy, such as the electron neutrino survival probability $P_{ee}$, one can use a model that defines the relative contribution of different neutrino energies to the PDF for that class of event.
-For instance, since all CC events must be electron type neutrinos, the CC PDF events would be weighted by $P_{ee}$ in addition to the expected energy spectrum. 
-If the parameters for $P_{ee}$ are floated in the likelihood fit, one can simultaneously estimate the model parameters from the data.
-This will be discussed further in \Cref{ch:lifetime} focusing on the specifics of the neutrino lifetime analysis.
+\subsection{Previous Results}
+[...]
 
 \section{SNO+}
 
 The SNO experiment finished taking data in the early 2000s, and an upgrade of the detector was planned which ultimately led to SNO+ \cite{snop}.
-The primary goal of SNO+ is to perform a neutrinoless double beta decay measurement (0$\nu\beta\beta$) using the isotope $Te_{130}$, however that is beyond the scope of this thesis.
-What is relevant is the change in target media from SNO to SNO+: heavy water will be substituted for a light water calibration phase and a scintillator data taking phase.
+The primary goal of SNO+ is a measurement of neutrinoless double beta decay neutrinoless double beta decay which, if observed, would shed light on whether the neutrino is its own antiparticle and on the nature of neutrino mass.
+Also included in the goals of SNO+, and of particular relevance to this thesis, is a measurement of lower energy solar neutrino fluxes, particularly the CNO neutrinos, enabled by a switch of target mediums to a scintillating liquid also necessary for neutrinoless double beta decay sensitivity.
+To enable this change in targets, some modifications to the experiment were necessary: the detector electronics required upgrades to handle the higher data rate expected with lower energy thresholds, and the AV required the installation of hold-down ropes since scintillator has a lower density than water and would otherwise tend to float in the water shield.
+Additionally, the chemical plants to purify and process scintillator, and other supporting hardware, needed to be installed underground, which was no small task.
 
-Water phase in SNO+ is primarily intended to calibrate the detector and test the upgraded hardware in a regime similar to SNO.
-Light water differs from heavy water primarily in the available interaction channels: neither NC nor CC are possible given the lack of targets (deuterons) with sufficiently low interaction thresholds.
-The ES interaction is unaffected by this change in targets, since both have roughly the same electron density, and \Cref{ch:es} goes into detail on measuring the $^8$B solar neutrino flux with this channel.
-Additionally, as part of the calibration effort in water phase, \Cref{ch:chsrc} describes an optical calibration source designed for SNO+.
+\subsection{Experimental Phases}
+Similar to SNO, SNO+ intends to operate in three experimental phases.
+The first phase is of primary relevance to this thesis, however all three are described in the following sections.
+
+\subsubsection{Light Water}
+Water phase in SNO+ is intended to calibrate the detector and test the upgraded hardware in a regime similar to SNO, while also generating physics data as a deep underground water Cherenkov detector.
+As part of the calibration effort in water phase, \Cref{ch:chsrc} describes an optical calibration source designed for SNO+ which will be calibrated in water phase and then used to calibrate later phases of the experiment.
+Of physics interest in this phase are a search for nucleon decay \cite{nucleon_decay}, potential sensitivity to anti-neutrinos in pure water, and the elastic scatter of solar neutrinos.
+Relative to other water Cherenkov detectors, SNO benefits from its deeper location in a reduced muon flux, and hence reduced cosmogenic backgrounds
+In terms of solar neutrinos, light water differs from heavy water primarily in the available interaction channels: neither NC nor CC are possible given the lack of targets (deuterons) with sufficiently low interaction thresholds.
+The ES interaction is unaffected by this change in targets, since both H$_2$O and D$_2$O have roughly the same electron density.
+\Cref{ch:es} goes into detail on measuring the $^8$B solar neutrino flux in SNO+ with the ES channel.
 Data taking for this phase began mid 2017 and finished toward the end of 2018.
 
-The change to pure scintillator LAB+PPO (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2 g/L) started at the end of 2018.
-This switch was motivated by a need for enhanced energy resolution for the 0$\nu\beta\beta$ measurement, and similar reasoning comes into play in its applicability to solar neutrinos.
+\subsubsection{Scintillator}
+
+The change to pure scintillator LAB+PPO (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2 g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
+This switch was motivated by a need for enhanced energy resolution for the neutrinoless double beta decay measurement, and similar reasoning comes into play in its applicability to solar neutrinos.
 In terms of solar neutrinos, the ES interaction channel is still the only relevant one, however the observed signals in scintillator phase will be quite different than that of water phase.
 In water all information about the interaction was gathered from the Cherenkov light emitted. 
 Cherenkov light will still be generated in scintillator, however in LAB+PPO it will be insignificant compared to the light emitted by the relaxing of vibrational states of the scintillating medium itself.
+As of the writing of this thesis, scintillator phase is moving forward, but physics data taking is still in the future.
 
-\subsection{Scintillation Light}
+\subsubsection{Tellurium Loaded Scintillator}
+As mentioned, the primary goal of SNO+ is to perform a neutrinoless double beta decay measurement using the double beta decay isotope $^{130}$Te.
+This will be done by dissolving $^{130}$Te metal in the LAB+PPO scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$ MeV) of $^{130}$Te decay.
+The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the the electrons, resulting in a delta function spectrum at the endpoint.
+Since the feature of this process is a sharp feature in energy, SNO+ benefits greatly from the enhanced energy resolution of scintillators.
 
-As a charged particle moves through a scintillator, electronic energy levels in the scintillator are excited which can subsequently relax by emitting a visible photon.
-In the case of LAB+PPO in SNO+, this results in about 500 detected hits per MeV of deposited energy compared to the roughly 10 hits per MeV in light water.
-The much larger number of photons results in much higher energy resolution c.f. a water detector, which is very advantageous to analyses that rely heavily on energy reconstruction.
-
-Unlike Cherenkov light, scintillation light is emitted isotropically, since the relaxing of the vibrational state is uncorrelated with the direction of the incident particle.
-In a similar vein, scintillators are optically less transparent than water (typically) leading to increased scatter (isotropy) in the emitted light.
-With much of the Cherenkov light scattered by the scintillator, and the remaining Cherenkov photons burried under two orders of magnitude more scintillation photons, there is effectively no detectable Cherenkov light in the events.
-This leads to the significant downside of being unable to reconstruct direction, and therefore being unable to disentangle events based on directionality. 
-For solar neutrinos this is a significant loss, because typically there is no other class of events correlated with the direction of the sun.
-This is applicable both in analyses where solar neutrinos are of interest and should be selected, and also where solar neutrinos would be considered a background and should be rejected.
-
-The final significant difference between Cherenkov and scintillation light is the minimum energy threshold.
-Cherenkov light relies on the charged particle being very relativisitic (exceeding the local speed of light), meaning that $\alpha$ particles are typically invisible, while betas must exceed 0.7 MeV, to emit any light.
-Scintillation, on the other hand, has a much lower threshold such that typically the maximum rate of the detector electronics are the limiting factor for data acquisition, not the threshold of the medium.
-In the case of scintillation, both alphas and betas are visible, and analysis thresholds of hundreds of keV (electron hypothesis) are not unreasonable. 
-For solar neutrinos, these lower thresholds give access to virtually all types of neutrino fluxes, not just the $^8$B neutrinos accessible by water Cherenkov detectors.
-The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made excellent solar neutrino measurements with scintillator, and SNO+ plans similar analyses for scintillator phase.
 
 \section{\textsc{Theia}}
 
@@ -365,16 +403,5 @@ The detector design is still in the conceptual phase, but lessons learned from S
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.
 The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic.
 
-\subsection{Combined Scintillation and Cherenkov Signal}
-
-There are multiple technologies in development with the goal of having simultanously detectable Cherenkov and scintillation signals, however for this thesis I will focus on one in particular: water-based liquid scintillators (WbLS).
-WbLS mixes a traditional scintillator, LAB+PPO, an oil, with water at some configurable ratio that is in large part water.
-In principle the fraction of scintillator results in a fraction of total light output from a pure scintillator, so low scintillator fractions will have a comparable number of scintillation photons to cherenkov photons. 
-This leads to enhanced energy resolution compared to only Cherenkov light, while allowing for the possibility of observing Cherenkov geometry in the pattern of detected hits, and thereby obtaining direction information.
-At higher scintillation fractions, the relatively fewer Cherenkov photons might be difficult to identify on top of the isotropic scintillation light.
-In this case one may leverage the fact that Cherenkov light is very prompt (picoseconds) compared to scintillators (LAB+PPO has a short time constant of a few nanoseconds) to potentially identify Cherenkov photons as the most prompt hits.
-Finally, being mostly water, WbLS should have longer scattering and attenuation lengths than a pure scintillator, allowing larger volumes to be built before either effect becomes a limiting factor.
-This seems to identify WbLS as an ideal material for combining the long attentuation lengths of water with the directionality of Cherenkov light and higher energy resolutions of scintillating materials.
-Further discussion of WbLS and a characterization of low scintillator fractions can be found in \Cref{ch:wbls}.
 
 

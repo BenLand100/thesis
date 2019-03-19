@@ -143,15 +143,37 @@ The electron density in the Sun as a function of radius and the fraction of the 
 \subsubsection{$^8$B Flux}
 
 As earth bound measurements of the solar neutrino flux would be biased by neutrino decay, a theoretical prediction for the $^8$B flux is required.
-Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$ cm$^-2$s$^-1$ with $11\%$ uncertainty~\cite{serenelli} which is used as a prior in this fit.
-For reference the flux from BS05(OP)~\cite{bs05op} is $5.69\times10^6$ cm$^-2$s$^-1$.
+Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$ cm$^{-2}$s$^{-1}$ with $11\%$ uncertainty~\cite{serenelli} which is used as a prior in this fit.
+For reference the flux from BS05(OP)~\cite{bs05op} is $5.69\times10^6$ cm$^{-2}$s$^{-1}$.
 See \Cref{strategy} for further discussion of how the flux is treated in the fit.
 
 \section{Fit Implementation}
 \label{fit_impl}
 
 For this analysis, I have built off the existing QSigEx code which properly handled nuisance parameters, pdf generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
-The following sections describe QSigEx and the work that was necessary to implement the neutrino lifetime model in this framework.
+The following sections conceptually describe how to analyze SNO data, the implementation of such an analysis in QSigEx, and the work that was necessary to implement the neutrino lifetime model in this framework.
+
+\subsection{Analyzing SNO Data}
+
+The physical observables determined from vertex reconstruction can used to statistically sort events into different classes of interactions.
+Here the statistical sorting is be done with a maximum likelihood fit where the number of events in each class of interaction is floated, and each class of event is described by a probability distribution function (PDF) of some observable quantities.
+In SNO the observable quantities of choice are:
+\begin{enumerate}
+    \item Energy - the estimated deposited energy assuming Cherenkov light from an electron. Necessary for recovering spectral information for solar neutrinos and disentangling low energy backgrounds from higher energy solar neutrinos.
+    \item Radius - the volume weighted radius of the event estimated from reconstruction. Useful for distinguishing backgrounds from intrinsic radioactivity which tend to be away from the center of the detector.
+    \item Isotropy - the $\beta_{14}$ parameter based on Legendra polynomials giving a direction independent measure of isotropy of hits. Can distinguish between multi site events (multiple gammas scattering multiple electrons - NC) and single electrons (CC, ES). 
+    \item Direction - the cosine of the angle between the event direction and the direction to the Sun at the time of the event. Identifies ES electrons which are highly correlated with the solar direction, and provides some discrimination for CC electrons.
+\end{enumerate}
+These observables were chosen to maximize separation between different types of physics interactions (NC, CC, ES) and of physics, backgrounds, and instrumentals. 
+To properly take into account correlations between these parameters, 4D PDFs were used instead of four separate 1D PDFs for each event class.
+
+The likelihood fit determines the relative contribution of each event class necessary to best match the observed data.
+To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a Monte Carlo method.
+SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
+The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
+Because there may be systematic differences between simulated data and real data, even after calibration, systematic uncertainties on the scale and offset of each axis were considered.
+For some types of events, such as the radioactivity of the PMT glass, it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
+In these cases, analytical forms were used instead, and the parameters controling these analytical forms were estimated from the data.
 
 \subsection{QSigEx}
 
@@ -174,7 +196,7 @@ In the case of many classes of events with poission parameters $\nu_j$ decribed 
 With PDFs provided from SNOMAN, and data from the detector, carrying out such a fit is relatively straightforward.
 The results relavent to this thesis are obtained by the construction of the PDFs for the solar signals.
 
-\subsection{Neutrino Energy}
+\subsection{Building Solar PDFs}
 
 There are two options for handling the neutrino energy dependence in such a fit:
 \begin{itemize}

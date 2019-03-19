@@ -662,4 +662,65 @@ To confirm that the Cherenkov source passed the pressure test, the source was di
 
 \section{Water Phase Analysis}
 \label{chap:water_phase}
-[...]
+
+\subsection{Data Taking}
+The Cherenkov source was deployed in SNO+ water phase to calibrate the optical output of the source relative to the $^16$N source.
+In total 18 hours of data were taken with the source deployed and \Li being injected into the decay chamber.
+The PMT tag signal was connected to an empty PMT channel of the SNO+ electronics (FECD) to integrate the resulting pulses for event tagging.
+In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the SNO+ tigger system to record the full pulse.
+During this deployment we discovered the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
+
+\subsection{Data Cleaning}
+In water phase there is no expected contamination from Bremsstrahlung gammas, however, since the detector is self triggering during deployment, tagged events must be identified and separated from other unrelated detector triggers.
+This is done by characterizing the signal from the tag PMT contained within the source.
+For a perfect event, the alpha scintillation within the source will result in a large signal with a long time constant.
+There is some contamination from \Li betas which clip the PMT prior to exiting the source which should be excluded.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{data_tagging}
+\caption{\label{fig:chsrc_classify} Shown here are all events where the tag PMT crossed threshold during detector triggers during source deployment. Note the tag threshold was set quite low, resulting in a population of "other" events inconsistent with true alphas or beta contamination. Red lines show nominal cut values used in classification.}
+\end{figure}
+
+These events can be well separated in a 2D histogram of total charge (QHL) vs pulse height from the tag PMT. 
+Classifications of events with nominal cuts are shown in \Cref{fig:chsrc_classify}.
+The population of "other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
+The distribution of number of hit PMTs in the detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized trace for each class.
+The alphas have an nhit distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{nhit_dists}
+\caption{\label{fig:chsrc_nhits} The hit PMT distributions for the different classifications of Cherenkov source data.}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{average_traces}
+\caption{\label{fig:chsrc_pmttraces} The average tag PMT traces from the different classifications of Cherenkov source data.}
+\end{figure}
+
+\subsection{Collection Efficiency Fit}
+The most straightforward way to extract the correction factor to the MC collection efficiency is to varry that efficiency in MC to maximize the Poisson likelihood of the data.
+MC is generated with an $^16$N calibrated photon collection efficiency $C_{eff_0}$.
+This quantity is scanned over a range of collection efficiencies while a MC model of the source is used to predict a hit PMT distribution.
+To avoid accounting for detector trigger efficiencies, only events with $>20$ hits -- where trigger efficiency is garunteed to be 100$\%$ -- are included in this analysis.
+At each point in the scan the negative logarithm of the Poisson likelihood of the data is calculated resulting in a best fit at $0.945^{+0.015}_{-0.015}$ $C_{eff}/C_{eff_0}$ where the errors are statistical only.
+The scan itself is shown in \Cref{fig:chsrc_scan} with the best fit hit PMT distribution in \Cref{fig:chsrc_bestfit}.
+This indicates a systematic offset between the light emission of the MC model of the source and the actual source of roughly $5\%$, which should be taken into account when calibrating future phases of SNO+.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{100k_bulk_py_ceff_scan}
+\caption{\label{fig:chsrc_scan} A plot of the region around the minimmum negative log likelihood space in the collection efficiency scan for calibrating the Cherenkov source.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{100k_bulk_py_ceff_scan_bestfit}
+\caption{\label{fig:chsrc_bestfit} A comparison between data and simulation for the best fit collection efficiency in the water phase deployment for the Cherenkov source.}
+\end{figure}
+
