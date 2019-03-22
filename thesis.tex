@@ -13,6 +13,19 @@
 \usepackage[noabbrev]{cleveref}
 \usepackage[mathscr]{euscript}
 
+\hypersetup{
+colorlinks   = true, %Colours links instead of ugly boxes
+urlcolor     = blue, %Colour for external hyperlinks
+linkcolor    = blue, %Colour of internal links
+citecolor   = green, %Colour of citations
+linktocpage = true
+}
+
+\makeatletter
+\pretocmd{\NAT@open}{\begingroup\color{\@citecolor}}{}{}
+\apptocmd{\NAT@close}{\endgroup}{}{}
+\makeatother 
+
 \graphicspath{{figures/}}
 \bibliography{citations.bib}
 
@@ -59,7 +72,8 @@ I want to thank my advisor for advising me.
 
 \end{frontmatter}
 
-\setsecnumdepth{subsubsection}
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
 \pagestyle{headings}
 
 \include{introduction}

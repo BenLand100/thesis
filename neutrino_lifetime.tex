@@ -4,7 +4,7 @@
 Analysis of the SNO data was instrumental in solving the SNP, and with the leading order dynamics of neutrinos established as the MSW effect, one can now explore the SNO data to constrain second order effects. 
 Neutrino decay is one such effect, and was first explored as a possible explanation for the less-than-unity survival probability of electron flavor neutrinos \cite{bachall_stable}.
 Even though neutrino decay is now known not to be the dominant effect behind the SNP, solar neutrinos make an excellent test beam for investigating neutrino decay.
-Roughly speaking, this analysis will be searching for a deficite of neutrinos resulting from decay of neutrinos in flight from the Sun to the Earth.
+Roughly speaking, this analysis will be searching for a deficit of neutrinos resulting from decay of neutrinos in flight from the Sun to the Earth.
 As will be shown in the following sections, this produces an energy dependent distortion to the MSW survival probability curves that can be fit for in an analysis of SNO data.
 
 The initial proposal to use solar neutrinos as a handle on neutrino lifetime explored a few models of neutrino decay and estimated that solar neutrinos could put the best limit on non-radiative neutrino decay~\cite{beacombell}.
@@ -12,20 +12,14 @@ The authors noted that the large uncertainty on the $^8$B flux as well as uncert
 Relatively recent precise mixing parameters from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} and improved theoretical predictions for the $^8$B flux~\cite{serenelli} mitigate this to some extent.
 Further studies~\cite{berryman} using a simple disappearance model - where the neutrino decays into some non-active daughter(s) and the observable signal is an energy dependent distortion to the survival probability - were able to set respectable limits analyzing SNO~\cite{sno}, Super-Kamiokande~\cite{superk}, and Borexino~\cite{borexino} results.
 Various constraints such as the eccentricity of the Earth's orbit allowed this limit to be improved~\cite{picoreti}. 
-However, it was noted~\cite{berryman} that the published fits to the SNO data were not ideal for testing the simple disappearance model because the survival probabilities for electron neutrinos $P_{ee}$ and $P_{ea}$ were not treated as independent functions.
-In a decaying scenario the survival probabilities are modified by an energy dependent form that does not preserve $P_{ee} + P_{ea} = 1$, so the authors concluded a better limit could be set with a dedicated fit.
+However, it was noted~\cite{berryman} that the published fits to the SNO data were not ideal for testing the simple disappearance model because the survival probabilities for electron neutrinos, $P_{ee}$, and the transition probability to other neutrino flavors, $P_{ea}$, were not treated as independent functions.
+In a decaying scenario these probabilities are modified by an energy dependent form that does not preserve $P_{ee} + P_{ea} = 1$, which is a valid assumption in non-decaying scenarios and used in previous SNO analyses, so the authors concluded a better limit could be set with a dedicated fit.
 This analysis aims to perform such a dedicated fit, specifically for the $\nu_2$ lifetime observed as an energy dependent modification to the standard MSW survival probability.
 
 \section{Lifetime Model}
 \label{lifetime_model}
 
-To fit for neutrino lifetime using SNO data one first needs a model of the survival probability curves.
-The fit will minimize the negative SNO Extended Log Likelihood function~\cite{3phase} using this model for the survival probability.
-The following sections discuss the model itself and the treatment of parameters.
-
-\subsection{Decaying Survival Probability}
-
-The flux of a particular mass state $\ket{\nu_i}$ could have some lifetime associated with it $\tau_i$ representing the decay of neutrinos of that mass state.
+The flux of a particular mass state $\nu_i$ could have some lifetime associated with it $\tau_i$ representing the decay of neutrinos of that mass state.
 Since the actual neutrino masses are unknown the lifetime is often represented by an effective parameter $k_i$ scaled by the mass of the state
 \begin{equation}
 k_i = \frac{\tau_i}{m_i}.
@@ -36,21 +30,41 @@ Therefore, using the formalism given in \Cref{ch:theory}, the detected flux $\ps
 \psi_i \approx  e^{-L_\odot / (E k_i)} \phi_i =  e^{-L_\odot / (E k_i)} \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2
 \label{decay}
 \end{equation}
-The survival probabilities for electron and muon/tau flavor neutrinos in a decaying scinareo may then be calculated with appropriate factors from the PMNS matrix.
+where $L_\odot$ is the Earth-Sun distance (1 A.U.) and $E$ is the neutrino energy.
+The survival probabilities for electron and muon/tau flavor neutrinos in a decaying scenario may then be calculated with appropriate factors from the PMNS matrix in the usual way,
 \begin{equation}
 \begin{array}{rcl}
 P_{ee} & = & \sum_i \psi_i |U_{ie}|^2  \\
-P_{ea} & = & \sum_i \psi_i |U_{i\mu}|^2 + \psi_i |U_{i\tau}|^2
+P_{ea} & = & \sum_i \psi_i |U_{i\mu}|^2 + \psi_i |U_{i\tau}|^2.
 \end{array}
 \label{survive}
 \end{equation}
 
-\subsection{Monte-Carlo Simulation}
+\subsection{Computing Survival Probabilities for $^8$B Neutrinos}
 
 \label{montecarlo}
 
-Since $^8$B solar neutrinos are produced in a continuous region of the sun which samples a range of electron densities, a model seeking to fit a shape change should well reproduce this effect.
-See \Cref{fig:core_density} for a visual representation of the magnitude of this effect.
+The three neutrino mass states each have a lifetime associated with them $k_i = \tau_i / m_i$, which are all physically interesting quantities to measure.
+However, the characteristic energies of $^8$B neutrinos and the electron densities at the core of the Sun conspire to make the $^8$B flux a nearly pure flux of $\nu_2$.
+The ultimate result of this is that an analysis of SNO data consisting of $^8$B neutrinos will be insensitive to $\nu_1$ or $\nu_2$ decay.
+This is shown in \Cref{fig:frac_not_nu_2}, which shows the fraction of neutrinos produced at electron densities consistent with $^8$B neutrinos that exit the Sun as $\nu_2$ along with a typical $^8$B energy spectrum.
+Weighting the former by the latter and averaging, one finds that less than $4\%$ of the detectable flux is not $\nu_2$
+Therefore, for the purposes of this analysis, the lifetimes of mass state $\nu_1$ and $\nu_3$ are fixed at infinity as data taken by SNO for $^8$B neutrinos is nominally insensitive to $\nu_1$ or $\nu_3$ decay.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\columnwidth]{nu2_fraction}
+\caption{
+The fraction of $^8$B neutrinos that are $\nu_2$ upon exiting the Sun are shown here as a function of neutrino energy with a solid line, while the dashed line shows a typical $^8$B energy spectrum. 
+This plot was created using central values for the neutrino mixing and standard solar model parameters. 
+}
+\label{fig:frac_not_nu_2}
+\end{figure}
+
+$^8$B solar neutrinos are produced in a continuous region of the Sun, which samples a large range of electron densities.
+This variation in electron density must be propagated into the modeled survival probability curves.
+\Cref{fig:core_density} shows the variation in the survival probability of neutrinos from the core of the Sun to a tenth of the solar radius.
+$^8$B neutrinos are primarily produced at intermediate radii.
 
 \begin{figure}
 \centering
@@ -59,20 +73,32 @@ See \Cref{fig:core_density} for a visual representation of the magnitude of this
 \label{fig:core_density}
 \end{figure}
 
-To calculate the survival probability for a particular neutrino energy value, a Monte-Carlo simulation generates initial electron neutrino states for $^8$B decays at radial positions sampled from the SSM distribution for $^8$B neutrino flux.
-The SSM electron density distribution is then used to convert the radial position inside the Sun to an electron density.
-To get the matter mass state composition the the Hamiltonian $H_{MSW}$ is first converted to the flavor basis with the PMNS matrix and then the eigenvectors are calculated numerically using TMatrixDEigen from ROOT 6.5.34~\cite{root}.
-These eigenvectors are $\ket{\nu_{mi}(V_e)}$, and their projection onto $\ket{\nu_e}$, which is trivial in the flavor basis, yields \Cref{rawflux}.
+However, because a numerical method must be used to compute the MSW effect in a three neutrino scenario, one cannot simply integrate over this variation in electron density to arrive at the average survival probability. 
+To calculate the survival probability of a $^8$B neutrino numerically for a particular neutrino energy value, a MC method is used:
+\begin{enumerate}
+\item Generate an ensemble of radial positions sampled from the SSM radial distribution for $^8$B neutrino flux.
+\item Use the SSM electron density distribution to find the electron densities for this ensemble.
+\item For each electron density, numerically diagonalize the Hamiltonian $H_{MSW}$ from \Cref{eq:msw} in the flavor basis using TMatrixDEigen from ROOT~\cite{root}.
+\item These eigenvectors are  $\ket{\nu_{mi}(V_e)}$, and their projection onto $\ket{\nu_e}$ is trivial in the flavor basis.
+\item The quantity \Cref{decay} is calculated using these projections for a particular values of $k_i$.
+\item Survival probabilities are calculated with \Cref{survive} and averaged across the ensemble.
+\end{enumerate} 
 
-The final flux of a mass state without decay is calculated from the average of all the neutrino states.
-These fluxes are then decayed according to \Cref{decay} for a particular lifetime value and the survival probabilities from \Cref{survive} are used to check the goodness of fit to the data.
-Example survival probability curves for different lifetime values are shown in \Cref{fig:model}.
+This process can be executed for any neutrino energy, producing survival probability curves for neutrinos produced in regions consistent with $^8$B neutrinos.
+Example survival/oscillation probability curves produced this way for different values of $k_2$ are shown in \Cref{fig:model}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\columnwidth]{decay_msw_theory}
+\includegraphics[width=0.75\columnwidth]{decay_msw_pee_theory}
+\includegraphics[width=0.75\columnwidth]{decay_msw_pea_theory}
 \caption{
-The electron neutrino survival probability curves from the Monte-Carlo simulation that underlies this analysis for various values of the lifetime. The shaded regions represent the propagated error from the neutrino mixing parameter priors while the solid lines are the central values.
+Shown here in dashed lines are survival probability of
+electron neutrinos $P_{ee}$ and the oscillation probability $P_{ea}$ for
+various values of mass state $\nu_2$ lifetime ($k_2$), demonstrating the
+energy-dependent distortion being modeled. Both $k_1$ and $k_2$ are fixed
+to infinity in these plots. Existing limits are near $k_2 = 10^{-4}$ s/eV.
+The solid line shows the survival probability with no neutrino
+decay ($k_2 = \infty$).
 }
 \label{fig:model}
 \end{figure}
@@ -80,33 +106,16 @@ The electron neutrino survival probability curves from the Monte-Carlo simulatio
 \subsection{Parameters}
 \label{parameters}
 
-The lifetime model and monte-carlo simulation require the parameters discussed in the following sections to produce the survival probability curves.
-Nuisance parameters in the analysis are treated exactly as described in~\cite{plthesis}.
-Fundamental constants are taken from the PDG~\cite{pdg}.
-
-\subsubsection{Neutrino Lifetime}
-The three neutrino mass states each have a lifetime associated with them $k_i = \tau_i / m_i$. 
-For this analysis the lifetimes of mass state 1 and 3 are fixed at infinity because the $^8$B flux exits the sun as a nearly pure $\nu_2$ mass state, so the data taken by SNO for $^8$B neutrinos is nominally insensitive to $\nu_1$ or $\nu_3$ decay.
-This is shown in \Cref{fig:frac_not_nu_2} which uses the central values from the following section to compute the fraction of $^8$B neutrinos exiting the sun that are not $\nu_2$.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.75\columnwidth]{fraction_not_nu_2}
-\caption{
-The fraction of $^8$B neutrinos that are not mass state $\nu_2$ upon exiting the sun are shown here as a function of neutrino energy. This plot was created using the central values for the neutrino and solar parameters. 
-}
-\label{fig:frac_not_nu_2}
-\end{figure}
+The parameters of the neutrino lifetime model beyond the quantity of interest, the lifetime $k_2$ of mass state $\nu_2$, are discussed in the following sections.
+In all cases, fundamental constants are taken from the Particle Data Group (PDG)~\cite{pdg}.
 
 \subsubsection{Neutrino Mixing}
 Neutrino mixing parameters taken from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} are reproduced in \Cref{tbl:mixing_params}. 
-Parameters from KamLAND and DayaBay were used to avoid bias from using SNO results in this analysis.
+Parameters from KamLAND and Daya Bay were used to avoid bias from using SNO results in this analysis.
 As these measurements were done at Earth with neutrinos produced on Earth they are expected to be uncorrelated with effects of $\nu_2$ decay.
-The current limit on $k_2$ constrains it to be greater than $\approx7\times10^{-4}$~\cite{picoreti} which means at length scales comparable to the diameter of the earth the maximum flux lost by $\nu_2$ decay for a $10$ MeV neutrino is given by
+The current limit on $k_2$ constrains it to be greater than $\approx7\times10^{-4}$~\cite{picoreti}, which means at length scales comparable to the diameter of the earth the maximum flux lost by $\nu_2$ decay for a $10$ MeV neutrino is given by
 $1-e^{-2R_{earth}/(E k_2)} \approx 6\times10^{-6}$
 which would have negligible impact on values quoted for mixing parameters.
-These parameters and their central values are used as priors and floated during the fit.
-See \Cref{systematics} for further discussion.
 
 \begin{table}
 \centering
@@ -126,9 +135,9 @@ Reproduced here are the mixing parameters used in this analysis taken from Daya 
 
 \subsubsection{Standard Solar Model}
 
-The model implemented here uses the distribution of electron density and distribution of neutrino fluxes calculated in the BS05(OP) Standard Solar Model (SSM)~\cite{bs05op} which are reproduced in \Cref{fig:ssm}. 
+The model implemented here uses the distribution of electron density and distribution of neutrino fluxes calculated in the BS05(OP) Standard Solar Model (SSM)~\cite{bs05op}, which are reproduced in \Cref{fig:ssm}. 
 Uncertainties in these values are not quoted in the original source and are therefore not considered in this fit.
-These predictions are expected to be uncorrelated with $\nu_2$ decay as they are not constrained with neutrino flux measurements.
+These predictions are expected to be unaffected by potential $\nu_2$ decay as they are not constrained with neutrino flux measurements.
 
 \begin{figure}
 \centering
@@ -143,80 +152,115 @@ The electron density in the Sun as a function of radius and the fraction of the 
 \subsubsection{$^8$B Flux}
 
 As earth bound measurements of the solar neutrino flux would be biased by neutrino decay, a theoretical prediction for the $^8$B flux is required.
-Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$ cm$^{-2}$s$^{-1}$ with $11\%$ uncertainty~\cite{serenelli} which is used as a prior in this fit.
-For reference the flux from BS05(OP)~\cite{bs05op} is $5.69\times10^6$ cm$^{-2}$s$^{-1}$.
-See \Cref{strategy} for further discussion of how the flux is treated in the fit.
+Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$ cm$^{-2}$s$^{-1}$ with $11\%$ uncertainty~\cite{serenelli}, which is used as a prior in this fit.
+For reference the flux from BS05(OP)~\cite{bs05op} traditionally used in SNO analyses is $5.69\times10^6$ cm$^{-2}$s$^{-1}$.
+See \Cref{strategy} for further discussion of how the flux is handled.
 
 \section{Fit Implementation}
 \label{fit_impl}
 
-For this analysis, I have built off the existing QSigEx code which properly handled nuisance parameters, pdf generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
+For this analysis, I have built off the existing QSigEx code \cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
+This package could be modified to use the model described in \Cref{lifetime_model} instead of polynomials used in previous analyses.
 The following sections conceptually describe how to analyze SNO data, the implementation of such an analysis in QSigEx, and the work that was necessary to implement the neutrino lifetime model in this framework.
-
-\subsection{Analyzing SNO Data}
-
-The physical observables determined from vertex reconstruction can used to statistically sort events into different classes of interactions.
-Here the statistical sorting is be done with a maximum likelihood fit where the number of events in each class of interaction is floated, and each class of event is described by a probability distribution function (PDF) of some observable quantities.
-In SNO the observable quantities of choice are:
-\begin{enumerate}
-    \item Energy - the estimated deposited energy assuming Cherenkov light from an electron. Necessary for recovering spectral information for solar neutrinos and disentangling low energy backgrounds from higher energy solar neutrinos.
-    \item Radius - the volume weighted radius of the event estimated from reconstruction. Useful for distinguishing backgrounds from intrinsic radioactivity which tend to be away from the center of the detector.
-    \item Isotropy - the $\beta_{14}$ parameter based on Legendra polynomials giving a direction independent measure of isotropy of hits. Can distinguish between multi site events (multiple gammas scattering multiple electrons - NC) and single electrons (CC, ES). 
-    \item Direction - the cosine of the angle between the event direction and the direction to the Sun at the time of the event. Identifies ES electrons which are highly correlated with the solar direction, and provides some discrimination for CC electrons.
-\end{enumerate}
-These observables were chosen to maximize separation between different types of physics interactions (NC, CC, ES) and of physics, backgrounds, and instrumentals. 
-To properly take into account correlations between these parameters, 4D PDFs were used instead of four separate 1D PDFs for each event class.
-
-The likelihood fit determines the relative contribution of each event class necessary to best match the observed data.
-To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a Monte Carlo method.
-SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
-The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
-Because there may be systematic differences between simulated data and real data, even after calibration, systematic uncertainties on the scale and offset of each axis were considered.
-For some types of events, such as the radioactivity of the PMT glass, it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
-In these cases, analytical forms were used instead, and the parameters controling these analytical forms were estimated from the data.
-
-\subsection{QSigEx}
-
-A fit package for all three phases of SNO data that treated $P_{ee}$ and $P_{ea}$ independent polynomials existed in the software package QSigEx~\cite{plthesis}.
-This package already implemented the SNO Extended Log Likelihood Function, and could be modified to use the model described in \Cref{lifetime_model} instead of polynomials.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
 
-\subsection{SNO Extended Log Likelihood}
+\subsection{Extended Log Likelihood}
 
-QSigEx finds the model parameters best describing the data by maximizing the Poisson likelihood of the observed data.
+The physical observables determined from vertex reconstruction can be used to statistically sort events into different classes of interactions.
+Here the statistical sorting is done with a maximum likelihood fit: QSigEx finds the model parameters best describing the data by varying these parameters and maximizing the Poisson likelihood of the observed data.
 This is done by minimizing the well known form of the log likelihood:
 \begin{equation}
     \mathcal{L} = -\nu + \sum_{i=1}^{n_{events}} \log \left[ \nu f(\vec{x_i}) \right],
 \end{equation}
-where $\nu$ is a Poisson mean number of observed events and $f(\vec{x_i})$ is a PDF evaluated $\vec{x_i}$ which is a vector of quantities describing event $i$.
-In the case of many classes of events with poission parameters $\nu_j$ decribed by PDFs $f_j$ this log likelihood this can be written as:
+where $\nu$ is a Poisson mean number of observed events and $f(\vec{x_i})$ is a PDF evaluated $\vec{x_i}$, which is a vector of quantities describing event $i$.
+In the case of many classes of events with Poission parameters $\nu_j$ decribed by PDFs $f_j$ this log likelihood this can be written as:
 \begin{equation}
     \mathcal{L} = -\sum_{j=1}^{n_{classes}} \nu_j + \sum_{i=1}^{n_{events}} \log \left[ \sum_{j=1}^{n_{classes}} \nu_j f_j(\vec{x_i}) \right].
 \end{equation}
-With PDFs provided from SNOMAN, and data from the detector, carrying out such a fit is relatively straightforward.
-The results relavent to this thesis are obtained by the construction of the PDFs for the solar signals.
+In a typical SNO analysis, each type of signal or background for each phase is treated as a separate event class.
+When the rates of these classes are expected to be correlated across phases, the Poisson parameter for those classes are constrained to be the same value.
+In this way one can simultaneously fit to all three phases of SNO data in a self consistent manner.
+
+\subsection{Analyzing SNO Data}
+
+In SNO the observable quantities of choice are:
+\begin{enumerate}
+    \item Energy - the estimated deposited energy assuming Cherenkov light from an electron. Necessary for recovering spectral information for solar neutrinos and disentangling low energy backgrounds from higher energy solar neutrinos.
+    \item Radius - the volume weighted radius of the event estimated from reconstruction. Useful for distinguishing neutrino events, which are isotropic within the detector from intrinsic radioactivity, which is maximal at higher radii due to a very successful background reduction campaign within the AV.
+    \item Isotropy - the $\beta_{14}$ parameter based on Legendre polynomials giving a direction independent measure of isotropy of hits. Can distinguish between multi site events (multiple gammas scattering multiple electrons - NC) and single electrons (CC, ES). Also capable of discriminating between physics events (Cherenkov hit topology) and instrumental backgrounds.
+    \item Direction - the cosine of the angle between the reconstructed event direction and the direction to the Sun at the time of the event. Identifies ES electrons, which are highly correlated with the solar direction, and provides some discrimination for CC electrons.
+\end{enumerate}
+These observables were chosen to maximize separation between different types of physics interactions (NC, CC, ES) and of physics, backgrounds, and instrumentals. 
+To properly take into account correlations between these parameters, 4D PDFs were used instead of four separate 1D PDFs.
+
+The likelihood fit determines the relative contribution of each event class necessary to best match the observed data.
+To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a MC method.
+SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
+The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
+Most PDFs are provided directly by SNOMAN, however results relevant to this thesis are obtained by the construction of the PDFs for the solar signals, and specifically by the effect the lifetime model has on these PDFs.
+
+For the radioactivity of the PMT glass, only tails of this high-rate background fall within the ROI, and it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
+In this case, analytical forms were used instead, and the parameters controlling these analytical forms were estimated from the data and treated as systematic uncertainties.
 
 \subsection{Building Solar PDFs}
 
 There are two options for handling the neutrino energy dependence in such a fit:
 \begin{itemize}
-\item Binned neutrino energy fits where where the neutrino monte-carlo is binned into $N$ PDFs by neutrino energy prior to the fit, and the average value of the survival probability across that entire bin is applied to each of the $N$ PDFs when stepping though the minimization.
-\item Unbinned neutrino energy fits where each of the $M >> N$ neutrino monte-carlo events are reweighted by the value of the survival probability at their exact energy when stepping through the minimization to build the neutrino PDFs.
+\item Binned neutrino energy fits where where the neutrino MC is binned into $N$ PDFs by neutrino energy prior to the fit, and the average value of the survival probability across that entire bin is applied to each of the $N$ PDFs when stepping though the minimization.
+\item Unbinned neutrino energy fits where each of the $M >> N$ neutrino MC events are reweighted by the value of the survival probability at their exact energy when stepping through the minimization to build the neutrino PDFs.
 \end{itemize}
-Clearly the binned fit will perform more poorly as an average value of the survival probability across a neutrino energy bin is applied to all neutrinos in that bin, however this method is much faster, being computationally far simpler than rebuilding the PDFs at each minimization step. 
-For polynomial fits this poorer performance was not significant and allowed the systematic scans along with the shifts and refits to benefit from the speed increase.
-Unfortunately preliminary tests of the binned fit had very poor results regarding at capturing the shape of the lifetime model survival probabilities.
+Clearly the binned fit will perform more poorly as an average value of the survival probability across a neutrino energy bin is applied to all neutrinos in that bin, however, this method is much faster, being computationally far simpler than rebuilding the PDFs at each minimization step. 
+For polynomial fits of previous SNO analyses, this poorer performance was not significant and allowed the minimization algorithm to benefit from the increased speed.
+Unfortunately preliminary tests of the binned fit had very poor results regarding capturing the shape of the lifetime model survival probabilities.
 Because of this, an unbinned neutrino energy fit was adopted.
 
-\section{Fit Strategy}
+\subsection{Detector Systematic Effects}
+\label{systematics} 
+
+Systematic uncertainties are treated in three distinct ways.
+\begin{enumerate}
+\item Each of the observables has many systematic parameters associated with it representing possible discrepancies between simulated and real data. These uncertainties are best constrained with the data itself, and central values along with their uncertainties are determined with a brute-force initial iterative scan of the data. These are held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
+\item Other uncertainties are constrained with in-situ and ex-situ measurements and not highly correlated with neutrino parameters. These are also held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
+\item Finally, the NCD neutron capture efficiency, which is strongly correlated with measurements of the neutrino flux, is allowed to float in the fit to avoid biasing neutrino results.
+\end{enumerate}
+
+The procedure for determining the central values and uncertainties of scanned parameters is as follows:
+\begin{enumerate}
+\item A parameter is scanned around its current best guess
+\item An asymmetric gaussian is fit to the scan $-\log{L}$ to determine the central and upper/lower uncertainties.
+\item The best guess for that parameter is updated to the fitted values just determined.
+\item The next parameter is considered at step 1 until all parameters have been scanned.
+\item If any parameter central value has shifted relative to the previous iteration, the algorithm repeats until stable minima are found.
+\end{enumerate}
+
+The shift-and-refit algorithm is intended to stochastically marginalize over the bulk of the systematic uncertainties. 
+This was done for two reasons.
+First, variation in many of the systematics result in events moving between bins and discontinuities in the likelihood space, which interfere with minimization algorithms.
+Stochastic methods are not susceptible to such discontinuities.
+Second, there are very many systematic uncertainties, and floating them all would result in an intractably large parameter space.
+Therefore those systematic uncertainties not strongly correlated with neutrino parameters are treated with the following shift-and-refit procedure to propagate their uncertainties into the final results:
+\begin{enumerate}
+    \item A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. 
+    \item For each set of parameters, the fit is minimized again and the central value of each floated parameter is recorded.
+    \item This produces a distribution of shift-and-refit values for each floated parameter, which represent the systematic uncertainties on these parameters.
+\end{enumerate}
+
+If the shift-and-refit distributions are approximately normal, the upper and lower RMS represents the upper and lower systematic uncertainty. 
+This applies to most floated parameters, but notably not to $k_2$, which was shown to have highly asymmetric errors. 
+In the case of $k_2$, an assumption is made that the shape of the likelihood space does not change with variations in the central value of $k_2$ but rather the minimum simply shifts.
+Taking this assumption, the likelihood profile for $k_2$ obtained with systematics fixed to their central values can be shifted by each shift in the shift-and-refit distribution for $k_2$ and averaged to obtain a likelihood profile including systematic uncertainties.
+
+\subsection{Fit Strategy}
 \label{strategy}
 Ideally all neutrino parameters would be floated with priors in this fit. 
 In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux.
-Previous analyses \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced fit and then performing further fits and statistical studies with the flux fixed, and incorporating uncertainty from flux variations as a final step.
+This is most easily understood by considering the signature of neutrino decay: a disappearance of neutrino flux.
+Manifestly neutrino decay and the total flux will be highly correlated, however the energy dependent signature of neutrino decay allows these effects to be disentangled to some extent.
+Previous SNO analyses searching for oscillation to sterile neutrinos \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced parameter space, performing further fits and statistical studies with the flux fixed, and finally incorporating uncertainty from flux variations as a final step.
 In this analysis since there is only one model parameter of interest, $k_2$, a strategy of scanning $k_2$ manually while floating all other parameters seems to be ideal. 
-With that in mind, the current strategy is:
+With that in mind, the fit strategy is:
 \begin{enumerate}
-\item Perform a scan over $k_2$ minimizing floated parameters at each point. For data fits this can be done along with the other scanned nusiance parameters.
+\item Perform a scan over $k_2$ minimizing floated parameters at each point. For data fits this can be done along with the other scanned nuisance parameters.
 \item At the best $\chi^2$ value, use MINOS fit errors (implicitly with $k_2$ fixed) as the total uncertainty on all parameters except the highly correlated $k_2$ and $^8$B flux.
 \item For $k_2$ find the total uncertainty by at the point where $\Delta(-LL)$ in the scan is $0.5$.
 \item For the total uncertainty on $^8$B flux this value is scanned the same way as $k_2$ to properly account for the correlations in with $k_2$.
@@ -226,8 +270,13 @@ With that in mind, the current strategy is:
 \section{Ensemble Testing}
 \label{ensemble_tests}
 
-The purpose here is to demonstrate that the fit is unbiased and correctly estimating errors on the fitted parameters. 
-Figures of merit shown here include the pull, the bias, and the relative uncertainty.
+To demonstrate that the fit described above is unbiased and correctly estimates errors on the fitted parameters, statistical tests were done on an ensemble of fake datasets.
+These fake datasets are generated with known parameters, and the results of the fit are compared to these known quantities to demonstrate there is no systematic bias in parameter estimation.
+This is done by ensuring a distribution of biases has a mean consistent with zero.
+Further, statistical fluctuations resulting in biases in individual fits are compared to the errors estimated by the minimization algorithm by computing pull distributions for each parameter. 
+A pull distribution with a width of 1 indicates the fit is properly estimating errors.
+Finally the relative uncertainty of each parameter shows the sensitivity to each of the floated parameters.
+These figures of merit are defined as:
 \begin{equation}
 Pull = \frac{Fit\,\,\,value - Actual\,\,\,value}{Fit\,\,\,uncertainty}
 \end{equation}
@@ -237,11 +286,12 @@ Bias = \frac{Fit\,\,\,value - Actual\,\,\,value}{Actual\,\,\,value}
 \begin{equation}
 Relative\,\,\,uncertainty = \frac{Fit\,\,\,uncertainty}{Actual\,\,\,value} \times 100\%
 \end{equation}
-For the bias and pull, the mean of each ensemble is shown with error bars representing the standard deviation of the ensemble.
-The pull plots will additionally show the expected fluctuation of the mean ($1/\sqrt{n_{samples}}$) in dashed lines with the expected mean ($1 - 1/(4(n_{samples}-1))$) and fluctuation of the standard deviation ($1/\sqrt{n_{samples}}$) represented by shaded boxes.
-For relative uncertainty only the mean of the ensembles is shown.
 
-\subsection{Fake Datasets}
+This testing is done in three stages, starting with only solar neutrino events, and then with progressively more backgrounds added in order of importance.
+For each stage of testing a plot showing the mean and width (as error bars) of the bias and pull distributions are produced.
+Plots of the pull show the expected fluctuations of the mean ($1/\sqrt{n_{samples}}$) in dashed lines with the expected mean ($1 - 1/(4(n_{samples}-1))$) and fluctuation of the standard deviation ($1/\sqrt{n_{samples}}$) represented by shaded boxes.
+
+\subsection{Fake Dataset Ensembles}
 
 The SNO MC consists of different event classes for each phase of SNO.
 Events from each class and phase are partitioned into $N$ sets with $M$ samples each. 
@@ -250,7 +300,7 @@ $M$ is chosen from a Poisson distribution with a mean equal to the expected numb
 For solar neutrino signals the BS05(OP)~\cite{bs05op} flux predictions were used in generating these fake data sets.
 These sets can then be combined into fake datasets with realistic statistics containing only the event classes and phases desired.
 
-The solar neutrino signals from SNO monte-carlo, which were generated with a flat survival probability spectrum, were reweighted with the lifetime model as described in \ref{lifetime_model} 
+The solar neutrino signals from SNO MC, which were generated with a flat survival probability spectrum, were reweighted with the lifetime model as described in \ref{lifetime_model} 
 A representative value of $k_2 = 10^{-4}$ s/eV was seeded into the fake sets to test the fit performance near the current limit of $\approx7\times10^{-4}$~\cite{picoreti}.
 
 \subsection{Solar-Signal Only}
@@ -260,20 +310,20 @@ A representative value of $k_2 = 10^{-4}$ s/eV was seeded into the fake sets to 
 \centering
 \begin{tabular}{ccc}
 \hline
-D$_2$0 Phase Event Classes & Salt Phase Event Classes & NCD Phase Event Classes  \\ \hline \hline
+Phase I Event Classes & Phase II Event Classes & Phase III Event Classes  \\ \hline \hline
 $^8$B CC & $^8$B CC & $^8$B CC \\
 $^8$B ES (e) & $^8$B ES (e) & $^8$B ES (e) \\
 $^8$B ES ($\mu\tau$) & $^8$B ES ($\mu\tau$) & $^8$B ES ($\mu\tau$) \\
 $^8$B NC & $^8$B NC & $^8$B NC \\ \hline
 \end{tabular}
 \caption{
-The solar-signal event classes included from LETA and NCD(-PMT) phases. Note that NCD-NCD data was not included explicitly in the fit but comes into play as the PSA constraint~\cite{3phase}.
+The solar-signal event classes included for each phase.
 }
 \label{tbl:sigonly_evcls}
 \end{table}
 
 It was possible to create 250 uncorrelated datasets of solar-signal only data.
-The solar-signal event classes for LETA and NCD phases are shown in \Cref{tbl:sigonly_evcls}.
+The solar-signal event classes for each phase are shown in \Cref{tbl:sigonly_evcls}.
 With QSigEx configured to only fit these event classes, the lifetime fit was performed on each dataset as described in \Cref{strategy}. 
 The figures of merit for these tests are shown in \Cref{fig:sigonly_biaspull,fig:sigonly_reluncert}. 
 In short, the results are consistent with an unbiased fit that properly estimates the fit uncertainties.
@@ -303,7 +353,7 @@ The relative uncertainty of all fitted parameters with signal only datasets.
 \centering
 \begin{tabular}{ccc}
 \hline
-D$_2$O Phase Backgrounds & Salt Phase Backgrounds & NCD Phase Backgrounds \\ \hline \hline
+Phase I Backgrounds & Phase II Backgrounds & Phase III Backgrounds \\ \hline \hline
 AV neutrons & AV neutrons & External neutrons \\
 Bi D$_2$O & Bi Salt & D$_2$O p.d. \\ 
 Tl D$_2$O & Tl Salt & Atmospherics \\
@@ -313,12 +363,12 @@ hep NC & hep NC & hep NC \\
 PMT $\beta$-$\gamma$ & PMT $\beta$-$\gamma$ \\ \hline
 \end{tabular}
 \caption{
-These are the background event classes that are included in the high statistics background tests. Note that NCD-NCD data is not in the fit but is included with the PSA constraint. This includes internal backgrounds, AV neutrons, PMT backgrounds, and other backgrounds with very high Monte-Carlo statistics.
+These are the background event classes that are included in the high statistics background tests. This includes internal backgrounds, AV neutrons, PMT backgrounds, and other backgrounds with very high MC statistics.
 }
 \label{tbl:noextbitl_event_classes}
 \end{table}
 
-A subset of the fake 3-phase solar-signal only datasets from both LETA phases and NCD phase above were taken and combined with uncorrelated datasets of background events with high statistics.
+A subset of the fake 3-phase solar-signal only datasets from above were taken and combined with uncorrelated datasets of background events with high statistics.
 The event classes shown in \Cref{tbl:noextbitl_event_classes} were added in this section. 
 Due to the relatively lower statistics for background event classes, only 50 datasets could be created for each of the three $k_2$ values.
 With QSigEx configured to only fit these event classes, the lifetime fit was performed on each dataset as described in \Cref{strategy}. 
@@ -359,14 +409,14 @@ The relative uncertainty of all fitted parameters with signal + high stats backg
 \centering
 \begin{tabular}{ccc}
 \hline
-D$_2$O Phase Backgrounds & Salt Phase Backgrounds & NCD Phase Backgrounds\\ \hline \hline
+Phase I Backgrounds & Phase II Backgrounds & Phase III Backgrounds\\ \hline \hline
 Bi AV bulk & Bi AV bulk & Strings p.d. \\
 Tl AV bulk & Tl AV bulk & K2 p.d. \\
 Bi H$_2$O & Bi H$_2$O & K5 p.d. \\
 Tl H$_2$O & Tl H$_2$O & \\ \hline
 \end{tabular}
 \caption{
-These are the background event classes that are added for the fits that include all backgrounds. Note that NCD-NCD data is not in the fit but is included with the PSA constraint. This includes AV and external backgrounds for LETA and photodisintegration for NCD phase.
+These are the background event classes that are added for the fits that include all backgrounds. This includes AV and external backgrounds for Phases I and II and photodisintegration for Phase III.
 }
 \label{tbl:allbg_event_classes}
 \end{table}
@@ -409,38 +459,14 @@ The relative uncertainty of all fitted parameters with signal + all backgrounds 
 \label{fig:allbg_reluncert}
 \end{figure}
 
-\clearpage 
+\subsection{Independent Impact of Systematics}
 
-\section{Detector Systematic Effects}
-\label{systematics} 
-
-Each of the observables has many systematic parameters associated with it representing possible descrepancies between simulated and real data.
-Many of these parameters are best constrained with the data itself, and central values along with their uncertanties are determined with a brute-force initial iterative scan of the data.
-These scanned parameters, along with the other systematics, were held fixed during the central fit, and their errors were propagated with a shift and refit algorithm.
-
-The initial iterative minimization used here proceeds as follows:
-\begin{enumerate}
-\item A parameter is scanned around its current best guess
-\item An asymmetric gaussian is fit to the scan $-\log{L}$ to determine the central and upper/lower uncertainties.
-\item The best guess for that parameter is updated to the fitted values just determined.
-\item The next parameter is considered at step 1 until all parameters have been scanned.
-\item If any parameter central value has shifted relative to the previous iteration, the algorithm repeats until stable minima are found.
-\end{enumerate}
-
-Other systematic uncertainties are constrained with in-situ and ex-situ measurements.
-These scanned parameters, along with the other systematics, were held fixed during the central fit, and their errors were propagated with a shift and refit algorithm:
-\begin{enumerate}
-    \item A million sets of randomly sampled systematic parameters are produced by sampling asymmetric Gaussian distributions of parameter uncertainties. These distributions are either known from independent analyses or determined by initial scans of the dataset. 
-    \item For each set of parameters, the fit is minimized again and the most likely value of each floated parameter is recorded.
-    \item The RMS of these shift-and-refit $k_2$ values on each side of the central value for $k_2$ are calculated as the systematic effect. 
-    \item The likelihood profile for $k_2$ from the central fit is shifted by the $k_2$ shift-and-refit distribution, and the average likelihood is used to set the final limits
-\end{enumerate}
-
-Both positive and negative uncertainties are quoted but it is important to note that this analysis is expected to produce a lowerbound on $k_2$ making the positive error rather meaningless.
-
-The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset. This fake dataset was seeded with $k_2 = 10^{-4}$ and had the $^8$B flux seeded and fixed at the SSM central value.
-
-The parameters considered here include nuisance parameters and all parameters scanned as the preliminary step in the fit. \Cref{fig:detector_systematics1,fig:detector_systematics2} show the individual contributions of the scanned parameters to the detector systematic uncertainty on $k_2$: $^{+13.4\%}_{-9.03\%}$.
+The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset with all backgrounds included. 
+This fake dataset was seeded with $k_2 = 10^{-4}$ and had the $^8$B flux seeded and fixed at the SSM central value.
+The parameters considered here include all parameters whose uncertainties are propagated with the shift-and-refit method. 
+\Cref{fig:detector_systematics1,fig:detector_systematics2} show the individual contributions of these parameters independently.
+In the final fit these systematics will be propagated by simultaneously shifting all parameters and refitting as described in \Cref{systematics}, however, for this test it was desired to know the impact of each parameter.
+When summed in quadrature, the total uncertainty on $k_2$ is found to be $^{+13.4\%}_{-9.03\%}$.
 
 \begin{figure}
 \centering
@@ -457,7 +483,7 @@ The parameters considered here include nuisance parameters and all parameters sc
 \end{figure}
 
 
-\clearpage
+\clearpage 
 
 \section{\nicefrac{1}{3} Dataset}
 \label{third}
@@ -472,7 +498,7 @@ The observable projections for the minimum and with $k_2$ fixed to infinity are 
 
 There is a 1-sigma minimum for $k_2$ at a central value of of $4.62\times10^{-4}$ s/eV.
 This minimum is almost consistent with infinite lifetime at the one sigma level, and has a one sigma lower bound of $2.40\times10^{-4}$ s/eV.
-The fitted value of the $^8$B flux is $5.77^{+0.58}_{-0.58}\times10^6$ cm$^{-2}$s$^{-1}$ ($1.01\pm0.10 \times \Phi_{8B_{BS05(OP)}}$) which is quite consistent with the SSM predictions.
+The fitted value of the $^8$B flux is $5.77^{+0.58}_{-0.58}\times10^6$ cm$^{-2}$s$^{-1}$ ($1.01\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions.
 With $k_2$ fixed at infinity the $^8$B flux fits to $5.19^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.91\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
 Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
 
@@ -502,23 +528,15 @@ As a preliminary step, the systematics identified in the previous 3-phase analys
 Using the central values for the systemtics, both $k_2$ and $^8$B flux were then scanned with the systematic parameters fixed at their central values, and are shown in \Cref{fig:final_scans}.
 The neutrino parameters are shown relative to their priors at the minimum of this scan in \Cref{fig:priors_final}.
 The observable projections for the minimum and with $k_2$ fixed to infinity are shown in \Cref{final_observables}.
+The likelihood profile including systematic uncertainties is compared to the likelihood profile without systematics in \Cref{fig:systematic_scans}.
 
-To account for systematic effects, a shift-and-refit procedure was applied to stochastically marginalize over the systematic parameters.
-$10^6$ sets of systematic parameters were drawn from asymmetric Gaussian distributions representing the uncertainty on each parameter. 
-The fit was run with each set of shifted systematic parameters producing distributions of shifts in each floated parameter by comparing shifted fit results with the results from the central fit.
-An assumption was made that the small shifts in any floated parameter does not change the shape of the likelihood profile for that parameter, but rather only shifts the most likely value. 
-Taking this assumption, a final likelihood profile can be produced for $k_2$ by averaging the shifted likelihood profile obtained with systematics fixed at their central values by the distribution of $k_2$ shifts obtained in the shift-and-refit procedure.
-This likelihood is compared to the likelihood profile without systematics in \Cref{fig:systematic_scans}.
-The parameter $k_2$ was treated in this way due to highly asymmetric errors. 
-For other parameters, an asymmetric Gaussian is fit to the distribution of fitted values from the shift-and-refit procedure and these upper and lower widths are added in quadrature with the upper and lower widths uncertainties from the central fit.
-
-The minimum for $k_2$ observed in the 1/3 data fit is still present in this fit (at higher significance) at a central value of of $3.45^{+5.50}_{-1.68}\times10^{-4}$ s/eV where the uncertainty given is the total uncertainty
+The minimum for $k_2$ observed in the 1/3 data fit is still present in this fit (at higher significance) at a central value of of $3.45^{+5.50}_{-1.68}\times10^{-4}$ s/eV where the uncertainty given is the total uncertainty.
 This minimum is consistent with infinite lifetime at a bit over $85\%$ confidence, and sets a $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV.
 This lower bound was found by applying Wilks' theorem to the systematically broadened likelihood, i.e. when the $-2\Delta\log{L}$ from the minimum crosses $2.71$.
-The fitted value of the $^8$B flux is $6.08^{+0.47}_{-0.47}$(stat.)$^{+0.21}_{-0.22}$(syst.)$\times10^6$ cm$^{-2}$s$^{-1}$ ($1.07\pm0.10 \times \Phi_{8B_{BS05(OP)}}$) which is quite consistent with the SSM predictions and constraint.
+The fitted value of the $^8$B flux is $6.08^{+0.47}_{-0.47}$(stat.)$^{+0.21}_{-0.22}$(syst.)$\times10^6$ cm$^{-2}$s$^{-1}$ ($1.07\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions and constraint.
 With $k_2$ fixed at infinity the $^8$B flux fits to $5.22^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
 The flux measurement with $k_2$ fixed at infinity is expected to reproduce previous 3-phase results, and is quite consistent consistent with those results: $5.23^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
-There is some tension between the SNO result and the flux fitted with with $k_2$ floating, however they are consistent at two sigma. 
+There is some tension between the SNO result and the flux fitted with with $k_2$ floating, however, they are consistent at two sigma. 
 
 \begin{figure}
 \centering
@@ -531,22 +549,23 @@ There is some tension between the SNO result and the flux fitted with with $k_2$
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{sno_8b_stat_syst_profile.pdf}
-\caption{The scans of $k_2$ with and without systematic effects. Note that in both cases the minimum has been shifted to zero. With systematics included the minimum is less significant relative to the limiting value at $k_2 \rightarrow \infty$ as expected.}
-\label{fig:systematic_scans}
-\end{figure}
-
-\begin{figure}
-\centering
 \includegraphics[width=0.95\columnwidth]{prior_deviation_final}
 \caption{The fractional deviation of each neutrino parameter with a prior constraint from its prior. The errors shown are the fractional errors of the fit.}
 \label{fig:priors_final}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.95\columnwidth]{sno_8b_stat_syst_profile.pdf}
+\caption{The scans of $k_2$ with and without systematic effects. Note that in both cases the minimum has been shifted to zero. With systematics included the minimum is less significant relative to the limiting value at $k_2 \rightarrow \infty$ as expected.}
+\label{fig:systematic_scans}
+\end{figure}
 
-\section{Additional Constraints}
+\clearpage
 
-The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis \cite{picoreti} which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$ s/eV (note order of magnitude).
+\section{Global Solar Neutrino Decay Analysis}
+
+The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis \cite{picoreti}, which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$ s/eV (note order of magnitude).
 This result was obtained by combining measurements from many solar experiments, and such an analysis can be repeated while including the SNO result described in previous sections.
 
 Experiments have made measurements of solar neutrino interaction rates and published measured fluxes both assuming oscillations (a mixture of neutrino flavors) and no oscillations (assuming a pure electron neutrino flux). 
@@ -561,7 +580,7 @@ Since the survival probabilities and cross sections are energy dependent, averag
 
 The total neutrino flux inferred from the survival probability can be directly compared to a standard solar model flux $\Phi_{SSM}$ with a Gaussian constraint term:
 \begin{equation}
--Ln[{\mathscr{L}}] = \frac{(\Phi_T - \Phi_{SSM})^2}{2 \sigma_\Phi^2}
+\mathcal{L} = \frac{(\Phi_T - \Phi_{SSM})^2}{2 \sigma_\Phi^2}
 \label{combolike}
 \end{equation}
 where $\sigma_\Phi$ combines the uncertainty from the measurement with the uncertainty from the SSM.
@@ -587,7 +606,7 @@ This produces the profiles in \Cref{fig:8b_profiles}.
 
 \subsection{$^7$Be Constraints}
 
-Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be} measured the 862 keV line of $^7$Be neutrinos which account for $90\%$ of the flux from this isotope. 
+Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be} measured the 862 keV line of $^7$Be neutrinos, which account for $90\%$ of the flux from this isotope. 
 The average survival probability weighted by the $^7$Be production regions for 862 keV neutrinos is computed for any particular set of neutrino parameters.
 Using these survival probabilities, the measured $\Phi_e$ of each experiment is converted to a true $^7$Be flux with \Cref{flux_conv} and compared to the SSM prediction with \Cref{combolike}. 
 As these neutrinos are much lower energy, they contain a significant fraction of mass state one. 
@@ -595,13 +614,13 @@ Here the lifetime of mass state one, $k_1$, is treated as a nuisance parameter a
 The profiles in \Cref{fig:7be_profiles} are generated by scanning $k_2$ while floating neutrino parameters and $k_1$.
 
 Note that these constraints are stronger than $^8$B constraints because these neutrinos are lower energy, so measured fluxes near the SSM prediction - even with less precision - can rule out shorter lifetimes.
-This holds true to some extent for radiochemical gallium and chlorine experiments discussed in following sections.
+This holds true (to some extent) for the radiochemical gallium and chlorine experiments discussed in the following sections.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.58\columnwidth]{borexino_7be}
 \includegraphics[width=0.58\columnwidth]{kamland_7be}
-\caption{The profiled likelihood for the parameter $k_2$ using $^7$Be 862 keV line measurements from Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be}. Note the shape of the Borexino profile is quite similar to KamLAND, just excluding short lifetimes at higher significance due to being a more precise measurement results in going off the scale of these plots.}
+\caption{The profiled likelihood for the parameter $k_2$ using the $^7$Be 862 keV line measurements from Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be}. Note the shape of the Borexino profile is quite similar to KamLAND, however, the Borexino measurement excludes short lifetimes at higher significance due to being a more precise measurement.}
 \label{fig:7be_profiles}
 \end{figure}
 
@@ -632,7 +651,7 @@ The result is shown in \Cref{fig:ga_profiles}.
 
 As this is more complicated than a simple constraint, some additional verification is needed to ensure there are no issues with the code.
 To that end I have reproduced the per-component interaction rate from Table IV of~\cite{sagecombo} in \Cref{tbl:gallium} using the mixing parameters and approximate form of the survival probability from that same reference.
-As these values are nearly identical to those reported in the original publication, my calculation of cross sections and total rates appears correct.
+As these values are nearly identical to those reported in the original publication, my calculation of cross sections and total rates appears consistent.
 
 Note that~\cite{sagecombo} uses an approximate form of the survival probability whereas for all other parts of this analysis I have numerically diagonalized the MSW Hamiltonian (see \Cref{lifetime_model}).
 A notable difference between these two approaches is that the approximate forms assume a uniform solar density for each flux, while my numerical method accounts for the density profile in the regions where these neutrinos originate.
@@ -644,7 +663,7 @@ With the calculation of the expected rate validated, the remaining step of inclu
 \begin{table}
 \centering
 \begin{tabular}{c|r|r|r}
-Component & SAGE Rate (SNU) & Approximate $P_{ee}$ (SNU) & Numerical $P_{ee}$ (SNU) \\ \hline
+Component & \cite{sagecombo} Rate (SNU) & Approximate $P_{ee}$ (SNU) & Numerical $P_{ee}$ (SNU) \\ \hline
 $pp$		& 39.35	&	39.34 	&	39.18	\\
 $pep$		& 1.43 	&	1.43 	&	1.35 	\\ 
 $^7$Be		& 18.73	&	18.74	& 	18.78	\\
@@ -655,7 +674,7 @@ $^8$B		& 4.64 	&	4.63	&	4.54	\\
 $hep$		& 0.02 	&	0.02	&	0.02	\\ \hline
 Total		& 66.31	&	66.32 	&	65.80	\\ \hline
 \end{tabular}
-\caption{\label{tbl:gallium}Shown here are the predicted interaction rates of each neutrino flux with Gallium computed with the code developed for this analysis using both the approximate survival probability forms in~\cite{sagecombo} and the numerical forms used elsewhere in this analysis. The values published by SAGE~\cite{sagecombo} are shown for reference.}
+\caption{\label{tbl:gallium}Shown here are the predicted interaction rates of each neutrino flux with Gallium computed with the code developed for this analysis using both the approximate survival probability forms in~\cite{sagecombo} and the numerical forms used elsewhere in this analysis. Results from \cite{sagecombo} are reproduced for reference.}
 \end{table}
 
 \subsection{Chlorine Constraints}
@@ -674,7 +693,7 @@ The result of the profile are found in in \Cref{fig:cl_profiles}.
 
 \subsubsection{Validation}
 The Homestake~\cite{homestake} experiment does not go into detail about expected rates from separate components.
-Also, the references cited there tend to assume $P_{ee} = 1$ when calculating expected rates which is not a useful comparison to make with this analysis.
+Also, the references cited there tend to assume $P_{ee} = 1$ when calculating expected rates, which is not a useful comparison to make with this analysis.
 A more recent paper~\cite{bachall_lma} does a modern calculation of the expected interaction rates per flux component that is directly comparable to the model used here.
 
 Using the fluxes and mixing parameters quoted in Table I of \cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the LMA solution from Table I of \cite{bachall_lma}.
@@ -709,7 +728,7 @@ Notably the presence of a relatively significant minimum in the new SNO results 
 \subsection{Cross-Check with Previous Limit}
 
 The analysis that set the best limit~\cite{picoreti} did not go into detail as to how their analysis was performed, or which SSM values were used as a reference.
-This makes it difficult to precisely reproduce their results, however since they do list the experimental results used, I can repeat my analysis using those experimental results and see if I get a similar limit.
+This makes it difficult to precisely reproduce their results, however, since they do list the experimental results used, I can repeat my analysis using those experimental results and see if I get a similar limit.
 
 The experiments used in the previous best limit were: Homestake (Cl), Sage (Ga), GNO+GALLEX (Ga), Borexino's first $^7$Be publication, SNO's 3-phase analysis, and Super-K (I). 
 Homestake and the gallium experiments have not been updated and are handled as described above.
