@@ -21,15 +21,14 @@ citecolor   = green, %Colour of citations
 linktocpage = true
 }
 
-\makeatletter
-\pretocmd{\NAT@open}{\begingroup\color{\@citecolor}}{}{}
-\apptocmd{\NAT@close}{\endgroup}{}{}
-\makeatother 
-
 \graphicspath{{figures/}}
 \bibliography{citations.bib}
 
 \begin{document}
+
+\newcommand{\Li}{$^{8}$Li }
+\newcommand{\N}{$^{16}$N }
+\newcommand{\B}{$^{8}$B }
 
 \title{Past, Present, and Future of Solar Neutrino Detection:\\SNO, SNO+, and \textsc{Theia}}
 \author{Benjamin J. Land}
@@ -87,6 +86,7 @@ I want to thank my advisor for advising me.
 
 \include{appendix_qsigex}
 \include{appendix_lifetime_observables}
+\include{appendix_chsrc_bond}
 
 \printbibliography
 

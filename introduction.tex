@@ -37,14 +37,74 @@ In \Cref{ch:wbls} a benchtop experiment to evaluate the optical properties of su
 To aid in understanding these topics, the remainder of this chapter is devoted to the theory of neutrinos and particulars of solar neutrinos, while \Cref{ch:detectors} discusses the steps necessary to detect and analyze solar neutrino fluxes.
 But first, the theory.
 
-%\section{Standard Model Neutrinos}
-%[... maybe ...]
+\section{Standard Model Neutrinos}
+\label{sec:stdmodel}
+
+The Standard Model of particle physics aims to describe all observed particle phenomenon in a self consistent theory within the framework of Quantum Field Theory.
+Notably this theory describes only three of the four fundamental forces -- the strong, weak, and electromagnetic -- leaving gravity for some grander and as yet undetermined theory. 
+Allowing for that notable caveat, the Standard Model has been very successful in its description of nature, except in the neutrino sector where the baseline theory predicts massless neutrinos and no flavor change.
+One can, however, augment the Standard Model to include neutrino mass, and from that, flavor change follows naturally.
+
+The theory includes three massless vector bosons roughly corresponding to the three fundamental forces, $g^a$, $W^b$, and $B$, where $a=1..8$ and $b=1..3$.
+$g^a$ represents the eight colors of gluons, which mediate the strong force.
+Linear combinations of $W^b$ and $B$ are responsible for the weak nuclear force and electromagnetic force, whose bosons are typically written as $Z_0$, $W^{\pm}$, and $\gamma$.
+
+Matter is included in the theory as left and right handed fermion fields organized into three increasingly massive generations.
+Each generation contains two quarks fields which can be any of three colors, a charged lepton, and a neutral lepton.
+In the first generation, these correspond to the up and down quark, the electron, and the electron neutrino. 
+These generations are commonly called flavors, which take their names from the charged fermions.
+
+A fourth boson, the spin-0 Higgs, which was recently observed in 2012 \cite{higgs}, is responsible for the observed mass of these fermions through electroweak symmetry breaking.
+This mechanism requires coupling between the left and right handed fields for each fermion.
+Notably, only left handed neutrinos (right handed anti-neutrinos) have ever been observed, so initial formulations of the Standard Model did not include right handed neutrino fields.
+This led to a prediction that neutrinos are massless particles, which has now been demonstrated false.
+
+To include neutrino mass in the standard model, one must include right handed neutrinos.
+This results in both a Dirac mass term for the neutrino -- as with the other fermions -- and a Majorana mass term.
+The search for Majorana mass of neutrinos is actively being investigated by the current generation of neutrino experiments, however solar neutrino experiments are insensitive to the origin neutrino mass, so I will only consider the Dirac case, which takes the form
+\begin{equation}
+\mathscr{L_D} = m_{ij} \bar{\nu}_{Ri} \nu_{Li} 
+\end{equation}
+where $m_{ij}$ is the neutrino mass matrix, and $\bar{\nu}_{Ri}$, $\nu_{Li}$ represent the right and left handed neutrino fields.
+If flavor change is disallowed, this matrix must be diagonal.
+With flavor change demonstrated, however, this matrix can take any form.
+The mass matrix $m_{ij}$ may be diagonalized by some matrix $U$ to find superpositions of neutrino flavor states with definite mass.
+This matrix $U$ is known as the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix.
+
+Many of the degrees of freedom in the PMNS matrix are not observable, and it can be parameterized by three "mixing angles" $\theta_{12}$, $\theta_{13}$, and $\theta_{23}$, and a complex phase $\delta$.
+Typically this is done as follows:
+\begin{equation}
+U = 
+\left(
+\begin{array}{ccc}
+1 & 0        & 0\\
+0 & c_{23}   & s_{23}\\
+0 & -s_{23}  & c_{23}\\
+\end{array}
+\right)
+\left(
+\begin{array}{ccc}
+c_{13}              & 0  & s_{13}e^{-i\delta} \\
+0                   & 1  & 0                  \\
+-s_{13}e^{-i\delta} & 0  & c_{13}             \\
+\end{array}
+\right)
+\left(
+\begin{array}{ccc}
+c_{12}  & s_{12} & 0 \\
+-s_{12} & c_{12} & 0 \\
+0       & 0      & 1 \\
+\end{array}
+\right),
+\end{equation}
+where $s_{ij} = \sin{\theta_{ij}}$ and $c_{ij} = \cos{\theta_{ij}}$.
+
 
 \section{Neutrino Oscillation}
 \label{ch:theory}
 
-Neutrinos are produced and interact in the flavor basis, $\ket{\nu_{\alpha}}$ where $\alpha = {e,\mu,\tau}$, however, these are not eigenstates of the vacuum Hamiltonian, whose eigenstates (the eigenstates with definite mass) are denoted as $\ket{\nu_i}$ where $i = {1,2,3}$. 
-The flavor basis is related to the mass basis by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix $U_{\alpha i}$ as follows:
+Neutrinos are produced and interact in the flavor basis, with $\ket{\nu_{\alpha}}$ where $\alpha = {e,\mu,\tau}$, however, these are not eigenstates of the vacuum Hamiltonian, whose eigenstates (the eigenstates with definite mass) are denoted as $\ket{\nu_i}$ where $i = {1,2,3}$. 
+The flavor basis is related to the mass basis by the PMNS matrix $U_{\alpha i}$ as follows:
 \begin{equation}
 \ket{\nu_{\alpha}} = \sum_i U^*_{\alpha i} \ket{\nu_i}.
 \end{equation}
@@ -74,7 +134,7 @@ The primary reaction in the Sun is the proton-proton ($pp$) reaction,
 \begin{equation}
 p+p \rightarrow ^2\mathrm{H}+e^++\nu_e,
 \end{equation}
-which produces the most neutrinos, with a flux of roughly $10^10$ cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
+which produces the most neutrinos, with a flux of roughly $10^{10}$ cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
 The $^2$He from this reaction is involved in further reactions in the proton-proton chain, resulting in other neutrino fluxes.
 Notable among these is the $^8$B reaction which produces neutrinos that are both high energy, around 10 MeV, and relatively high flux, at roughly $10^6$ cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
 $hep$ neutrinos are higher energy, but the much lower flux of roughly $10^4$ cm$^{-2}$s$^{-1}$ makes the already rare neutrino interactions much harder to identify on top of backgrounds.
@@ -174,6 +234,8 @@ Because of this, neutrino detectors typically rely on large masses of target mat
 These low rates mean that neutrino detectors must be isolated from cosmic radiation by being constructed deep underground, or lose the neutrino events in the noise.
 Even then the materials used to construct the detector must have very low intrinsic radioactivity or suffer the same fate.
 
+\section{Radiochemical Experiments}
+
 The earliest neutrino detectors relied on the transmutation of nuclei by neutrino interactions. 
 In the Homestake \cite{homestake} experiment, chlorine nuclei were transformed to argon nuclei via a neutrino capture,
 \begin{equation}
@@ -187,6 +249,8 @@ The gallium experiments GNO \cite{gno}, GALLEX \cite{gallex}, and SAGE \cite{sag
 Notably detectors relying on these radiochemical methods were only sensitive to $\nu_e$ and the solar neutrinos that had oscillated into another flavor were not detected, resulting in the SNP.
 Also of note is that these detectors provide no information about the neutrinos that interact besides their rate: energy and direction information is totally lost in the radiochemical detection scheme.
 
+\section{Real-Time Neutrino Detection}
+
 The next generation of neutrino detectors progressed to real time detection of neutrino interactions.
 These were the water Cherenkov detectors, the most recent of which include SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neturino interaction.
 Pure water detectors like Super-Kamiokande are dominated by an elastic scatter interaction,
@@ -194,10 +258,6 @@ Pure water detectors like Super-Kamiokande are dominated by an elastic scatter i
 \nu_e + e^- \rightarrow \nu_e + e^-,
 \end{equation}
 where the final state electron has a momentum highly correlated with the incident neutrino.
-
-In the following sections I will describe the real-time signals of neutrino interactions and will focus on the detection methods used in SNO, SNO+, and \textsc{Theia} as they are directly applicable to analyses presented later.
-
-\section{Real-Time Neutrino Detection}
 
 Real-time detectors measure properties about each neutrino interaction as they occur instead of simply counting the number of interactions that happened within a given amount of time.
 Analysis of data collected by real-time detectors allows for a statistical determination of the properties of the neutrino flux that produced such interactions.
@@ -361,6 +421,22 @@ Further quantities can be extracted, such as a measure of the isotropy of the ev
 Cherenkov light has a very specific geometry, so good physics events will have a characteristic spatial distribution of detected photons, allowing isotropy to be used to cut instrumental backgrounds.
 Similarly Cherenkov light is very prompt, meaning all photons from a physics event are expected to arrive within tens of nanoseconds, and making the ratio of in-time hits a useful metric for identifying candidate physics events. 
 
+\subsection{Calibration}
+
+To understand detector response and characterize the algorithms that perform the vertex reconstruction, sources with known energy spectra or well defined photon emission times that can be deployed at known positions within the detector are critical.
+Two sources were critical in this effort:
+\begin{description}
+\item[\N \cite{sno_n16}] This isotope is produced with a deturium-tritium neutron generator by captures on $^{16}$O producing $^{17}$O which quickly decays by emitting a proton to leave \N. This isotope is transported in gas form to a calibration source within the detector where it beta decays into a metastable state of $^{16}$O that relaxes, releasing a 6.13-MeV gamma. The initial beta decay provides a tag signal within the source, and the gamma escapes into the detector where it deposits its energy. This source provides the energy scale calibration for SNO by calibrating its photon detection efficiency. It is also used to evaluate energy and position reconstruction systematics as a function of position within the detector and throughout the operational time of the detector.
+\item[Laser Ball \cite{sno_laserball}] A fast dye laser is fiber coupled to an optical diffuser which work together to produce an isotropic light pulse at a well defined time. This is primarily used to calibrate the time offset of each PMT, and can also be used to measure relative detection efficiencies of the PMTs.
+\end{description}
+Additional sources were used to provide calibration points at other energies, such as a beta source using \Li \cite{Tagg:2002} with an endpoint at 14 MeV, and a proton fusion source \cite{fusion_source} producing a gamma at 19.8 MeV.
+Sources producing the decay chains of $^{238}$U and $^{232}$Th were deployed for low energy calibrations.
+Additional the heavy water target was at times intentionally spiked with both radon and $^{24}$Na to provide calibrations unbiased by the presence of shielding that is unavoidable in encapsulated sources.
+Finally, to characterize the neutron detection efficiency critical for the measurement of the NC interaction, two neutron sources were deployed: $^{252}$Cf and an AmBe source.
+
+The deployed sources were lowered into the detector through the neck via the manipulator system.
+This used a central umbilical to provide power or gas-transport to the sources, and additionally used a rope system to accurately position the sources within the detector volume.
+
 \subsection{Previous Results}
 
 As mentioned, SNO was instrumental in demonstrating flavor change of solar neutrinos, and this was possible by using the flavor discrimination of the available interaction channels.
@@ -436,14 +512,33 @@ This will be done by dissolving $^{130}$Te metal in the LAB+PPO scintillator, an
 The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the the electrons, resulting in a delta function spectrum at the endpoint.
 Since the feature of this process is a sharp feature in energy, SNO+ benefits greatly from the enhanced energy resolution of scintillators.
 
+\subsection{Calibration}
+
+SNO+ makes extensive use of SNO calibration hardware in its calibration effort, however upgrades of the deployment hardware are planned for scintillator phase to meet the more stringent background requirements of that phase.
+For water phase, both the SNO \N and Laser Ball sources were used in the same manner as in SNO.
+An upgrade of the SNO Laser Ball is under construction for scintillator phase in SNO+
+Finally, a new calibration source described in \Cref{ch:chsrc} intended to replace the \N calibration of photon detection efficiency for scintillator phase was developed.
 
 \section{\textsc{Theia}}
 
 \textsc{Theia} \cite{asdc_paper} is a proposed large scale (50-100kT) neutrino detector, which aims to support a diverse platform of neutrino physics. 
 Of particular relevance to this thesis is the goal of doing high precision measurements of solar neutrinos \cite{theia_solar}.
+
+\subsection{Conceptual Design}
 The detector design is still in the conceptual phase, but lessons learned from SNO+ and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.
-The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic.
+The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic that is explored further in \Cref{ch:wbls}.
+The baseline design calls for a right cylinder around 40m across filled with WbLS and surrounded with fast photo detectors.
+The optical clarity of WbLS should allow scaling to these sizes without undue loss of photons to attenuation.
+
+\subsection{Sensitivity to Solar Neutrinos}
+With WbLS comes the possibility of simultaneously detecting a Cherenkov and scintillation signal.
+The presence of a Cherenkov signal means that the direction reconstruction is again possible, while the scintillation light will enhance the energy resolution relative to water Cherenkov detectors, and allow for detection of events below the Cherenkov threshold.
+In particular, simulations suggest \textsc{Theia} would have good sensitivity to the CNO cycle neutrinos \cite{theia_solar}.
+
+Since WbLS for \textsc{Theia} would be primary water, this allows for easy loading of metals into the detector.
+Of primary interest are isotopes like $^7$Li which, like the deuterons in the heavy water in SNO, have low enough binding energies for solar neutrinos to participate in a CC interaction.
+As the CC interaction has a visible energy much better correlated with the incident neutrino than the ES interaction, loading such an isotope in WbLS in \textsc{Theia} would enable high resolution measurements of the solar neutrino spectra. 
 
 
 
