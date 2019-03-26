@@ -39,8 +39,8 @@ Example PDFs can be seen in \Cref{fig:solar:pdfs}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{normal_survival_b8density}
-\caption{Example PDFs for $\nu_e$ and $\nu_a$ ES events.}
+\includegraphics[width=0.8\textwidth]{example_pdf}
+\caption{Example PDF for the ES interaction in SNO+.}
 \label{fig:solar:pdfs}
 \end{figure}
 
@@ -104,21 +104,21 @@ These high level cuts are summarized per time bin in Table \ref{tbl:solar:roi}.
 \begin{tabular}{l|c|c|c}
 \textbf{Time Bin} & Open & External Hotspot & Steady State  \\ \hline
 \textbf{Run Range} & 100000-100399 & 100400-102048 & 102049-103402 \\ \hline
-\textbf{Criteria} & ITR $ >= 0.55$ & ITR $ >= 0.55$ & ITR $ >= 0.55$ \\
-& $-0.12 <= \beta_{14} <= 0.95$ & $-0.12 <= \beta_{14} <= 0.95$ & $-0.12 <= \beta_{14} <= 0.95$ \\
-& $4.5 <= E <= 15.0$ & $4.5 <= E <= 15.0$ & $4.5 <= E <= 15.0$ \\
-& $R <= 5.3$ & $R <= 5.3$ (for Z$<$0) & $R <= 5.3$ \\
-& & $R <= 4.2$ (for Z$>$0) & \\
+\textbf{Criteria} & ITR $ \geq 0.55$ & ITR $ \geq 0.55$ & ITR $ \geq 0.55$ \\
+& $-0.12 \leq \beta_{14} \leq 0.95$ & $-0.12 \leq \beta_{14} \leq 0.95$ & $-0.12 \leq \beta_{14} \leq 0.95$ \\
+& $4.5 \leq E \leq 15.0$ & $4.5 \leq E \leq 15.0$ & $4.5 \leq E \leq 15.0$ \\
+& $R \leq 5.3$ & $R \leq 5.3$ (for Z$<$0) & $R \leq 5.3$ \\
+& & $R \leq 4.2$ (for Z$>$0) & \\
 \end{tabular}
 \\[2\baselineskip]
 \begin{tabular}{l|c|c|c}
 \textbf{Time Bin} & AV 1 \& 2 & AV 3 \& 4 & Post-Bubble \\ \hline
 \textbf{Run Range} & 103411-105171 & 105493-105661 & 106716- \\
 & & 106070-106499 & \\ \hline
-\textbf{Criteria} & ITR$ >= 0.55$ & ITR$ >= 0.55$ & ITR$ >= 0.55$ \\
-& $-0.12 <= \beta_{14} <= 0.95$ & $-0.12 <= \beta_{14} <= 0.95$ & $-0.12 <= \beta_{14} <= 0.95$ \\
-& $4.5 <= E <= 15.0$ & $4.5 <= E <= 15.0$ & $4.5 <= E <= 15.0$ \\
-& $R <= 5.3$ & $R <= 5.3$ & $R <= 5.3$ \\
+\textbf{Criteria} & ITR$ \geq 0.55$ & ITR$ \geq 0.55$ & ITR$ \geq 0.55$ \\
+& $-0.12 \leq \beta_{14} \leq 0.95$ & $-0.12 \leq \beta_{14} \leq 0.95$ & $-0.12 \leq \beta_{14} \leq 0.95$ \\
+& $4.5 \leq E \leq 15.0$ & $4.5 \leq E \leq 15.0$ & $4.5 \leq E \leq 15.0$ \\
+& $R \leq 5.3$ & $R \leq 5.3$ & $R \leq 5.3$ \\
 \end{tabular}
 \caption{The high level cuts used in the SNO+ ES analysis. Selected events will pass these cuts.}
 \label{tbl:solar:roi}
@@ -184,25 +184,6 @@ This requires re-smearing each event's direction and rebuilding the angular PDF 
 
 Like the other systematics, the angular resolution was determined by comparing \N data to MC. 
 This systematic does strongly affect the shape of the ES PDF as described by Equation \ref{solar:eq:dirres}, and the constraint on $\Delta$ was determined to be $0^{+0.08}_{-0.19}$.
-
-\begin{table}[]
-\begin{center}
-\begin{tabular}{c|c|c|c}
-Systematic & Uncertainty & Application & Origin \\ \hline
-$E_{scale}$     & $\pm 2.0\%$ & shift-refit $^{+0.0217}_{-0.0204}$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-$E_{res}$       & $\sqrt{(1+0.0018)^2-1.0}\sqrt{E}$ & shift-refit $\pm 0.0005$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{scale}$ & $(^{+0.91}_{-1.01},^{+0.92}_{-1.02},^{+0.91}_{-0.99}) \%$ & shift-refit $^{+0.0261}_{-0.0284}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$ mm & shift-refit $^{+0.0002}_{-0.0001}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{res}$ & $(104.0,98.2,106.2)$ mm & shift-refit $\pm 0.0002$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
-\end{tabular}
-\caption{ Systematic uncertainties considered on the SNO+ ES analysis are shown here.
-The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $4.5-15.0$ MeV.
-For the livetime considered in this analysis approximately 100 solar ES events are expected.}
-\label{tbl:solar:updated_syst}
-\end{center}
-\end{table}
-
 
 \section{Open Data Analysis}
 \label{sec:solar:opendata}
@@ -290,6 +271,25 @@ The additional livetime (approximately 115 days) and additional events this impl
 \label{fig:solar:unpdated_fit_4.5}
 \end{figure}
 
+\begin{table}[]
+\begin{center}
+\begin{tabular}{c|c|c|c}
+Systematic & Uncertainty & Application & Origin \\ \hline
+$E_{scale}$     & $\pm 2.0\%$ & shift-refit $^{+0.0217}_{-0.0204}$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+$E_{res}$       & $\sqrt{(1+0.0018)^2-1.0}\sqrt{E}$ & shift-refit $\pm 0.0005$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{scale}$ & $(^{+0.91}_{-1.01},^{+0.92}_{-1.02},^{+0.91}_{-0.99}) \%$ & shift-refit $^{+0.0261}_{-0.0284}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$ mm & shift-refit $^{+0.0002}_{-0.0001}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{res}$ & $(104.0,98.2,106.2)$ mm & shift-refit $\pm 0.0002$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
+\end{tabular}
+\caption{ Systematic uncertainties considered on the SNO+ ES analysis are shown here.
+The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $4.5-15.0$ MeV.
+For the livetime considered in this analysis approximately 100 solar ES events are expected.}
+\label{tbl:solar:updated_syst}
+\end{center}
+\end{table}
+
 Using the full dataset, the full energy range $4.5-15.0$ MeV can be fit. 
 The results of this fit is shown in Figure \ref{fig:solar:unpdated_fit_4.5} and can also be found in \cite{snoplus_solar}.
+\Cref{tbl:solar:updated_syst} shows in detail the impact of each systematic uncertainty. 
 Notably this fit is consistent with the current global best fit for the $^8$B neutrino flux, $5.16^{+0.13}_{-0.09}$(stat)$^{+0.30}_{-0.26}$(syst) \cite{GlobalSolarFlux}, and demonstrates that SNO+ has achieved very low backgrounds as evidenced by the clear ES peak in the solar direction despite the very low $4.5$ MeV threshold.

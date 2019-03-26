@@ -21,7 +21,8 @@ In the case of a water target, the production of Cherenkov light is well underst
 In order to calibrate the energy response of the detector, a radioactive source with a well understood energy spectrum, such as an \N source, can be deployed and used to calibrate a simulation model.
 In this case, with Cherenkov production being simulated accurately, only the response of the detector needs to be tuned in simulation to reproduce the data.
 
-When SNO+ switches to liquid scintillator, this situation is more complicated because the scintillation process is not as easy to model, as the photon yield typically must be measured for any independent batch of scintillating liquid.
+When SNO+ switches to liquid scintillator, this situation is more complicated because the scintillation process is not as easy to model.
+For instance, the photon yield typically must be measured for any independent batch of scintillating liquid, whereas the production of Cherenkov light is calculable. 
 This means that calibrating the energy scale of the detector with something like an \N source would be unable to disentangle changes to scintillation output from changes in detector response.
 Disentangling these two effects can be achieved by deploying a source that produces a well understood and easily simulated optical signal. 
 The Cherenkov source is designed to produce such a signal through tagged Cherenkov events.
@@ -42,11 +43,11 @@ This visible Cherenkov light is easy to model, allowing for a measurement of det
 
 The decays following \Li in the decay chain (see \Cref{fig:decayscheme}) results in a very fast alpha decay following the production of the beta.
 The chamber in which the decay occurs will be filled with helium gas in which these alphas will produce scintillation light.
-This scintillation light is hard UV, around 80-nm, and impossible for traditional PMTs to detect, so the chamber will contain a wavelength shifter,  Tetraphenyl Butadiene (TPB), to convert the UV photons to approximately 400-nm light.
-These shifted photons can then be detected by an internal to produce a tag signal for the primary \Li decays.
+This scintillation light is hard UV, around 80-nm, and impossible for traditional PMTs to detect, so the chamber will contain a wavelength shifter,  Tetraphenyl Butadiene (TPB), to convert the UV photons to approximately 420-nm light.
+These shifted photons can then be detected by an internal PMT to produce a tag signal for the primary \Li decays.
 
 Because this is a calibrated light source, any other processes that may produce optical photons should be well understood and, where possible, eliminated with design choices.
-The alpha scintillation, for instance, light must be contained within the source. 
+The alpha scintillation, especially including the wavelength shifted photons, must be contained within the source. 
 Additionally, any energetic particles produced in the \Li decay must be taken into account.
 The UVA acrylic is designed thick enough to stop all of the \Li betas from exiting, however these energetic electrons can produce Bremsstrahlung gammas that do escape the source.
 When deployed in water phase these gammas will not produce sufficient light to interfere with analysis of the data, however in scintillator phase these will be a significant background to the measurement, and must be cut in an offline analysis. 
@@ -54,7 +55,7 @@ When deployed in water phase these gammas will not produce sufficient light to i
 \subsection{Cherenkov Event Generation}
 
 The \Li (t$_{1/2}$=0.838\,s) isotope is created using a deuterium-tritium neutron generator in conjunction with a $^{11}$B target.
-Neutron captures on $^{11}$B produce $^{12}$B which alpha decays to \Li.
+Neutron captures on $^{11}$B produce $^{12}$B, which alpha decays to \Li.
 The \Li is transported by helium gas to the spherical decay chamber at the center of the source as shown in Figure~\ref{fig:design-1}. 
 The energetic beta particles produced by the decay are stopped in the 6\,cm-thick spherical acrylic wall and produce Cherenkov light. 
 The alphas from the subsequent $^{8}$Be decay produce scintillation light in the helium, which is then wavelength shifted by TPB present in the lining of the decay chamber.
@@ -199,7 +200,7 @@ Additionally, a Weld-On\,\#40 bond maintains good optical properties, is very st
 The bonding of the two acrylic blocks that make up the Cherenkov source decay chamber is a critical step in the Cherenkov source construction. 
 The procedure for this bonding was developed after many tests and mock-bonding walk-throughs. 
 The bonding procedure describes how to safely and cleanly prepare and apply the bonding agent, how to align and clamp the two acrylic pieces together, and how to deal with the excess cement that will leak inside the decay chamber.
-It can be found in full in \Cref{chap:bondproc}
+It can be found in full in \Cref{chap:bondproc}.
 After this step, the source can proceed to the final machining cycle to form the outer spherical surface, and is then ready for the application of the decay chamber lining.
 
 \subsection{Decay Chamber Lining}
@@ -516,12 +517,12 @@ There is some contamination from \Li betas which clip the PMT prior to exiting t
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{data_tagging}
-\caption{\label{fig:chsrc_classify} Shown here are all events where the tag PMT crossed threshold during detector triggers during source deployment. Note the tag threshold was set quite low, resulting in a population of "other" events inconsistent with true alphas or beta contamination. Red lines show nominal cut values used in classification.}
+\caption{\label{fig:chsrc_classify} Shown here are all events where the tag PMT crossed threshold during detector triggers during source deployment. Note the tag threshold was set quite low, resulting in a population of ``other" events inconsistent with true alphas or beta contamination. Red lines show nominal cut values used in classification.}
 \end{figure}
 
 These events can be well separated in a 2D histogram of total charge (QHL) vs pulse height from the tag PMT. 
 Classifications of events with nominal cuts are shown in \Cref{fig:chsrc_classify}.
-The population of "other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
+The population of ``other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
 The distribution of number of hit PMTs in the detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized trace for each class.
 The alphas have an nhit distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
 
@@ -566,9 +567,9 @@ The most likely cause for this is uncertainty in the precise absorption characte
 It is possible that tweaking the source geometry in MC could correct this systematic offset, however it is sufficient to adjust the MC collection efficiency in future phases to reproduce the measured collection efficiency ratio.
 
 
-\section{Scintillator Analysis plan}
+\section{Scintillator Analysis Plan}
 The potential of the Cherenkov source in obtaining measures of the overall light collection efficiency in scintillator phase has been investigated using RAT simulations. 
-The effect and elimination of scintillation light resulting from unwanted bremsstrahlung $\gamma s$  was studied.  
+The effect and elimination of scintillation light resulting from unwanted bremsstrahlung gammas was studied.  
 In all of the simulations, the Cherenkov source was positioned at the center of the detector, and the source was assumed to be constructed from UV-absorbent (UVA) acrylic.
  
  \begin{figure}

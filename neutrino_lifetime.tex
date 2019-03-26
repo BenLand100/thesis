@@ -46,8 +46,8 @@ P_{ea} & = & \sum_i \psi_i |U_{i\mu}|^2 + \psi_i |U_{i\tau}|^2.
 
 The three neutrino mass states each have a lifetime associated with them $k_i = \tau_i / m_i$, which are all physically interesting quantities to measure.
 However, the characteristic energies of $^8$B neutrinos and the electron densities at the core of the Sun conspire to make the $^8$B flux a nearly pure flux of $\nu_2$.
-The ultimate result of this is that an analysis of SNO data consisting of $^8$B neutrinos will be insensitive to $\nu_1$ or $\nu_2$ decay.
-This is shown in \Cref{fig:frac_not_nu_2}, which shows the fraction of neutrinos produced at electron densities consistent with $^8$B neutrinos that exit the Sun as $\nu_2$ along with a typical $^8$B energy spectrum.
+The ultimate result of this is that an analysis of SNO data consisting of $^8$B neutrinos will be insensitive to $\nu_1$ or $\nu_3$ decay.
+This is shown in \Cref{fig:frac_not_nu_2}, which shows the fraction of neutrinos (produced at electron densities consistent with $^8$B neutrinos) that exit the Sun as $\nu_2$, along with a typical $^8$B energy spectrum.
 Weighting the former by the latter and averaging, one finds that less than $4\%$ of the detectable flux is not $\nu_2$
 Therefore, for the purposes of this analysis, the lifetimes of mass state $\nu_1$ and $\nu_3$ are fixed at infinity as data taken by SNO for $^8$B neutrinos is nominally insensitive to $\nu_1$ or $\nu_3$ decay.
 
@@ -112,9 +112,9 @@ In all cases, fundamental constants are taken from the Particle Data Group (PDG)
 \subsubsection{Neutrino Mixing}
 Neutrino mixing parameters taken from KamLAND~\cite{kamland} and Daya Bay~\cite{dayabay} are reproduced in \Cref{tbl:mixing_params}. 
 Parameters from KamLAND and Daya Bay were used to avoid bias from using SNO results in this analysis.
-As these measurements were done at Earth with neutrinos produced on Earth they are expected to be uncorrelated with effects of $\nu_2$ decay.
+As these measurements were done at Earth with neutrinos produced on Earth, they are expected to be uncorrelated with effects of $\nu_2$ decay.
 The current limit on $k_2$ constrains it to be greater than $\approx7\times10^{-4}$~\cite{picoreti}, which means at length scales comparable to the diameter of the earth the maximum flux lost by $\nu_2$ decay for a $10$ MeV neutrino is given by
-$1-e^{-2R_{earth}/(E k_2)} \approx 6\times10^{-6}$
+$1-e^{-2R_{earth}/(E k_2)} \approx 6\times10^{-6}$,
 which would have negligible impact on values quoted for mixing parameters.
 
 \begin{table}
@@ -136,7 +136,7 @@ Reproduced here are the mixing parameters used in this analysis taken from Daya 
 \subsubsection{Standard Solar Model}
 
 The model implemented here uses the distribution of electron density and distribution of neutrino fluxes calculated in the BS05(OP) Standard Solar Model (SSM)~\cite{bs05op}, which are reproduced in \Cref{fig:ssm}. 
-Uncertainties in these values are not quoted in the original source and are therefore not considered in this fit.
+Uncertainties in these values are not quoted in the original source and are therefore not considered here.
 These predictions are expected to be unaffected by potential $\nu_2$ decay as they are not constrained with neutrino flux measurements.
 
 \begin{figure}
@@ -226,9 +226,10 @@ Systematic uncertainties are treated in three distinct ways.
 
 The procedure for determining the central values and uncertainties of scanned parameters is as follows:
 \begin{enumerate}
-\item A parameter is scanned around its current best guess
-\item An asymmetric gaussian is fit to the scan $-\log{L}$ to determine the central and upper/lower uncertainties.
-\item The best guess for that parameter is updated to the fitted values just determined.
+\item A parameter is scanned around its current best guess with other systematics held at their best guess and floated parameters minimized at each point.
+\item This produces a negative log likelihood profile as a function of the parameter.
+\item An asymmetric gaussian is fit to the profile of the negative log likeihood to determine the central and upper/lower uncertainties for the parameter.
+\item The best guess for that parameter is updated to the central value of that fit.
 \item The next parameter is considered at step 1 until all parameters have been scanned.
 \item If any parameter central value has shifted relative to the previous iteration, the algorithm repeats until stable minima are found.
 \end{enumerate}
@@ -260,9 +261,9 @@ Previous SNO analyses searching for oscillation to sterile neutrinos \cite{plthe
 In this analysis since there is only one model parameter of interest, $k_2$, a strategy of scanning $k_2$ manually while floating all other parameters seems to be ideal. 
 With that in mind, the fit strategy is:
 \begin{enumerate}
-\item Perform a scan over $k_2$ minimizing floated parameters at each point. For data fits this can be done along with the other scanned nuisance parameters.
-\item At the best $\chi^2$ value, use MINOS fit errors (implicitly with $k_2$ fixed) as the total uncertainty on all parameters except the highly correlated $k_2$ and $^8$B flux.
-\item For $k_2$ find the total uncertainty by at the point where $\Delta(-LL)$ in the scan is $0.5$.
+\item Perform a scan over $k_2$ minimizing floated parameters at each point producing a likelihood profile. For data fits this can be done along with the other scanned nuisance parameters.
+\item At the best, use MINOS fit errors (implicitly with $k_2$ fixed) as the total uncertainty on all parameters except the highly correlated $k_2$ and $^8$B flux.
+\item For $k_2$ find the total uncertainty by at the point where $\Delta(-LL)$ in the profile is $0.5$.
 \item For the total uncertainty on $^8$B flux this value is scanned the same way as $k_2$ to properly account for the correlations in with $k_2$.
 \item Combine with these uncertainties on $k_2$ and the $^8$B flux additional shift and refit uncertainties from scanned nuisance parameters.
 \end{enumerate}
@@ -330,8 +331,8 @@ In short, the results are consistent with an unbiased fit that properly estimate
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\columnwidth]{bias_nofit}
-\includegraphics[width=0.85\columnwidth]{pull_nofit}
+\includegraphics[width=0.82\columnwidth]{bias_nofit}
+\includegraphics[width=0.82\columnwidth]{pull_nofit}
 \caption{
 The bias and pull of all fitted parameters with signal only datasets. Gray bars and dashed lines represent expected fluctuations due to limited statistics.
 }
@@ -346,6 +347,8 @@ The relative uncertainty of all fitted parameters with signal only datasets.
 }
 \label{fig:sigonly_reluncert}
 \end{figure}
+
+\clearpage
 
 \subsection{Solar-Signal + High Statistics Backgrounds}
 
@@ -401,6 +404,8 @@ The relative uncertainty of all fitted parameters with signal + high stats backg
 }
 \label{fig:noextbitl_reluncert}
 \end{figure}
+
+\clearpage
 
 \subsection{Solar-Signal + All Backgrounds}
 \label{3phase_allbg}
@@ -459,6 +464,8 @@ The relative uncertainty of all fitted parameters with signal + all backgrounds 
 \label{fig:allbg_reluncert}
 \end{figure}
 
+\clearpage
+
 \subsection{Independent Impact of Systematics}
 
 The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset with all backgrounds included. 
@@ -470,14 +477,14 @@ When summed in quadrature, the total uncertainty on $k_2$ is found to be $^{+13.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\columnwidth]{basic_1_2}
+\includegraphics[width=0.85\columnwidth]{basic_1_2}
 \caption{The calculated systematic effect on $k_2$ from the first half of the detector systematic parameters in the fit is shown here. Red represents positive (blue, negative) fractional error.}
 \label{fig:detector_systematics1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\columnwidth]{basic_2_2}
+\includegraphics[width=0.85\columnwidth]{basic_2_2}
 \caption{The calculated systematic effect on $k_2$ from the second half of the detector systematic parameters in the fit is shown here. Red represents positive (blue, negative) fractional error.}
 \label{fig:detector_systematics2}
 \end{figure}
@@ -504,16 +511,16 @@ Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{k2_scan_third} \\
+\includegraphics[width=0.85\columnwidth]{k2_scan_third} \\
 \vspace{12pt}
-\includegraphics[width=0.95\columnwidth]{flux_scan_third}
+\includegraphics[width=0.85\columnwidth]{flux_scan_third}
 \caption{The scans of $k_2$ and the $^8$B flux for the 1/3 dataset. The red points are the scan values, and the blue line is a fit to the minimum.}
 \label{fig:third_scans}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{prior_deviation_third}
+\includegraphics[width=0.85\columnwidth]{prior_deviation_third}
 \caption{The fractional deviation of each neutrino parameter with a prior constraint from its prior. The errors shown are the fractional errors of the fit.}
 \label{fig:priors_third}
 \end{figure}
@@ -540,23 +547,23 @@ There is some tension between the SNO result and the flux fitted with with $k_2$
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{k2_scan_final} \\
+\includegraphics[width=0.85\columnwidth]{k2_scan_final} \\
 \vspace{12pt}
-\includegraphics[width=0.95\columnwidth]{flux_scan_final}
+\includegraphics[width=0.85\columnwidth]{flux_scan_final}
 \caption{The scans of $k_2$ and the $^8$B flux for the full dataset. The red points are the scan values, and the blue line is a fit to the minimum.}
 \label{fig:final_scans}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{prior_deviation_final}
+\includegraphics[width=0.85\columnwidth]{prior_deviation_final}
 \caption{The fractional deviation of each neutrino parameter with a prior constraint from its prior. The errors shown are the fractional errors of the fit.}
 \label{fig:priors_final}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{sno_8b_stat_syst_profile.pdf}
+\includegraphics[width=0.85\columnwidth]{sno_8b_stat_syst_profile.pdf}
 \caption{The scans of $k_2$ with and without systematic effects. Note that in both cases the minimum has been shifted to zero. With systematics included the minimum is less significant relative to the limiting value at $k_2 \rightarrow \infty$ as expected.}
 \label{fig:systematic_scans}
 \end{figure}
@@ -570,12 +577,12 @@ This result was obtained by combining measurements from many solar experiments, 
 
 Experiments have made measurements of solar neutrino interaction rates and published measured fluxes both assuming oscillations (a mixture of neutrino flavors) and no oscillations (assuming a pure electron neutrino flux). 
 Practically, the oscillated fluxes are tricky to use because they always depend on a particular set of mixing parameters.
-Fortunately, given an unoscillated flux, $\Phi_e$, it is straightforward to recover the true neutrino flux, $\Phi_T$ given some oscillation model and knowing the ratio of cross sections for electron $\sigma_e$ and other flavor $\sigma_a$ neutrinos.
+Fortunately, given an unoscillated flux of electron neutrinos, $\Phi_e$, it is straightforward to recover the true neutrino flux, $\Phi_T$ given some oscillation model and knowing the ratio of cross sections for electron $\sigma_e$ and other flavor $\sigma_a$ neutrinos.
 \begin{equation}
 \Phi_e = (P_{ee} + P_{ea} \frac{\sigma_a}{\sigma_e})\Phi_T
 \label{flux_conv}
 \end{equation}
-The theory described in \Cref{lifetime_model} predicts a value for $P_{ex}$ given a set of neutrino mixing parameters, a standard solar model, and a set of neutrino lifetimes.
+The theory described in \Cref{lifetime_model} predicts a value for both $P_{ee}$ and $P_{ea}$ given a set of neutrino mixing parameters, a standard solar model, and a set of neutrino lifetimes.
 Since the survival probabilities and cross sections are energy dependent, average quantities weighted by the detected energy spectrum are used.
 
 The total neutrino flux inferred from the survival probability can be directly compared to a standard solar model flux $\Phi_{SSM}$ with a Gaussian constraint term:
@@ -597,9 +604,9 @@ This produces the profiles in \Cref{fig:8b_profiles}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.58\columnwidth]{superk_8b}
-\includegraphics[width=0.58\columnwidth]{borexino_8b}
-\includegraphics[width=0.58\columnwidth]{kamland_8b}
+\includegraphics[width=0.5\columnwidth]{superk_8b}
+\includegraphics[width=0.5\columnwidth]{borexino_8b}
+\includegraphics[width=0.5\columnwidth]{kamland_8b}
 \caption{The profiled likelihood for the parameter $k_2$ using $^8$B measurements from SuperK~\cite{superkiv}, Borexino~\cite{borexino8b}, and KamLAND~\cite{kamland8b}.}
 \label{fig:8b_profiles}
 \end{figure}
@@ -697,13 +704,13 @@ Also, the references cited there tend to assume $P_{ee} = 1$ when calculating ex
 A more recent paper~\cite{bachall_lma} does a modern calculation of the expected interaction rates per flux component that is directly comparable to the model used here.
 
 Using the fluxes and mixing parameters quoted in Table I of \cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the LMA solution from Table I of \cite{bachall_lma}.
-The column showing the 'old' parameters are using the fluxes and mixing parameters from \cite{bachall_lma} while the column showing 'new' parameters uses the SSM and mixing parameters used elsewhere in this analysis.
+The column showing the `old' parameters are using the fluxes and mixing parameters from \cite{bachall_lma} while the column showing `new' parameters uses the SSM and mixing parameters used elsewhere in this analysis.
 In all cases there is pretty good agreement with the measured rate from Homestake and between models.
 
 \begin{table}
 \centering
 \begin{tabular}{c|r|r|r}
-Component & \cite{bachall_lma} Rate (SNU) & 'Old' Parameters (SNU) & 'New' parameters (SNU) \\ \hline
+Component & \cite{bachall_lma} Rate (SNU) & `Old' Parameters (SNU) & `New' parameters (SNU) \\ \hline
 $pp$		& 0.0	&	0.00 & 0.00		\\
 $pep$		& 0.1 	&	0.13 & 0.12		\\ 
 $^7$Be		& 0.46	&	0.45 & 0.30		\\
@@ -713,7 +720,7 @@ $^8$B		& 1.8 	&	1.82 & 2.20		\\
 $hep$		& 0.1 	&	0.07 & 0.01		\\ \hline
 Total		& 2.6	&	2.69 & 2.75		\\ \hline
 \end{tabular}
-\caption{\label{tbl:chlorine}Shown here are the predicted interaction rates of each neutrino flux with Chlorine both from an independent calculation \cite{bachall_lma}, using this analysis' code with the 'old' mixing and flux parameters in that reference, and again with the flux and mixing parameters used elsewhere in this analysis.}
+\caption{\label{tbl:chlorine}Shown here are the predicted interaction rates of each neutrino flux with Chlorine both from an independent calculation \cite{bachall_lma}, using this analysis' code with the `old' mixing and flux parameters in that reference, and again with the flux and mixing parameters used elsewhere in this analysis.}
 \end{table}
 
 \subsection{Combined Result}
@@ -722,7 +729,7 @@ Total		& 2.6	&	2.69 & 2.75		\\ \hline
 The likelihood profiles of individual experiments are multiplied (negative log likelihoods added) together to arrive at a combined likelihood profile shown in \Cref{fig:combined_profile}. 
 Explicitly this includes: $^8$B measurements from KamLAND, Borexino, SuperK (I,II,III,IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
 The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$ s/eV. 
-This is better than the the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
+This is better than the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
 Notably the presence of a relatively significant minimum in the new SNO results is not particularly beneficial here since it occurs near the location of the limit.
 
 \subsection{Cross-Check with Previous Limit}
@@ -742,14 +749,14 @@ Unfortunately with the brevity of the previous paper a more direct comparison do
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{combined_profile}
+\includegraphics[width=0.85\columnwidth]{combined_profile}
 \caption{The combined profiled likelihood described in \Cref{sec:combobreaker}.}
 \label{fig:combined_profile}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\columnwidth]{cross_check_profile}
+\includegraphics[width=0.85\columnwidth]{cross_check_profile}
 \caption{The combined profile intended to reproduce the result in \cite{picoreti} by using the same experimental measurements. Notably the analysis methods are not identical so the results should be similar but do not match exactly.}
 \label{fig:cross_check_profile}
 \end{figure}
