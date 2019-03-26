@@ -71,7 +71,7 @@ These data selection criteria described in the following sections were also appl
 
 \subsection{Low Level Cuts}
 
-The SNO+ trigger system records a 32 bit integer where each bit is a boolean mask of the state of the trigger system for each event.
+The SNO+ trigger system records a 32~bit integer where each bit is a boolean mask of the state of the trigger system for each event.
 This trigger word identifies, at a very low level, what caused the detector to take data.
 Low level event selection requires that the trigger word include a physics trigger based on the number of coincidentally hit PMTs, and excludes any externally forced triggers that may be in the data.
 The following expression evaluates to logical false for selected events.
@@ -81,7 +81,7 @@ The following expression evaluates to logical false for selected events.
 \end{verbatim}
 
 Various data cleaning classifiers are run over the raw data as part of reconstruction, with the goal of identifying instrumental backgrounds or other non-physics events.
-These classifiers produce another 32 bit word which can be checked for event quality.
+These classifiers produce another 32~bit word which can be checked for event quality.
 A check of the data cleaning word requires that all standard data cleaning classifiers did not mark the event as dirty using the analysis mask 0x7FFE.
 The following expression evaluates to logical false for selected events.
 
@@ -95,7 +95,7 @@ Once an event satisfies low level even selection criteria, the results of event 
 A valid reconstruction result is then required, meaning the reconstruction algorithms successfully converged to some value.
 High level cuts are applied on the in time ratio (ITR), representing the number of hit PMTs within a prompt time window to all hit PMTs, and isotropy ($\beta_{14}$), representing the isotropy of the pattern of hit PMTs.
 The region of interest (ROI) for the analysis is then selected with cuts on energy and radius.
-Note that initially this analysis only planned to extend down to 5.5 MeV, however, evaluation of the actual data indicated that backgrounds were low enough to consider events down to 4.5 MeV.
+Note that initially this analysis only planned to extend down to 5.5~MeV, however, evaluation of the actual data indicated that backgrounds were low enough to consider events down to 4.5~MeV.
 Other analyses of this data identified a region of high radioactivity near the top of the detector, and for this a z dependent radial cut was adopted.
 These high level cuts are summarized per time bin in Table \ref{tbl:solar:roi}.
 
@@ -188,7 +188,7 @@ This systematic does strongly affect the shape of the ES PDF as described by Equ
 \section{Open Data Analysis}
 \label{sec:solar:opendata}
 
-To understand detector data, constrain backgrounds, and aid in the development of analyses, SNO+ provided about 16 days of detector livetime with no blinding applied.
+To understand detector data, constrain backgrounds, and aid in the development of analyses, SNO+ provided about 16~days of detector livetime with no blinding applied.
 The remaining data was withheld until analyses were developed so that unbiased results could be extracted.
 
 \begin{table}
@@ -198,7 +198,7 @@ The remaining data was withheld until analyses were developed so that unbiased r
 \label{tbl:solar:openev}
 \end{table}
 
-The following preliminary diagnostic plots are created with a higher energy threshold of 5.5 MeV.
+The following preliminary diagnostic plots are created with a higher energy threshold of 5.5~MeV.
 After applying the data selection criteria to this open data, there are 5 candidate ES events selected.
 These candidates are shown with with various observables in Table \ref{tbl:solar:openev}.
 The SNO+ date for the runs included along with the 5 selected events is shown in Figure \ref{fig:solar:opendata} to gain confidence that these events are not suspiciously distributed in time.
@@ -230,15 +230,15 @@ The best fit is shown plotted with the binned data in Figure \Cref{fig:solar:ope
 While this result disagrees with the expected $^8$B flux at over one sigma, it is expected that this is a statistical fluctuation due to very few statistics.
 
 Within SNO+ there is interest in opening up the energy ROI for this analysis to include as many solar events as possible.
-To that end, an identical analysis was performed, but with a lower bound on the energy of 4.5 MeV.
+To that end, an identical analysis was performed, but with a lower bound on the energy of 4.5~MeV.
 This larger energy ROI yields the results \Cref{fig:solar:open55}, which notably agrees better with the expected $^8$B flux and shows higher background expected at lower energies.
-The justification for the 4.5 MeV threshold used for all other results in this chapter is the clear ES peak observed in this open data with a 4.5 MeV threshold.
+The justification for the 4.5~MeV threshold used for all other results in this chapter is the clear ES peak observed in this open data with a 4.5~MeV threshold.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{b8_es_fit_4_5}
 \caption{
-Summary plot of the $^8$B ES fit on the open dataset using the alternative energy range 4.5-15.0 MeV.
+Summary plot of the $^8$B ES fit on the open dataset using the alternative energy range 4.5-15.0~MeV.
 The shaded regions show the fit uncertainty, with the selected events shown in blue.
 The fitted flux scale is shown relative to the current global predictions \cite{GlobalSolarFlux}.
 }
@@ -249,7 +249,7 @@ The fitted flux scale is shown relative to the current global predictions \cite{
 \centering
 \includegraphics[width=\textwidth]{b8_es_fit_5_5}
 \caption{
-Summary plot of the $^8$B ES fit on the open dataset using the alternative energy range 5.5-15.0 MeV.
+Summary plot of the $^8$B ES fit on the open dataset using the alternative energy range 5.5-15.0~MeV.
 The shaded regions show the fit uncertainty, with the selected events shown in blue.
 The fitted flux scale is shown relative to the current global predictions \cite{GlobalSolarFlux}.
 }
@@ -262,12 +262,12 @@ The fitted flux scale is shown relative to the current global predictions \cite{
 \label{sec:solar:updated}
 
 Following a review of the open data analysis as described in the previous section, the SNO+ Analysis Committee approved the analysis procedure to move ahead with the entire SNO+ water phase dataset.
-The additional livetime (approximately 115 days) and additional events this implies allows for finer data binning of 0.05 $\cos{\theta_{sun}}$ intervals.
+The additional livetime (approximately 115~days) and additional events this implies allows for finer data binning of 0.05~$\cos{\theta_{sun}}$ intervals.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{8b_es_4_5_15_0_fit_float_ang_res}
-\caption{Summary plot of the SNO+ $^8$B ES analysis on the full dataset using the energy range $4.5-15.0$ MeV.}
+\caption{Summary plot of the SNO+ $^8$B ES analysis on the full dataset using the energy range $4.5-15.0$~MeV.}
 \label{fig:solar:unpdated_fit_4.5}
 \end{figure}
 
@@ -278,18 +278,18 @@ Systematic & Uncertainty & Application & Origin \\ \hline
 $E_{scale}$     & $\pm 2.0\%$ & shift-refit $^{+0.0217}_{-0.0204}$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
 $E_{res}$       & $\sqrt{(1+0.0018)^2-1.0}\sqrt{E}$ & shift-refit $\pm 0.0005$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
 ${XYZ}_{scale}$ & $(^{+0.91}_{-1.01},^{+0.92}_{-1.02},^{+0.91}_{-0.99}) \%$ & shift-refit $^{+0.0261}_{-0.0284}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$ mm & shift-refit $^{+0.0002}_{-0.0001}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
-${XYZ}_{res}$ & $(104.0,98.2,106.2)$ mm & shift-refit $\pm 0.0002$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$~mm & shift-refit $^{+0.0002}_{-0.0001}$ & \N  \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
+${XYZ}_{res}$ & $(104.0,98.2,106.2)$~mm & shift-refit $\pm 0.0002$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
 Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
 \end{tabular}
 \caption{ Systematic uncertainties considered on the SNO+ ES analysis are shown here.
-The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $4.5-15.0$ MeV.
+The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $4.5-15.0$~MeV.
 For the livetime considered in this analysis approximately 100 solar ES events are expected.}
 \label{tbl:solar:updated_syst}
 \end{center}
 \end{table}
 
-Using the full dataset, the full energy range $4.5-15.0$ MeV can be fit. 
+Using the full dataset, the full energy range $4.5-15.0$~MeV can be fit. 
 The results of this fit is shown in Figure \ref{fig:solar:unpdated_fit_4.5} and can also be found in \cite{snoplus_solar}.
 \Cref{tbl:solar:updated_syst} shows in detail the impact of each systematic uncertainty. 
-Notably this fit is consistent with the current global best fit for the $^8$B neutrino flux, $5.16^{+0.13}_{-0.09}$(stat)$^{+0.30}_{-0.26}$(syst) \cite{GlobalSolarFlux}, and demonstrates that SNO+ has achieved very low backgrounds as evidenced by the clear ES peak in the solar direction despite the very low $4.5$ MeV threshold.
+Notably this fit is consistent with the current global best fit for the $^8$B neutrino flux, $5.16^{+0.13}_{-0.09}$(stat)$^{+0.30}_{-0.26}$(syst) \cite{GlobalSolarFlux}, and demonstrates that SNO+ has achieved very low backgrounds as evidenced by the clear ES peak in the solar direction despite the very low $4.5$~MeV threshold.

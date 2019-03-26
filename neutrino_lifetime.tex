@@ -30,7 +30,7 @@ Therefore, using the formalism given in \Cref{ch:theory}, the detected flux $\ps
 \psi_i \approx  e^{-L_\odot / (E k_i)} \phi_i =  e^{-L_\odot / (E k_i)} \left| \braket{\nu_{m i}(V_e)}{\nu_e} \right|^2
 \label{decay}
 \end{equation}
-where $L_\odot$ is the Earth-Sun distance (1 A.U.) and $E$ is the neutrino energy.
+where $L_\odot$ is the Earth-Sun distance (1~A.U.) and $E$ is the neutrino energy.
 The survival probabilities for electron and muon/tau flavor neutrinos in a decaying scenario may then be calculated with appropriate factors from the PMNS matrix in the usual way,
 \begin{equation}
 \begin{array}{rcl}
@@ -121,9 +121,9 @@ which would have negligible impact on values quoted for mixing parameters.
 \centering
 \begin{tabular}{c|c|c}
 Parameter & Value & Ref \\ \hline
-$ \Delta m ^2 _{21} $ & $7.58^{+0.14}_{-0.13}(stat)^{+0.15}_{-0.15}(syst) \times 10^{-5}$ eV$^2$ & \cite{kamland} \\ \hline
+$ \Delta m ^2 _{21} $ & $7.58^{+0.14}_{-0.13}(stat)^{+0.15}_{-0.15}(syst) \times 10^{-5}$~eV$^2$ & \cite{kamland} \\ \hline
 $ \tan^2 \theta_{12} $ & $0.56^{+0.10}_{-0.07}(stat)^{+0.10}_{-0.06}(syst) $ & \cite{kamland} \\ \hline
-$ |\Delta m ^2 _{32}| $ & $2.45\pm0.06(stat)\pm0.06(syst) \times 10^{-3}$ ev$^2$ & \cite{dayabay} \\ \hline
+$ |\Delta m ^2 _{32}| $ & $2.45\pm0.06(stat)\pm0.06(syst) \times 10^{-3}$~ev$^2$ & \cite{dayabay} \\ \hline
 $ \sin^2 2\theta_{13} $ & $0.0841\pm0.0072(stat)\pm0.0019(syst)$ & \cite{dayabay} \\ \hline
 $ \sin^2 \theta_{23} $ & $0.5^{+0.058}_{-0.062}$ & \cite{superkth23} \\ 
 \end{tabular}
@@ -152,8 +152,8 @@ The electron density in the Sun as a function of radius and the fraction of the 
 \subsubsection{$^8$B Flux}
 
 As earth bound measurements of the solar neutrino flux would be biased by neutrino decay, a theoretical prediction for the $^8$B flux is required.
-Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$ cm$^{-2}$s$^{-1}$ with $11\%$ uncertainty~\cite{serenelli}, which is used as a prior in this fit.
-For reference the flux from BS05(OP)~\cite{bs05op} traditionally used in SNO analyses is $5.69\times10^6$ cm$^{-2}$s$^{-1}$.
+Serenelli's most recent prediction yields a $^8$B flux of $5.88\times10^{6}$~cm$^{-2}$s$^{-1}$ with $11\%$ uncertainty~\cite{serenelli}, which is used as a prior in this fit.
+For reference the flux from BS05(OP)~\cite{bs05op} traditionally used in SNO analyses is $5.69\times10^6$~cm$^{-2}$s$^{-1}$.
 See \Cref{strategy} for further discussion of how the flux is handled.
 
 \section{Fit Implementation}
@@ -199,8 +199,9 @@ The likelihood fit determines the relative contribution of each event class nece
 To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a MC method.
 SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
 The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
-Most PDFs are constructed by directly binning simulated data produced by SNOMAN, however, the physics encoded by the neutrino survival probabilities is included by reweighting solar neutrino events from SNOMAN while building the PDFs for solar signals.
 
+Most PDFs are constructed by directly binning simulated data produced by SNOMAN.
+The physics encoded by the neutrino survival probabilities is included by reweighting solar neutrino events from SNOMAN while building the PDFs for solar signals.
 For the radioactivity of the PMT glass, only tails of this high-rate background fall within the ROI, and it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
 In this case, analytical forms were used instead, and the parameters controlling these analytical forms were estimated from the data and treated as systematic uncertainties.
 
@@ -266,7 +267,7 @@ With that in mind, the fit strategy is:
 \begin{enumerate}
 \item Perform a scan over $k_2$ minimizing floated parameters at each point producing a likelihood profile. For data fits this can be done along with the other scanned nuisance parameters.
 \item At the best, use MINOS fit errors (implicitly with $k_2$ fixed) as the total uncertainty on all parameters except the highly correlated $k_2$ and $^8$B flux.
-\item For $k_2$ find the total uncertainty by at the point where $\Delta(-LL)$ in the profile is $0.5$.
+\item For $k_2$ find the total uncertainty by at the point where change in negative log likelihood profile with respect to the minimum is $0.5$.
 \item For the total uncertainty on $^8$B flux this value is scanned the same way as $k_2$ to properly account for the correlations in with $k_2$.
 \item Combine with these uncertainties on $k_2$ and the $^8$B flux additional shift and refit uncertainties from scanned nuisance parameters.
 \end{enumerate}
@@ -305,7 +306,7 @@ For solar neutrino signals the BS05(OP)~\cite{bs05op} flux predictions were used
 These sets can then be combined into fake datasets with realistic statistics containing only the event classes and phases desired.
 
 The solar neutrino signals from SNO MC, which were generated with a flat survival probability spectrum, were reweighted with the lifetime model as described in \ref{lifetime_model} 
-A representative value of $k_2 = 10^{-4}$ s/eV was seeded into the fake sets to test the fit performance near the current limit of $\approx7\times10^{-4}$~\cite{picoreti}.
+A representative value of $k_2 = 10^{-4}$~s/eV was seeded into the fake sets to test the fit performance near the current limit of $\approx7\times10^{-4}$~\cite{picoreti}.
 
 \subsection{Solar-Signal Only}
 \label{3phase_sigonly}
@@ -471,8 +472,8 @@ The relative uncertainty of all fitted parameters with signal + all backgrounds 
 
 \subsection{Independent Impact of Systematics}
 
-The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3 phase dataset with all backgrounds included. 
-This fake dataset was seeded with $k_2 = 10^{-4}$ and had the $^8$B flux seeded and fixed at the SSM central value.
+The following systematic tests were done at the best fit values for a fake dataset of comparable statistics to the SNO 3-phase dataset with all backgrounds included. 
+This fake dataset was seeded with $k_2 = 10^{-4}$~s/eV and had the $^8$B flux seeded and fixed at the SSM central value.
 The parameters considered here include all parameters whose uncertainties are propagated with the shift-and-refit method. 
 \Cref{fig:detector_systematics1,fig:detector_systematics2} show the individual contributions of these parameters independently.
 In the final fit these systematics will be propagated by simultaneously shifting all parameters and refitting as described in \Cref{systematics}, however, for this test it was desired to know the impact of each parameter.
@@ -506,11 +507,11 @@ The scan of $k_2$ and the $^8$B flux are shown in \Cref{fig:third_scans}.
 The neutrino parameters are shown relative to their priors in \Cref{fig:priors_third}.
 The observable projections for the minimum and with $k_2$ fixed to infinity are shown in \Cref{third_observables}.
 
-There is a 1-sigma minimum for $k_2$ at a central value of of $4.62\times10^{-4}$ s/eV.
-This minimum is almost consistent with infinite lifetime at the one sigma level, and has a one sigma lower bound of $2.40\times10^{-4}$ s/eV.
-The fitted value of the $^8$B flux is $5.77^{+0.58}_{-0.58}\times10^6$ cm$^{-2}$s$^{-1}$ ($1.01\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions.
-With $k_2$ fixed at infinity the $^8$B flux fits to $5.19^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.91\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
-Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
+There is a 1-sigma minimum for $k_2$ at a central value of of $4.62\times10^{-4}$~s/eV.
+This minimum is almost consistent with infinite lifetime at the one sigma level, and has a one sigma lower bound of $2.40\times10^{-4}$~s/eV.
+The fitted value of the $^8$B flux is $5.77^{+0.58}_{-0.58}\times10^6$~cm$^{-2}$s$^{-1}$ ($1.01\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions.
+With $k_2$ fixed at infinity the $^8$B flux fits to $5.19^{+0.16}_{-0.16}\times10^6$~cm$^{-2}$s$^{-1}$ ($0.91\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
+Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{+0.16}_{-0.16}\times10^6$~cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
 
 \begin{figure}
 \centering
@@ -540,12 +541,12 @@ The neutrino parameters are shown relative to their priors at the minimum of thi
 The observable projections for the minimum and with $k_2$ fixed to infinity are shown in \Cref{final_observables}.
 The likelihood profile including systematic uncertainties is compared to the likelihood profile without systematics in \Cref{fig:systematic_scans}.
 
-The minimum for $k_2$ observed in the 1/3 data fit is still present in this fit (at higher significance) at a central value of of $3.45^{+5.50}_{-1.68}\times10^{-4}$ s/eV where the uncertainty given is the total uncertainty.
-This minimum is consistent with infinite lifetime at a bit over $85\%$ confidence, and sets a $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV.
+The minimum for $k_2$ observed in the 1/3 data fit is still present in this fit (at higher significance) at a central value of of $3.45^{+5.50}_{-1.68}\times10^{-4}$~s/eV where the uncertainty given is the total uncertainty.
+This minimum is consistent with infinite lifetime at a bit over $85\%$ confidence, and sets a $90\%$ confidence lower bound at $>8.08\times10^{-5}$~s/eV.
 This lower bound was found by applying Wilks' theorem to the systematically broadened likelihood, i.e. when the $-2\Delta\log{L}$ from the minimum crosses $2.71$.
-The fitted value of the $^8$B flux is $6.08^{+0.47}_{-0.47}$(stat.)$^{+0.21}_{-0.22}$(syst.)$\times10^6$ cm$^{-2}$s$^{-1}$ ($1.07\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions and constraint.
-With $k_2$ fixed at infinity the $^8$B flux fits to $5.22^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
-The flux measurement with $k_2$ fixed at infinity is expected to reproduce previous 3-phase results, and is quite consistent consistent with those results: $5.23^{+0.16}_{-0.16}\times10^6$ cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
+The fitted value of the $^8$B flux is $6.08^{+0.47}_{-0.47}$(stat.)$^{+0.21}_{-0.22}$(syst.)$\times10^6$~cm$^{-2}$s$^{-1}$ ($1.07\pm0.10 \times \Phi_{8B_{BS05(OP)}}$), which is quite consistent with the SSM predictions and constraint.
+With $k_2$ fixed at infinity the $^8$B flux fits to $5.22^{+0.16}_{-0.16}\times10^6$~cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
+The flux measurement with $k_2$ fixed at infinity is expected to reproduce previous 3-phase results, and is quite consistent consistent with those results: $5.23^{+0.16}_{-0.16}\times10^6$~cm$^{-2}$s$^{-1}$ ($0.92\pm0.03 \times \Phi_{8B_{BS05(OP)}}$).
 There is some tension between the SNO result and the flux fitted with with $k_2$ floating, however, they are consistent at two sigma. 
 
 \begin{figure}
@@ -575,7 +576,7 @@ There is some tension between the SNO result and the flux fitted with with $k_2$
 
 \section{Global Solar Neutrino Decay Analysis}
 
-The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis \cite{picoreti}, which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$ s/eV (note order of magnitude).
+The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis \cite{picoreti}, which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$~s/eV (note order of magnitude).
 This result was obtained by combining measurements from many solar experiments, and such an analysis can be repeated while including the SNO result described in previous sections.
 
 Experiments have made measurements of solar neutrino interaction rates and published measured fluxes both assuming oscillations (a mixture of neutrino flavors) and no oscillations (assuming a pure electron neutrino flux). 
@@ -616,8 +617,8 @@ This produces the profiles in \Cref{fig:8b_profiles}.
 
 \subsection{$^7$Be Constraints}
 
-Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be} measured the 862 keV line of $^7$Be neutrinos, which account for $90\%$ of the flux from this isotope. 
-The average survival probability weighted by the $^7$Be production regions for 862 keV neutrinos is computed for any particular set of neutrino parameters.
+Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be} measured the 862~keV line of $^7$Be neutrinos, which account for $90\%$ of the flux from this isotope. 
+The average survival probability weighted by the $^7$Be production regions for 862~keV neutrinos is computed for any particular set of neutrino parameters.
 Using these survival probabilities, the measured $\Phi_e$ of each experiment is converted to a true $^7$Be flux with \Cref{flux_conv} and compared to the SSM prediction with \Cref{combolike}. 
 As these neutrinos are much lower energy, they contain a significant fraction of mass state one. 
 Here the lifetime of mass state one, $k_1$, is treated as a nuisance parameter and floated in the fit. 
@@ -630,7 +631,7 @@ This holds true (to some extent) for the radiochemical gallium and chlorine expe
 \centering
 \includegraphics[width=0.58\columnwidth]{borexino_7be}
 \includegraphics[width=0.58\columnwidth]{kamland_7be}
-\caption{The profiled likelihood for the parameter $k_2$ using the $^7$Be 862 keV line measurements from Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be}. Note the shape of the Borexino profile is quite similar to KamLAND, however, the Borexino measurement excludes short lifetimes at higher significance due to being a more precise measurement.}
+\caption{The profiled likelihood for the parameter $k_2$ using the $^7$Be 862~keV line measurements from Borexino~\cite{borexino7be} and KamLAND~\cite{kamland7be}. Note the shape of the Borexino profile is quite similar to KamLAND, however, the Borexino measurement excludes short lifetimes at higher significance due to being a more precise measurement.}
 \label{fig:7be_profiles}
 \end{figure}
 
@@ -666,7 +667,7 @@ As these values are nearly identical to those reported in the original publicati
 Note that~\cite{sagecombo} uses an approximate form of the survival probability whereas for all other parts of this analysis I have numerically diagonalized the MSW Hamiltonian (see \Cref{lifetime_model}).
 A notable difference between these two approaches is that the approximate forms assume a uniform solar density for each flux, while my numerical method accounts for the density profile in the regions where these neutrinos originate.
 Using my numerical computation instead of the approximate form yields slightly different numbers (also shown in \Cref{tbl:gallium}). 
-Both total rates are consistent with the Gallium measurements $66.1\pm3.1$ SNU~\cite{sagecombo} at one sigma, and the numerical method is used for other parts of this analysis.
+Both total rates are consistent with the Gallium measurements $66.1\pm3.1$~SNU~\cite{sagecombo} at one sigma, and the numerical method is used for other parts of this analysis.
 
 With the calculation of the expected rate validated, the remaining step of including gallium results in this analysis is a comparison to the measured rate with a term like \Cref{combolike}.
 
@@ -690,7 +691,7 @@ Total		& 66.31	&	66.32 	&	65.80	\\ \hline
 \subsection{Chlorine Constraints}
 
 The analysis of radiochemical measurements of interactions on chlorine is very similar to that of the gallium experiments described above. 
-So, a similar analysis as done for gallium was performed here, but using the measured rate from the Homestake~\cite{homestake} experiment, $2.56\pm0.23$ SNU on $^{37}$Cl, along with the chlorine cross sections used for that analysis.
+So, a similar analysis as done for gallium was performed here, but using the measured rate from the Homestake~\cite{homestake} experiment, $2.56\pm0.23$~SNU on $^{37}$Cl, along with the chlorine cross sections used for that analysis.
 The result of the profile are found in in \Cref{fig:cl_profiles}.
 
 \begin{figure}
@@ -731,7 +732,7 @@ Total		& 2.6	&	2.69 & 2.75		\\ \hline
 
 The likelihood profiles of individual experiments are multiplied (negative log likelihoods added) together to arrive at a combined likelihood profile shown in \Cref{fig:combined_profile}. 
 Explicitly this includes: $^8$B measurements from KamLAND, Borexino, SuperK (I,II,III,IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
-The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$ s/eV. 
+The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$~s/eV. 
 This is better than the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
 Notably the presence of a relatively significant minimum in the new SNO results is not particularly beneficial here since it occurs near the location of the limit.
 
@@ -746,7 +747,7 @@ Borexino and Super-K (I) are handled as described above but with the less-precis
 The SNO 3-phase results are handled in an analogous way to Super-K results using only the flux information.
 
 
-In \Cref{fig:cross_check_profile} I have combined the profiles from these measurements and arrived at a limit of $>7.58\times10^{-4}$ s/eV at $99\%$ C.L., a bit better than \cite{picoreti}'s quoted $>7.2\times10^{-4}$ at $99\%$ C.L..
+In \Cref{fig:cross_check_profile} I have combined the profiles from these measurements and arrived at a limit of $>7.58\times10^{-4}$~s/eV at $99\%$ C.L., a bit better than \cite{picoreti}'s quoted $>7.2\times10^{-4}$~s/eV at $99\%$ C.L..
 That this is quite close to the limit set by~\cite{picoreti} indicates that these two analyses are consistent even if the methods presumably differ.
 Unfortunately with the brevity of the previous paper a more direct comparison does not seem possible.
 

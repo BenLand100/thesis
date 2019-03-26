@@ -133,10 +133,10 @@ The primary reaction in the Sun is the proton-proton ($pp$) reaction,
 \begin{equation}
 p+p \rightarrow ^2\mathrm{H}+e^++\nu_e,
 \end{equation}
-which produces the most neutrinos, with a flux of roughly $10^{10}$ cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
+which produces the most neutrinos, with a flux of roughly $10^{10}$~cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
 The $^2$He from this reaction is involved in further reactions in the proton-proton chain, resulting in other neutrino fluxes.
-Notable among these is the $^8$B reaction, which produces neutrinos that are both high energy, around 10 MeV, and relatively high flux, at roughly $10^6$ cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
-$hep$ neutrinos are higher energy, but the much lower flux of roughly $10^4$ cm$^{-2}$s$^{-1}$ makes the already rare neutrino interactions much harder to identify on top of backgrounds.
+Notable among these is the $^8$B reaction, which produces neutrinos that are both high energy, around 10~MeV, and relatively high flux, at roughly $10^6$~cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
+$hep$ neutrinos are higher energy, but the much lower flux of roughly $10^4$~cm$^{-2}$s$^{-1}$ makes the already rare neutrino interactions much harder to identify on top of backgrounds.
 Beyond the proton-proton chain, there is also the so called CNO process, involving carbon, oxygen, and nitrogen nuclei. 
 Neutrinos produced from the CNO process have energies and fluxes between $pp$ and $^8$B neutrinos.
 \Cref{neutrino_spectra} shows the energy spectra and total flux of all known solar neutrinos, where the fluxes represent theoretical predictions.
@@ -229,8 +229,8 @@ A measurement of the CNO neutrinos is a goal of current and next-generation sola
 \chapter{Solar Neutrino Detectors}
 \label{ch:detectors}
 
-Neutrinos only interact weakly with normal matter, so the interaction cross sections are quite small, being less than $10^{-40}$ cm$^2$ for energies relevant to solar neutrinos.
-Even with expected fluxes of detectable solar neutrinos exceeding $10^6$ cm$^{-2}$s$^{-1}$, the interaction rates are minuscule.
+Neutrinos only interact weakly with normal matter, so the interaction cross sections are quite small, being less than $10^{-40}$~cm$^2$ for energies relevant to solar neutrinos.
+Even with expected fluxes of detectable solar neutrinos exceeding $10^6$~cm$^{-2}$s$^{-1}$, the interaction rates are minuscule.
 Because of this, neutrino detectors typically rely on large masses of target material to achieve a reasonable interaction rate, with a solar neutrino event a day being quite respectable.
 These low rates mean that neutrino detectors must be isolated from cosmic radiation by being constructed deep underground, or lose the neutrino events in the noise.
 Even then the materials used to construct the detector must have very low intrinsic radioactivity or suffer the same fate.
@@ -318,7 +318,7 @@ Further discussion of WbLS and a characterization of low scintillator fractions 
 \end{figure}
 
 The SNO \cite{sno} detector is located deep underground near Sudbury, Canada in the Creighton mine, an active nickle mine.
-This location is one of the deepest laboratories in the world at $2$ km underground, providing a 5800 m.w.e. overburden to shield from cosmic rays.
+This location is one of the deepest laboratories in the world at $2$~km underground, providing a 5800 m.w.e. overburden to shield from cosmic rays.
 The detector itself is composed of a 6-m radius acrylic vessel (AV) in the shape of a spherical shell containing 1 kT of heavy water ($^2$H$_2$O or D$_2$O) as the active volume.
 Heavy water was chosen because the loosely bound neutron in the deturons enabled both neutral current and charged current interactions enabling flavor selective measurements of the solar neutrino flux.
 
@@ -425,7 +425,6 @@ The hits from each GT are built into a single event for further analysis.
 To perform an analysis of SNO data it is first necessary to extract physical observables from the PMT hit time information provided by the DAQ.
 This is done using pattern recognition algorithms, which take into account the geometry of cherenkov light to reconstruct the direction, position, and time of each event.
 Using that information, along with the total number of hits, other algorithms can estimate the energy deposited in the detector. 
-In SNO there were roughly 10 detected hits per 1 MeV of deposited energy.
 Further quantities can be extracted, such as a measure of the isotropy of the event and the ratio of hits within a prompt time window to all hits, encode additional information about the event that can, for instance, be useful for selecting physics events from instrumental events.
 Cherenkov light has a very specific geometry, so good physics events will have a characteristic spatial distribution of detected photons, allowing isotropy to be used to cut instrumental backgrounds.
 Similarly Cherenkov light is very prompt, meaning all photons from a physics event are expected to arrive within tens of nanoseconds, and making the ratio of in-time hits a useful metric for identifying candidate physics events. 
@@ -438,7 +437,7 @@ Two sources were critical in this effort:
 \item[\N \cite{sno_n16}] This isotope is produced with a deturium-tritium neutron generator by captures on $^{16}$O producing $^{17}$O, which quickly decays by emitting a proton to leave \N. This isotope is transported in gas form to a calibration source within the detector where it beta decays into a metastable state of $^{16}$O that relaxes, releasing a 6.13-MeV gamma. The initial beta decay provides a tag signal within the source, and the gamma escapes into the detector where it deposits its energy. This source provides the energy scale calibration for SNO by calibrating its photon detection efficiency. It is also used to evaluate energy and position reconstruction systematics as a function of position within the detector and throughout the operational time of the detector.
 \item[Laser Ball \cite{sno_laserball}] A fast dye laser is fiber coupled to an optical diffuser, which work together to produce an isotropic light pulse at a well defined time. This is primarily used to calibrate the time offset of each PMT, and can also be used to measure relative detection efficiencies of the PMTs.
 \end{description}
-Additional sources were used to provide calibration points at other energies, such as a beta source using \Li \cite{Tagg:2002} with an endpoint at 14 MeV, and a proton fusion source \cite{fusion_source} producing a gamma at 19.8 MeV.
+Additional sources were used to provide calibration points at other energies, such as a beta source using \Li \cite{Tagg:2002} with an endpoint at 14~MeV, and a proton fusion source \cite{fusion_source} producing a gamma at 19.8~MeV.
 Sources producing the decay chains of $^{238}$U and $^{232}$Th were deployed for low energy calibrations.
 Additionally, the heavy water target was at times intentionally spiked with both radon and $^{24}$Na to provide calibrations unbiased by the presence of shielding that is unavoidable in encapsulated sources.
 Finally, to characterize the neutron detection efficiency critical for the measurement of the NC interaction, two neutron sources were deployed: $^{252}$Cf and an AmBe source.
@@ -508,7 +507,7 @@ Data taking for this phase began mid 2017 and finished toward the end of 2018.
 
 \subsubsection{Scintillator}
 
-The change to pure scintillator LAB+PPO (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2 g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
+The change to pure scintillator LAB+PPO (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2~g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
 This switch was motivated by a need for enhanced energy resolution for the neutrinoless double beta decay measurement, and similar reasoning comes into play in its applicability to solar neutrinos.
 In terms of solar neutrinos, the ES interaction channel is still the only relevant one, however, the observed signals in scintillator phase will be quite different than that of water phase.
 In water all information about the interaction was gathered from the Cherenkov light emitted. 
@@ -517,7 +516,7 @@ As of the writing of this thesis, scintillator phase is moving forward, but phys
 
 \subsubsection{Tellurium Loaded Scintillator}
 As mentioned, the primary goal of SNO+ is to perform a neutrinoless double beta decay measurement using the double beta decay isotope $^{130}$Te.
-This will be done by dissolving $^{130}$Te metal in the LAB+PPO scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$ MeV) of $^{130}$Te decay.
+This will be done by dissolving $^{130}$Te metal in the LAB+PPO scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$~MeV) of $^{130}$Te decay.
 The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the the electrons, resulting in a delta function spectrum at the endpoint.
 Since the signature of this process is a sharp feature in energy, SNO+ requires the enhanced energy resolution of scintillators, as such a measurement would not be possible with the energy resolution of Cherenkov light.
 
