@@ -95,7 +95,7 @@ Once an event satisfies low level even selection criteria, the results of event 
 A valid reconstruction result is then required, meaning the reconstruction algorithms successfully converged to some value.
 High level cuts are applied on the in time ratio (ITR), representing the number of hit PMTs within a prompt time window to all hit PMTs, and isotropy ($\beta_{14}$), representing the isotropy of the pattern of hit PMTs.
 The region of interest (ROI) for the analysis is then selected with cuts on energy and radius.
-Note that initially this analysis only planned to extend down to 5.5 MeV, however evaluation of the actual data indicated that backgrounds were low enough to consider events down to 4.5 MeV.
+Note that initially this analysis only planned to extend down to 5.5 MeV, however, evaluation of the actual data indicated that backgrounds were low enough to consider events down to 4.5 MeV.
 Other analyses of this data identified a region of high radioactivity near the top of the detector, and for this a z dependent radial cut was adopted.
 These high level cuts are summarized per time bin in Table \ref{tbl:solar:roi}.
 
@@ -175,7 +175,7 @@ Previously the uncertainty in angular resolution was accounted for by remapping 
 \label{solar:eq:dirres}
 \end{equation}
 where $\Delta$ is a parameter representing the systematic uncertainty on the angular resolution.
-For the solar ES analysis this approach would likely work, however it was noted that this results in events being pushed into non-physical values ($\cos \theta_{sun} < -1$) or leaving a void of zero probability near $\cos \theta_{sun} = 1$.
+For the solar ES analysis this approach would likely work, however, it was noted that this results in events being pushed into non-physical values ($\cos \theta_{sun} < -1$) or leaving a void of zero probability near $\cos \theta_{sun} = 1$.
 To handle this better, it was proposed to instead adjust the reconstructed direction of each MC event to be further or nearer the MC truth direction (as determined by  \ref{solar:eq:dirres}), and finally recomputing the $\cos \theta_{sun}$ PDF using these new directions and rerunning the fit.
 This method was adopted for the early stages of this analysis.
 

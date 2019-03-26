@@ -160,7 +160,7 @@ See \Cref{strategy} for further discussion of how the flux is handled.
 \label{fit_impl}
 
 For this analysis, I have built off the existing QSigEx code \cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
-This package could be modified to use the model described in \Cref{lifetime_model} instead of polynomials used in previous analyses.
+This package was modified to use the model described in \Cref{lifetime_model} instead of polynomials used in previous analyses.
 The following sections conceptually describe how to analyze SNO data, the implementation of such an analysis in QSigEx, and the work that was necessary to implement the neutrino lifetime model in this framework.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
 
@@ -192,12 +192,14 @@ In SNO the observable quantities of choice are:
 \end{enumerate}
 These observables were chosen to maximize separation between different types of physics interactions (NC, CC, ES) and of physics, backgrounds, and instrumentals. 
 To properly take into account correlations between these parameters, 4D PDFs were used instead of four separate 1D PDFs.
+A notable exception is the inclusion of Phase III data, where the NCDs present in the target volume significantly complicated photon propagation, and made $\beta_{14}$ a less reliable metric than in Phases I and II.
+For Phase III, 3D PDFs in energy, radius, and direction were used.
 
 The likelihood fit determines the relative contribution of each event class necessary to best match the observed data.
 To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a MC method.
 SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
 The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
-Most PDFs are provided directly by SNOMAN, however results relevant to this thesis are obtained by the construction of the PDFs for the solar signals, and specifically by the effect the lifetime model has on these PDFs.
+Most PDFs are constructed by directly binning simulated data produced by SNOMAN, however, the physics encoded by the neutrino survival probabilities is included by reweighting solar neutrino events from SNOMAN while building the PDFs for solar signals.
 
 For the radioactivity of the PMT glass, only tails of this high-rate background fall within the ROI, and it was impractical to simulate a sufficient number of interactions to produce reliable PDFs.
 In this case, analytical forms were used instead, and the parameters controlling these analytical forms were estimated from the data and treated as systematic uncertainties.
@@ -219,15 +221,16 @@ Because of this, an unbinned neutrino energy fit was adopted.
 
 Systematic uncertainties are treated in three distinct ways.
 \begin{enumerate}
-\item Each of the observables has many systematic parameters associated with it representing possible discrepancies between simulated and real data. These uncertainties are best constrained with the data itself, and central values along with their uncertainties are determined with a brute-force initial iterative scan of the data. These are held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
-\item Other uncertainties are constrained with in-situ and ex-situ measurements and not highly correlated with neutrino parameters. These are also held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
+\item Each of the observables has many systematic parameters associated with it representing possible discrepancies between simulated and real data. These uncertainties are best constrained with the data itself, and most likely central values along with their uncertainties are determined with an initial brute-force iterative scan of each parameter while maximizing the likelihood of the data. These parameters are then held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
+\item Other uncertainties are best constrained with in-situ and ex-situ measurements and not highly correlated with neutrino parameters. These are also held fixed during the central fit, and uncertainties are propagated with a shift-and-refit method.
 \item Finally, the NCD neutron capture efficiency, which is strongly correlated with measurements of the neutrino flux, is allowed to float in the fit to avoid biasing neutrino results.
 \end{enumerate}
 
 The procedure for determining the central values and uncertainties of scanned parameters is as follows:
 \begin{enumerate}
-\item A parameter is scanned around its current best guess with other systematics held at their best guess and floated parameters minimized at each point.
-\item This produces a negative log likelihood profile as a function of the parameter.
+\item A parameter is scanned around its current best guess with other systematics held at their best guess.
+\item At each point in the scan, the minimization algorithm is run, finding the minimum negative log likelihood value.
+\item This produces a negative log likelihood profile as a function of the parameter of interest.
 \item An asymmetric gaussian is fit to the profile of the negative log likeihood to determine the central and upper/lower uncertainties for the parameter.
 \item The best guess for that parameter is updated to the central value of that fit.
 \item The next parameter is considered at step 1 until all parameters have been scanned.
@@ -253,10 +256,10 @@ Taking this assumption, the likelihood profile for $k_2$ obtained with systemati
 
 \subsection{Fit Strategy}
 \label{strategy}
-Ideally all neutrino parameters would be floated with priors in this fit. 
+Ideally all neutrino parameters would be floated with priors in this analysis. 
 In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux.
 This is most easily understood by considering the signature of neutrino decay: a disappearance of neutrino flux.
-Manifestly neutrino decay and the total flux will be highly correlated, however the energy dependent signature of neutrino decay allows these effects to be disentangled to some extent.
+Manifestly neutrino decay and the total flux will be highly correlated, however, the energy dependent signature of neutrino decay allows these effects to be disentangled to some extent.
 Previous SNO analyses searching for oscillation to sterile neutrinos \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced parameter space, performing further fits and statistical studies with the flux fixed, and finally incorporating uncertainty from flux variations as a final step.
 In this analysis since there is only one model parameter of interest, $k_2$, a strategy of scanning $k_2$ manually while floating all other parameters seems to be ideal. 
 With that in mind, the fit strategy is:
