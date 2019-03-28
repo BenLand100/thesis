@@ -216,15 +216,42 @@ With the leading order effects now understood, the door is open for precision me
 
 \subsection{Open Questions}
 The solid lines in \Cref{fig:global_solar} represent the best fit MSW survival probability $P_{ee}$ as determined by combining the measurements of many solar neutrino experiments.
-Notably the error bars on the measurements, from which the best fits are derived, are quite large, leading to considerable uncertainty in the precise shape of $P_{ee}$.
-Any interesting physics that affects solar neutrinos between their creation in the core of the Sun and later detection at Earth would result in distortions to this function.
-Therefore, high precision measurements of the solar neutrino fluxes can be used to search for new physics. 
-An example of this using SNO data is presented in \Cref{ch:lifetime}, where distortion to the survival probability indicative of neutrino decay is used to set a limit on neutrino lifetime.
+Notably, the error bars on the measurements, from which the best fits are derived, are quite large, leading to considerable uncertainty in the precise shape of $P_{ee}$.
+This is of interest because new and interesting physics, such as nonstandard neutrino interactions with matter, would result in distortions to the survival probabilities, which would be measurable by solar neutrino experiments.
+Here, ``nonstandard interactions" are any sort of interaction not predicted by the Standard Model that somehow distinguishes between neutrino flavors, and hence influences the propagation of neutrinos in matter.
+Much like the MSW effect, the influence from nonstandard interactions would be small, except for the very high densities present in the Sun, making solar neutrinos a viable probe of such effects.
+The transition region between vacuum-dominated dynamics below 1~MeV to matter-dominated dynamics above 10~MeV is particularly sensitive to nonstandard interaction, however, this region has not yet been accurately probed by solar neutrino experiments.
+
+To consider a specific possibility, nonstandard forward scattering \cite{nonstandard_forward_scatter} of neutrinos off of fermions is a proposed effect similar to the MSW effect (standard forward scattering of electron neutrinos off of electrons).
+Compared to the MSW Hamiltonian given in \Cref{eq:msw}, the Hamiltonian for nonstandard forward scattering allows for all neutrino flavors to couple to matter:
+\begin{equation}
+H_{NFS} = H_{0} + \sqrt{2} G_F n_e U\begin{bmatrix}
+1+\epsilon_{ee} & \epsilon_{e\mu}^* & \epsilon_{e\tau}^* \\
+\epsilon_{\mu e} & \epsilon_{\mu\mu} & \epsilon_{\mu\tau}^* \\
+\epsilon_{\tau e} & \epsilon_{\tau\mu} & \epsilon_{\tau\tau}
+\end{bmatrix}U^\dagger.
+\label{eq:nsi}
+\end{equation}
+where the $\epsilon$ parameters represent the strength of the couplings.
+This can be treated in an analogous way to the MSW effect to produce survival probability curves, of which examples can be seen in \Cref{fig:nonstandard}.
+Such models cannot be disentangled from the standard MSW effect until higher precision measurements of the survival probability exist in this transition region.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{nonstandard_interactions}
+\caption{\label{fig:nonstandard}Shown here are predictions of the survival probability from nonstandard neutrino forward scattering which cannot be disentangled from the standard MSW effect with existing solar neutrino measurements. The $\epsilon_1$ and $\epsilon_2$ parameter are analogous to the parameters in \Cref{eq:nsi}, but for a two neutrino scenario. Figure from \cite{nonstandard_interactions}.}
+\end{figure}
+
+Another possibility, since it is now known that neutrinos are massive particles, is that neutrino mass states could decay to some lighter states.
+This can also be treated as a distortion to the survival probabilities, since the signature of neutrino decay is a disappearance (non-detection) of neutrino flux.
+An analysis seeking to measure the effect of neutrino decay is discussed further in \Cref{ch:lifetime}, where distortion to the survival probability indicative of neutrino decay is used to set a limit on neutrino lifetime.
 
 Further, the rate of the CNO process in the Sun, which is proportional to the CNO neutrino fluxes, is currently only constrained by analyses done by Borexino.
 A high precision measurement of the CNO neutrino flux will provide information about the abundance of elements heavier the helium ("metallicity") in the core of the Sun necessary for the CNO process.
 At the moment there is tension between standard solar model predictions of metallicity and measurements done of the surface of the Sun, and a better understanding of the CNO neutrino fluxes could resolve some of this tension.
 A measurement of the CNO neutrinos is a goal of current and next-generation solar neutrino detectors, however, the low energies and a similar spectrum to common radioactive contaminates makes this quite difficult.
+
+\clearpage
 
 \chapter{Solar Neutrino Detectors}
 \label{ch:detectors}

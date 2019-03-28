@@ -1,12 +1,11 @@
 \chapter{R\&D for Future Solar Neutrino Experiments}
 \label{ch:wbls}
 
-\section{Introduction}
-
-Optical photon detection has been a common detection mechanism in neutrino experiments for many decades~\cite{imb,superk,sno,kamland,borexino,lsnd} and the technology is well developed.
-Experiments have historically been optimized to detect one of two types of optical radiation: Cherenkov~\cite{cherenkov} or scintillation~\cite{birks} light.  
-Directional Cherenkov light has been successfully used in both high energy and nuclear physics by large ultra-pure water experiments such as SuperKamiokande~\cite{superk} and SNO~\cite{sno}, while the more abundant, isotropic scintillation is more commonly used in low-energy detectors such as KamLAND~\cite{kamland} and Borexino~\cite{borexino}.  
-A brief summary of the advantages and limitations of each technique can be found in \Cref{tab:chervsscint}.
+Detection of optical photons produced as energetic charged particles deposit energy in a target material has been successfully exploited in many neutrino experiments~\cite{imb,superk,sno,kamland,borexino,lsnd}.
+Historically, real-time neutrino detectors have progressed from detecting Cherenkov~\cite{cherenkov} light in water targets to detecting scintillation~\cite{birks} light in organic liquid scintillator targets.
+This was driven by the desire to detect low energy solar neutrinos, such as the CNO or $pp$ neutrino fluxes, where the interactions would typically fall below the Cherenkov threshold in water, and hence go undetected.
+The ability to detect these low energy interactions with scintillators comes with a notable downside: scintillation light, being isotropic, does not carry the directional information of Cherenkov light.
+Other notable differences between Cherenkov and scintillation light are summarized in \Cref{tab:chervsscint}.
 
 \begin{table}[]
 \newcolumntype{C}{>{\centering\arraybackslash}X}
@@ -32,44 +31,56 @@ Cost-effective & More expensive materials \\
 \label{tab:chervsscint}
 \end{table}
 
-The LSND experiment~\cite{lsnd} used a mineral-oil-based scintillator designed to allow detection of both scintillation and Cherenkov light, opening up  sensitivity to low-energy particles  below  Cherenkov threshold. The ratio of created photoelectrons for the two sources of light was approximately 5 to 1 (scintillation to Cherenkov) for a 45~MeV electron created in the detector. Photon timing and charge was used for particle identification and to reconstruct vertex and angle information. Particles emitting Cherenkov radiation produced significant fractions of prompt light and thus particle identification techniques relied on the fraction of prompt light as a tool for discrimination.
+Scintillators do, however, also produce Cherenkov light. 
+The much higher photon yields of scintillators ($10^3$ more scintillation photons than Cherenkov photons per MeV in LAB+PPO) typically makes the remaining Cherenkov photons quite difficult to detect.
+This is further complicated by scintillator optical attenuation and scattering lengths being small relative to neutrino detector sizes, which means many of the Cherenkov photons will be absorbed or scattered, further reducing the directional information available.
+The ability to identify these remaining Cherenkov photons, or design a material that makes this identification easier, would allow a neutrino detector to simultaneously be sensitive to low energy interactions though the scintillation light, while recovering directionality in sufficiently high energy events to produce Cherenkov light.
 
-Separation of Cherenkov- and scintillation-light components on an event-by-event basis enables a single detector to exploit the advantages of each technique.  If this separation can be achieved in a pure liquid scintillator (LS) detector it would substantially improve the sensitivity of low-energy physics programs by adding directional reconstruction capability to a low-threshold detector. Searches for neutrinoless double beta decay (NLDBD) would benefit from rejection of the directional solar neutrino signal, the dominant background in experiments such as SNO+~\cite{snop}.  Precision solar neutrino measurements would benefit from  separation of the directional signal from isotropic radioactive background events. 
-However, the high scintillation light yield and fast timing of commonly used LS such as LAB (linear alkyl benzene) makes this separation extremely challenging.  In addition, liquid scintillator detectors are limited to kiloton scales by the attenuation of light in the scintillator material and also by cost.
+Directional information is manifestly useful when detecting solar neutrinos, as the elastic scatter (ES) interaction channel produces final state electrons highly correlated with the neutrino direction. 
+As the direction of solar neutrinos is away from the Sun, and no backgrounds are expected to be correlated with the solar direction, solar neutrinos are thus relatively easy to identify. 
+This directional correlation is not only useful for measurements of solar neutrinos, however. Searches for neutrinoless double beta decay ($0\nu\beta\beta$) would benefit from rejection of the directional solar neutrino signal, which is the dominant background in experiments such as SNO+~\cite{snop}.
 
-The recent development of Water-based Liquid Scintillator (WbLS)~\cite{wbls} allows both the scintillation light yield and timing profile of the target material to be tuned, thus increasing sensitivity to the Cherenkov component.  The admixture of water increases the attenuation length, thus improving light collection.  For the first time one can thus envisage a large-scale, low-threshold detector with directional sensitivity.  
-The concept for a large monolithic WbLS detector capable of a very broad program of physics, such as the \textsc{Theia} experiment, is presented in~\cite{asdc} and ~\cite{theia}.  The unique capabilities of a large-scale WbLS detector enable both a broad low-energy program, including a sensitive NLDBD search, solar neutrino studies, supernova neutrinos, and diffuse supernova neutrinos (DSNB), as well as sensitivity to nucleon decay and, if sited in a high-energy neutrino beam, to long-baseline physics (neutrino mass hierarchy and CP violation).  The high-energy program benefits from the potential to image Cherenkov rings, thus improving particle ID, and the ability to detect particles below Cherenkov threshold, which improves background rejection.
-
-The goals of the CHErenkov / Scintillation Separation (CHESS) experiment are several: to demonstrate Cherenkov / scintillation separation in a pure LS target by deploying ultra-fast-timing photosensors, and to study how the separation improves in WbLS and quantify the efficiency as a function of the scintillator fraction.  These studies will allow optimization of the \textsc{Theia} detector configuration (WbLS target cocktail, photosensor requirements, detector scale) in order to maximize the physics reach across a broad program. 
-
-Separation of scintillation and Cherenkov components can occur in three domains:
+In general, the identification of Cherenkov photons in a scintillator can be done in three ways:
 \begin{itemize}
-    \item Wavelength:  Cherenkov and scintillation light have  different emission spectra (\Cref{fig:optics}). The Cherenkov signal could be enhanced by selecting photosensors  with improved sensitivity in the high wavelength region above the scintillation emission cutoff.
-	\item Photon density: depending on the ratio of Cherenkov to scintillation light yield, it may be possible to distinguish the  Cherenkov ring structure on top of the background of isotropic scintillation light. 
-	\item Time separation: scintillation light, originating from molecular de-excitation, is typically delayed from the fast Cherenkov light pulse by 1 to 10s of ns~\cite{cherenkov, birks}. By combining fast photon detectors and electronics it should be possible to achieve some signal separation using photon detection times.  
+    \item Wavelength:  Cherenkov and scintillation light have different emission spectra (\Cref{fig:optics}). The very broad Cherenkov spectrum could be selectively detected with optical filters that block scintillation light, or by detectors sensitive only to long wavelength photons.
+	\item Intensity: Cherenkov photons are not isotropic in space, and, with sufficiently dim scintillation light, should have a typical ``Cherenkov ring" geometry that can be identified on top of an isotropic scintillation background.
+	\item Timing: Cherenkov emission is very fast, on the order of tens of picoseconds~\cite{cherenkov}, while scintillation light, originating from molecular de-excitation, is typically delayed by 1-10~ns~\cite{birks} and emitted with a profile of exponential time constants of a few to hundreds of nanoseconds.
 \end{itemize}
-
 
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{optics.pdf}
-	\caption{\label{fig:optics} PMT H11934 quantum efficiency~\cite{h11934} and UVT acrylic absorption length compared to the Cherenkov and scintillation emission spectra for pure LAB~\cite{lab_emission} and LAB loaded with 2~g/L PPO~\cite{snop_private}. The normalization of the emission spectra are shown in arbitrary units.}
+	\caption{\label{fig:optics} PMT H11934 quantum efficiency~\cite{h11934} and UVT acrylic absorption length compared to the Cherenkov and scintillation emission spectra for pure LAB~\cite{lab_emission} and LAB loaded with 2~g/L PPO~\cite{snop_private}. The normalization of the emission spectra are shown in arbitrary units. Figure from \cite{chess_nim}.}
 \end{figure}
 
-Each option has the potential to enhance signal separation, but each comes with a cost, such as: reduced light yield, reduced light collection efficiency, high-cost photosensors, or limitations on detector size.  The challenge for time-based separation is the timing precision of  available photosensors. Large photomultiplier Tubes (PMTs) typically have worse than ns  time precision, making Cherenkov light identification in a scintillation medium extremely difficult. However, newly developed small PMTs~\cite{h11934} can achieve  timing precisions of $\lesssim$ 300~ps and new micro-channel plate (MCP) photosensor technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps. In addition, fast and precise commercial electronics are available to digitize these signals without significantly degrading the time resolution. This makes  separation in the time domain a  theoretical possibility.
+Each option has the potential to enhance Cherenkov photon detection, but each comes with a cost.
+Detection based on wavelength requires expensive optical filters and complicated geometries to avoid losing photons to attenuation.
+Intensity based detection means a sacrifice of scintillation photons to avoid losing Cherenkov photons in counting statistics, and recently developed Water-based Liquid Scintillator (WbLS)~\cite{wbls} materials aim to do exactly this.
+Finally, timing based detection requires very fast (on the order of 100~ps) photon detectors, which can be very expensive.
+Traditionally used large photomultiplier Tubes (PMTs) typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult. 
+Smaller PMTs~\cite{h11934} can achieve timing precision of $\lesssim$ 300~ps and new micro-channel plate (MCP) photosensor technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps.
 
-This chapter describes the CHESS detector and its sensitivity to Cherenkov / scintillation separation in  the time domain.  Section~\ref{s:desc} describes the detector itself.  Section~\ref{sec:simulation} describes the detailed Monte Carlo simulation used to model the detector. 
-Section~\ref{s:analysis} describes the general approach to data analysis.  Section~\ref{sec:calibration} describes detector calibrations.  Section~\ref{s:event} describes event selection and techniques for rejection of instrumental and physics background events.
-Results are presented in \Cref{sec:water,sec:lab,sec:labppo,sec:wbls}.
 
+This chapter describes the CHErenkov / Scintillation Separation (CHESS) experiment~\cite{chess_nim} developed as a part of this thesis, which aims to explore the intensity and timing methods of identifying Cherenkov photons in liquid scintillators. 
+Development of CHESS was driven by the recent development of WbLS which allows both the scintillation light yield and timing profile of the target material to be tuned to maximize sensitivity to Cherenkov photons.  
+In particular, low scintillator fraction WbLS, from 1\% to 5\% scintillator, is of interest here. 
+Being mostly water, this material should have better attenuation characteristics than a pure scintillator, maximizing the likelihood of Cherenkov photons arriving unhindered to a photon detector, and should also have only fractions of scintillation photon yield of pure scintillators, making intensity-based identification of Cherenkov photons a possibility.
+CHESS can also explore the potential for Cherenkov photon detectors in more traditional scintillators, such as LAB+PPO identified by the SNO+ collaboration.
 
 \section{The CHESS Detector}\label{s:desc}
 
-The primary goal of the CHESS experiment is to demonstrate Cherenkov / scintillation  separation by Cherenkov ring imaging in both charge (detected photoelectron density) and time, for different scintillating liquids.  
-A schematic of CHESS is shown in \Cref{fig:timing-setup,fig:timing-setup-2}.  An acrylic target vessel is viewed by an array of small, fast PMTs. 
-The setup is designed to detect either cosmic muons or events from deployed radioactive sources.  The primary ring imaging measurement is performed using through-going muons.  Vertical-going events are selected via a 1-cm diameter coincidence tag, ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring. 
-The muons produce Cherenkov and scintillation light in the target material, which is detected on the PMT array. The apparatus has been optimized using a full Monte Carlo simulation (Sec.~\ref{sec:simulation}), complete with optical ray tracing, such that direct Cherenkov light from vertical muons falls on a distinct set of PMTs, forming a clear ring in the PMT array.  This yields two distinct groups of PMTs by construction: those with pure scintillation hits and those with both scintillation and Cherenkov hits. The earliest hits on each PMT can thus be identified as being caused by either Cherenkov or scintillation photons, and demonstrate the time separation between these two signals to high precision. 
-A  measurement of the clarity of the Cherenkov ring imaged in charge on top of the isotropic scintillation light background is also possible.
+A schematic of CHESS is shown in \Cref{fig:timing-setup,fig:timing-setup-2}.  
+An acrylic target vessel is viewed by an array of small, fast PMTs. 
+The setup is designed to detect either cosmic muons or events from deployed radioactive sources.  
+The primary ring imaging measurement is performed using through-going muons.  
+Vertical-going events are selected via a 1-cm diameter coincidence tags above and below the target volume, ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring. 
+The muons produce Cherenkov and scintillation light in the target material, which is detected on the PMT array. 
+
+The apparatus was constructed such that direct Cherenkov light from vertical muons falls on a distinct set of PMTs, forming a clear ring in the PMT array.
+This yields two distinct groups of PMTs by construction: those with only scintillation photons and those with both scintillation and Cherenkov photons. 
+Because Cherenkov light is known to be prompt, the earliest hits on any particular PMT can be identified as being caused by either Cherenkov or scintillation photons.
+Therefore, comparing the time distributions from each population of PMTs allows one to compare prompt scintillation photons to prompt Cherenkov photons, and one can determine a time cut that results in the best sensitivity to Cherenkov photons.
+The total charge collected by each group of PMTs also informs the intensity of the Cherenkov photons relative to scintillation photons.
 
 \begin{figure}
 \centering
@@ -81,41 +92,52 @@ A  measurement of the clarity of the Cherenkov ring imaged in charge on top of t
 \begin{figure}
 \centering
 \includegraphics[width=0.7\columnwidth]{chess_timing_setup}
-\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and LAB/PPO. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
+\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and LAB+PPO. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
 \label{fig:timing-setup-2}
 \end{figure}
 
 \subsection{Target Vessel}
-The target vessel  consists of a cylinder 5~cm in radius and 3~cm in height, constructed from ultraviolet-transmitting (UVT) acrylic. Three flat faces on the outer surface of the cylinder, each 3~cm in diameter, provide surfaces for attaching a radioactive button source or optical coupling of a PMT as a source tag. A lid made of the same UVT acrylic encloses the target material in an air-tight environment using an FFKM o-ring~\cite{cog-oring}. 
-
-Distinct but similarly designed target vessels are used for water, pure LS and WbLS target materials in order to minimize the risk of cross contamination.
+The target vessel for CHESS is a cylinder 5~cm in radius and 3~cm in height, constructed from ultraviolet-transmitting (UVT) acrylic. 
+Three flat faces on the outer surface of the cylinder, each 3~cm in diameter, provide surfaces for attaching a radioactive button source or optical coupling of a PMT to act as a trigger for the detector. 
+A lid made of the same UVT acrylic encloses the target material in an air-tight environment using an FFKM o-ring~\cite{cog-oring} known to be chemically stable to both LAB+PPO and WbLS. 
+Each liquid deployed in CHESS uses a separate target to avoid contamination of the target materials.
 
 \subsection{PMT Array}
 
 \label{pmtarray}
-In the initial phase of CHESS, one dozen Hamamatsu H11934-200 PMTs~\cite{h11934} were deployed in a cross shape beneath the target, providing three radial rings of four PMTs each for detection of Cherenkov and scintillation light.  An additional twelve similar PMTs are available for deployment in a future upgrade.  The H11934-200 PMT is a small 1-inch cubic PMT with superb quantum efficiency (QE) peaked at $42\%$ (\Cref{fig:optics}) and excellent transit time spread (TTS) of 300~ps (FWHM for single photoelectrons).
+One dozen Hamamatsu H11934-200 PMTs~\cite{h11934} were deployed in a cross shape beneath the target.
+This geometry providing three radial rings of four PMTs each for detection of Cherenkov and scintillation light, and takes advantage of the rotational symmetry of the expected event topology. 
+This particular model of PMT was chosen due to its very high quantum efficiency (QE) peaked at $42\%$ (\Cref{fig:optics}) and excellent transit time spread (TTS) of 300~ps (FWHM).
 
-The PMTs are held in an array that consists of a 7x7 grid, with four additional slots at each compass point, as shown in~\Cref{fig:timing-setup}.  The holder is 3D printed from black ABS plastic.  The initial deployment positions for the twelve PMTs used in phase I of CHESS are shown in \Cref{fig:timing-setup}.
-The unfilled locations on the grid can be populated with additional PMTs for future expansion. 
-
-\subsection{Optical Propagation}
-The target vessel is optically coupled to a propagation medium made of UVT acrylic (30~cm $\times$ 30~cm $\times$ 6.5~cm). This coupling eliminates an acrylic/air boundary which would otherwise block all Cherenkov light due to total internal reflection. The propagation medium acts as a light guide to allow photons to propagate from the bottom of the target vessel towards the PMT array. The PMTs in the array are similarly optically coupled to the bottom of the propagation medium. The propagation medium and target vessel have been polished for a better optical coupling and a more accurate simulation of refracted light at the boundaries. 
-
-A vertical cylindrical hole 1~cm in diameter is machined through the center of the propagation medium aligned with the center of the target vessel and cosmic tags in order to allow  vertical-going  muons to interact with the target material, but pass through the propagation medium without producing additional Cherenkov light in the acrylic block that would contaminate the measurement.
-
-Throughout the setup, EJ-550 optical grease~\cite{ej550} is used for optical coupling of components. 
-
+The PMTs are held in a 7x7 grid, with four additional slots on each side, as shown in~\Cref{fig:timing-setup}. 
+The holder was 3D printed from black ABS plastic.
+This grid allows for future expansion of CHESS with the purchase and deployment of additional PMTs in the unfilled slots.
 
 \subsection{Cosmic Muon Tags}
 
-Two custom-made cylindrical scintillator tags are positioned above and below the target vessel (\Cref{fig:timing-setup}) in order to trigger on vertical cosmic muons.  An aluminum arm maintains the alignment of the upper cosmic muon tag while the bottom is fixed in the PMT array (described in \Cref{pmtarray}). Each tag consists of a cylindrical 1-cm diameter Hamamatsu PMT~\cite{h3164} optically coupled to EJ-200 plastic scintillator~\cite{ej200} shaped into a cylinder of 1-cm diameter and 5-cm height. The scintillator is coated with white paint to reflect light into the tag PMT, and then coated with matte black paint (except for the end that is coupled to the PMT) to shield the remainder of the setup from light contamination.  This assembly is held in a custom-built mount.
+Two custom-made cylindrical scintillator tags are positioned above and below the target vessel (\Cref{fig:timing-setup}) in order to trigger on vertical cosmic muons.  
+An aluminum arm maintains the alignment of the upper cosmic muon tag while providing easy access to the target vessel.
+The bottom cosmic muon tag is fixed in the center slot of the PMT array. 
+Each tag consists of a cylindrical 1-cm diameter Hamamatsu PMT~\cite{h3164} optically coupled to a 1-cm diameter 5-cm tall cylinder of EJ-200 plastic scintillator~\cite{ej200}.
+The scintillator is coated with white paint to reflect light into the tag PMT, and then coated with matte black paint (except for the end that is coupled to the PMT) to shield the remainder of the setup from light contamination. 
 
 The small size of the tags results in a low angular acceptance (6$^{\circ}$ from vertical), ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring.  
 Given the typical muon flux at the Earth surface ($1~\mbox{cm}^{-2}\mbox{min}^{-1}$) and the angular acceptance of the tags, a coincidence rate of $\sim4~\mu / \mbox{day}$ is predicted. 
 
+
+\subsection{Optical Propagation}
+
+Cherenkov light from the vertically going muons is emitted at approximately 45$^{\circ}$from the muon track.
+This unfortunately means that an acrylic-air boundary perpendicular to the track would totally internally reflect the Cherenkov photons away from the PMTs.
+To resolve this, a large UVT acrylic block (30~cm $\times$ 30~cm $\times$ 6.5~cm) referred to as the optical propagation medium was fabricated to direct photons down towards the PMTs.
+The target vessel is optically coupled to the top of this propagation medium, which itself is optically coupled to the PMTs.
+This ensures maximal light collection efficiency.
+To prevent the vertically going muons from creating Cherenkov light in this propagation medium, a 1-cm vertical hole was machined into it for the muons to travel through.
+Throughout the setup, EJ-550 optical grease~\cite{ej550} is used for optical coupling of components. 
+
 \subsection{Veto Panels}\label{s:veto}
 
-The apparatus is surrounded by four scintillator panels (50~cm$\times$100~cm$\times$5.3~cm), as shown in Fig.~\ref{f:veto}, fabricated from EJ-200 plastic scintillator~\cite{ej200} (two on the floor and two on the sides in a corner distribution) providing effective $4\pi$ coverage. 
+CHESS is positioned within a volume guarded by four scintillator panels (50~cm$\times$100~cm$\times$5.3~cm), as shown in Fig.~\ref{f:veto}, fabricated from EJ-200 plastic scintillator~\cite{ej200} (two on the floor and two on the sides in a corner distribution) providing effective $4\pi$ coverage. 
 Each panel is instrumented with a PMT~\cite{9102ksb} which is read out for each event and used for an offline veto. The scintillator panels are used to veto cosmic events during calibration source deployment, and to reject cosmic shower events and coincidence of multiple cosmic muons in the ring imaging analysis. 
 
 \begin{figure}
@@ -126,16 +148,7 @@ Each panel is instrumented with a PMT~\cite{9102ksb} which is read out for each 
 \end{figure}
 
 
-\subsection{Shielding}
-CHESS is enclosed in a light-tight darkbox of about 1.5~m$\times$1.5~m$\times$1~m wrapped in FINEMET\textsuperscript{\textregistered} sheets~\cite{finemet} for magnetic field isolation and painted matte black on the inside to minimize reflections.  
-
-
-\subsection{Radioactive Source Deployment}\label{s:source}
-A $^{90}$Sr button source is used to calibrate various aspects of the detector response (Sec.~\ref{sec:calibration}).  The source consists of a 1-inch diameter acrylic disk with a thickness of 0.125 inches (\cite{buttonsource}). A 0.25-inch diameter cylindrical well in the center of the button contains a deposit of 0.1$\mu Ci$ of $^{90}$Sr combined with a resin. The well containing the radioactive material is encapsulated with a 0.02-inch thick acrylic window. This source is attached to one face of the target vessel with the window facing the target material.
-
-To trigger on source events a  1-inch cubic H11934-200  PMT~\cite{h11934} is optically coupled to another of the flat faces on the target vessel. This is the same type of PMT used in the PMT array and was chosen for its high QE and low TTS. 
-
-\subsection{The DAQ System \label{sec:daq}}
+\section{The DAQ System \label{sec:daq}}
 
 A schematic diagram of the data acquisition (DAQ) hardware is shown in \Cref{fig:daq}  (high voltage omitted) and described in detail in the following sections. 
 The DAQ software~\cite{wblsdaq} utilizes the CAEN VME library~\cite{caen-vme} to configure and read out the digitizers and high voltage supplies, and outputs HDF5~\cite{hdf5} formatted files containing raw digitized data and metadata for each triggered event.
@@ -148,15 +161,18 @@ The DAQ software~\cite{wblsdaq} utilizes the CAEN VME library~\cite{caen-vme} to
 \end{figure}
 
 
-\subsubsection{Readout Electronics and High Voltage}
+\subsection{Readout Electronics and High Voltage}
 Three six-channel high-voltage power supplies (CAEN V6533~\cite{v6533}) power the PMTs. 
-The PMT output signals are connected to two CAEN digitizers: a high-precision V1730~\cite{v1730} digitizes the veto panels and source tag PMT signals, while a fast V1742~\cite{v1742} based on the DRS4~\cite{drs4} chip digitizes the PMT array and cosmic tag signals.  The hardware is housed in a VME crate, and a CAEN V1718~\cite{v1718} VME to USB bridge is used for communications.  
+The PMT output signals are connected to two CAEN digitizers: a high-precision V1730~\cite{v1730} digitizes the veto panels and source tag PMT signals, while a fast V1742~\cite{v1742} based on the DRS4~\cite{drs4} chip digitizes the PMT array and cosmic tag signals.  
+The hardware is housed in a VME crate, and a CAEN V1718~\cite{v1718} VME to USB bridge is used for communications.  
 
-The V1742 card is capable of sub-$100$~ps resolution, which exceeds the TTS of the PMT array and is therefore not a limiting factor in the time precision.  However, on-board buffer size limits the acquisition to a maximum of 1024 samples or 200~ns. This shallow buffer necessitated a low-latency triggering scheme in order to contain the pertinent data in the available event window. The V1730 digitizer is deadtimeless, however, the V1742 introduces dead time on the order of 100~$\mu$s.  This is neither a limitation for measurements with cosmic particles, where the trigger rate is approximately $0.2$~Hz, nor for measurements with radioactive source data where the trigger rate is approximately $30$~Hz.  
-  
+The V1742 card is capable of sub-$100$~ps resolution, which exceeds the TTS of the PMT array and is therefore not a limiting factor in the time precision.  
+However, on-board buffer size limits the acquisition to a maximum of 1024 samples or 200~ns. 
+This shallow buffer necessitated a low-latency triggering scheme in order to contain the pertinent data in the available event window. 
+The V1730 digitizer is deadtimeless, however, the V1742 introduces dead time on the order of 100~$\mu$s.  
+This is neither a limitation for measurements with cosmic particles, where the trigger rate is approximately $0.2$~Hz, nor for measurements with radioactive source data where the trigger rate is approximately $30$~Hz.  
 
-
-\subsubsection{Trigger}
+\subsection{Trigger}
 \label{sec:triggering}
 
 A LeCroy 606Zi~\cite{lecroy606zi} oscilloscope is used to produce low-latency trigger signals for the setup with programmable coincidence logic. 
@@ -179,54 +195,85 @@ As these four chips operate on independent high-speed sampling clocks, the trigg
 \section{Monte Carlo Simulation}
 \label{sec:simulation}
 
-The entire setup is simulated in the RAT-PAC suite~\cite{ratpac}. Primary particles are produced (\Cref{sec:primarygen}) and tracked in a complete geometry implemented in GEANT4~\cite{geant4}. When Cherenkov and scintillation processes take place (\Cref{sec:photon_prod}), individual photons are tracked from the production point to the PMTs (\Cref{sec:optics}). Once the photon reaches the PMT, a custom model decides whether to produce a photoelectron (PE) based on the photon properties and PMT features (\Cref{sec:pmt_model}). If a PE is produced, a custom DAQ simulation (\Cref{sec:daq_sim}) produces a pulse per PE and the total waveform is digitized and stored for posterior analysis. Further details on each of the points are given in the following sections.
-
+The entire setup is simulated in the open source program RAT-PAC~\cite{ratpac} which is closely related to the RAT software used by SNO+. 
+Primary particles are produced (\Cref{sec:primarygen}) and tracked in a complete geometry implemented in GEANT4~\cite{geant4}. 
+When Cherenkov and scintillation processes take place (\Cref{sec:photon_prod}), individual photons are tracked from the production point to the PMTs (\Cref{sec:optics}). 
+Once the photon reaches the PMT, a custom model decides whether to produce a photoelectron (PE) based on the photon properties and PMT features (\Cref{sec:pmt_model}). 
+If any PE are produced in a PMT for an event, a custom DAQ simulation (\Cref{sec:daq_sim}) generates a simulated waveform for that PMT to be analyzed with the same algorithms applied to data.
 
 \subsection{Cosmic Muon Generator}
 \label{sec:primarygen}
 
-Muons and anti-muons are generated at $50\%$ ratio following the semi-empirical modified Gaisser distribution~\cite{gaisser-mod}. The hadronic component at surface is expected to be sub-dominant by a factor of approximately 50, resulting in a predicted 3 events within a month's worth of data, thus this component is not considered.  Muons are constrained to pass through the bottom tag volume.
-There exists the possibility that high energy electrons produced by muon ionization trigger the bottom cosmic tag. This is reproduced in simulation by including a complete model of the holder material and geometry for both top and bottom tags.
-
-
+Muons and anti-muons are generated at $50\%$ ratio following the semi-empirical modified Gaisser distribution~\cite{gaisser-mod}. 
+Generated muons are constrained to pass through the bottom tag volume, as this is the trigger signal for the detector. 
+Coincidence constraints between the bottom and top tag are applied in offline analysis.
+There exists the possibility that high energy delta rays (electrons produced by muon ionization) may trigger one of the cosmic tags, resulting in false coincidence.
+This is reproduced in simulation by including a complete model of the holder material and geometry for both top and bottom tags.
 
 \subsection{Photon Production \label{sec:photon_prod}}
 
-Cherenkov production is simulated by GEANT4 by the standard class G4Cerenkov. The typical Cherenkov emission spectrum is shown in \Cref{fig:optics}. Cherenkov photons emitted with a wavelength below a certain value are immediately reabsorbed by the medium and hence are not propagated in the simulation. Scintillation emission is handled by a minimally modified version of the GLG4Sim model~\cite{glg4sim}. A charged particle passing through a medium deposits an energy $E$ due to ionization. The total number of scintillation photons generated is not expected to behave linearly with $E$ due to quenching effects. This is taken into account by using Birk's law~\cite{birks} which states that the deposited energy after quenching, $E_{q}$, is:
+Cherenkov production is simulated by GEANT4 by the standard model implemented in G4Cerenkov. 
+The typical Cherenkov emission spectrum is shown in \Cref{fig:optics}.
+
+Scintillation emission is handled by a minimally modified version of the GLG4Scint model~\cite{glg4sim}. 
+A charged particle passing through a medium deposits an energy $E$ due to ionization. 
+The total number of scintillation photons generated is not expected to behave linearly with $E$ due to quenching effects in the scintillator.
+This is taken into account by GLG4Scint by using Birk's law~\cite{birks} which states that the deposited energy after quenching, $E_{q}$, is:
 \begin{eqnarray}
 	\dfrac{dE_{q}}{dx} = \dfrac{dE/dx}{1+ k_BdE/dx},
     \label{eq:birk}
 \end{eqnarray}
-where $k_B$ is Birk's constant. The total number of  photons produced, $N_{\gamma}$, is the direct product of $E_{q}$ and the light yield of the material in question in photons/MeV. Ex-situ measurements for the scintillation emission spectrum, light yield and time profile for LAB and LAB/PPO are included in the simulation. $N_{\gamma}$ photons are drawn randomly from the emission spectrum of the scintillator under investigation. The spectra for LAB~\cite{lab_emission} and LAB/PPO~\cite{snop_private} are shown in \Cref{fig:optics}. 
+where $k_B$ is Birk's constant, which must be determined for any particular scintillator. 
+The total number of  photons produced, $N_{\gamma}$, is directly $E_{q}$, where the proportionality constant is typically called the light yield of the material. 
 
-The short term components of the timing profile $\rho(t)$ for the scintillation process is well described by a double exponential model~\cite{mcguire_palmer}, including both a rise time and a decay time. Two further decaying exponentials are included for LAB/PPO, based on~\cite{labppo}. The simulated time profile is:
+Scintillation photons are emitted with some characteristic time profile, $\rho(t)$, typically modeled as an exponential rise and a sum of exponentially decaying terms of various time constants.
+This time profile is well described by a double exponential model~\cite{mcguire_palmer}, including both a rise time and a decay time. 
+Two further decaying exponentials are included for LAB+PPO, based on measurements in~\cite{labppo}. The simulated time profile is:
 \begin{eqnarray}
 \rho(t) \propto (1 - e^{-t/\tau_r}) \times \sum^3_i A_i e^{-t/\tau_i},
 \end{eqnarray}
 where $\tau_r$ is the rise time and the parameters $\tau_i$ and $A_i$ are the decay times and their scale factors.
+RAT-PAC also supports an the use of an arbitrary PDF as the scintillation time profile.
+Similarly, scintillation photons follow some wavelength distribution, often called an emission spectrum, for which RAT-PAC accepts an arbitrary PDF.
+
+Ex-situ measurements for the scintillation emission spectrum, light yield, and time profile are included in the simulation. 
+The procedure for generating scintillation photons draws $N_{\gamma}$ photons randomly from the emission spectrum and time profile of the scintillator under investigation. 
+For reference, the spectra for LAB~\cite{lab_emission} and LAB+PPO~\cite{snop_private} are shown in \Cref{fig:optics}. 
+
 
 \subsection{Optical Propagation \label{sec:optics}}
 
-Optical photons are propagated through different media by GEANT4. Absorption, refraction and reflection are taken into account according to the material's optical properties. The absorption length of the UVT acrylic used in CHESS (\Cref{fig:optics}) has been measured with a spectrometer and is included directly in the simulation.  
-The refractive indexes for LAB and LAB/PPO are considered to be the same and are taken from~\cite{snop_private}. \\
-Photon reemission from wavelength shifting materials are simulated in a similar fashion as the scintillation process. Once a photon is absorbed in a medium, there is a finite probability that it will be reemitted following a specified reemission spectrum.
-
-
+Optical photons are propagated through different media by GEANT4. 
+Absorption, refraction and reflection are taken into account according to the optical properties defined for each material. 
+The absorption length of the UVT acrylic used in CHESS (\Cref{fig:optics}) was measured with a spectrometer and is included directly in the simulation.  
+The refractive indexes for LAB and LAB+PPO are considered to be the same and are taken from~\cite{snop_private}. \\
+Photon reemission from wavelength shifting materials are simulated in a similar fashion as the scintillation process. Once a photon is absorbed in a scintillating medium, there is a finite probability that it will be reemitted by again randomly sampling the emission spectrum.
 
 \subsection{PMT Model \label{sec:pmt_model}}
 
-A full and precise simulation of the different PMTs is implemented in RAT-PAC. It contains a detailed PMT geometry (glass, photocathode, dynode stack and case) as well as a dedicated photon tracking simulation inside the PMT volume. Once an optical photon hits the external boundary of the PMT glass, it is propagated through the different internal PMT surfaces according to the relevant material optical properties.  The QE of the PMTs is taken from Hamamatsu specifications~\cite{h11934} and used as an input to the simulation to determine whether or not to create a PE for an incident photon at a particular wavelength. An individual normalization can be applied to the efficiency of each tube to allow for  
-a finite collection efficiency.  These are set to 90\% for each tube~\cite{hamamatsu}.  
-If the incident photon creates a PE, its associated charge and time are extracted from Gaussian distributions that have been previously calibrated to take into account the PMT gain and electronic delays (\Cref{sec:calibration}).
+Detailed PMT geometries (glass, photocathode, dynode stack and case) are included in RAT-PAC, as well as a fast photon tracking simulation inside the PMT volume. 
+Once an optical photon hits the external boundary of the PMT glass, it is propagated directly from one dielectric interface to another according relevant refractive indices until it is absorbed in the photo cathode, absorbed at an interface, or escapes the PMT.
+This ignores additional effects considered by GEANT4 during normal photon propagation outside the PMT, resulting in a significant speedup of the simulation.
+
+The QE of the PMTs is taken from Hamamatsu specifications~\cite{h11934} and used by the simulation to determine whether or not to create a PE for an incident photon at a particular wavelength. 
+The collection efficiency of generated PE can be simulated per PMT, however these are set to a nominal 90\% for each PMT according to Hamamatsu specifications~\cite{hamamatsu}.  
+If the incident photon creates a PE, the total amplified char charge and detection time time are extracted from Gaussian distributions that have been previously calibrated to take into account the PMT gain and electronic delays (\Cref{sec:calibration}).
 
 \subsubsection{Charge Distribution Model}
 
-The single-PE (SPE) charge distribution is modeled as a Gaussian truncated for negative charge values. The SPE charge distribution for individual PMTs has been measured (\Cref{sec:calibration}) and \Cref{fig:spe_data} shows that the Gaussian model agrees well with the data.
+The single-PE (SPE) charge distribution is modeled as a Gaussian truncated at zero to exclude negative charge values. 
+The SPE charge distribution for individual PMTs was measured (\Cref{sec:calibration}), and \Cref{fig:spe_data} shows that the Gaussian model agrees well with the data.
 
 
 \subsubsection{Time Profile Model}
 
-Each PMT has a characteristic transit time and TTS that depends on the PMT design. These numbers are taken from the PMT specifications and included in the simulation assuming the time is Gaussian distributed. The PMT specifications~\cite{h11934} show that the Gaussian model is a very good approximation to the time profile. The mean is set to the provided transit time and the width to the provided TTS. Extra time offset parameters allow for individual delays per electronics channel (referring to the PMT, cable, and readout electronics) primarily due to different cable lengths. These are measured on a channel-by-channel basis (\Cref{sec:calibration}).
+Each PMT has a characteristic transit time and transit time spread (TTS) that depends strongly on the internal design of the PMT. 
+Nominal values for both are taken from the PMT specifications and included in the simulation by assuming the detected time is Gaussian distributed, with a mean consistent with the transit time and the width being consistent with the TTS. 
+The PMT specifications~\cite{h11934} show that the Gaussian TTS model is a very good approximation.
+The time calibration of the detector is also included here with an extra offset to the detected time.
+This additional offset represents variation in cable length between PMTs, and variation in signal path in the DAQ.
+With time precision on the order of 100~ps, signal path differences of order cm are significant.
+These are measured for each cPMT (\Cref{sec:calibration}).
 
 
 
@@ -236,39 +283,53 @@ Each PMT has a characteristic transit time and TTS that depends on the PMT desig
 For each event an analog waveform is generated per channel by summing the individual pulses created by each PE (\Cref{sec:pmtpulses}). 
 The waveform is then digitized via a process that mimics the characteristics of the two models of CAEN digitizers used in the detector. 
 High frequency electronics noise is added to these digitized waveforms following a Gaussian distribution centered at zero and with a width of $0.35$~mV and $0.88$~mV for the V1730 and V1742 cards, respectively.
-These widths are measured from data by performing a Gaussian fit to the residuals of pedestal-corrected noise data.
-In this way, any effects introduced into the dataset by the digitization process are reproduced in the simulation.
+These widths are measured from data by measuring the RMS of force-triggered noise data from the detector.
+This allows the simulation to reliably reproduce digitized traces for each PMT for each event.
 
 The trigger process implements the conditions described in \Cref{sec:triggering} and decides whether to create a triggered detector event. 
-When an event is created, acquisition windows corresponding to the buffer size of the appropriate digitizer are captured from the digitized waveforms.
-These windows are used to determine photon hit times and charge using the same process as applied to data in Sec.~\ref{s:analysis}.  
-The trigger process then scans the remainder of the digitized waveform to look for additional triggers within the same simulated physics event. 
+When an event is created, acquisition windows corresponding to the buffer size of the appropriate digitizer are captured from the simulated waveforms.
+These windows are used to determine photon hit times and charge using the same process as applied to data in \Cref{s:analysis}.  
+The trigger process then scans the remainder of the digitized waveform to look for additional triggers within the same simulated physics event, in an analogous way to the functioning of the physical DAQ.
 
 
 \section{Waveform Analysis}\label{s:analysis}
 
 The full waveform is analyzed to extract individual PMT charges and hit times. 
-An analysis window of $135$~ns (675 samples) is chosen starting $160$~ns (800 samples) prior to the acquisition trigger. This is defined based on when light from the target is expected to hit the PMT array. The charge in picocoulombs is defined as the integral within that window multiplied by a 50~$\Omega$ resistance, corrected by the pedestal charge. The pedestal charge is calculated on a trace-by-trace basis by taking an average of sample values across the pedestal region, which is defined by a $25$~ns window right before the analysis window. If fluctuations of more than $5$~mV peak-to-valley are detected in the pedestal region, the waveform is not analyzed.  The total integrated charge is converted to an estimated number of detected PEs by normalizing by the mean value of the SPE charge distribution measured in \Cref{sec:calibration}.
+An analysis window of $135$~ns (675 samples) is chosen starting $160$~ns (800 samples) prior to the acquisition trigger. 
+This window is optimized to start when light from the target is expected to hit the PMT array. 
+A short 25~ns pedestal window prior to the analysis window is used to estimate the voltage baseline for each PMT for each event.
+The the baseline is subtracted off the analysis window, and the residuals are integrated to determine the total charge detected by each PMT. 
+To ensure that this process works reliably, fluctuations of more than $5$~mV peak-to-valley in the pedestal window results the event being discarded in offline analysis.  
+The integrated charge is used to estimate the number of PE by dividing by the mean of the SPE distribution for that PMT as determined in calibrations (\Cref{sec:calibration}).
 
-The time of an individual PMT pulse is defined as the time at which the waveform crosses a threshold given by $25\%$ of the  height of a single PE pulse. 
-This threshold is determined by modeling the PMT pulse as a log-normal pulse with parameters extracted from the fit in \Cref{sec:pmtpulses} and an integrated charge equivalent to the mean of the SPE distribution for each PMT (\Cref{pmt-gain}). 
-This threshold is well clear of the per-channel noise levels, as can be seen in Fig.~\ref{fig:spe-pulse-shape}. 
+A discriminator is implemented in the analysis software to determine the hit time of each PMT.
+If the waveform crosses a threshold given by $25\%$ of the height of a single PE pulse, a hit time is computed at that crossing.
+This threshold is determined per PMT by modeling the PMT pulse shape as a log-normal pulse with parameters extracted from the fit in \Cref{sec:pmtpulses} and requiring integrated charge equivalent to the mean of the SPE distribution for each PMT (\Cref{pmt-gain}). 
+This threshold is well clear of the electronics noise, as can be seen in \Cref{fig:spe-pulse-shape}. 
 
-
-Linear interpolation between ADC samples is used to maximize the time precision. The measured hit time at the PMT array is corrected by the photon time of flight (ToF), assuming that the photons are produced in the center of the target. 
+Linear interpolation between digitized samples is used to maximize the time precision. 
+Finally, these hit times are corrected by the expected time of flight (ToF) between the center of the target vessel and each PMT in order to find the creation time of each detected photon, which can be compared between PMTs regardless of PMT position.
 
 \section{Calibration}
 \label{sec:calibration}
 
-The setup is calibrated using a $^{90}$Sr beta source in combination with a water-filled target, an LED deployed in the dark box, and a control sample of cosmic muons passing through the acrylic propagation medium. For source data, the veto panels are used to reject coincident cosmic muon events. Beta decay, muon ionization and Cherenkov emission are well understood processes that help to calibrate the optical aspects of the detector. 
+The setup is calibrated using a $^{90}$Sr beta source in combination with a water-filled target, an LED deployed in the dark box, and a control sample of cosmic muons passing through the acrylic propagation medium. 
+For source data, the veto panels are used to reject all cosmic muon events. 
+Beta decay, muon ionization, and Cherenkov emission are well understood processes that help to calibrate the optical aspects of the detector. 
 The following sections detail the calibration techniques.
-
 
 \subsection{PMT Gain}
 \label{pmt-gain}
-PMT gains depend on the supplied voltage and vary tube-by-tube, so the gain is measured individually for each PMT in the array. The PMT voltages are kept constant between data-taking periods. A direct measurement of the gain is given by the SPE charge distributions. A dim source of light is provided by the $^{90}$Sr beta source (Sec.~\ref{s:source}) attached to the water target. 
-A small PMT optically coupled to the target is used to trigger the acquisition (Sec.~\ref{sec:triggering}). The SPE charge distribution for one of the array PMTs  is shown in \Cref{fig:spe_data}, where a clear SPE peak is identifiable. There is a noticeable population of multi PE events, 
-which may be due to byproducts of muon cosmic events crossing the propagation medium. The muons themselves are easily vetoed using the scintillator panels (Sec.~\ref{s:veto}), but high energy electrons and gammas produced by these muons are more difficult to veto and thus cause irreducible tails in the charge distribution. 
+PMT gains depend on the supplied voltage, which is held constant in CHESS, but also vary between PMTs depending on the particulars of individual manufacture, so the gain is measured for each PMT in the array. 
+Gain is measured by using a dim light source known to have fewer than one detected photon per PMT on average.
+The $^{90}$Sr beta source attached to the water target provides such a dim source.
+A small PMT optically coupled to the target is used to trigger the acquisition (\Cref{sec:triggering}). 
+By determining the charge for many events, and excluding events with no detected photon, one can determine the characteristic charge of a single photon, which can assumed to be sampled multiple times to produce the charge of a multi-photon event.
+The SPE charge distribution for one of the array PMTs  is shown in \Cref{fig:spe_data}, where a clear SPE distribution is seen. 
+Also visible in that figure is a noticeable population of multi PE events, which may be due to byproducts of muon cosmic events crossing the propagation medium, or other intrinsic radioactivity near the detector. 
+Muons themselves are easily vetoed using the veto panels surrounding the setup, but high energy electrons and gammas produced by these muons are more difficult to veto, and could cause these tails in the charge distribution. 
+
+%STOPPED HERE
 
 A Gaussian fit is used to model the charge distributions. To precisely extract the SPE parameters, the noise distribution and the multi-PE event distributions with up to 3 PEs are included and re-weighted by nuisance parameters. A Gaussian is assumed for the noise peak distribution with a mean, width and integral floated in the fit. For multi-PE events only the event rates with respect to SPE are floated in the fit, since the mean and width are determined by the SPE distribution. As a result, a fit with 7 parameters (SPE mean and width, noise mean, width and integral, multi-PE event rates for 2 and 3 PEs) driving a multi-Gaussian model is performed and the mean and width for the SPE of each single PMT is extracted.  \Cref{fig:spe_data} shows a sample fit. 
 Before inclusion in the Monte Carlo model the SPE width is corrected for noise, since this is independently modeled, 
@@ -376,7 +437,7 @@ Clean cosmic muon events are expected to produce hits only on the middle PMTs (f
 In both cases of follower events, the majority of Cherenkov light generated in the propagation medium was observed 
 to fall primarily on the innermost PMTs within the array.  This was confirmed by Monte Carlo simulations of each event type, which 
 demonstrated that muon followers do produce events with this topology.   
-Simulations of these events show a clear tail in the PE distribution observed on the inner PMT group for both water and LAB/PPO targets (Fig.~\ref{f:clipMC}).  
+Simulations of these events show a clear tail in the PE distribution observed on the inner PMT group for both water and LAB+PPO targets (Fig.~\ref{f:clipMC}).  
 These events 
 typically create between 30 and 400 PEs in the innermost PMTs, making their identification in both water and LS possible by analysis of the charge on these PMTs.  
 
@@ -384,12 +445,12 @@ typically create between 30 and 400 PEs in the innermost PMTs, making their iden
 \centering
 \includegraphics[width=0.6\columnwidth]{cosmic_water_clipping}
 \includegraphics[width=0.6\columnwidth]{cosmic_labppo_clipping}
-\caption{ Monte Carlo simulation of the summed PE distribution on the inner PMT group due to cosmic muon events with perfect rings (turquoise, right diagonal hatching), muon contamination (orange, left diagonal hatching), electron contamination (purple, right diagonal dashed hatching), and the total (red, solid).  (a) Water target, with water data overlaid to show the agreement, and (b) LAB/PPO target.  The vertical black dashed line represents the chosen cut value, with arrows to illustrate the acceptance region.}
+\caption{ Monte Carlo simulation of the summed PE distribution on the inner PMT group due to cosmic muon events with perfect rings (turquoise, right diagonal hatching), muon contamination (orange, left diagonal hatching), electron contamination (purple, right diagonal dashed hatching), and the total (red, solid).  (a) Water target, with water data overlaid to show the agreement, and (b) LAB+PPO target.  The vertical black dashed line represents the chosen cut value, with arrows to illustrate the acceptance region.}
 \label{f:clipMC}
 \end{figure}
 
 A cut was designed to reject these events based on event topology: since the Cherenkov ring geometry is not expected to produce hits on the inner PMTs for either a water or LS target, the total number of estimated PEs on the inner PMTs was used to identify clean rings.   In water this charge is expected to be very low (consistent with noise), whereas in LS the total charge will be higher due to scintillation photons.  However, as demonstrated in Fig.~\ref{f:clipMC}, a large fraction of follower events can still be removed with a high-charge cut.   
-A cut was placed at a summed PE count of 40 for water and LAB targets, and 500 for LAB/PPO.  
+A cut was placed at a summed PE count of 40 for water and LAB targets, and 500 for LAB+PPO.  
 These cuts were conservatively chosen based on the simulations to reject events with high light contamination due to secondary particles with a minimal impact on the efficiency. 
 Performance of this cut in water is shown in 
 the top panel of Fig.~\ref{f:clipMC}.  The high-charge tail due to follower events is similar to that seen in the simulation, supporting use of the simulation for defining this cut for both water and LS targets. The  cut value selected for a water target removes a large fraction of the remaining background events, with zero sacrifice in the control sample.  
@@ -508,16 +569,16 @@ A threshold of $Q_{\rm ratio}=0.09$ gives a Cherenkov detection efficiency of $9
 	\label{f:labQ}
 \end{figure}
 
-\section{LAB/PPO Results}
+\section{LAB+PPO Results}
 \label{sec:labppo}
 
-After applying event selection criteria, $103$ ring candidates were identified in the LAB/PPO data set. 
+After applying event selection criteria, $103$ ring candidates were identified in the LAB+PPO data set. 
 The topology of a typical event, and the average across the data set, are shown in \Cref{fig:labppo_ring}.  Again a clear ring structure can be observed. 
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringcandidate_time_dt}
 	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringtime_dt}	
-	\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in LAB/PPO.}
+	\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in LAB+PPO.}
 	\label{fig:labppo_ring}
 \end{figure}
 Hit-time residual distributions are shown in \Cref{fig:labppo}, where the early Cherenkov hits on outer PMTs are clear. The separation is less distinct than for pure LAB, as expected. The MC shows good agreement with data.  
@@ -528,26 +589,26 @@ A  cut at $ t_c = 0.4$~ns yields Cherenkov detection efficiency of  $70 \pm 3 $(
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_time_smear_0p75nsrtime}
-	\caption{Hit-time residual distributions in LAB/PPO for data and MC.}
+	\caption{Hit-time residual distributions in LAB+PPO for data and MC.}
 	\label{fig:labppo}
 \end{figure}
 
-The charge ratio for LAB/PPO is shown in Fig.~\ref{f:labppoQ}.   The separation is more difficult in LAB/PPO due to higher scintillation yield.  A threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection efficiency of $63\pm4$(stat)$\pm7$(syst)\% with contamination of $38\pm3$(stat)$\pm2$(syst)\%.
+The charge ratio for LAB+PPO is shown in Fig.~\ref{f:labppoQ}.   The separation is more difficult in LAB+PPO due to higher scintillation yield.  A threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection efficiency of $63\pm4$(stat)$\pm7$(syst)\% with contamination of $38\pm3$(stat)$\pm2$(syst)\%.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_qratio5ns_led_dt}
-	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for LAB/PPO.}
+	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for LAB+PPO.}
 	\label{f:labppoQ}
 \end{figure}
 
-A scan of the LAB/PPO rise time, $\tau_r$, showed that the data is inconsistent with zero rise time.  The best $\chi^2$ value for  agreement between data and MC is for $\tau_r=0.75$~ns. The data is consistent with $\tau_r=0.5-1.0$~ns.
+A scan of the LAB+PPO rise time, $\tau_r$, showed that the data is inconsistent with zero rise time.  The best $\chi^2$ value for  agreement between data and MC is for $\tau_r=0.75$~ns. The data is consistent with $\tau_r=0.5-1.0$~ns.
 
 
-Successful  time- and charge-based separation of Cherenkov and scintillation light has been achieved in both LAB and LAB/PPO with CHESS. 
-A time resolution of $338\pm12$~ps FWHM yields a Cherenkov detection efficiency in LAB/PPO of  
+Successful  time- and charge-based separation of Cherenkov and scintillation light has been achieved in both LAB and LAB+PPO with CHESS. 
+A time resolution of $338\pm12$~ps FWHM yields a Cherenkov detection efficiency in LAB+PPO of  
 $70 \pm 3 \%$ and $63\pm8$\% for time- and charge-based separation, respectively, with scintillation contamination of  $36\pm5\%$ and $38\pm4$\%.  In pure LAB the time- and charge-based Cherenkov efficiencies are $83\pm3\%$ and $96\pm2$\%, with contaminations of $11\pm1\%$ and $6\pm3$\%.
-The LAB/PPO  data  is  inconsistent with zero rise time, and consistent with a range of $0.75\pm0.25$~ns.  
+The LAB+PPO  data  is  inconsistent with zero rise time, and consistent with a range of $0.75\pm0.25$~ns.  
 
 
 \section{WbLS Results}
