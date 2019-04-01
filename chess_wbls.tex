@@ -58,7 +58,7 @@ Detection based on wavelength requires expensive optical filters and complicated
 Intensity based detection means a sacrifice of scintillation photons to avoid losing Cherenkov photons in counting statistics.
 Recently developed Water-based Liquid Scintillator (WbLS)~\cite{wbls} materials aim to optimize this sacrifice.
 Finally, timing based detection requires very fast (on the order of 100~ps) photon detectors, which can be very expensive.
-Traditionally used large photomultiplier Tubes (PMTs) typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult. 
+Traditionally used large PMTs typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult. 
 Smaller PMTs~\cite{h11934} can achieve timing precision of $\lesssim$ 300~ps and new micro-channel plate (MCP) photosensor technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps.
 
 
@@ -661,8 +661,8 @@ Nevertheless, a threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection e
 \label{sec:wbls}
 
 Finally, CHESS was used to evaluate the Cherenkov / scintillation separation capabilities of WbLS.
-Shown in this section are timing and charge results for 1\% and 5\% scintillator mixtures that are expected to have roughly 1\% and 5\% of LAB+PPO light yield.
-Because the scintillation component is expected to be very dim, the results shown here for charge are directly in units of PE instead of the charge ratio shown for brighter LS in previous sections.
+Shown in this section are timing and charge results for 1\%, 5\%, and 10\% scintillator mixtures that are expected to have roughly 1\%, 5\%, and 10\% of LAB+PPO light yield.
+Because the scintillation component is expected to be very dim for the lower scintillator fractions, the results shown here for charge are directly in units of PE instead of the charge ratio shown for brighter LS in previous sections.
 The refractive index of these low scintillator fraction WbLS materials is very similar to water, so the Cherenkov ring is expected to fall on the middle set of PMTs.
 
 \subsubsection{1\% WbLS}
@@ -703,11 +703,11 @@ Similarly, the total number of PE distributions shown in \Cref{fig:wbls1pct_tota
 
 \subsubsection{5\% WbLS}
 
-After applying selection criteria to the 5\% WbLS dataset, 83 ring candidates are found.
+After applying selection criteria to the 10\% WbLS dataset, 83 ring candidates are found.
 The average hit time residuals and average charge observed by each PMT is given in \Cref{fig:wbls5pct_avg_charge,fig:wbls5pct_avg_time}.
 Relative to the 1\%WbLS results, the scintillation component is notably brighter, resulting in a poorer contrast in charge.
 The hit time residual distributions shown in \Cref{fig:wbls5pct_tresid} still indicate a clear population of prompt Cherenkov photons on the middle grouping of PMTs, meaning time-based separation is still viable.
-The total number of PE distributions shown in \Cref{fig:wbls5pct_totalq} again indicates charge based separation will be difficult, as the middle group of PMTs is only seeing a slightly higher number of PE on average.
+The total number of PE distributions shown in \Cref{fig:wbls5pct_totalq} indicate charge based separation will be difficult, as the middle group of PMTs is only seeing a slightly higher number of PE on average.
 
 \begin{figure}
 \centering
@@ -735,6 +735,42 @@ The total number of PE distributions shown in \Cref{fig:wbls5pct_totalq} again i
 \caption{\label{fig:wbls5pct_totalq}A histogram of the total number of PE for all selected events in the 5\% WbLS dataset grouped by PMT radius}
 \end{figure}
 
+\clearpage
+
+\subsubsection{10\% WbLS}
+
+After applying selection criteria to the 10\% WbLS dataset, 171 ring candidates are found.
+The average hit time residuals and average charge observed by each PMT is given in \Cref{fig:wbls10pct_avg_charge,fig:wbls10pct_avg_time}.
+Here the scintillation component is now bright enough that the contrast between the Cherenkov and scintillation regions in intensity is quite poor.
+The hit time residual distributions shown in \Cref{fig:wbls10pct_tresid} are not that dissimilar from the 5\% WbLS results, with a clear prompt Cherenkov signal on the middle PMTs.
+The total number of PE distributions shown in \Cref{fig:wbls10pct_totalq} present little hope for intensity based identification alone, with only a slight upward shift in the distribution of middle PMTs, which should see Cherenkov light as well as scintillation.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{wbls_10pct_avg_time}
+\includegraphics[width=0.09\columnwidth]{wbls_10pct_avg_time_legend}
+\caption{\label{fig:wbls10pct_avg_time}The average hit time residuals for all selected events in the 10\% WbLS dataset.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{wbls_10pct_avg_charge}
+\includegraphics[width=0.09\columnwidth]{wbls_10pct_avg_charge_legend}
+\caption{\label{fig:wbls10pct_avg_charge}The average number of detected PE for all selected events in the 10\% WbLS dataset.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{wbls_10pct_hittimes}
+\caption{\label{fig:wbls10pct_tresid}A histogram of the hit time residuals for all selected events in the 10\% WbLS dataset grouped by PMT radius}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{wbls_10pct_charge}
+\caption{\label{fig:wbls10pct_totalq}A histogram of the total number of PE for all selected events in the 10\% WbLS dataset grouped by PMT radius}
+\end{figure}
+
 \section{Prospects}
 
 CHESS demonstrated the potential for Cherenkov / scintillation separation in the traditional scintillator LAB+PPO, with the caveat that very fast photon detectors are required.
@@ -742,6 +778,8 @@ Such detectors are currently being developed in the form of micro-channel plate 
 While they are cost-prohibitive at the moment (compared to large PMTs), as they become more commercially available, Cherenkov detection with prompt time cuts in large scale pure scintillator detectors may become a reality.
 
 In the more immediate future, CHESS has demonstrated clear Cherenkov / scintillation separation in WbLS materials with low scintillator fraction in both intensity and time. 
+The results indicate that WbLS in the 1\%-5\% scintillator fraction regime should show clear separation between Cherenkov and scintillation signals in both intensity and time, while scintillator fractions approaching 10\% will be difficult to separate by intensity.
 The intensity metric is accessible by current generation of photon detectors, meaning that WbLS is a viable candidate for simultaneous detection of Cherenkov and scintillation light, and could potentially be used in the \textsc{Theia} detector.
 Further, CHESS results show that prompt time cuts on the order of a nanosecond --- potentially achievable with large PMTs --- can result in a more pure sample of Cherenkov photons than would be achievable without timing information.
+As new photon detectors with better time resolution become available, time separation will be able to further enhance the population of Cherenkov photons.
 This should be leveraged in further studies of Cherenkov / scintillation separation.
