@@ -19,19 +19,19 @@ This discovery of flavor change implied a nonzero neutrino mass, and a set of ma
 
 Determining the parameters of the mixing matrix that relates the flavor and mass basis has been the forefront of neutrino research for the last 20 years, and has seen great success measuring the rotation between the two bases and the magnitude of mass difference between mass states. 
 Currently, the absolute masses of the neutrino states have yet to be determined, with the best constraints coming from cosmology, which still only sets a limit on the sum of the mass states \cite{pdg}.
-Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as SNO+ \cite{snop}, CUORE \cite{cuore}, and LEGEND \cite{legend}, by searching for a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state -- only possible if neutrinos have Majorana mass terms).
+Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as {\snop} \cite{snop}, CUORE \cite{cuore}, and LEGEND \cite{legend}, by searching for a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state -- only possible if neutrinos have Majorana mass terms).
 
 In this thesis I describe the experimental efforts to fully characterize the flux of neutrinos from the Sun.
-Included in particular are a physics analysis from both SNO and its upgrade SNO+, along with calibration and R\&D efforts supporting solar neutrino measurements.
+Included in particular are a physics analysis from both SNO and its upgrade {\snop}, along with calibration and R\&D efforts supporting solar neutrino measurements.
 The first analysis, described in \Cref{ch:lifetime}, explores the possibility that neutrinos are unstable particles and could decay into more stable states.
 There the well understood flux of $^8$B neutrinos, and the established framework of neutrino oscillations, provides a constraint on the lifetime of neutrino mass states.
 Using solar neutrino data from SNO and combining with other solar neutrino experiments, a limit is set on the rate of such decay.
-The currently operating SNO+ experiment aims to measure the solar neutrino flux at lower energies in its scintillator phase than SNO was able to observe.
-To aid in this effort, \Cref{ch:chsrc} describes the design and evaluation of an optical calibration source for SNO+, which will be crucial for understanding the photon detection efficiency (energy scale) for solar neutrino measurements.
-The second physics analysis, in \Cref{ch:es}, uses the initial light water phase data from SNO+ to measure the flux of $^8$B solar neutrinos using the kinematics of the elastic scatter of neutrinos off of electrons in the light water.
+The currently operating {\snop} experiment aims to measure the solar neutrino flux at lower energies in its scintillator phase than SNO was able to observe.
+To aid in this effort, \Cref{ch:chsrc} describes the design and evaluation of an optical calibration source for {\snop}, which will be crucial for understanding the photon detection efficiency (energy scale) for solar neutrino measurements.
+The second physics analysis, in \Cref{ch:es}, uses the initial light water phase data from {\snop} to measure the flux of $^8$B solar neutrinos using the kinematics of the elastic scatter of neutrinos off of electrons in the light water.
 Looking toward the future, the \textsc{Theia} \cite{asdc} experiment aims to make precision measurements of the lower energy solar neutrino fluxes, as well as support a broader platform of neutrino physics.
 This would allow \textsc{Theia} to probe open questions about the Sun, such as the concentration of elements heavier than helium in the core, which affects the relative fluxes of different types of solar neutrinos. 
-To achieve such a goal, \textsc{Theia} requires a next-generation target material that combines the positive aspects of experiments like SNO and SNO+. 
+To achieve such a goal, \textsc{Theia} requires a next-generation target material that combines the positive aspects of experiments like SNO and {\snop}. 
 In \Cref{ch:wbls} a benchtop experiment to evaluate the optical properties of such a target material is described.
 To aid in understanding these topics, the remainder of this chapter is devoted to the theory of neutrinos and particulars of solar neutrinos, while \Cref{ch:detectors} discusses the steps necessary to detect and analyze solar neutrino fluxes.
 But first, the theory.
@@ -306,7 +306,7 @@ This was leveraged in analyses of SNO data and is a very beneficial feature when
 \subsection{Scintillation Light}
 
 As a charged particle moves through a scintillator, electronic energy levels in the scintillator are excited, which can subsequently relax by emitting a visible photon.
-In the case of LAB+PPO in SNO+, this results in roughly ten thousand scintillation photons per MeV compared to hundreds of Cherenkov photons.
+In the case of {\labppo} in {\snop}, this results in roughly ten thousand scintillation photons per MeV compared to hundreds of Cherenkov photons.
 The much larger number of photons results in much better energy resolution c.f. a water detector, which is very advantageous to analyses that rely heavily on energy reconstruction.
 
 Unlike Cherenkov light, scintillation light is emitted isotropically, since the relaxing of the vibrational state is uncorrelated with the direction of the incident particle.
@@ -322,16 +322,16 @@ Scintillation, on the other hand, only has the constraint that sufficient energy
 In the case of scintillation, both alphas and betas from radioactive decays are visible, since both can deposit sufficient energy to create scintillation light.
 In scintillator detectors, therefore, the maximum rate of the detector electronics are the limiting factor for data acquisition, not the interaction threshold of the medium.
 For solar neutrinos, the capability to see lower energy interactions gives access to virtually all types of neutrino fluxes, not just the $^8$B neutrinos accessible by water Cherenkov detectors.
-The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made excellent solar neutrino measurements with scintillator, and SNO+ plans similar analyses for scintillator phase.
+The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made excellent solar neutrino measurements with scintillator, and {\snop} plans similar analyses for scintillator phase.
 
 \subsection{Combined Scintillation and Cherenkov Signal}
 
 There are multiple technologies in development with the goal of having simultaneously detectable Cherenkov and scintillation signals, however, for this thesis I will focus on one in particular: water-based liquid scintillators (WbLS).
-WbLS mixes a traditional scintillator, LAB+PPO, an oil, with water at some configurable ratio that is in large part water.
+WbLS mixes a traditional scintillator, {\labppo}, an oil, with water at some configurable ratio that is in large part water.
 In principle the fraction of scintillator results in a fraction of total light output from a pure scintillator, so low scintillator fractions will have a comparable number of scintillation photons to cherenkov photons. 
 This leads to enhanced energy resolution compared to only Cherenkov light, while allowing for the possibility of observing Cherenkov geometry in the pattern of detected photons, and thereby obtaining direction information.
 At higher scintillation fractions, the relatively fewer Cherenkov photons might be difficult to identify on top of the isotropic scintillation light.
-In this case one may leverage the fact that Cherenkov light is very prompt (picoseconds) compared to scintillators (LAB+PPO has a short time constant of a few nanoseconds) to potentially identify Cherenkov photons as the most prompt hits.
+In this case one may leverage the fact that Cherenkov light is very prompt (picoseconds) compared to scintillators ({\labppo} has a short time constant of a few nanoseconds) to potentially identify Cherenkov photons as the most prompt hits.
 Finally, being mostly water, WbLS should have longer scattering and attenuation lengths than a pure scintillator, allowing larger volumes to be built before either effect becomes a limiting factor.
 This seems to identify WbLS as an ideal material for combining the long attenuation lengths of water with the directionality of Cherenkov light and higher energy resolutions of scintillating materials.
 Further discussion of WbLS and a characterization of low scintillator fractions can be found in \Cref{ch:wbls}.
@@ -341,7 +341,7 @@ Further discussion of WbLS and a characterization of low scintillator fractions 
 \begin{figure}
 \centering
     \includegraphics[width=0.8\columnwidth]{sno}
-    \caption{\label{fig:sno}The SNO detector \cite{3phase}}
+    \caption{\label{fig:sno}The SNO detector as shown in \cite{3phase}.}
 \end{figure}
 
 The SNO \cite{sno} detector is located deep underground near Sudbury, Canada in the Creighton mine, an active nickle mine.
@@ -503,11 +503,11 @@ The result of this style of analysis can be seen in the earlier \Cref{fig:global
 By comparing the fitted survival probability to models of neutrino propagation, most notably the MSW model described earlier, SNO was able to constrain neutrino oscillation parameters.
 Building off this style of analysis one is able to probe neutrino physics as a function of neutrino energy and investigate other effects beyond MSW that would influence neutrino propagation.
 
-\section{SNO+}
+\section{{\snop}}
 
-The SNO experiment finished taking data in the early 2000s, and an upgrade of the detector was planned, which ultimately led to SNO+ \cite{snop}.
-The primary goal of SNO+ is a measurement of neutrinoless double beta decay, which, if observed, would shed light on whether the neutrino is its own antiparticle and on the nature of neutrino mass.
-Also included in the goals of SNO+, and of particular relevance to this thesis, is a measurement of lower energy solar neutrino fluxes, particularly the CNO neutrinos, enabled by a switch of target mediums to a scintillating liquid also necessary for neutrinoless double beta decay sensitivity.
+The SNO experiment finished taking data in the early 2000s, and an upgrade of the detector was planned, which ultimately led to {\snop} \cite{snop}.
+The primary goal of {\snop} is a measurement of neutrinoless double beta decay, which, if observed, would shed light on whether the neutrino is its own antiparticle and on the nature of neutrino mass.
+Also included in the goals of {\snop}, and of particular relevance to this thesis, is a measurement of lower energy solar neutrino fluxes, particularly the CNO neutrinos, enabled by a switch of target mediums to a scintillating liquid also necessary for neutrinoless double beta decay sensitivity.
 To enable this change in targets, some modifications to the experiment were necessary: the detector electronics required upgrades to handle the higher data rate expected with lower energy thresholds, and the AV required the installation of hold-down ropes since scintillator has a lower density than water and would otherwise tend to float in the water shield.
 A rendering of the upgraded detector can be seen in \Cref{fig:snop}.
 Additionally, the chemical plants to purify and process scintillator, and other supporting hardware, needed to be installed underground, which was no small task.
@@ -515,43 +515,43 @@ Additionally, the chemical plants to purify and process scintillator, and other 
 \begin{figure}
 \centering
 \includegraphics[width=0.5\columnwidth]{snop.png}
-\caption{\label{fig:snop}The SNO+ detector. Note the PSUP is only partially rendered to expose the AV.}
+\caption{\label{fig:snop}The {\snop} detector. Note the PSUP is only partially rendered to expose the AV.}
 \end{figure}
 
 \subsection{Experimental Phases}
-Similar to SNO, SNO+ intends to operate in three experimental phases.
+Similar to SNO, {\snop} intends to operate in three experimental phases.
 The first phase is of primary relevance to this thesis, however, all three are described in the following sections.
 
 \subsubsection{Light Water}
-Water phase in SNO+ is intended to calibrate the detector and test the upgraded hardware in a regime similar to SNO, while also generating physics data as a deep underground water Cherenkov detector.
-As part of the calibration effort in water phase, \Cref{ch:chsrc} describes an optical calibration source designed for SNO+, which will be calibrated in water phase and then used to calibrate later phases of the experiment.
+Water phase in {\snop} is intended to calibrate the detector and test the upgraded hardware in a regime similar to SNO, while also generating physics data as a deep underground water Cherenkov detector.
+As part of the calibration effort in water phase, \Cref{ch:chsrc} describes an optical calibration source designed for {\snop}, which will be calibrated in water phase and then used to calibrate later phases of the experiment.
 Of physics interest in this phase are a search for nucleon decay \cite{nucleon_decay}, potential sensitivity to anti-neutrinos in pure water, and the elastic scatter of solar neutrinos.
 Relative to other water Cherenkov detectors, SNO benefits from its deeper location in a reduced muon flux, and hence reduced cosmogenic backgrounds
 In terms of solar neutrinos, light water differs from heavy water primarily in the available interaction channels: neither NC nor CC are possible given the lack of targets (deuterons) with sufficiently low interaction thresholds.
 The ES interaction is unaffected by this change in targets, since both H$_2$O and D$_2$O have roughly the same electron density.
-\Cref{ch:es} goes into detail on measuring the $^8$B solar neutrino flux in SNO+ with the ES channel.
+\Cref{ch:es} goes into detail on measuring the $^8$B solar neutrino flux in {\snop} with the ES channel.
 Data taking for this phase began mid 2017 and finished toward the end of 2018.
 
 \subsubsection{Scintillator}
 
-The change to pure scintillator LAB+PPO (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2~g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
+The change to pure scintillator {\labppo} (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2~g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
 This switch was motivated by a need for enhanced energy resolution for the neutrinoless double beta decay measurement, and similar reasoning comes into play in its applicability to solar neutrinos.
 In terms of solar neutrinos, the ES interaction channel is still the only relevant one, however, the observed signals in scintillator phase will be quite different than that of water phase.
 In water all information about the interaction was gathered from the Cherenkov light emitted. 
-Cherenkov light will still be generated in scintillator, however, in LAB+PPO it will be insignificant compared to the light emitted by the relaxing of vibrational states of the scintillating medium itself.
+Cherenkov light will still be generated in scintillator, however, in {\labppo} it will be insignificant compared to the light emitted by the relaxing of vibrational states of the scintillating medium itself.
 As of the writing of this thesis, scintillator phase is moving forward, but physics data taking is still in the future.
 
 \subsubsection{Tellurium Loaded Scintillator}
-As mentioned, the primary goal of SNO+ is to perform a neutrinoless double beta decay measurement using the double beta decay isotope $^{130}$Te.
-This will be done by dissolving $^{130}$Te metal in the LAB+PPO scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$~MeV) of $^{130}$Te decay.
+As mentioned, the primary goal of {\snop} is to perform a neutrinoless double beta decay measurement using the double beta decay isotope $^{130}$Te.
+This will be done by dissolving $^{130}$Te metal in the {\labppo} scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$~MeV) of $^{130}$Te decay.
 The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the the electrons, resulting in a delta function spectrum at the endpoint.
-Since the signature of this process is a sharp feature in energy, SNO+ requires the enhanced energy resolution of scintillators, as such a measurement would not be possible with the energy resolution of Cherenkov light.
+Since the signature of this process is a sharp feature in energy, {\snop} requires the enhanced energy resolution of scintillators, as such a measurement would not be possible with the energy resolution of Cherenkov light.
 
 \subsection{Calibration}
 
-SNO+ makes extensive use of SNO calibration hardware in its calibration effort, however, upgrades of the deployment hardware are planned for scintillator phase to meet the more stringent background requirements of that phase.
+{\snop} makes extensive use of SNO calibration hardware in its calibration effort, however, upgrades of the deployment hardware are planned for scintillator phase to meet the more stringent background requirements of that phase.
 For water phase, both the SNO \N and Laser Ball sources were used in the same manner as in SNO.
-An upgrade of the SNO Laser Ball is under construction for scintillator phase in SNO+.
+An upgrade of the SNO Laser Ball is under construction for scintillator phase in {\snop}.
 The timing calibration typically by the Laser Ball is intended to be replaced by a fast pulsed LED system called ELLIE, which is fiber coupled to known positions on the PSUP, and does not require deployment of a source into the target volume.
 A new calibration source (described in \Cref{ch:chsrc}) intended to replace the \N calibration of photon detection efficiency for scintillator phase was developed.
 Finally, new radioactive sources, such as a $^{48}$Sc and $^{57}$Co, are being developed to assist in energy scale calibrations in tellurium loaded phase, while intrinsic radioactivity present in the scintillator provides another means for calibrating energy scale.
@@ -562,7 +562,7 @@ Finally, new radioactive sources, such as a $^{48}$Sc and $^{57}$Co, are being d
 Of particular relevance to this thesis is the goal of doing high precision measurements of solar neutrinos \cite{theia_solar}.
 
 \subsection{Conceptual Design}
-The detector design is still in the conceptual phase, but lessons learned from SNO+ and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
+The detector design is still in the conceptual phase, but lessons learned from {\snop} and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.
 The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic that is explored further in \Cref{ch:wbls}.
 The baseline design calls for a right cylinder around 40m across filled with WbLS and surrounded with fast photo detectors.

@@ -32,13 +32,13 @@ Cost-effective & More expensive materials \\
 \end{table}
 
 Scintillators do, however, also produce Cherenkov light. 
-The much higher photon yields of scintillators ($10^3$ more scintillation photons than Cherenkov photons per MeV in LAB+PPO) typically makes the remaining Cherenkov photons quite difficult to detect.
+The much higher photon yields of scintillators ($10^3$ more scintillation photons than Cherenkov photons per MeV in {\labppo}) typically makes the remaining Cherenkov photons quite difficult to detect.
 This is further complicated by scintillator optical attenuation and scattering lengths being small relative to neutrino detector sizes, which means many of the Cherenkov photons will be absorbed or scattered, further reducing the directional information available.
 The ability to identify these remaining Cherenkov photons, or design a material that makes this identification easier, would allow a neutrino detector to simultaneously be sensitive to low energy interactions though the scintillation light, while recovering directionality in sufficiently high energy events to produce Cherenkov light.
 
 Directional information is manifestly useful when detecting solar neutrinos, as the elastic scatter (ES) interaction channel produces final state electrons highly correlated with the neutrino direction. 
 As the direction of solar neutrinos is away from the Sun, and no backgrounds are expected to be correlated with the solar direction, solar neutrinos are thus relatively easy to identify. 
-This directional correlation is not only useful for measurements of solar neutrinos, however. Searches for neutrinoless double beta decay would benefit from rejection of the directional solar neutrino signal, which is the dominant background in experiments such as SNO+~\cite{snop}.
+This directional correlation is not only useful for measurements of solar neutrinos, however. Searches for neutrinoless double beta decay would benefit from rejection of the directional solar neutrino signal, which is the dominant background in experiments such as {\snop}~\cite{snop}.
 
 In general, the identification of Cherenkov photons in a scintillator can be done in three ways:
 \begin{itemize}
@@ -66,7 +66,7 @@ This chapter describes the CHErenkov / Scintillation Separation (CHESS) experime
 Development of CHESS was driven by the recent development of WbLS which allows both the scintillation light yield and timing profile of the target material to be tuned to maximize sensitivity to Cherenkov photons.  
 In particular, low scintillator fraction WbLS, from 1\% to 5\% scintillator, is of interest here. 
 Being mostly water, this material should have better attenuation characteristics than a pure scintillator, maximizing the likelihood of Cherenkov photons arriving unhindered to a photon detector, and should also have only fractions of scintillation photon yield of pure scintillators, making intensity-based identification of Cherenkov photons a possibility.
-CHESS can also explore the potential for Cherenkov photon detectors in more traditional scintillators, such as LAB+PPO.
+CHESS can also explore the potential for Cherenkov photon detectors in more traditional scintillators, such as {\labppo}.
 
 \section{The CHESS Detector}\label{s:desc}
 
@@ -93,14 +93,14 @@ The total charge collected by each group of PMTs also informs the intensity of t
 \begin{figure}
 \centering
 \includegraphics[width=0.7\columnwidth]{chess_timing_setup}
-\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and LAB+PPO. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
+\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and {\labppo}. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
 \label{fig:timing-setup-2}
 \end{figure}
 
 \subsection{Target Vessel}
 The target vessel for CHESS is a cylinder 5~cm in radius and 3~cm in height, constructed from ultraviolet-transmitting (UVT) acrylic. 
 Three flat faces on the outer surface of the cylinder, each a 3~cm width square, provide surfaces for attaching a radioactive button source or optical coupling of a PMT to act as a trigger for the detector. 
-A lid made of the same UVT acrylic encloses the target material in an air-tight environment using an FFKM o-ring~\cite{cog-oring} known to be chemically stable to both LAB+PPO and WbLS. 
+A lid made of the same UVT acrylic encloses the target material in an air-tight environment using an FFKM o-ring~\cite{cog-oring} known to be chemically stable to both {\labppo} and WbLS. 
 Each liquid deployed in CHESS uses a separate target to avoid contamination of the target materials.
 
 \subsection{PMT Array}
@@ -291,7 +291,7 @@ The difference between the two data sets is taken as a measure of  systematic er
 \section{Monte Carlo Simulation}
 \label{sec:simulation}
 
-The entire setup is simulated in the open source program RAT-PAC~\cite{ratpac} which is closely related to the RAT software used by SNO+. 
+The entire setup is simulated in the open source program RAT-PAC~\cite{ratpac} which is closely related to the RAT software used by {\snop}. 
 Primary particles are produced and tracked in a complete geometry implemented in GEANT4~\cite{geant4}. 
 When Cherenkov and scintillation processes take place, individual photons are tracked from the production point to the PMTs. 
 Once the photon reaches the PMT, a custom model decides whether to produce a photoelectron (PE) based on the photon properties and PMT features. 
@@ -325,7 +325,7 @@ The total number of  photons produced, $N_{\gamma}$, is directly proportional to
 
 Scintillation photons are emitted with some characteristic time profile, $\rho(t)$, typically modeled as an exponential rise and a sum of exponentially decaying terms of various time constants.
 This time profile is well described by a double exponential model~\cite{mcguire_palmer}, including both a rise time and a decay time. 
-Two further decaying exponentials are included for LAB+PPO, based on measurements in~\cite{labppo}. The simulated time profile is:
+Two further decaying exponentials are included for {\labppo}, based on measurements in~\cite{labppo}. The simulated time profile is:
 \begin{eqnarray}
 \rho(t) \propto (1 - e^{-t/\tau_r}) \times \sum^3_i A_i e^{-t/\tau_i},
 \end{eqnarray}
@@ -335,7 +335,7 @@ Similarly, scintillation photons follow some wavelength distribution, often call
 
 Ex-situ measurements for the scintillation emission spectrum, light yield, and time profile are included in the simulation. 
 The procedure for generating scintillation photons draws $N_{\gamma}$ photons randomly from the emission spectrum and time profile of the scintillator under investigation. 
-For reference, the spectra for LAB~\cite{lab_emission} and LAB+PPO~\cite{snop_private} are shown in \Cref{fig:optics}. 
+For reference, the spectra for LAB~\cite{lab_emission} and {\labppo}~\cite{snop_private} are shown in \Cref{fig:optics}. 
 
 
 \subsection{Optical Propagation \label{sec:optics}}
@@ -343,7 +343,7 @@ For reference, the spectra for LAB~\cite{lab_emission} and LAB+PPO~\cite{snop_pr
 Optical photons are propagated through different media by GEANT4. 
 Absorption, refraction and reflection are taken into account according to the optical properties defined for each material. 
 The absorption length of the UVT acrylic used in CHESS (\Cref{fig:optics}) was measured with a spectrometer and is included directly in the simulation.  
-The refractive indexes for LAB and LAB+PPO are considered to be the same and are taken from~\cite{snop_private}. \\
+The refractive indexes for LAB and {\labppo} are considered to be the same and are taken from~\cite{snop_private}. \\
 Photon reemission from wavelength shifting materials are simulated in a similar fashion as the scintillation process. Once a photon is absorbed in a scintillating medium, there is a finite probability that it will be reemitted by again randomly sampling the emission spectrum.
 
 \subsection{PMT Model \label{sec:pmt_model}}
@@ -459,21 +459,21 @@ Unfortunately, this means that this selection criteria is not target independent
 Clean cosmic muon events are expected to produce hits only on the middle PMTs (for a water target, or outer PMTs for LS).
 In both cases of follower events, the majority of Cherenkov light generated in the propagation medium was observed to fall primarily on the innermost PMTs within the array.  
 This was confirmed by MC simulations of each event type, which demonstrated that muon followers do produce events with this topology.   
-Simulations of these events shown in \Cref{f:clipMC} show a clear tail in the PE distribution observed on the inner PMT group for both water and LAB+PPO targets.
+Simulations of these events shown in \Cref{f:clipMC} show a clear tail in the PE distribution observed on the inner PMT group for both water and {\labppo} targets.
 These events typically create between 30 and 400 PEs in the innermost PMTs, which is significantly higher than the expected number of PE of a clean event, allowing them to be identified and removed from the data.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\columnwidth]{cosmic_water_clipping}
 \includegraphics[width=0.6\columnwidth]{cosmic_labppo_clipping}
-\caption{ Monte Carlo simulation of the summed PE distribution on the inner PMT group due to cosmic muon events with perfect rings (turquoise, right diagonal hatching), muon contamination (orange, left diagonal hatching), electron contamination (purple, right diagonal dashed hatching), and the total (red, solid).  (a) Water target, with water data overlaid to show the agreement, and (b) LAB+PPO target.  The vertical black dashed line represents the chosen cut value, with arrows to illustrate the acceptance region. Figure from~\cite{chess_nim}.}
+\caption{ Monte Carlo simulation of the summed PE distribution on the inner PMT group due to cosmic muon events with perfect rings (turquoise, right diagonal hatching), muon contamination (orange, left diagonal hatching), electron contamination (purple, right diagonal dashed hatching), and the total (red, solid).  (a) Water target, with water data overlaid to show the agreement, and (b) {\labppo} target.  The vertical black dashed line represents the chosen cut value, with arrows to illustrate the acceptance region. Figure from~\cite{chess_nim}.}
 \label{f:clipMC}
 \end{figure}
 
 In water this total number of PE in the innermost PMTs is expected to be very low (consistent with noise), whereas in LS the total number of PE will be higher due to scintillation photons.  
 However, as demonstrated in \Cref{f:clipMC}, a large fraction of follower events can still be removed with a high-charge cut.   
-A cut was placed at a summed PE count of 40 for water and LAB targets, and 500 for LAB+PPO.  
-The cut value selected for a water target removes a large fraction of the remaining background events, with zero sacrifice in the control sample, and is expected to perform similarly for LAB+PPO targets.
+A cut was placed at a summed PE count of 40 for water and LAB targets, and 500 for {\labppo}.  
+The cut value selected for a water target removes a large fraction of the remaining background events, with zero sacrifice in the control sample, and is expected to perform similarly for {\labppo} targets.
 
 \section{Event-Level Analysis}\label{s:recon}
 
@@ -566,7 +566,7 @@ This is appropriately close to the manufacturer estimate of the PMT TTS: 300~ps 
 
 \label{sec:lab}
 
-Prior to moving to LAB+PPO, pure LAB was deployed. 
+Prior to moving to {\labppo}, pure LAB was deployed. 
 The PPO component enhances the light yield significantly, so LAB by itself is expected to have low scintillation light yield, and perhaps a visible Cherenkov ring geometry.
 After applying event selection criteria, $117$ ring candidates were identified in the LAB data set. 
 An example event is shown in \Cref{fig:lab_ring} for both time and charge, with the average across the data set shown in \Cref{fig:lab2}. 
@@ -616,42 +616,42 @@ Better separation might be achieved by eliminating the Cherenkov contamination i
 
 \clearpage
 
-\section{LAB+PPO Results}
+\section{{\labppo} Results}
 \label{sec:labppo}
 
-With Cherenkov ring imaging demonstrated in water and pure LAB, an LAB+PPO target was then deployed.
-After applying event selection criteria, $103$ ring candidates were identified in the LAB+PPO data set. 
-The scintillation component of LAB+PPO is far too bright to identify remaining Cherenkov photons based on an intensity metric, so only the time separation metric is expected to show good results here.
-Like LAB, the Cherenkov photons from LAB+PPO should fall on the outermost PMTs.
+With Cherenkov ring imaging demonstrated in water and pure LAB, an {\labppo} target was then deployed.
+After applying event selection criteria, $103$ ring candidates were identified in the {\labppo} data set. 
+The scintillation component of {\labppo} is far too bright to identify remaining Cherenkov photons based on an intensity metric, so only the time separation metric is expected to show good results here.
+Like LAB, the Cherenkov photons from {\labppo} should fall on the outermost PMTs.
 The topology of a typical event, and the average across the data set, are shown in \Cref{fig:labppo_ring}.  Again a clear ring structure can be observed. 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringcandidate_time_dt}
 	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringtime_dt}	
-	\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in LAB+PPO. Figure from~\cite{chess_lab}.}
+	\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in {\labppo}. Figure from~\cite{chess_lab}.}
 	\label{fig:labppo_ring}
 \end{figure}
 Hit-time residual distributions are shown in \Cref{fig:labppo}, where the early Cherenkov hits on outer PMTs are clear. 
 The separation is less distinct than for pure LAB.
-This is expected, as the scintillation channel for pure LAB is much slower than the scintillation channel for PPO, which dominates the light output of LAB+PPO.
+This is expected, as the scintillation channel for pure LAB is much slower than the scintillation channel for PPO, which dominates the light output of {\labppo}.
 The MC shows good agreement with data.  
 A cut at $ t_c = 0.4$~ns yields Cherenkov detection efficiency of $70 \pm 3 $(stat)$\pm0$(syst)\% with contamination of $36 \pm 3 $(stat)$\pm4$(syst)\%. 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_time_smear_0p75nsrtime}
-	\caption{Hit-time residual distributions in LAB+PPO for data and MC. Figure from~\cite{chess_lab}.}
+	\caption{Hit-time residual distributions in {\labppo} for data and MC. Figure from~\cite{chess_lab}.}
 	\label{fig:labppo}
 \end{figure}
 
-The charge ratio for LAB+PPO is shown in \Cref{f:labppoQ}. 
-The separation is more difficult in LAB+PPO due to higher scintillation yield.  
+The charge ratio for {\labppo} is shown in \Cref{f:labppoQ}. 
+The separation is more difficult in {\labppo} due to higher scintillation yield.  
 Nevertheless, a threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection efficiency of $63\pm4$(stat)$\pm7$(syst)\% with contamination of $38\pm3$(stat)$\pm2$(syst)\%.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_qratio5ns_led_dt}
-	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for LAB+PPO. Figure from~\cite{chess_lab}.}
+	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for {\labppo}. Figure from~\cite{chess_lab}.}
 	\label{f:labppoQ}
 \end{figure}
 
@@ -661,7 +661,7 @@ Nevertheless, a threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection e
 \label{sec:wbls}
 
 Finally, CHESS was used to evaluate the Cherenkov / scintillation separation capabilities of WbLS.
-Shown in this section are timing and charge results for 1\%, 5\%, and 10\% scintillator mixtures that are expected to have roughly 1\%, 5\%, and 10\% of LAB+PPO light yield.
+Shown in this section are timing and charge results for 1\%, 5\%, and 10\% scintillator mixtures that are expected to have roughly 1\%, 5\%, and 10\% of {\labppo} light yield.
 Because the scintillation component is expected to be very dim for the lower scintillator fractions, the results shown here for charge are directly in units of PE instead of the charge ratio shown for brighter LS in previous sections.
 The refractive index of these low scintillator fraction WbLS materials is very similar to water, so the Cherenkov ring is expected to fall on the middle set of PMTs.
 
@@ -773,7 +773,7 @@ The total number of PE distributions shown in \Cref{fig:wbls10pct_totalq} presen
 
 \section{Prospects}
 
-CHESS demonstrated the potential for Cherenkov / scintillation separation in the traditional scintillator LAB+PPO, with the caveat that very fast photon detectors are required.
+CHESS demonstrated the potential for Cherenkov / scintillation separation in the traditional scintillator {\labppo}, with the caveat that very fast photon detectors are required.
 Such detectors are currently being developed in the form of micro-channel plate based detectors~\cite{lappd,lappd2}.
 While they are cost-prohibitive at the moment (compared to large PMTs), as they become more commercially available, Cherenkov detection with prompt time cuts in large scale pure scintillator detectors may become a reality.
 

@@ -1,17 +1,17 @@
 \renewcommand{\bf}{\bfseries}
 
-\chapter{Cherenkov Optical Calibration Source for SNO+}
+\chapter{Cherenkov Optical Calibration Source for {\snop}}
 \label{ch:chsrc}
 
-SNO+ has over 9500 Photo-Multiplier Tubes (PMTs), which detect photons produced inside the target (water or liquid scintillator).
-Within the SNO+ calibration plan~\cite{gann:2013} it is vital to extract and monitor the overall light collection efficiency of these PMTs, because this determines the energy response of the detector.
+{\snop} has over 9500 Photo-Multiplier Tubes (PMTs), which detect photons produced inside the target (water or liquid scintillator).
+Within the {\snop} calibration plan~\cite{gann:2013} it is vital to extract and monitor the overall light collection efficiency of these PMTs, because this determines the energy response of the detector.
 The Cherenkov source was designed to produce a well understood optical signal, which can be used to measure these quantities.
 
 The Cherenkov source is able to make the measurements in a way nominally independent of the target as described in \Cref{chap:motivation}. 
 The detailed design of the source is discussed in \Cref{chap:design}. 
 The construction procedures are briefly covered in \Cref{chap:construction}.
-Tests performed to ensure the source was properly fabricated and meets SNO+ requirements for cleanliness are presented in \Cref{chap:tests}.
-Finally \Cref{chap:water_phase} discusses the deployment of this source in SNO+ water phase and an analysis of the data taken during the deployment.
+Tests performed to ensure the source was properly fabricated and meets {\snop} requirements for cleanliness are presented in \Cref{chap:tests}.
+Finally \Cref{chap:water_phase} discusses the deployment of this source in {\snop} water phase and an analysis of the data taken during the deployment.
 
 \section{Motivation}
 \label{chap:motivation}
@@ -21,7 +21,7 @@ In the case of a water target, the production of Cherenkov light is well underst
 In order to calibrate the energy response of the detector, a radioactive source with a well understood energy spectrum, such as an \N source, can be deployed and used to calibrate a simulation model.
 In this case, with Cherenkov production being simulated accurately, only the response of the detector needs to be tuned in simulation to reproduce the data.
 
-When SNO+ switches to liquid scintillator, this situation is more complicated because the scintillation process is not as easy to model.
+When {\snop} switches to liquid scintillator, this situation is more complicated because the scintillation process is not as easy to model.
 For instance, the photon yield typically must be measured for any independent batch of scintillating liquid, whereas the production of Cherenkov light is calculable. 
 This means that calibrating the energy scale of the detector with something like an \N source would be unable to disentangle changes to scintillation output from changes in detector response, such as the overall light collection or relative PMT efficiencies.
 Disentangling these two effects can be achieved by deploying a source that produces a well understood and easily simulated optical signal. 
@@ -33,7 +33,7 @@ The Cherenkov source is designed to produce such a signal through tagged Cherenk
 
 The Cherenkov light produced by this source will come from stopping beta decay electrons from \Li in UV-absorbent (UVA) acrylic, and is based on the SNO \Li source design and experience~\cite{Tagg:2002,Tagg:2001}.
 The choice of UVA acrylic was made to block the UV component of Cherenkov light, which would be absorbed and reemitted by the scintillator.
-Thus, the remaining light that propagates through the SNO+ detector is quasi-independent of the optical properties of the LAB-PPO scintillator. 
+Thus, the remaining light that propagates through the {\snop} detector is quasi-independent of the optical properties of the LAB-PPO scintillator. 
 This visible Cherenkov light is easy to model, allowing for a measurement of detector response nominally independent of the target material.
 
 \begin{figure}[]
@@ -100,7 +100,7 @@ There are 4 small o-rings between the PMT assembly and the neck-sleeve, they are
 \subsubsection{Steel housing}
 The housing (\cite{wallig:2015}, page 12) and the gas connections (\cite{wallig:2015}, page 13) are inherited from the SNO \Li source. 
 The housing is made of stainless steel and can be shortened if needed. 
-To handle the different types of connections used in different phases of SNO+, a flange was added to the original steel housing, as shown in \Cref{fig:flange}. 
+To handle the different types of connections used in different phases of {\snop}, a flange was added to the original steel housing, as shown in \Cref{fig:flange}. 
 The gas connections can also be changed if needed by modifying the gas lines threaded into the decay chamber.
 The steel housing is electropolished and cleaned to remove any surface contaminates before the final assembly and deployment of the source.
 
@@ -112,12 +112,12 @@ The steel housing is electropolished and cleaned to remove any surface contamina
 
 \subsection{Deployment hardware}
 
-The SNO \Li umbilical was re-used to transport \Li into the source during the SNO+ water phase.
+The SNO \Li umbilical was re-used to transport \Li into the source during the {\snop} water phase.
 \Cref{fig:sno_umbilical} shows the cross-section of this umbilical. It contains the required gas-transport lines in addition to the electrical wires; one for the PMT signal and three for the low-voltage for the PMT (ground, power, control voltage). 
 The umbilical currently has no connector. 
 Just as was done for SNO, the gas line connection and wiring for the PMT is done by hand while the top of the source (steel housing) is exposed. 
 Then the sealing pressure plates (\Cref{fig:pressureplates}) are slid down and bolted together. 
-The so-called ``lighthouse" attachment (\Cref{fig:connection}) is attached to the top of the source and is used to attach the source to SNO+'s source deployment hardware.
+The so-called ``lighthouse" attachment (\Cref{fig:connection}) is attached to the top of the source and is used to attach the source to {\snop}'s source deployment hardware.
 
 \begin{figure}
 \begin{subfigure}{.57\textwidth}
@@ -250,7 +250,7 @@ The final layer was a mixture of 40\,mL of deionized water, 20\,mL of Vallejo wh
 \hspace{0.5cm}
 \begin{subfigure}{.55\textwidth}
   \includegraphics[width=\textwidth]{100k_realistic_nonoise_hits_vs_thickness}
-  \caption{Simulation in scintillator phase SNO+ of \Li beta decays inside decay chamber volume with various smooth and isotropic paint layer thicknesses. As expected this follows a roughly linear trend representing the energy loss of the electrons in the paint.}
+  \caption{Simulation in scintillator phase {\snop} of \Li beta decays inside decay chamber volume with various smooth and isotropic paint layer thicknesses. As expected this follows a roughly linear trend representing the energy loss of the electrons in the paint.}
   \label{fig:meannhits}
 \end{subfigure}
 \caption{Small scale painting results and preliminary simulations of NHit response for \Li beta decays for various paint thicknesses assuming the simplest case of a smooth paint layer.}
@@ -343,7 +343,7 @@ The PMT used for the source is the Hamamatsu H11432-100, which has an integrated
 \section{Source Quality Control}
 \label{chap:tests}
 
-This section describes the tests that were done on the source and the source materials to verify that the construction met the background and safety requirements for SNO+. 
+This section describes the tests that were done on the source and the source materials to verify that the construction met the background and safety requirements for {\snop}. 
 Of concern here is any radioactive contamination that may be present in the source materials and any adverse affect the source materials may have on the target medium in the detector.
 Since the source is primarily acrylic and stainless steel, no radioactivity or material compatibility concerns are expected, but the potential impact of catastrophic failure of the source (target material entering the decay chamber and flowing back into the detector) must be evaluated.
 
@@ -353,19 +353,19 @@ The decay of radon is part of the thorium and uranium decay chains, and its deca
 Radon itself is a particular issue because it is a gas at room temperature, and can readily move from one material to another.
 It is therefore important to constrain the amount of radon expected to emanate from a calibration source, because this radon will increase the radioactive backgrounds within the detector.
 A first pass radon emanation estimate can be calculated by considering the surface area of stainless steel and acrylic that will be exposed during deployment. 
-Estimates for the radon emanation of the SNO+ calibration hardware used a measurement of $4.60$~$\mu$Bq~m$^{-2}$ for stainless steel \cite{kormos:2015}. 
+Estimates for the radon emanation of the {\snop} calibration hardware used a measurement of $4.60$~$\mu$Bq~m$^{-2}$ for stainless steel \cite{kormos:2015}. 
 The SNO stainless steel limit was $< 5$~mBq~m$^{-2}$ and for acrylic $< 1.6$~mBq~m$^{-2}$ \cite{Liu:1993}. 
 The source, assuming a full size stainless steel housing, has an exposed stainless steel surface area of $0.15$~m$^2$, and exposed acrylic surface area of 0.20~m$^2$. 
-Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the SNO+ emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$~atoms/day where this limit is grossly dominated by the limit on the acrylic radon emanation. 
-The radon emanation rate for stainless steel is, however, significantly lower in the source used by SNO+ than the source used by SNO, which either means the SNO+ estimation is unrealistic or the SNO limit was very conservative. 
+Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the {\snop} emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$~atoms/day where this limit is grossly dominated by the limit on the acrylic radon emanation. 
+The radon emanation rate for stainless steel is, however, significantly lower in the source used by {\snop} than the source used by SNO, which either means the {\snop} estimation is unrealistic or the SNO limit was very conservative. 
 Using the limits from the SNO measurements we would expect $<92.5$~atoms/day.
-In either case, this is expected to be within the as-yet undefined SNO+ radon budget for scintillator phase.
+In either case, this is expected to be within the as-yet undefined {\snop} radon budget for scintillator phase.
 
 \subsection{Intrinsic Radioactivity}
 \label{sec:matcounting}
 All materials have some level of radioactive contamination from natural sources.
 In most cases this intrinsic radioactivity is at such low levels that it can be safely ignored, however, being present in the target volume of a neutrino detector is not one of those cases.
-In fact, deployment in SNO+ will be the best measurement of the radioactivity of this source, but other methods must be used prior to deployment to place limits on such radioactivity and ensure there is not unexpected contamination.
+In fact, deployment in {\snop} will be the best measurement of the radioactivity of this source, but other methods must be used prior to deployment to place limits on such radioactivity and ensure there is not unexpected contamination.
 This is done in two ways: source materials can either be placed in low background radiation detectors and directly measured, or the materials may be exposed to a high neutron flux, which activates the trace materials in the source making them easier to measure.
 As this source is not expected to have radioactive contamination at detectable levels, direct measurement is not particularly useful, however, this was done for the acrylic at the Low Background Counting Facility at LBNL.
 The neutron activation analysis (NAA) results were obtained by deployment of materials at the McClellan Nuclear Research Center and counted at UC Davis. 
@@ -392,18 +392,18 @@ Detectable potassium levels from NAA in the materials within the source are not 
 
 \subsection{Material compatibility tests}
 \label{sec:comptest}
-Beyond basic concerns of chemical compatibility, the light yield and optical properties of the LAB+PPO scintillator used in SNO+ are quite dependent on the exact chemical makeup of the scintillator.
-Additionally, the scintillator itself is a solvent, so there is a very real possibility that a material immersed in LAB+PPO could leech into the scintillator resulting in undesirable optical effects.
-As such, any material expected to come into contact with LAB+PPO must first be exposed to it in some controlled way while the optical properties of the scintillator are monitored.
-Further, materials that could possibly come in contact with LAB+PPO must not cause undesired chemical reactions if they are accidentally exposed.
-Both UVA acrylic and stainless steel have been vetted by SNO+ (the AV is acrylic, and the process system for LAB+PPO purification is stainless steel), however, other Cherenkov source materials were vetted.
+Beyond basic concerns of chemical compatibility, the light yield and optical properties of the {\labppo} scintillator used in {\snop} are quite dependent on the exact chemical makeup of the scintillator.
+Additionally, the scintillator itself is a solvent, so there is a very real possibility that a material immersed in {\labppo} could leech into the scintillator resulting in undesirable optical effects.
+As such, any material expected to come into contact with {\labppo} must first be exposed to it in some controlled way while the optical properties of the scintillator are monitored.
+Further, materials that could possibly come in contact with {\labppo} must not cause undesired chemical reactions if they are accidentally exposed.
+Both UVA acrylic and stainless steel have been vetted by {\snop} (the AV is acrylic, and the process system for {\labppo} purification is stainless steel), however, other Cherenkov source materials were vetted.
 
 Three samples were tested for compatibility with LAB-PPO by the technical support team at SNOLAB: the potting material (Sylgard~184), a UVA acrylic sample with black paint and one with both black and white paint, and TPB mixed. 
-These represent the materials inside the decay chamber that could potentially be exposed to LAB+PPO in the event of a catastrophic source failure.
+These represent the materials inside the decay chamber that could potentially be exposed to {\labppo} in the event of a catastrophic source failure.
 The materials were soaked in a few 100\,mL of 2g/L PPO-LAB for 1~month. 
 A control sample consisting of the default 2g/L PPO-LAB was scanned with the samples and used as a comparison. 
 Deviation from the control is observed in all of the samples, indicating incompatibility, however, no chemical reactions were observed.
-Since these materials are not expected to come in contact with the LAB+PPO and are only present in small quantities within the source, this was deemed acceptable.
+Since these materials are not expected to come in contact with the {\labppo} and are only present in small quantities within the source, this was deemed acceptable.
 For the full technical report of the compatibility test, see~\cite{lina:2015}.
 
 
@@ -499,21 +499,21 @@ Therefore, the source tag rate will be determined during the initial deployment.
 \subsection{Hydrostatic Pressure Test}
 
 The Queen's pressure chamber was used to pressure test all SNO sources and was similarly used to pressure test the Cherenkov source. 
-The purpose of this test is to demonstrate the mechanical stability of the source when exposed to pressures consistent with being submerged in SNO+.
+The purpose of this test is to demonstrate the mechanical stability of the source when exposed to pressures consistent with being submerged in {\snop}.
 This pressure chamber is a 10" diameter aluminum cylinder that is pressurized with tap water pressure. For this test the Cherenkov source was removed from its radon-proof bag and fully assembled in a clean room environment with viton o-rings. A 5/8" aluminum plug was used in place of an ubmilical. Because of the use of tap water extra care was taken to ensure the source would not be contaminated by isolating it from the bulk volume of water. The source was heat sealed into a bag of DI water and lowered into the pressure chamber, which was also filled with DI water. After sealing the chamber it was pressurized to 60~psi and the source remained at this pressure for one hour. This pressure exceeds the approximately 22~psi pressure differential from mine pressure to the bottom of the acrylic vessel by a very conservative margin. To achieve this pressure approximately $0.5\%$ of the water inside the pressure chamber (but outside the sealed bag) was tap water. After depressurizing, the bagged source was removed from the pressure chamber and the bag was inspected to confirm there were no leaks into the tap water contaminated volume. The Cherenkov source was then removed from the DI water bag and was dried externally with grade 5.0 nitrogen gas in a clean room environment. 
 
 To confirm that the Cherenkov source passed the pressure test, the source was disassembled in a clean room environment and inspected for water ingress. Neither the single o-ring seal at the steel-acrylic interface, the double o-ring seal at the umbilical flange, nor the double o-ring seals at the umbilical showed any sign of a water leak. With this result the source passed the pressure test.
 
 \section{Water Phase Analysis}
 \label{chap:water_phase}
-The Cherenkov source was deployed in SNO+ water phase to calibrate the optical output of the source relative to the \N source.
-This will allow deployment of the Cherenkov source as a calibration for the absolute light collection in SNO+ in future phases
+The Cherenkov source was deployed in {\snop} water phase to calibrate the optical output of the source relative to the \N source.
+This will allow deployment of the Cherenkov source as a calibration for the absolute light collection in {\snop} in future phases
 The following sections describe the deployment effort and the resulting calibration of the source.
 
 \subsection{Data Taking}
 In total 18~hours of data were taken with the source deployed and \Li being injected into the decay chamber.
-The PMT tag signal was connected to an empty PMT channel of the SNO+ electronics (FECD) to integrate the resulting pulses for event tagging.
-In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the SNO+ trigger system to record the full pulse.
+The PMT tag signal was connected to an empty PMT channel of the {\snop} electronics (FECD) to integrate the resulting pulses for event tagging.
+In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the {\snop} trigger system to record the full pulse.
 During this deployment we discovered the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
 
 \subsection{Data Cleaning}
@@ -532,14 +532,14 @@ There is some contamination from \Li betas, which clip the PMT prior to exiting 
 These events can be well separated in a 2D histogram of total charge (QHL) vs pulse height from the tag PMT. 
 Classifications of events with nominal cuts are shown in \Cref{fig:chsrc_classify}.
 The population of ``other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
-The distribution of number of hit PMTs in the SNO+ detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized Cherenkov source tag PMT signal for each class.
+The distribution of number of hit PMTs in the {\snop} detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized Cherenkov source tag PMT signal for each class.
 The alphas have an hit PMT distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.75\columnwidth]{nhit_dists}
-\caption{\label{fig:chsrc_nhits} The hit PMT distributions in the SNO+ detector for the different classifications of Cherenkov source data.}
+\caption{\label{fig:chsrc_nhits} The hit PMT distributions in the {\snop} detector for the different classifications of Cherenkov source data.}
 \end{figure}
 
 
@@ -557,7 +557,7 @@ This quantity is scanned over a range of collection efficiencies while a MC mode
 To avoid a regime where detector trigger inefficiency is relevant, only events with $>20$ detected photons -- where trigger efficiency is guaranteed to be 100$\%$ -- are included in this analysis.
 At each point in the scan the negative logarithm of the Poisson likelihood of the data is calculated resulting in a best fit at $0.945^{+0.015}_{-0.015}$~$C_{eff}/C_{eff_0}$ where the errors are statistical only.
 The scan itself is shown in \Cref{fig:chsrc_scan} with the best fit hit PMT distribution in \Cref{fig:chsrc_bestfit}.
-This indicates a systematic offset between the light emission of the MC model of the source and the actual source of roughly $5\%$, which should be taken into account when calibrating future phases of SNO+.
+This indicates a systematic offset between the light emission of the MC model of the source and the actual source of roughly $5\%$, which should be taken into account when calibrating future phases of {\snop}.
 
 \begin{figure}
 \centering
@@ -619,7 +619,7 @@ The analysis described for water phase in \Cref{sec:water_fit}, with the additio
 \caption{Fit of NHit-distribution to sum of binomial distributions.}
 \label{fig:fit}
 \end{subfigure}
-\caption{Using GEANT4~\cite{geant4} based simulations of the Cherenkov source to extract the overall light collection efficiency in SNO+. Figures taken from~\cite{Heintzelman:2013}. }
+\caption{Using GEANT4~\cite{geant4} based simulations of the Cherenkov source to extract the overall light collection efficiency in {\snop}. Figures taken from~\cite{Heintzelman:2013}. }
 \label{fig:heintzelman-plots}
 \end{figure}
  

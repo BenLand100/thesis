@@ -1,16 +1,16 @@
-\chapter{Elastic Scatter of $^8$B Solar Neutrinos in SNO+}
+\chapter{Elastic Scatter of $^8$B Solar Neutrinos in {\snop}}
 \label{ch:es}
 
-During the water phase of SNO+, after the upgrades made to the SNO detector were commissioned, the detector operated stably for a period of time, producing a physics dataset.
-Because of its depth, SNO+ has much lower cosmic muon flux than other water Cherenkov detectors, so even though it is much smaller than, for instance, Super-Kamiokande, it is able to make competitive measurements of nucleon decay \cite{nucleon_decay} because of lower cosmogenic backgrounds.
+During the water phase of {\snop}, after the upgrades made to the SNO detector were commissioned, the detector operated stably for a period of time, producing a physics dataset.
+Because of its depth, {\snop} has much lower cosmic muon flux than other water Cherenkov detectors, so even though it is much smaller than, for instance, Super-Kamiokande, it is able to make competitive measurements of nucleon decay \cite{nucleon_decay} because of lower cosmogenic backgrounds.
 These very low backgrounds also enable measurements of solar neutrinos down to low energy thresholds.
 The analysis described here does just that by performing a measurement of the $^8$B solar neutrino flux using the elastic scatter (ES) interaction channel.
-This represents the first physics results from the SNO+ detector, and also serves as a cross check that SNO+ is correctly simulating its direction resolution.
+This represents the first physics results from the {\snop} detector, and also serves as a cross check that {\snop} is correctly simulating its direction resolution.
 
 \section{Introduction}
 \label{sec:solar:intro}
 
-SNO+'s water phase differs from SNO in that light water is used instead of heavy water.
+{\snop}'s water phase differs from SNO in that light water is used instead of heavy water.
 This means that there is no CC or NC interaction, however, there are still electrons present, so the ES process is unchanged.
 As described in earlier chapters, the final state electron in the ES interaction has a direction highly correlated with the incident neutrino direction, and this fact can be used to statistically identify ES events in the detector.
 This can be achieved by binning events in the observable $\cos{\theta_{sun}}$ which is the cosine of the angle between reconstructed event direction and the Sun at the time of the event.
@@ -20,7 +20,7 @@ A maximum likelihood fit similar to the approach described in \Cref{fit_impl}, b
 \label{sec:solar:inputs}
 
 As with other maximum likelihood fits, PDFs for the solar events must be generated.
-The SNOMAN package used to model and analyze data from SNO is replaced by the RAT Monte Carlo and analysis package for SNO+.
+The SNOMAN package used to model and analyze data from SNO is replaced by the RAT Monte Carlo and analysis package for {\snop}.
 Both operate very similarly: interactions can be simulated in a detailed model of the detector, and PMT hit information can be used to reconstruct events in the same manner as data.
 This information is used to build PDFs for statistical analysis of detector data.
 
@@ -31,7 +31,7 @@ The code from the neutrino lifetime analysis presented earlier was leveraged her
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{normal_survival_b8density}
-\caption{The MSW survival probability curves used in the SNO+ ES analysis.}
+\caption{The MSW survival probability curves used in the {\snop} ES analysis.}
 \label{fig:solar:msw}
 \end{figure}
 
@@ -43,7 +43,7 @@ Example PDFs can be seen in \Cref{fig:solar:pdfs}.
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{example_pdf}
-\caption{Example PDF for the ES interaction in SNO+.}
+\caption{Example PDF for the ES interaction in {\snop}.}
 \label{fig:solar:pdfs}
 \end{figure}
 
@@ -51,7 +51,7 @@ Example PDFs can be seen in \Cref{fig:solar:pdfs}.
 
 Since this analysis is only using the observable $\cos{\theta_{sun}}$, the handling of backgrounds is quite simple.
 In short, no other types of event are expected to be correlated with the direction of the Sun, so a flat PDF can be used.
-This is demonstrated by generating background PDFs as shown in \Cref{fig:solar:backgrounds} of all backgrounds considered for SNO+.
+This is demonstrated by generating background PDFs as shown in \Cref{fig:solar:backgrounds} of all backgrounds considered for {\snop}.
 Notably, all backgrounds are flat in $\cos{\theta_{sun}}$ as expected.
 Using MC derived PDFs offers no benefit here, so an analytically flat PDF is assumed.
 
@@ -75,7 +75,7 @@ The lookup table is shown in \Cref{fig:energy_lookup}.
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{energy_correction}
-\caption{\label{fig:energy_lookup}The lookup table used in the first step of correcting reconstructed energy in SNO+. This plot shows the residual of the correction, and applies to both real and simulated data.}
+\caption{\label{fig:energy_lookup}The lookup table used in the first step of correcting reconstructed energy in {\snop}. This plot shows the residual of the correction, and applies to both real and simulated data.}
 \end{figure}
 
 Further analysis of \N calibration data taken at many locations within the detector demonstrated radius- and z-dependent energy scale bias.
@@ -97,15 +97,15 @@ C & -5.45e-6 & 3.76e-6\\ \hline
 D & 2.14e-9 & 4.46e-10 \\ \hline
 E & 6.49e-13 & 1.43e-13
 \end{tabular}
-\caption{\label{tbl:energy_correction}Coefficients used to further correct the reconstructed energy of SNO+ data according to \Cref{tbl:energy_correction}. This was done separately for real and simulated data after the lookup table in \Cref{fig:energy_lookup} was applied.}
+\caption{\label{tbl:energy_correction}Coefficients used to further correct the reconstructed energy of {\snop} data according to \Cref{tbl:energy_correction}. This was done separately for real and simulated data after the lookup table in \Cref{fig:energy_lookup} was applied.}
 \end{table}
 
 \section{Data Selection}
 
-As this is an early look at SNO+ data, the criteria defining which events are physics and should be analyzed are not as well defined as they are for contemporary analyses of SNO data.
+As this is an early look at {\snop} data, the criteria defining which events are physics and should be analyzed are not as well defined as they are for contemporary analyses of SNO data.
 This section discusses these criteria in detail, and aims to produce a set of data free of instrumental backgrounds by defining low level cuts on detector behavior and basic event information, and high level cuts on reconstructed quantities.
 
-For SNO+, the data within the water phase were separated into various time bins roughly correlated to the background levels during data taking.
+For {\snop}, the data within the water phase were separated into various time bins roughly correlated to the background levels during data taking.
 The data were split into six data sets, during each of which the background levels were relatively stable, each with its  own  background  estimate  and  set  of  analysis cuts.
 For this analysis, where all backgrounds are treated as analytically flat PDFs, changing backgrounds are not a concern.
 Of relevance are the variation of analysis cuts between the six data sets, which must be accounted for in the analysis.
@@ -113,7 +113,7 @@ These data selection criteria described in the following sections were also appl
 
 \subsection{Low-Level Cuts}
 
-The SNO+ trigger system records a 32~bit integer where each bit is a boolean mask of the state of the trigger system for each event.
+The {\snop} trigger system records a 32~bit integer where each bit is a boolean mask of the state of the trigger system for each event.
 This trigger word identifies, at a very low level, what caused the detector to take data.
 Low-level event selection requires that the trigger word include a physics trigger based on the number of coincidentally hit PMTs, and excludes any externally forced triggers that may be in the data.
 Externally forced triggers include a periodic trigger that is used to monitor the noise rates in the detector, triggers related to deployed sources, and diagnostic triggers issued by the detector electronics for self-testing.
@@ -158,7 +158,7 @@ These high level cuts are summarized per time bin in \Cref{tbl:solar:roi}.
 & $5.0 \leq E \leq 15.0$ & $5.0 \leq E \leq 15.0$ & $5.0 \leq E \leq 15.0$ \\
 & $R \leq 5.3$ & $R \leq 5.3$ & $R \leq 5.3$ \\
 \end{tabular}
-\caption{The high level cuts used in the SNO+ ES analysis. Selected events will pass these cuts.}
+\caption{The high level cuts used in the {\snop} ES analysis. Selected events will pass these cuts.}
 \label{tbl:solar:roi}
 \end{center}
 \end{table}
@@ -195,7 +195,7 @@ Again, the resulting variation in the measured flux is taken as the systematic u
 
 \subsection{Position Scale and Resolution}
 
-As the solar MC is simulated as a uniform distribution inside the AV, and the position resolution of SNO+ is small (O(10cm)), smearing the reconstructed position by this resolution has a 
+As the solar MC is simulated as a uniform distribution inside the AV, and the position resolution of {\snop} is small (O(10cm)), smearing the reconstructed position by this resolution has a 
 negligible effect on the expected number of events.
 However, this uncertainty is propagated similar to the energy resolution systematic: by smearing the MC reconstructed positions by the position resolution and rerunning the analysis.
 The more important position systematic is the position scale, as this changes the fiducial volume which is directly proportional to the measured flux.
@@ -220,7 +220,7 @@ This requires re-smearing each event's direction and rebuilding the angular PDF 
 \section{Open Data Analysis}
 \label{sec:solar:opendata}
 
-To understand detector data, constrain backgrounds, and aid in the development of analyses, SNO+ provided about 16~days of detector livetime with no blinding applied.
+To understand detector data, constrain backgrounds, and aid in the development of analyses, {\snop} provided about 16~days of detector livetime with no blinding applied.
 The remaining data was withheld until analyses were developed so that unbiased results could be extracted.
 
 \begin{table}
@@ -233,13 +233,13 @@ The remaining data was withheld until analyses were developed so that unbiased r
 The following preliminary diagnostic plots are created with a higher energy threshold of 5.5~MeV.
 After applying the data selection criteria to this open data, there are 5 candidate ES events selected.
 These candidates are shown with various observables in \Cref{tbl:solar:openev}.
-The SNO+ date for the runs included along with the 5 selected events is shown in \Cref{fig:solar:opendata} to gain confidence that these events are not suspiciously distributed in time.
+The {\snop} date for the runs included along with the 5 selected events is shown in \Cref{fig:solar:opendata} to gain confidence that these events are not suspiciously distributed in time.
 In a similar vein, the time of day of each event along with the relative livetime (represented by number of runs at that time) is shown in \Cref{fig:solar:tod}.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{per_day}
-\caption{The SNO+ days that are included in the open data analysis are shown
+\caption{The {\snop} days that are included in the open data analysis are shown
          shaded gray.
          The date of each selected event in the open data analysis is also shown.}
 \label{fig:solar:opendata}
@@ -266,9 +266,9 @@ While this result disagrees with the expected $^8$B flux at over one sigma, it i
 \centering
 \includegraphics[width=0.8\textwidth]{b8_es_fit_5_5}
 \caption{
-Summary plot of the $^8$B ES fit on the open dataset using the alternative energy range 5.5-15.0~MeV.
+Summary plot of the $^8$B ES fit on the open dataset using the energy range 5.5-15.0~MeV.
 The shaded regions show the fit uncertainty, with the selected events shown in blue.
-The fitted flux scale is shown relative to the current global predictions \cite{GlobalSolarFlux}.
+The fitted flux scale is shown relative to the current global predictions in \cite{GlobalSolarFlux}.
 }
 \label{fig:solar:open55}
 \end{figure}
@@ -276,7 +276,7 @@ The fitted flux scale is shown relative to the current global predictions \cite{
 \section{Final Results}
 \label{sec:solar:updated}
 
-Following a review of the open data analysis as described in the previous section, the SNO+ Analysis Committee approved the analysis procedure to move ahead with the entire SNO+ water phase dataset.
+Following a review of the open data analysis as described in the previous section, the {\snop} Analysis Committee approved the analysis procedure to move ahead with the entire {\snop} water phase dataset.
 The additional livetime (approximately 115~days) and additional events this implies allows for finer data binning of 0.05 in $\cos{\theta_{sun}}$ intervals.
 Further, there are sufficient statistics for this fit to be performed in independent energy bins within the 5.0-15.0~MeV ROI.
 This is advantageous because background rates increase as energy decreases, so energy bins at the high end of this range would be less susceptible to statistical fluctuations in the backgrounds.
@@ -287,7 +287,7 @@ Five bins 1-MeV wide are considered in the range 5.0-10.0~MeV, along with a sing
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{snoplus_solar_binned}
-\caption{The total number of ES events from each energy bin in the SNO+ $^8$B ES analysis is shown in the top panel. 
+\caption{The total number of ES events from each energy bin in the {\snop} $^8$B ES analysis is shown in the top panel. 
 The bottom panel shows the same information as a ratio to the expected number of ES events from SNO. 
 Also shown are the expected number of events from MC when assuming an $^8$B flux as measured by SNO (blue, with uncertainty from the SNO measurement shown as a shaded region), and assuming the best fit of this analysis (red, with uncertainty shown on data).}
 \label{fig:solar:binned}
@@ -296,7 +296,7 @@ Also shown are the expected number of events from MC when assuming an $^8$B flux
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{snoplus_solar_summary}
-\caption{The best fit for the SNO+ $^8$B ES analysis, shown with data from the full 5.0-15.0~MeV energy range.}
+\caption{The best fit for the {\snop} $^8$B ES analysis, shown with data from the full 5.0-15.0~MeV energy range.}
 \label{fig:solar:summary}
 \end{figure}
 
@@ -311,7 +311,7 @@ ${XYZ}_{shift}$ & $(^{+16.4}_{-18.2},^{+22.3}_{-19.2},^{+38.4]}_{-16.7})$~mm & s
 ${XYZ}_{res}$ & $(104.0,98.2,106.2)$~mm & shift-refit $\pm 0.0002$ & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\
 Dir$_{res}$     &  $\Delta = ^{+0.08}_{-0.13}$ & floated (best fit $\Delta = -0.02^{+0.09}_{-0.13}$) & \N \rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt}  \\ \hline
 \end{tabular}
-\caption{ Systematic uncertainties considered on the SNO+ ES analysis are shown here.
+\caption{ Systematic uncertainties considered on the {\snop} ES analysis are shown here.
 The impact shown for shift-and-refit parameters is a fractional change of the $^8$B flux from the central value of the fit for the energy range $5.0-15.0$~MeV.
 For the livetime considered in this analysis approximately 100 solar ES events are expected.}
 \label{tbl:solar:systs}
@@ -336,12 +336,12 @@ Notably this fit is consistent with the current global best fit for the $^8$B ne
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{snoplus_solar_lowbg}
-\caption{The fit results from the SNO+ $^8$B ES analysis excluding the lowest energy bin from 5.0-6.0~MeV. Notably, this demonstrates SNO+ has very low backgrounds above 6.0~MeV.}
+\caption{The fit results from the {\snop} $^8$B ES analysis excluding the lowest energy bin from 5.0-6.0~MeV. Notably, this demonstrates {\snop} has very low backgrounds above 6.0~MeV.}
 \label{fig:solar:lowbg}
 \end{figure}
 
 The majority of the background events are contained within the 5.0-6.0~MeV energy bin.
 With this bin included, the solar neutrino event rate is $1.30\pm0.18$~events/kt-day while the background rate is $10.23\pm0.38$~events/kt-day.
-If this bin is excluded, \Cref{fig:solar:lowbg} shows very low backgrounds SNO+ achieved above 6.0~MeV.
+If this bin is excluded, \Cref{fig:solar:lowbg} shows very low backgrounds {\snop} achieved above 6.0~MeV.
 For the 6.0-15.0~MeV range the solar neutrino event rate is $1.03\pm0.13$~events/kt-day while the background rate is $0.25\pm0.08$~events/kt-day.
-This demonstrates that SNO+ has achieved very low backgrounds above 6.0~MeV, which is an excellent conclusion to arrive at as SNO+ moves into scintillator phase.
+This demonstrates that {\snop} has achieved very low backgrounds above 6.0~MeV, which is an excellent conclusion to arrive at as {\snop} moves into scintillator phase.
