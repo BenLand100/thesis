@@ -59,7 +59,7 @@ Intensity based detection means a sacrifice of scintillation photons to avoid lo
 Recently developed Water-based Liquid Scintillator (WbLS)~\cite{wbls} materials aim to optimize this sacrifice.
 Finally, timing based detection requires very fast (on the order of 100~ps) photon detectors, which can be very expensive.
 Traditionally used large PMTs typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult. 
-Smaller PMTs~\cite{h11934} can achieve timing precision of $\lesssim$ 300~ps and new micro-channel plate (MCP) photosensor technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps.
+Smaller PMTs~\cite{h11934} can achieve timing precision of $\lesssim$ 300~ps and new micro-channel plate (MCP) photodetector technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps.
 
 
 This chapter describes the CHErenkov / Scintillation Separation (CHESS) experiment~\cite{chess_nim} developed as a part of this thesis, which aims to explore the intensity and timing methods of identifying Cherenkov photons in liquid scintillators. 
@@ -110,7 +110,7 @@ One dozen Hamamatsu H11934-200 PMTs~\cite{h11934} were deployed in a cross shape
 This geometry providing three radial rings of four PMTs each, and takes advantage of the rotational symmetry of the expected event topology. 
 This particular model of PMT was chosen due to its very high quantum efficiency (QE) peaked at $42\%$ (\Cref{fig:optics}) and excellent transit time spread (TTS) of 300~ps (FWHM).
 
-The PMTs are held in a 7x7 grid, with four additional slots on each side, as shown in~\Cref{fig:timing-setup}. 
+The PMTs are held in a $7 \times 7$ grid, with four additional slots on each side, as shown in~\Cref{fig:timing-setup}. 
 The holder was 3D printed from black ABS plastic.
 This grid allows for future expansion of CHESS with the purchase and deployment of additional PMTs in the unfilled slots.
 
@@ -216,8 +216,8 @@ A Gaussian fit is used to model the SPE charge distributions.
 To precisely extract the SPE parameters, the noise distribution (events with no charge) and the high charge tails of the data must be taken into account.
 A Gaussian is included to model the noise, while additional Gaussians are included to account for multi-PE events. 
 The parameters for this noise Gaussian and the normalization of the multi-PE Gaussians are treated as nuisance parameters in the fits.
-The means of the multi-PE gaussians are constrained to be integer multiples, $N$ for the $N$th PE, of the SPE mean, with the widths being $\sqrt{N}$ times the width of the SPE gaussian.
-This results in a fit with 7 parameters: SPE mean and width; noise mean, width, and integral; multi-PE normalizations for 2 and 3 PEs.
+The means of the multi-PE Gaussians are constrained to be integer multiples, $N$ for the $N$th PE, of the SPE mean, with the widths being $\sqrt{N}$ times the width of the SPE Gaussian.
+This results in a fit with 7 parameters: SPE mean and width; noise mean, width, and integral; multi-PE normalization for 2 and 3 PEs.
 \Cref{fig:spe_data} shows a sample fit.
 Finally, the SPE width is corrected by subtracting in quadrature the width of the noise to arrive at the true width of the SPE charge distribution.
 
@@ -254,8 +254,9 @@ was fit to the average pulse shape across all 12 PMTs (lower panel of \Cref{fig:
 	\includegraphics[width=0.5\columnwidth]{pulse_shape_ring1}
 	\includegraphics[width=0.5\columnwidth]{pulse_shape_norm_ring}
 	\includegraphics[width=0.5\columnwidth]{pulse_shape_lognorm_fit}
-	\caption{PMT pulse shape characterization.   (a) 
-	Mean and RMS spread for one PMT, showing excellent stability in the pulse region.  (b) Averaged pulse shapes for SPE pulses for each individual PMT. 
+	\caption{PMT pulse shape characterization.   
+	(a) Mean and RMS spread for one PMT, showing excellent stability in the pulse region.  
+	(b) Averaged pulse shapes for SPE pulses for each individual PMT. 
 	(c) Log-normal fit to the average pulse shape across all PMTs. 
 	In all cases the pulses are normalized to unit area, so the voltage is reported in arbitrary units.}
 	\label{fig:spe-pulse-shape}
@@ -266,8 +267,8 @@ was fit to the average pulse shape across all 12 PMTs (lower panel of \Cref{fig:
 
 The total time delay due to PMT transit times, electronics, and cable lengths is measured for each individual channel and is used to correct hit times from the data. 
 Time delays are measured relative to the average across all PMTs in the array. 
-Typical relative delays are on the order of 100s~ps. 
-The primary calibration is performed by deploying an LED at the top of the dark box, such that the light path to each PMT is similar.  A full Monte Carlo simulation of this configuration is run and used to correct the data in order to take into account PMT-to-PMT variations in photon ToF and geometry effects.  
+Typical relative delays are on the order of hundreds of picoseconds. 
+The primary calibration is performed by deploying an LED at the top of the dark box, such that the light path to each PMT is similar.  A full Monte Carlo simulation of this configuration is run and used to correct the data in order to take into account PMT-to-PMT variations in photon time of flight (ToF) and geometry effects.  
 Several datasets are generated by removing and reattaching the LED in order to quantify any uncertainty in the LED position with respect to the simulated one. 
 Cosmic muons passing through the propagation medium are used to evaluate systematics uncertainties in the calculation of the time delays, as they provide an abundant source of prompt Cherenkov light. 
 Events are selected  by requiring a coincidence between the lower muon tag and the bottom scintillator panel. 

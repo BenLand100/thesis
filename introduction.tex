@@ -281,7 +281,7 @@ Some spectral information can be obtained by looking at results from different i
 \section{Real-Time Neutrino Detection}
 
 The next generation of neutrino detectors progressed to real-time detection of neutrino interactions.
-These were the water Cherenkov detectors, the most recent of which include SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neturino interaction.
+These were the water Cherenkov detectors, the most recent of which include SNO \cite{3phase} and Super-Kamiokande \cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neutrino interaction.
 Pure water detectors, like Super-Kamiokande, detect neutrinos through the elastic scatter interaction,
 \begin{equation}
 \nu_e + e^- \rightarrow \nu_e + e^-,
@@ -317,7 +317,7 @@ For solar neutrinos this is a significant loss, because typically there is no ot
 This is applicable both in analyses where solar neutrinos are of interest and should be selected, and also where solar neutrinos would be considered a background and should be rejected.
 
 The final significant difference between Cherenkov and scintillation light is the minimum energy threshold.
-Cherenkov light relies on the charged particle being very relativisitic (exceeding the local speed of light), meaning that $\alpha$ particles are typically invisible, while betas must exceed 0.7 MeV total energy, to emit any light.
+Cherenkov light relies on the charged particle being very relativistic (exceeding the local speed of light), meaning that $\alpha$ particles are typically invisible, while betas must exceed 0.7 MeV total energy, to emit any light.
 Scintillation, on the other hand, only has the constraint that sufficient energy be deposited to excite vibrational states, typically on the order of eV.
 In the case of scintillation, both alphas and betas from radioactive decays are visible, since both can deposit sufficient energy to create scintillation light.
 In scintillator detectors, therefore, the maximum rate of the detector electronics are the limiting factor for data acquisition, not the interaction threshold of the medium.
@@ -328,7 +328,7 @@ The Borexino \cite{borexino} and KamLAND \cite{kamland} experiments have made ex
 
 There are multiple technologies in development with the goal of having simultaneously detectable Cherenkov and scintillation signals, however, for this thesis I will focus on one in particular: water-based liquid scintillators (WbLS).
 WbLS mixes a traditional scintillator, {\labppo}, an oil, with water at some configurable ratio that is in large part water.
-In principle the fraction of scintillator results in a fraction of total light output from a pure scintillator, so low scintillator fractions will have a comparable number of scintillation photons to cherenkov photons. 
+In principle the fraction of scintillator results in a fraction of total light output from a pure scintillator, so low scintillator fractions will have a comparable number of scintillation photons to Cherenkov photons. 
 This leads to enhanced energy resolution compared to only Cherenkov light, while allowing for the possibility of observing Cherenkov geometry in the pattern of detected photons, and thereby obtaining direction information.
 At higher scintillation fractions, the relatively fewer Cherenkov photons might be difficult to identify on top of the isotropic scintillation light.
 In this case one may leverage the fact that Cherenkov light is very prompt (picoseconds) compared to scintillators ({\labppo} has a short time constant of a few nanoseconds) to potentially identify Cherenkov photons as the most prompt hits.
@@ -347,7 +347,7 @@ Further discussion of WbLS and a characterization of low scintillator fractions 
 The SNO \cite{sno} detector is located deep underground near Sudbury, Canada in the Creighton mine, an active nickle mine.
 This location is one of the deepest laboratories in the world at $2$~km underground, providing a 5800 m.w.e. overburden to shield from cosmic rays.
 The detector itself is composed of a 6-m radius acrylic vessel (AV) in the shape of a spherical shell containing 1 kT of heavy water ($^2$H$_2$O or D$_2$O) as the active volume.
-Heavy water was chosen because the loosely bound neutron in the deturons enabled both neutral current and charged current interactions enabling flavor selective measurements of the solar neutrino flux.
+Heavy water was chosen because the loosely bound neutron in the deuterons enabled both neutral current and charged current interactions enabling flavor selective measurements of the solar neutrino flux.
 
 \subsection{Neutrino Detection}
 
@@ -404,21 +404,21 @@ SNO operated in three distinct phases differing in their neutron detection capab
 This was achieved by modifying the target material between phases of data taking.
 These phases are described in the following sections along with the neutron detection mode in each phase.
 
-\subsubsection{D$_2$O}
+\subsubsection{Phase I}
 
 The first phase consisted of a pure D$_2$O target. 
 Neutrons produced in the NC interaction primarily captured on other deuterons in the target.
 The produced $^3$H then decayed, releasing a 6.26-MeV gamma.
 This gamma could either scatter electrons in the target or create energetic electron-positron pairs, either mode being detected by Cherenkov light.
 
-\subsubsection{Salt}
+\subsubsection{Phase II}
 
 In the second phase, NaCl was added to the D$_2$O target.
 Chlorine has a much greater neutron capture cross section than deuterium, resulting in a significant increase in neutron detection efficiency.
 The decay scheme after a neutron capture on Cl is quite complicated, releasing many gammas, and giving these events a more isotropic topology compared to other interactions.
 Neutron detection was further enhanced by an increase in total energy released in the gamma cascade to 8.6 MeV.
 
-\subsubsection{NCD}
+\subsubsection{Phase III}
 
 Finally, in the third phase, the NaCl was removed from the target, and neutron counting devices (NCDs) were added inside the AV.
 These were essentially independent detectors, allowing for an independent measure of the neutron production rate.
@@ -435,22 +435,22 @@ The entire structure is submerged in a large barrel shaped cavity of light water
 Both the heavy water inside the AV and the light water of the cavity were continually purified to keep intrinsic radioactivity low and cooled to minimize biological growth.
 
 The PMTs used in SNO were 8-inch Hamamatsu R1408 created with low-radioactivity glass. 
-These PMTs had a time resolution for detected photons of 1.5 ns, and a peak quantum efficiency of 21.5\% at 440 nm.
+These PMTs had a time resolution for detected photons of 1.5~ns, and a peak quantum efficiency of 21.5\% at 440~nm.
 Each PMT was outfitted with non-imaging light-concentrating reflectors to increase the effective coverage of light-sensitive elements to 55\%.
 To assist in vetoing cosmic rays, 91 additional PMTs were mounted to the PSUP looking outward into the light water of the cavity. 
 
 Whenever a PMT detected a photon, a discriminator would fire on the corresponding voltage fluctuation and register a hit.
 This hit started a voltage ramp on a time-to-amplitude converter (TAC) to track the hit time, and integrated the total charge collected by the PMT.
 Additionally, the PMT readout electronics would emit two  10-mV square pulses of configurable widths, which are summed across the entire detector and act as a count of coincidentally hit PMTs within each window.
-For SNO these windows were set to approximately 20 ns and 100 ns.
-The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400 ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
+For SNO these windows were set to approximately 20~ns and 100~ns.
+The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400~ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
 For SNO the discriminator threshold on trigger sums corresponded roughly to 17 hit PMTs.
 The hits from each GT are built into a single event for further analysis.
 
 \subsection{Vertex Reconstruction}
 
 To perform an analysis of SNO data it is first necessary to extract physical observables from the PMT hit time information provided by the DAQ.
-This is done using pattern recognition algorithms, which take into account the geometry of cherenkov light to reconstruct the direction, position, and time of each event.
+This is done using pattern recognition algorithms, which take into account the geometry of Cherenkov light to reconstruct the direction, position, and time of each event.
 Using that information, along with the total number of hits, other algorithms can estimate the energy deposited in the detector. 
 Further quantities can be extracted, such as a measure of the isotropy of the event and the ratio of hits within a prompt time window to all hits, encode additional information about the event that can, for instance, be useful for selecting physics events from instrumental events.
 Cherenkov light has a very specific geometry, so good physics events will have a characteristic spatial distribution of detected photons, allowing isotropy to be used to cut instrumental backgrounds.
@@ -461,7 +461,7 @@ Similarly Cherenkov light is very prompt, meaning all photons from a physics eve
 To understand detector response and characterize the algorithms that perform the vertex reconstruction, sources with known energy spectra or well defined photon emission times that can be deployed at known positions within the detector are critical.
 Two sources were critical in this effort:
 \begin{description}
-\item[\N \cite{sno_n16}] This isotope is produced with a deturium-tritium neutron generator by captures on $^{16}$O producing $^{17}$O, which quickly decays by emitting a proton to leave \N. This isotope is transported in gas form to a calibration source within the detector where it beta decays into a metastable state of $^{16}$O that relaxes, releasing a 6.13-MeV gamma. The initial beta decay provides a tag signal within the source, and the gamma escapes into the detector where it deposits its energy. This source provides the energy scale calibration for SNO by calibrating its photon detection efficiency. It is also used to evaluate energy and position reconstruction systematics as a function of position within the detector and throughout the operational time of the detector.
+\item[\N \cite{sno_n16}] This isotope is produced with a deuterium-tritium neutron generator by captures on $^{16}$O producing $^{17}$O, which quickly decays by emitting a proton to leave \N. This isotope is transported in gas form to a calibration source within the detector where it beta decays into a metastable state of $^{16}$O that relaxes, releasing a 6.13-MeV gamma. The initial beta decay provides a tag signal within the source, and the gamma escapes into the detector where it deposits its energy. This source provides the energy scale calibration for SNO by calibrating its photon detection efficiency. It is also used to evaluate energy and position reconstruction systematics as a function of position within the detector and throughout the operational time of the detector.
 \item[Laser Ball \cite{sno_laserball}] A fast dye laser is fiber coupled to an optical diffuser, which work together to produce an isotropic light pulse at a well defined time. This is primarily used to calibrate the time offset of each PMT, and can also be used to measure relative detection efficiencies of the PMTs.
 \end{description}
 Additional sources were used to provide calibration points at other energies, such as a beta source using \Li \cite{Tagg:2002} with an endpoint at 14~MeV, and a proton fusion source \cite{fusion_source} producing a gamma at 19.8~MeV.
@@ -558,14 +558,14 @@ Finally, new radioactive sources, such as a $^{48}$Sc and $^{57}$Co, are being d
 
 \section{\textsc{Theia}}
 
-\textsc{Theia} \cite{asdc_paper} is a proposed large scale (50-100kT) neutrino detector, which aims to support a diverse platform of neutrino physics. 
+\textsc{Theia} \cite{asdc_paper} is a proposed large scale (50-100~kT) neutrino detector, which aims to support a diverse platform of neutrino physics. 
 Of particular relevance to this thesis is the goal of doing high precision measurements of solar neutrinos \cite{theia_solar}.
 
 \subsection{Conceptual Design}
 The detector design is still in the conceptual phase, but lessons learned from {\snop} and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.
 The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic that is explored further in \Cref{ch:wbls}.
-The baseline design calls for a right cylinder around 40m across filled with WbLS and surrounded with fast photo detectors.
+The baseline design calls for a right cylinder around 40~m across filled with WbLS and surrounded with fast photo detectors.
 The optical clarity of WbLS should allow scaling to these sizes without undue loss of photons to attenuation.
 
 \subsection{Sensitivity to Solar Neutrinos}

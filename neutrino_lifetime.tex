@@ -233,7 +233,7 @@ The procedure for determining the central values and uncertainties of scanned pa
 \item A parameter is scanned around its current best guess with other systematics held at their best guess.
 \item At each point in the scan, the minimization algorithm is run, finding the minimum negative log likelihood value.
 \item This produces a negative log likelihood profile as a function of the parameter of interest.
-\item An asymmetric gaussian is fit to the profile of the negative log likeihood to determine the central and upper/lower uncertainties for the parameter.
+\item An asymmetric Gaussian is fit to the profile of the negative log likelihood to determine the central and upper/lower uncertainties for the parameter.
 \item The best guess for that parameter is updated to the central value of that fit.
 \item The next parameter is considered at step 1 until all parameters have been scanned.
 \item If any parameter central value has shifted relative to the previous iteration, the algorithm repeats until stable minima are found.
@@ -537,7 +537,7 @@ Both flux measurements are consistent with previous 3-phase SNO results: $5.23^{
 
 Now with the entire SNO dataset, the fit was run as described in \Cref{strategy}. 
 As a preliminary step, the systematics identified in the previous 3-phase analysis as requiring scanning were scanned iteratively until a global minimum was found.
-Using the central values for the systemtics, both $k_2$ and $^8$B flux were then scanned with the systematic parameters fixed at their central values, and are shown in \Cref{fig:final_scans}.
+Using the central values for the systematics, both $k_2$ and $^8$B flux were then scanned with the systematic parameters fixed at their central values, and are shown in \Cref{fig:final_scans}.
 The neutrino parameters are shown relative to their priors at the minimum of this scan in \Cref{fig:priors_final}.
 The observable projections for the minimum and with $k_2$ fixed to infinity are shown in \Cref{final_observables}.
 The likelihood profile including systematic uncertainties is compared to the likelihood profile without systematics in \Cref{fig:systematic_scans}.
@@ -601,7 +601,7 @@ The lifetime of mass state three is fixed at infinity (solar neutrino fluxes con
 
 \subsection{$^8$B Constraints}
 
-SuperK~\cite{superkiv}, KamLAND~\cite{kamland8b} and Borexino~\cite{borexino8b} have all measured the $^8$B neutrino flux via the elastic scatter channel. 
+Super-Kamiokande~\cite{superkiv}, KamLAND~\cite{kamland8b} and Borexino~\cite{borexino8b} have all measured the $^8$B neutrino flux via the elastic scatter channel. 
 For any particular set of neutrino parameters, the average survival probability values are computed for the elastic scatter cross section weighted energy spectrum of $^8$B neutrinos using the correct production regions (electron density) in the Sun. 
 Using these survival probabilities, the measured $\Phi_e$ of each experiment is converted to a true $^8$B flux with \Cref{flux_conv} and compared to the SSM prediction with \Cref{combolike}.
 To arrive at a profiled likelihood for each experiment, all neutrino parameters are floated with priors while scanning $k_2$. The lifetime of mass state one is fixed at infinity as with the SNO analysis. 
@@ -708,7 +708,7 @@ The Homestake~\cite{homestake} experiment does not go into detail about expected
 Also, the references cited there tend to assume $P_{ee} = 1$ when calculating expected rates, which is not a useful comparison to make with this analysis.
 A more recent paper~\cite{bachall_lma} does a modern calculation of the expected interaction rates per flux component that is directly comparable to the model used here.
 
-Using the fluxes and mixing parameters quoted in Table I of \cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the LMA solution from Table I of \cite{bachall_lma}.
+Using the fluxes and mixing parameters quoted in Table I of \cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the large mixing angle (LMA) solution from Table I of \cite{bachall_lma}.
 The column showing the `old' parameters are using the fluxes and mixing parameters from \cite{bachall_lma} while the column showing `new' parameters uses the SSM and mixing parameters used elsewhere in this analysis.
 In all cases there is pretty good agreement with the measured rate from Homestake and between models.
 
@@ -732,7 +732,7 @@ Total		& 2.6	&	2.69 & 2.75		\\ \hline
 \label{sec:combobreaker}
 
 The likelihood profiles of individual experiments are multiplied (negative log likelihoods added) together to arrive at a combined likelihood profile shown in \Cref{fig:combined_profile}. 
-Explicitly this includes: $^8$B measurements from KamLAND, Borexino, SuperK (I,II,III,IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
+Explicitly this includes: $^8$B measurements from KamLAND, Borexino, Super-Kamiokande (I,II,III,IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
 The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$~s/eV. 
 This is better than the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
 Notably the presence of a relatively significant minimum in the new SNO results is not particularly beneficial here since it occurs near the location of the limit.
