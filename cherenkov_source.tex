@@ -62,7 +62,7 @@ The alphas from the subsequent $^{8}$Be decay produce scintillation light in the
 A small PMT in the neck of the source detects this scintillation light, generating a tagging signal for the event. 
 
 \subsection{Source Geometry}
-The Cherenkov source consists of three main parts: the acrylic decay chamber, the PMT assembly inside the neck, and the steel housing inherited from the SNO \Li source. See Figures~\ref{fig:design-1} and~\ref{fig:design-2}.
+The Cherenkov source consists of three main parts: the acrylic decay chamber, the PMT assembly inside the neck, and the steel housing inherited from the SNO \Li source. See \Cref{fig:design-1,fig:design-2}.
 See~\cite{wallig:2015} for the complete set of technical drawings for the Cherenkov source. 3D-rendered drawings are used in this section to identify the different parts of the source.
 
 \begin{figure}
@@ -217,7 +217,7 @@ To accomplish these goals, three thin layers of black paint are deposited for op
 \subsubsection{Paint Deposition}
 
 To ensure the source meets cleanliness requirements and that unwanted materials did not get trapped in the paint, this entire process was carried out in a class-1000 clean room.
-The method for applying the paint was to pour the paint mixture into the neck with the neck facing up, rotate the source by hand to coat the inside of the decay chamber, place the source neck down on a drying stand that blows filtered air into the decay chamber while allowing excess paint to drip down out of the neck, and finally cut away any excess paint that dripped out the neck with a scalpel (see Figure \ref{fig:drying}). 
+The method for applying the paint was to pour the paint mixture into the neck with the neck facing up, rotate the source by hand to coat the inside of the decay chamber, place the source neck down on a drying stand that blows filtered air into the decay chamber while allowing excess paint to drip down out of the neck, and finally cut away any excess paint that dripped out the neck with a scalpel (see \Cref{fig:drying}). 
 In small scale tests~\cite{tanner:2014} this was found to produce a nominally uniform, thin, and opaque surface.
 
 
@@ -236,7 +236,7 @@ In small scale tests~\cite{tanner:2014} this was found to produce a nominally un
 \end{figure}
 
 
-For the first two of three opaque black layers a Teflon sleeve similar to the aluminum neck sleeve was inserted into the neck to prevent black paint from adhering to the neck region while allowing excess paint to drip out. Using a removable Teflon sleeve for the first two layers enhanced the uniformity of the paint thickness near the neck by preventing pooling (see Figure \ref{fig:minisource_paint}) that would occur if the aluminum neck sleeve were present. Prior to the third layer of black paint, the aluminum neck sleeve that accepts the PMT assembly was potted into the neck using Sylgard 184, a silicone encapsulate, allowing the third layer of black paint to fill any gaps around the neck sleeve to decay chamber interface resulting in a light tight seal. The encapsulate was applied to the outside of the neck sleeve and inserted into the source with the neck facing down to ensure no encapsulate dripped into the decay chamber. After the encapsulate cured on the drying stand, the final layer of black was applied.
+For the first two of three opaque black layers a Teflon sleeve similar to the aluminum neck sleeve was inserted into the neck to prevent black paint from adhering to the neck region while allowing excess paint to drip out. Using a removable Teflon sleeve for the first two layers enhanced the uniformity of the paint thickness near the neck by preventing pooling (see \Cref{fig:minisource_paint}) that would occur if the aluminum neck sleeve were present. Prior to the third layer of black paint, the aluminum neck sleeve that accepts the PMT assembly was potted into the neck using Sylgard 184, a silicone encapsulate, allowing the third layer of black paint to fill any gaps around the neck sleeve to decay chamber interface resulting in a light tight seal. The encapsulate was applied to the outside of the neck sleeve and inserted into the source with the neck facing down to ensure no encapsulate dripped into the decay chamber. After the encapsulate cured on the drying stand, the final layer of black was applied.
 
 The final layer was a mixture of 40\,mL of deionized water, 20\,mL of Vallejo white paint, and 5\,g of TPB. The addition of deionized water made the mixture approximately the same consistency as the black paint, and upon drying the remaining layer is mostly TPB crystals with a white paint binding that adheres well to the black paint surface. 5\,g of TPB using this deposition method was shown to give approximately the same scintillation brightness as the SNO \Li source when illuminated under a UV lamp.
 
@@ -266,7 +266,7 @@ The aluminum neck sleeve that receives the PMT and ensures light tightness of th
 
 After each layer the surface was visually inspected to ensure no major flaws or clumps were found. Smaller scale tests indicated that the paint layers will be thicker near the neck than opposite the neck due to the drying orientation (anisotropy), that the mean paint thickness would be around 1\,mm, and that 10\% variations in thickness (roughness) are to be expected (\Cref{fig:minisource_paint}). The roughness is expected to vary with a characteristic length scale of approximately 1\,cm according to the cross section of the small scale paint test.
 
-To explore the effects of mean thickness and surface roughness on NHits, simulations of \Li electrons were done using a source geometry in RAT and various different paint layers. Simulations with perfectly smooth paint layers indicated that a 0.1\,mm change in mean paint thickness is conservatively a 5\% change in mean NHits (\Cref{fig:meannhits}), so it will be necessary to know the thickness of the paint very well. 
+To explore the effects of mean thickness and surface roughness on the number of detected photons (NHits), simulations of \Li electrons were done using a source geometry in GEANT4~\cite{geant4} and various different paint layers. Simulations with perfectly smooth paint layers indicated that a 0.1\,mm change in mean paint thickness is conservatively a 5\% change in mean NHits (\Cref{fig:meannhits}), so it will be necessary to know the thickness of the paint very well. 
 
 \begin{figure}[h!]
 \begin{subfigure}{.53\textwidth}
@@ -285,7 +285,7 @@ To explore the effects of mean thickness and surface roughness on NHits, simulat
 \label{fig:stltests}
 \end{figure}
 
-By generating stereolithography (STL) surface definitions, which break an arbitrary surface down into triangles, and importing these into RAT/GEANT4, it was possible to simulate how paint roughness or anisotropy would change the peak NHits. 
+By generating stereolithography (STL) surface definitions, which break an arbitrary surface down into triangles, and importing these into GEANT4, it was possible to simulate how paint roughness or anisotropy would change the peak NHits. 
 \Cref{fig:stltests} summarizes the result that the expected roughness and anisotropy had no significant effect on the mean NHit. 
 Since events are uniform in the decay chamber volume, and hence any individual beta sees a distribution of thicknesses of paint based on initial position and direction regardless of surface imperfections, the fact that these effects do not contribute strongly makes sense. 
 Therefore it was only necessary to establish the mean paint thickness accurately to properly simulate the NHits distribution.
@@ -369,7 +369,7 @@ In fact, deployment in SNO+ will be the best measurement of the radioactivity of
 This is done in two ways: source materials can either be placed in low background radiation detectors and directly measured, or the materials may be exposed to a high neutron flux, which activates the trace materials in the source making them easier to measure.
 As this source is not expected to have radioactive contamination at detectable levels, direct measurement is not particularly useful, however, this was done for the acrylic at the Low Background Counting Facility at LBNL.
 The neutron activation analysis (NAA) results were obtained by deployment of materials at the McClellan Nuclear Research Center and counted at UC Davis. 
-See Table \ref{tab:counting} for counting results for materials used in the source.
+See \Cref{tab:counting} for counting results for materials used in the source.
 
 \begin{table}[h!]
 \centering
@@ -402,7 +402,7 @@ Three samples were tested for compatibility with LAB-PPO by the technical suppor
 These represent the materials inside the decay chamber that could potentially be exposed to LAB+PPO in the event of a catastrophic source failure.
 The materials were soaked in a few 100\,mL of 2g/L PPO-LAB for 1~month. 
 A control sample consisting of the default 2g/L PPO-LAB was scanned with the samples and used as a comparison. 
-Deviation from the control is observed in all of the samples indicating incompatibility, however, no chemical reactions were observed.
+Deviation from the control is observed in all of the samples, indicating incompatibility, however, no chemical reactions were observed.
 Since these materials are not expected to come in contact with the LAB+PPO and are only present in small quantities within the source, this was deemed acceptable.
 For the full technical report of the compatibility test, see~\cite{lina:2015}.
 
@@ -427,7 +427,7 @@ To do this, the test source was placed in a dark-box with the center of the sour
 \label{fig:calibratedled1}
 \end{figure}
 
-A calibrated LED (see Figure \ref{fig:calibratedled1}) around the emission wavelength of TPB was placed in the center of the source with the neck blocked by an opaque rubber plug. This LED was pulsed on for 50\,ns intervals at various voltages one million times per LED voltage setting. The signal from the PMT was digitized and integrated with a per event pedestal correction to obtain a signal charge distribution. To cancel out systematics, the same process was repeated with the LED off to obtain a background charge distribution. The leaked light charge distribution was obtained by subtracting the background charge distribution from the signal charge distribution. There were no samples in the background subtracted charge distribution that appeared to correspond to multi-photon events, so each event that registered charge in the leaked light charge distribution was counted as a single leaked photon. The sum of leaked photons for the million events at each voltage are shown in Figure \ref{fig:lightleak}. 
+A calibrated LED (see \Cref{fig:calibratedled1}) around the emission wavelength of TPB was placed in the center of the source with the neck blocked by an opaque rubber plug. This LED was pulsed on for 50\,ns intervals at various voltages one million times per LED voltage setting. The signal from the PMT was digitized and integrated with a per event pedestal correction to obtain a signal charge distribution. To cancel out systematics, the same process was repeated with the LED off to obtain a background charge distribution. The leaked light charge distribution was obtained by subtracting the background charge distribution from the signal charge distribution. There were no samples in the background subtracted charge distribution that appeared to correspond to multi-photon events, so each event that registered charge in the leaked light charge distribution was counted as a single leaked photon. The sum of leaked photons for the million events at each voltage are shown in \Cref{fig:lightleak}. 
 \begin{figure}
         \begin{subfigure}{0.47\textwidth}
                 \includegraphics[width=\textwidth]{leakedphotons}
@@ -444,9 +444,11 @@ A calibrated LED (see Figure \ref{fig:calibratedled1}) around the emission wavel
 \label{fig:calibratedled2}
 \end{figure}
 
-To determine the total light leak of the source assume that the light leaking from the source is isotropic such that the PMT sees only a fraction of the total $4\pi$ light leak. Since the LED inside the source was pointed directly at the PMT, this is a conservative assumption. This along with dividing by the total number of events converts the y-axis of Figure \ref{fig:lightleak} to the y-axis of Figure \ref{fig:eventleak}. The calibration data in Figure \ref{fig:calibratedled1} shows the number of photons detected by the PMT without the source blocking the light from the LED. Correcting for the solid angle effect arising from the larger spot size of the LED compared to the solid angle of the PMT at 50\,cm gives the total number of photons produced by the LED when pulsed at 50\,ns at a particular voltage. This converts the x-axis of Figure \ref{fig:lightleak} to the x-axis of Figure \ref{fig:eventleak}. Therefore, Figure \ref{fig:eventleak} shows an upper limit for the expected leak per event with some average number of scintillation photons produced inside the decay chamber. This is an over estimate assuming perfect TPB efficiency, since any primary scintillation photons would be absorbed by the acrylic, but nonetheless puts an acceptable upper limit on the light leak to fewer than 1 photon in 50 events at our expected mean number of scintillation photons.
+To determine the total light leak of the source, the light leaking from the source was assumed to be isotropic, such that the PMT sees only a fraction of the total $4\pi$ light leak.
+Since the LED inside the source was pointed directly at the PMT, this is a conservative assumption. 
+This, along with dividing by the total number of events, converts the y-axis of \Cref{fig:lightleak} to the y-axis of \Cref{fig:eventleak}. The calibration data in \Cref{fig:calibratedled1} shows the number of photons detected by the PMT without the source blocking the light from the LED. Correcting for the solid angle effect arising from the larger spot size of the LED compared to the solid angle of the PMT at 50\,cm gives the total number of photons produced by the LED when pulsed at 50\,ns at a particular voltage. This converts the x-axis of \Cref{fig:lightleak} to the x-axis of \Cref{fig:eventleak}. Therefore, \Cref{fig:eventleak} shows an upper limit for the expected leak per event with some average number of scintillation photons produced inside the decay chamber. This is an over estimate assuming perfect TPB efficiency, since any primary scintillation photons would be absorbed by the acrylic, but nonetheless puts an acceptable upper limit on the light leak to fewer than 1 photon in 50 events at our expected mean number of scintillation photons.
 
-\subsection{Decay Chamber Continuity}
+\subsection{Decay Chamber Leak Testing}
 \label{sec:heleak}
 The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$\,Torr\,l/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheckSetup}, a leak rate of 6.2$\times10^{-9}$\,Torr\,l/s. was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the Viton o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
 
@@ -471,7 +473,13 @@ The decay chamber for the final source was tested for leaks using ultra-pure Hel
 
 \subsection{Tag PMT Response}
 \label{sec:tagpmt}
-The H11432-100 PMT efficiency and gain were measured before and after potting into the PMT assembly both to ensure the PMT had appropriate sensitivity across a wide range of photon fluxes and to see what effect the potting had on the PMT. This was done by placing the PMT in a dark-box 50\,cm away from a calibrated LED. The LED was pulsed for 50\,ns at various voltages to change the photon flux. \Cref{fig:pmttest} shows that the PMT is indeed sensitive over a large range of photon fluxes, however, comparing \Cref{fig:pmttest} to \Cref{fig:pmtafterpotting} shows that the potting of the PMT seems to have reduced the PMT efficiency enough to make tagging single or a few photons less reliable. As we are expecting roughly 20,000 primary scintillation photons this should not be an issue. However, only wavelength-shifted photons will be detectable and the wavelength shifting efficiency quite difficult to evaluate.
+The H11432-100 PMT efficiency and gain were measured before and after potting into the PMT assembly, both to ensure the PMT had appropriate sensitivity across a wide range of photon fluxes and to see what effect the potting had on the PMT. 
+This was done by placing the PMT 50~cm away from a calibrated LED inside of a dark box and measuring the PMT response.
+The LED was pulsed for 50~ns at various voltages to change the photon flux. 
+\Cref{fig:pmttest} shows that the PMT is indeed sensitive over a large range of photon fluxes, however, comparing \Cref{fig:pmttest} to \Cref{fig:pmtafterpotting} shows that the potting of the PMT seems to have reduced the PMT efficiency enough to make tagging single or a few photons less reliable. 
+As we are expecting roughly 20,000 primary scintillation photons this should not be an issue. 
+Only wavelength-shifted photons will be detectable and the wavelength shifting efficiency is quite difficult to evaluate prior to deployment.
+Therefore, the source tag rate will be determined during the initial deployment.
 
 \begin{figure}
     \begin{subfigure}{0.49\textwidth}
@@ -492,19 +500,20 @@ The H11432-100 PMT efficiency and gain were measured before and after potting in
 
 The Queen's pressure chamber was used to pressure test all SNO sources and was similarly used to pressure test the Cherenkov source. 
 The purpose of this test is to demonstrate the mechanical stability of the source when exposed to pressures consistent with being submerged in SNO+.
-This pressure chamber is a 10" diameter aluminum cylinder that is pressurized with tap water pressure. For this test the Cherenkov source was removed from its radon proof bag and fully assembled in a clean room environment with viton o-rings. A 5/8" aluminum plug was used in place of an ubmilical. Because of the use of tap water extra care was taken to ensure the source would not be contaminated by isolating it from the bulk volume of water. The source was heat sealed into a bag of DI water and lowered into the pressure chamber, which was also filled with DI water. After sealing the chamber it was pressurized to 60psi and the source remained at this pressure for one hour. This pressure exceeds the approximately 22psi pressure differential from mine pressure to the bottom of the acrylic vessel by a very conservative margin. To achieve this pressure approximately $0.5\%$ of the water inside the pressure chamber (but outside the sealed bag) was tap water. After depressurizing, the bagged source was removed from the pressure chamber and the bag was inspected to confirm there were no leaks into the tap water contaminated volume. The Cherenkov source was then removed from the DI water bag and was dried externally with grade 5.0 nitrogen gas in a clean room environment. 
+This pressure chamber is a 10" diameter aluminum cylinder that is pressurized with tap water pressure. For this test the Cherenkov source was removed from its radon-proof bag and fully assembled in a clean room environment with viton o-rings. A 5/8" aluminum plug was used in place of an ubmilical. Because of the use of tap water extra care was taken to ensure the source would not be contaminated by isolating it from the bulk volume of water. The source was heat sealed into a bag of DI water and lowered into the pressure chamber, which was also filled with DI water. After sealing the chamber it was pressurized to 60~psi and the source remained at this pressure for one hour. This pressure exceeds the approximately 22~psi pressure differential from mine pressure to the bottom of the acrylic vessel by a very conservative margin. To achieve this pressure approximately $0.5\%$ of the water inside the pressure chamber (but outside the sealed bag) was tap water. After depressurizing, the bagged source was removed from the pressure chamber and the bag was inspected to confirm there were no leaks into the tap water contaminated volume. The Cherenkov source was then removed from the DI water bag and was dried externally with grade 5.0 nitrogen gas in a clean room environment. 
 
 To confirm that the Cherenkov source passed the pressure test, the source was disassembled in a clean room environment and inspected for water ingress. Neither the single o-ring seal at the steel-acrylic interface, the double o-ring seal at the umbilical flange, nor the double o-ring seals at the umbilical showed any sign of a water leak. With this result the source passed the pressure test.
 
 \section{Water Phase Analysis}
 \label{chap:water_phase}
 The Cherenkov source was deployed in SNO+ water phase to calibrate the optical output of the source relative to the \N source.
+This will allow deployment of the Cherenkov source as a calibration for the absolute light collection in SNO+ in future phases
 The following sections describe the deployment effort and the resulting calibration of the source.
 
 \subsection{Data Taking}
 In total 18~hours of data were taken with the source deployed and \Li being injected into the decay chamber.
 The PMT tag signal was connected to an empty PMT channel of the SNO+ electronics (FECD) to integrate the resulting pulses for event tagging.
-In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the SNO+ tigger system to record the full pulse.
+In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the SNO+ trigger system to record the full pulse.
 During this deployment we discovered the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
 
 \subsection{Data Cleaning}
@@ -523,26 +532,26 @@ There is some contamination from \Li betas, which clip the PMT prior to exiting 
 These events can be well separated in a 2D histogram of total charge (QHL) vs pulse height from the tag PMT. 
 Classifications of events with nominal cuts are shown in \Cref{fig:chsrc_classify}.
 The population of ``other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
-The distribution of number of hit PMTs in the detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized trace for each class.
-The alphas have an nhit distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
+The distribution of number of hit PMTs in the SNO+ detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized Cherenkov source tag PMT signal for each class.
+The alphas have an hit PMT distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.75\columnwidth]{nhit_dists}
-\caption{\label{fig:chsrc_nhits} The hit PMT distributions for the different classifications of Cherenkov source data.}
+\caption{\label{fig:chsrc_nhits} The hit PMT distributions in the SNO+ detector for the different classifications of Cherenkov source data.}
 \end{figure}
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.75\columnwidth]{average_traces}
-\caption{\label{fig:chsrc_pmttraces} The average tag PMT traces from the different classifications of Cherenkov source data.}
+\caption{\label{fig:chsrc_pmttraces} The average Cherenkov source tag PMT traces from the different classifications of Cherenkov source data.}
 \end{figure}
 
 \subsection{Collection Efficiency Fit}
 \label{sec:water_fit}
-The most straightforward way to extract the correction factor to the MC collection efficiency is to varry that efficiency in MC to maximize the Poisson likelihood of the data.
+The most straightforward way to extract the correction factor to the MC collection efficiency is to vary that efficiency in MC to maximize the Poisson likelihood of the data.
 MC is generated with an \N calibrated photon collection efficiency $C_{eff_0}$.
 This quantity is scanned over a range of collection efficiencies while a MC model of the source is used to predict a hit PMT distribution.
 To avoid a regime where detector trigger inefficiency is relevant, only events with $>20$ detected photons -- where trigger efficiency is guaranteed to be 100$\%$ -- are included in this analysis.
@@ -559,7 +568,8 @@ This indicates a systematic offset between the light emission of the MC model of
 \begin{figure}
 \centering
 \includegraphics[width=0.75\columnwidth]{100k_bulk_py_ceff_scan_bestfit}
-\caption{\label{fig:chsrc_bestfit} A comparison between data and simulation for the best fit collection efficiency in the water phase deployment for the Cherenkov source.}
+\caption{\label{fig:chsrc_bestfit} A comparison between data and simulation for the best fit collection efficiency in the water phase deployment for the Cherenkov source.
+Data below 20 detected photons (NHits) is excluded in the fit because MC does not model detector trigger inefficiencies.}
 \end{figure}
 
 Since the MC model is already calibrated relative to the \N source, this systematic offset indicates that the MC model of the Cherenkov source over predicts the production of Cherenkov photons relative to the actual source.
@@ -572,34 +582,44 @@ The potential of the Cherenkov source in obtaining measures of the overall light
 The effect and elimination of scintillation light resulting from unwanted bremsstrahlung gammas was studied.  
 In all of the simulations, the Cherenkov source was positioned at the center of the detector, and the source was assumed to be constructed from UV-absorbent (UVA) acrylic.
  
- \begin{figure}
- \begin{subfigure}{.48\textwidth}
-   \includegraphics[width=.92\textwidth]{nhit.png}
-   \caption{Distribution of number of Cherenkov photons exiting the source for events without scintillation light.}
-   \label{fig:nphotons}
- \end{subfigure}
- \hspace{0.5cm}
- \begin{subfigure}{.48\textwidth}
-   \includegraphics[width=.92\textwidth]{fit.png}
-   \caption{Fit of NHit-distribution to sum of binomial distributions.}
-   \label{fig:fit}
- \end{subfigure}
- \caption{Using RAT simulations of the Cherenkov source to extract the overall light collection efficiency. Figures taken from~\cite{Heintzelman:2013}. }
- \label{fig:heintzelman-plots}
- \end{figure}
- 
 \subsubsection{Cutting Bremsstrahlung Events}
 
 The decay of \Li in the Cherenkov source produces betas with an end-point energy of about 13\,MeV. 
 In addition to producing Cherenkov light in the acrylic, bremsstrahlung gammas are also produced in a significant number of events.  
-These gammas exit the source and are likely to Compton-scatter in the scintillator inside the AV.  
-Simulations indicate that Compton-scatter electrons are produced in about 1/3 of the events.  
+These gammas exit the source and are likely to Compton scatter in the scintillator inside the AV.  
+Simulations indicate that Compton scatter electrons are produced in about 1/3 of all tagged events.  
 With scintillator as the target, these events produce much more light and, importantly, have timing profile consistent with scintillation events instead of water.  
 Because the light output from such events is more indicative of scintillator properties than detector response, it is desirable to eliminate such bremsstrahlung events from the dataset.
 For this, a cut based on the likelihood ratio of the distribution of PMT hit-time residuals was found to be particularly effective, due to the very different time profiles of scintillation and Cherenkov light.
+An example classification of events with and without scintillation contamination is shown in \Cref{fig:brem_llratio}.
+As can be seen, the total number of detected photons (NHits) is a good baseline metric for excluding scintillation, however, at NHits consistent with no-contamination, the log likelihood ratio provides discrimination between scintillation and non-scintillation events. 
+
+\begin{figure}
+\centering
+\includegraphics[width=.8\textwidth]{brem_llratio}
+\caption{\label{fig:brem_llratio} An example classification of Cherenkov source events with and without scintillation using a log likelihood ratio test of the hit time residuals for each event. Figure from~\cite{Heintzelman:2013}.}
+\end{figure}
+
 
 \subsubsection{Extracting the light Collection Efficiency}
 The distribution of the number of photons exiting the Cherenkov source per non-scintillation event are predicted by simulation, see \Cref{fig:nphotons}. 
 Using this information, the total probability of observing a certain number of hits is fitted to the distribution of the detected number of photons for simulated events as shown in \Cref{fig:fit}.
 This method can extract the total photon detection probability, however, as was discovered in the water phase analysis, the true quantity of interest is the correction to the MC collection efficiency necessary to result in a calibrated simulation.
 The analysis described for water phase in \Cref{sec:water_fit}, with the additional removal of bremsstrahlung events, can be repeated here to calibrate RAT once scintillator data exists for the Cherenkov source.
+
+\begin{figure}
+\begin{subfigure}{.48\textwidth}
+\includegraphics[width=.92\textwidth]{chsrc_nhit}
+\caption{Distribution of number of Cherenkov photons exiting the source for events without scintillation light.}
+\label{fig:nphotons}
+\end{subfigure}
+\hspace{0.5cm}
+\begin{subfigure}{.48\textwidth}
+\includegraphics[width=.92\textwidth]{chsrc_fit}
+\caption{Fit of NHit-distribution to sum of binomial distributions.}
+\label{fig:fit}
+\end{subfigure}
+\caption{Using GEANT4~\cite{geant4} based simulations of the Cherenkov source to extract the overall light collection efficiency in SNO+. Figures taken from~\cite{Heintzelman:2013}. }
+\label{fig:heintzelman-plots}
+\end{figure}
+ 
