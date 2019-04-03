@@ -49,7 +49,7 @@ These shifted photons can then be detected by an internal PMT to produce a tag s
 Because this is source is intended to provide a calibration for absolute light intensity, any other processes that may produce optical photons should be well understood and, where possible, eliminated with design choices.
 The alpha scintillation, especially including the wavelength shifted photons, must be contained within the source. 
 Additionally, any energetic particles produced in the \Li decay must be taken into account.
-The UVA acrylic is designed to be thick enough to stop all of the \Li betas from exiting, however, these energetic electrons can produce bremsstrahlung gammas that do escape the source.
+The UVA acrylic is designed to be thick enough to stop all of the \Li betas from exiting, however, these energetic electrons can produce Bremsstrahlung gammas that do escape the source.
 When deployed in water phase these gammas will not produce sufficient light to interfere with analysis of the data, however, in scintillator phase these will be a significant background to the measurement, and must be cut in an offline analysis. 
 
 \subsection{Cherenkov Event Generation}
@@ -517,7 +517,7 @@ In addition, the PMT signal was connected to the trigger signal digitizer (CAEN)
 During this deployment we discovered the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
 
 \subsection{Data Cleaning}
-In water phase there is no expected scintillation contamination from bremsstrahlung gammas, however, since the detector is self triggering during deployment, tagged events must be identified and separated from other unrelated detector triggers.
+In water phase there is no expected scintillation contamination from Bremsstrahlung gammas, however, since the detector is self triggering during deployment, tagged events must be identified and separated from other unrelated detector triggers.
 This is done by characterizing the signal from the tag PMT contained within the source.
 For a perfect event, the alpha scintillation within the source will result in a large signal with a long time constant.
 There is some contamination from \Li betas, which clip the PMT prior to exiting the source, and should be excluded.
@@ -579,17 +579,17 @@ It is possible that tweaking the source geometry in MC could correct this system
 
 \section{Scintillator Analysis Plan}
 The potential of the Cherenkov source in obtaining measures of the overall light collection efficiency in scintillator phase has been investigated using RAT simulations. 
-The effect and elimination of scintillation light resulting from unwanted bremsstrahlung gammas was studied.  
+The effect and elimination of scintillation light resulting from unwanted Bremsstrahlung gammas was studied.  
 In all of the simulations, the Cherenkov source was positioned at the center of the detector, and the source was assumed to be constructed from UV-absorbent (UVA) acrylic.
  
 \subsubsection{Cutting Bremsstrahlung Events}
 
 The decay of \Li in the Cherenkov source produces betas with an end-point energy of about 13~MeV. 
-In addition to producing Cherenkov light in the acrylic, bremsstrahlung gammas are also produced in a significant number of events.  
+In addition to producing Cherenkov light in the acrylic, Bremsstrahlung gammas are also produced in a significant number of events.  
 These gammas exit the source and are likely to Compton scatter in the scintillator inside the AV.  
 Simulations indicate that Compton scatter electrons are produced in about 1/3 of all tagged events.  
 With scintillator as the target, these events produce much more light and, importantly, have timing profile consistent with scintillation events instead of water.  
-Because the light output from such events is more indicative of scintillator properties than detector response, it is desirable to eliminate such bremsstrahlung events from the dataset.
+Because the light output from such events is more indicative of scintillator properties than detector response, it is desirable to eliminate such Bremsstrahlung events from the dataset.
 For this, a cut based on the likelihood ratio of the distribution of PMT hit-time residuals was found to be particularly effective, due to the very different time profiles of scintillation and Cherenkov light.
 An example classification of events with and without scintillation contamination is shown in \Cref{fig:brem_llratio}.
 As can be seen, the total number of detected photons (NHits) is a good baseline metric for excluding scintillation, however, at NHits consistent with no contamination, the log likelihood ratio provides discrimination between scintillation and non-scintillation events. 
@@ -605,7 +605,7 @@ As can be seen, the total number of detected photons (NHits) is a good baseline 
 The distribution of the number of photons exiting the Cherenkov source per non-scintillation event are predicted by simulation, see \Cref{fig:nphotons}. 
 Using this information, the total probability of observing a certain number of hits is fitted to the distribution of the detected number of photons for simulated events as shown in \Cref{fig:fit}.
 This method can extract the total photon detection probability, however, as was discovered in the water phase analysis, the true quantity of interest is the correction to the MC collection efficiency necessary to result in a calibrated simulation.
-The analysis described for water phase in \Cref{sec:water_fit}, with the additional removal of bremsstrahlung events, can be repeated here to calibrate RAT once scintillator data exists for the Cherenkov source.
+The analysis described for water phase in \Cref{sec:water_fit}, with the additional removal of Bremsstrahlung events, can be repeated here to calibrate RAT once scintillator data exists for the Cherenkov source.
 
 \begin{figure}
 \begin{subfigure}{.48\textwidth}
