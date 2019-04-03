@@ -1,8 +1,8 @@
 \chapter{R\&D for Future Solar Neutrino Experiments}
 \label{ch:wbls}
 
-Detection of optical photons produced as energetic charged particles deposit energy in a target material has been successfully exploited in many neutrino experiments~\cite{imb,superk,sno,kamland,borexino,lsnd}.
-Historically, real-time neutrino detectors have progressed from detecting Cherenkov~\cite{cherenkov} light in water targets to detecting scintillation~\cite{birks} light in organic liquid scintillator targets.
+Real-time neutrino detectors have frequently functioned on the basis of detecting optical photons produced as energetic charged particles deposit energy in a target medium
+Historically, these detectors have progressed from detecting Cherenkov~\cite{cherenkov} light in water targets to detecting scintillation~\cite{birks} light in organic liquid scintillator targets.
 This was driven by the desire to detect low energy solar neutrinos, such as the CNO or $pp$ neutrino fluxes, where the interactions would typically fall below the Cherenkov threshold in water, and hence go undetected.
 The ability to detect these low energy interactions with scintillators comes with a notable downside: scintillation light, being isotropic, does not carry the directional information of Cherenkov light.
 Other notable differences between Cherenkov and scintillation light are summarized in \Cref{tab:chervsscint}.
@@ -32,9 +32,9 @@ Cost-effective & More expensive materials \\
 \end{table}
 
 Scintillators do, however, also produce Cherenkov light. 
-The much higher photon yields of scintillators ($10^3$ more scintillation photons than Cherenkov photons per MeV in {\labppo}) typically makes the remaining Cherenkov photons quite difficult to detect.
+The much higher photon yields of scintillators (approximately 50 times more scintillation photons than Cherenkov photons per MeV in {\labppo}) typically makes the remaining Cherenkov photons quite difficult to detect.
 This is further complicated by scintillator optical attenuation and scattering lengths being small relative to neutrino detector sizes, which means many of the Cherenkov photons will be absorbed or scattered, further reducing the directional information available.
-The ability to identify these remaining Cherenkov photons, or design a material that makes this identification easier, would allow a neutrino detector to simultaneously be sensitive to low energy interactions though the scintillation light, while recovering directionality in sufficiently high energy events to produce Cherenkov light.
+The ability to identify these remaining Cherenkov photons would allow future detectors to recover directionality in events above the Cherenkov energy threshold, while simultaneously being sensitive to lower energy interactions through scintillation light.
 
 Directional information is manifestly useful when detecting solar neutrinos, as the elastic scatter (ES) interaction channel produces final state electrons highly correlated with the neutrino direction. 
 As the direction of solar neutrinos is away from the Sun, and no backgrounds are expected to be correlated with the solar direction, solar neutrinos are thus relatively easy to identify. 
@@ -54,11 +54,11 @@ In general, the identification of Cherenkov photons in a scintillator can be don
 \end{figure}
 
 Each option has the potential to enhance Cherenkov photon detection, but each comes with a cost.
-Detection based on wavelength requires expensive optical filters and complicated geometries to avoid losing photons to attenuation.
-Intensity based detection means a sacrifice of scintillation photons to avoid losing Cherenkov photons in counting statistics.
-Recently developed Water-based Liquid Scintillator (WbLS)~\cite{wbls} materials aim to optimize this sacrifice.
-Finally, timing based detection requires very fast (on the order of 100~ps) photon detectors, which can be very expensive.
-Traditionally used large PMTs typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult. 
+Detection-based on wavelength requires expensive optical filters and complicated geometries to avoid losing photons to attenuation.
+Intensity-based detection requires that the scintillation intensity be low enough that the Cherenkov topology is still identifiable by contrast.
+The recent development of water-based liquid scintillator (WbLS)~\cite{wbls} was in part motivated by the goal of optimizing this balance with a tunable scintillation intensity.
+Finally, timing-based detection likely requires very fast (on the order of 100~ps) photon detectors, which can be very expensive.
+Traditionally-used large PMTs typically have worse than nanosecond time precision, making Cherenkov light identification in a scintillation medium extremely difficult.
 Smaller PMTs~\cite{h11934} can achieve timing precision of $\lesssim$ 300~ps and new micro-channel plate (MCP) photodetector technology~\cite{mcp, lappd, lappd2} can achieve  $\lesssim$ 100~ps.
 
 
@@ -66,40 +66,34 @@ This chapter describes the CHErenkov / Scintillation Separation (CHESS) experime
 Development of CHESS was driven by the recent development of WbLS which allows both the scintillation light yield and timing profile of the target material to be tuned to maximize sensitivity to Cherenkov photons.  
 In particular, low scintillator fraction WbLS, from 1\% to 5\% scintillator, is of interest here. 
 Being mostly water, this material should have better attenuation characteristics than a pure scintillator, maximizing the likelihood of Cherenkov photons arriving unhindered to a photon detector, and should also have only fractions of scintillation photon yield of pure scintillators, making intensity-based identification of Cherenkov photons a possibility.
-CHESS can also explore the potential for Cherenkov photon detectors in more traditional scintillators, such as {\labppo}.
+CHESS can also explore the potential for Cherenkov photon detection in more traditional scintillators, such as {\labppo}.
 
 \section{The CHESS Detector}\label{s:desc}
 
-A schematic of CHESS is shown in \Cref{fig:timing-setup,fig:timing-setup-2}.  
+A schematic of CHESS is shown in \Cref{fig:timing-setup}.  
 An acrylic target vessel is viewed by an array of small, fast PMTs. 
 The setup is designed to detect either cosmic muons or events from deployed radioactive sources.  
-The primary ring imaging measurement is performed using through-going muons.  
-Vertical-going events are selected via a 1-cm diameter coincidence tags above and below the target volume, ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring. 
+The primary ring-imaging measurement is performed using through-going muons.  
+Vertical-going events are selected via 1-cm diameter coincidence tags above and below the target volume, ensuring a population of events with known orientation and thus a known expectation for the position of the Cherenkov ring. 
 The muons produce Cherenkov and scintillation light in the target material, which is detected on the PMT array. 
 
 The apparatus was constructed such that direct Cherenkov light from vertical muons falls on a distinct set of PMTs, forming a clear ring in the PMT array.
 This yields two distinct groups of PMTs by construction: those with only scintillation photons and those with both scintillation and Cherenkov photons. 
 Because Cherenkov light is known to be prompt, the earliest hits on any particular PMT can be identified as being caused by either Cherenkov or scintillation photons, depending on the radial position of the PMT.
-Therefore, comparing the time distributions from each radial grouping of PMTs allows one to compare prompt scintillation photons to prompt Cherenkov photons, and one can determine a time cut that results in the best sensitivity to Cherenkov photons.
+Therefore, comparing the distribution of first-photon hit times from each radial grouping of PMTs allows one to compare prompt scintillation photons to prompt Cherenkov photons, and one can determine a time cut that results in the best sensitivity to Cherenkov photons.
 The total charge collected by each group of PMTs also informs the intensity of the Cherenkov photons relative to scintillation photons.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\columnwidth]{timing-schematic}
-\caption{Detailed schematic view of the CHESS aparatus with dimensions.}
+\includegraphics[width=0.54\columnwidth]{timing-schematic}
+\includegraphics[width=0.45\columnwidth]{chess_timing_setup}
+\caption{Detailed schematic view of the CHESS apparatus with dimensions on the left, and demonstrating the muon ring-imaging technique on the right. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and {\labppo}. Due to the lower refractive index, the ring from a water and WbLS targets are detected in the middle (orange) PMTs.}
 \label{fig:timing-setup}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.7\columnwidth]{chess_timing_setup}
-\caption{The CHESS ring-imaging concept. The PMT array is designed to hold up to 53 PMTs; the dozen slots occupied for this study are color coded by radius: red and orange for those hit primarily by scintillation photons, and blue for those in the expected Cherenkov ring for LAB and {\labppo}. Due to the lower refractive index, the ring from a water target is detected in the middle (orange) PMTs. }
-\label{fig:timing-setup-2}
 \end{figure}
 
 \subsection{Target Vessel}
 The target vessel for CHESS is a cylinder 5~cm in radius and 3~cm in height, constructed from ultraviolet-transmitting (UVT) acrylic. 
-Three flat faces on the outer surface of the cylinder, each a 3~cm width square, provide surfaces for attaching a radioactive button source or optical coupling of a PMT to act as a trigger for the detector. 
+Three flat faces on the outer surface of the cylinder, each a 3-cm width square, provide surfaces for attaching a radioactive button source or optical coupling of a PMT to act as a trigger for the detector. 
 A lid made of the same UVT acrylic encloses the target material in an air-tight environment using an FFKM o-ring~\cite{cog-oring} known to be chemically stable to both {\labppo} and WbLS. 
 Each liquid deployed in CHESS uses a separate target to avoid contamination of the target materials.
 
@@ -128,18 +122,18 @@ This results in datasets that are months long.
 
 \subsection{Optical Propagation}
 
-Cherenkov light from the vertically going muons is emitted at approximately 45$^{\circ}$from the muon track.
+Cherenkov light from the vertically-going muons is emitted at approximately 45$^{\circ}$from the muon track.
 This unfortunately means that an acrylic-air boundary perpendicular to the track would totally internally reflect the Cherenkov photons away from the PMTs.
 To resolve this, a large UVT acrylic block (30~cm $\times$ 30~cm $\times$ 6.5~cm) referred to as the optical propagation medium was fabricated to direct photons down towards the PMTs.
 The target vessel is optically coupled to the top of this propagation medium, which itself is optically coupled to the PMTs.
 This ensures maximal light collection efficiency.
-To prevent the vertically going muons from creating Cherenkov light in this propagation medium, a 1-cm vertical hole was added for the muons to travel through.
+To prevent the vertically-going muons from creating Cherenkov light in this propagation medium, a 1-cm vertical hole was added for the muons to travel through.
 Throughout the setup, EJ-550 optical grease~\cite{ej550} is used for optical coupling of components. 
 
 \subsection{Veto Panels}\label{s:veto}
 
 CHESS is positioned within a volume guarded by four scintillator panels (50~cm $\times$ 100~cm $\times$ 5.3~cm), as shown in \Cref{f:veto}, fabricated from EJ-200 plastic scintillator~\cite{ej200} (two on the floor and two on the sides in a corner distribution) providing effective $4\pi$ coverage. 
-Each panel is instrumented with a PMT~\cite{9102ksb} which is read out for each event and used for an offline veto. The scintillator panels are used to veto cosmic events during calibration source deployment, and to reject cosmic shower events and coincidence of multiple cosmic muons in the ring imaging analysis. 
+Each panel is instrumented with a PMT~\cite{9102ksb} which is read out for each event and used for an offline veto. The scintillator panels are used to veto cosmic events during calibration source deployment, and to reject cosmic shower events and coincidence of multiple cosmic muons in the ring-imaging analysis. 
 
 \begin{figure}
 \centering
@@ -203,12 +197,13 @@ The following sections present the calibration scheme.
 \subsection{PMT Gain}
 \label{pmt-gain}
 PMT gains depend on the supplied voltage, which is held constant in CHESS, and also vary between PMTs, depending on the particulars of individual manufacture.
-Because of this, the gain is typically measured for each PMT in a detector by using a dim light source known to have fewer than one detected photon per PMT on average.
+The total charge collected by a PMT from a single PE (SPE) can be modeled as a Gaussian, so measuring the charge collected from single PEs allows one to determine the mean and width of this distribution. 
+These parameters are typically measured for each PMT in a detector by using a dim light source known to have fewer than one detected photon per PMT on average.
 The $^{90}$Sr beta source attached to the water target provides such a dim source.
-A small PMT optically coupled to the target is used to trigger the acquisition. 
-By determining the charge for many events, one can determine the single photoelectron (SPE) distribution.
-The  can assumed to be sampled multiple times to produce the charge of a multi-photon event.
-The charge distribution for one of the array PMTs  is shown in \Cref{fig:spe_data}, where a clear SPE distribution is seen. 
+A small PMT optically coupled to the target is used to trigger the acquisition, while SPE charge distributions are built for each PMT.
+
+This SPE charge distribution can be sampled multiple times to produce the charge of a multi-photon event.
+The charge distribution for one of the array PMTs is shown in \Cref{fig:spe_data}, where a clear SPE distribution is seen. 
 Also visible in that figure is a noticeable population of multi PE events, which may be due to byproducts of muon cosmic events crossing the propagation medium, or other intrinsic radioactivity near the detector. 
 Muons themselves are easily vetoed using the veto panels surrounding the setup, but high energy electrons and gammas produced by these muons are more difficult to veto, and could cause these tails in the charge distribution. 
 
@@ -238,7 +233,7 @@ The characteristic SPE pulse shapes need to be well modeled in order to accurate
 Events with an integrated charge from $-\frac{\sigma}{2}$ to $+\sigma$ about the mean of the SPE charge were extracted from the SPE calibration data for each PMT independently. 
 The smaller bound on the negative range was introduced to avoid including noise events. 
 These pulses were then normalized to unit area and a constant fraction threshold was applied to determine a common point of reference between all pulses from a single PMT.  
-This threshold was used to align pulses on a per-PMT basis, and a mean value along with upper and lower RMS values were calculated for the normalized voltage in 100~ps time bins.
+This threshold was used to align pulses on a per-PMT basis, and a mean value along with upper and lower RMS values were calculated for the normalized voltage in 100-ps time bins.
 The result is shown for one PMT in the top panel of \Cref{fig:spe-pulse-shape}. 
 The uncertainty in the pulse region is consistent with the noise of the ADCs; this was true for all PMTs. 
 The extracted mean PMT pulse shapes are shown for all 12 array PMTs in the middle panel of \Cref{fig:spe-pulse-shape}. 
@@ -270,7 +265,7 @@ Time delays are measured relative to the average across all PMTs in the array.
 Typical relative delays are on the order of hundreds of picoseconds. 
 The primary calibration is performed by deploying an LED at the top of the dark box, such that the light path to each PMT is similar.  A full Monte Carlo simulation of this configuration is run and used to correct the data in order to take into account PMT-to-PMT variations in photon time of flight (ToF) and geometry effects.  
 Several datasets are generated by removing and reattaching the LED in order to quantify any uncertainty in the LED position with respect to the simulated one. 
-Cosmic muons passing through the propagation medium are used to evaluate systematics uncertainties in the calculation of the time delays, as they provide an abundant source of prompt Cherenkov light. 
+Cosmic muons passing through the propagation medium are used to evaluate systematic uncertainties in the calculation of the time delays, as they provide an abundant source of prompt Cherenkov light. 
 Events are selected  by requiring a coincidence between the lower muon tag and the bottom scintillator panel. 
 Again, a full Monte Carlo simulation is used to correct for ToF and geometry effects in the calibration.  
 
@@ -381,13 +376,13 @@ The trigger process then scans the remainder of the digitized waveform to look f
 
 \section{Waveform Analysis}\label{s:analysis}
 
-The CHESS detector fully digitizes the PMT signals for each triggered events.
+The CHESS detector fully digitizes the PMT signals for each triggered event.
 These waveforms must then analyzed to extract individual PMT charges and hit times. 
-An analysis window of $135$~ns (675 samples) is chosen starting $160$~ns (800 samples) prior to the acquisition trigger. 
-This window is optimized to start when light from the target is expected to hit the PMT array. 
+The acquisition trigger is delayed relative to the signals from the PMTs because the LeCroy oscilloscope takes about 150~ns to issue the trigger signal that is propagated to the digitizers. 
+Accounting for this delay, an analysis window of $135$~ns (675 samples) is chosen starting $160$~ns (800 samples) prior to the acquisition trigger. 
 A short 25~ns pedestal window prior to the analysis window is used to estimate the voltage baseline for each PMT for each event.
 The the baseline is subtracted off the analysis window, and the residuals are integrated to determine the total charge detected by each PMT. 
-To ensure that this process works reliably, fluctuations of more than $5$~mV peak-to-valley in the pedestal window results the event being discarded in offline analysis.  
+To ensure that this process works reliably, fluctuations of more than $5$~mV peak-to-valley in the pedestal window results in the event being discarded in offline analysis.  
 The integrated charge is used to estimate the number of PE by dividing by the mean of the SPE distribution for that PMT as determined in calibrations (\Cref{sec:calibration}).
 
 A discriminator is implemented in the analysis software to determine the hit time of each PMT.
@@ -488,7 +483,7 @@ Event time is defined as the time at which the muon travels through the center o
 The most straightforward event time would be with respect to the cosmic muon tags, however, given the slowness of the scintillator emission and poorer TTS of the tag PMTs, this time is not precise enough.
 A higher precision event time is reconstructed from each event as the median of the hit time residuals for the four earliest hits.
 This provides a robust time reference since the prompt hits are due to Cherenkov light, which has a very sharp time profile.
-A comparison of using this definition of event time and event time defined with respect to the the muon tag is shown in \Cref{f:smear}, overlaid with the MC prediction in each case.  
+A comparison of using this definition of event time and event time defined with respect to the muon tag is shown in \Cref{f:smear}, overlaid with the MC prediction in each case.  
 
 The residual distribution with respect to the muon tag time is extremely well reproduced by the Monte Carlo, demonstrating the precision of the model.
 The simulation slightly under predicts the width of the higher precision distribution of residuals with respect to the reconstructed event time.  
@@ -516,7 +511,7 @@ The separation is defined in an analogous manner to that for time: a threshold i
 
 \clearpage
 
-\section{Cherenkov Ring Imaging in Water}
+\section{Cherenkov Ring-Imaging in Water}
 
 \label{sec:water}
 
@@ -620,7 +615,7 @@ Better separation might be achieved by eliminating the Cherenkov contamination i
 \section{{\labppo} Results}
 \label{sec:labppo}
 
-With Cherenkov ring imaging demonstrated in water and pure LAB, an {\labppo} target was then deployed.
+With Cherenkov ring-imaging demonstrated in water and pure LAB, an {\labppo} target was then deployed.
 After applying event selection criteria, $103$ ring candidates were identified in the {\labppo} data set. 
 The scintillation component of {\labppo} is far too bright to identify remaining Cherenkov photons based on an intensity metric, so only the time separation metric is expected to show good results here.
 Like LAB, the Cherenkov photons from {\labppo} should fall on the outermost PMTs.
