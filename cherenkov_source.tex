@@ -1,6 +1,6 @@
 \renewcommand{\bf}{\bfseries}
 
-\chapter{Cherenkov Optical Calibration Source for {\snop}}
+\chapter{Cherenkov Optical Calibration Source for \texorpdfstring{\snop}{SNO+}}
 \label{ch:chsrc}
 
 {\snop} has over 9500 Photo-Multiplier Tubes (PMTs), which detect photons produced inside the target (water or liquid scintillator).
@@ -36,7 +36,7 @@ The choice of UVA acrylic was made to block the UV component of Cherenkov light,
 Thus, the remaining light that propagates through the {\snop} detector is quasi-independent of the optical properties of the {\labppo} scintillator. 
 This visible Cherenkov light is easy to model, allowing for a measurement of detector response nominally independent of the target material.
 
-\begin{figure}[]
+\begin{figure}
 \center{\includegraphics[width=.7\textwidth]{Ais8DecayScheme.png}}
 \caption{\label{fig:decayscheme} A=8 decay scheme. Taken from~\cite{Tagg:2001}.}
 \end{figure}
@@ -268,7 +268,7 @@ After each layer the surface was visually inspected to ensure no major flaws or 
 
 To explore the effects of mean thickness and surface roughness on the number of detected photons (NHits), simulations of \Li electrons were done using a source geometry in GEANT4~\cite{geant4} and various different paint layers. Simulations with perfectly smooth paint layers indicated that a 0.1~mm change in mean paint thickness is conservatively a 5\% change in mean NHits (\Cref{fig:meannhits}), so it will be necessary to know the thickness of the paint very well. 
 
-\begin{figure}[h!]
+\begin{figure}
 \begin{subfigure}{.53\textwidth}
   \includegraphics[width=\textwidth]{paint_uniformity_nhits_hists}
   \caption{Plot of NHit distributions for \Li beta decays inside a decay chamber with various paint surface roughnesses. The sigma value here is roughly the standard deviation of the fluctuations in thickness, which were generated with a feature size of 1~cm. The 0.2~mm and 0.4~mm plots have 10x fewer statistics due to simulation difficulties.}
@@ -290,7 +290,7 @@ By generating stereolithography (STL) surface definitions, which break an arbitr
 Since events are uniform in the decay chamber volume, and hence any individual beta sees a distribution of thicknesses of paint based on initial position and direction regardless of surface imperfections, the fact that these effects do not contribute strongly makes sense. 
 Therefore it was only necessary to establish the mean paint thickness accurately to properly simulate the NHits distribution.
 
-\begin{figure}[h!]
+\begin{figure}
 \begin{subfigure}{.45\textwidth}
   \includegraphics[width=\textwidth]{paint_density}
   \caption{Summary of density fit for black and white+TPB paint layers. The uncertainty on the mass of the samples was insignificant, and therefore the largest source of error was the volume measurement, which was done with water displacement in a graduated cylinder with 0.2~mL divisions and a tolerance of 0.2~mL.}
@@ -310,7 +310,7 @@ Many options for directly measuring the paint layer thickness were explored and 
 
 \Cref{fig:paintthickness} gives a rough projection of estimated paint thickness for a given change in source mass. To do this conversion the change in mass must be converted to a paint volume, and the volume must be converted into a thickness using some model for how the paint coats the surface of the decay chamber. Using the source designs a model of paint coverage was developed as described in \Cref{fig:surfacemodel}, which ignores surface roughness since this should average out to the mean thickness. Based on small scale tests the expected anisotropy should lead to the neck area being roughly twice as thick as the thinnest section opposite the neck, however, according to this model an uncertainty in anisotropy does not significantly change the inferred mean thickness. Ultimately this measurement procedure for the test source led to an inferred thickness of $1.02\pm0.04$~mm, or approximately a 4\% uncertainty on the peak NHits.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{paint_model}
 \caption{The cylindrical profile of the full coverage model is shown here. This was revolved numerically to calculate the volume and hence the mass of the paint for a particular set of parameters to get a mass to thickness lookup table. Anisotropy in the paint thickness is accounted for by offsetting the inner surface of the black paint layer by some amount. In small scale tests this offset was empirically approximately half the mean thickness of the paint, and using this model it was verified that uncertainty in this anisotropy contributed a negligible uncertainty to the estimated mean thickness. The parameters for this profile are a black thickness of 1.0~mm, anisotropy offset of 0.5~mm, and white thickness of 0.5~mm. }
@@ -371,7 +371,7 @@ As this source is not expected to have radioactive contamination at detectable l
 The neutron activation analysis (NAA) results were obtained by deployment of materials at the McClellan Nuclear Research Center and counted at UC Davis. 
 See \Cref{tab:counting} for counting results for materials used in the source.
 
-\begin{table}[h!]
+\begin{table}
 \centering
 \begin{tabular}{|l|l|l|l|l|l|} \hline
                     Material       & Mass & Method    & $^{238}$U     & $^{232}$Th    & $^{40}$K      \\ \hline
