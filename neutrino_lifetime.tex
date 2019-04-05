@@ -167,15 +167,15 @@ Since QSigEx was previously vetted for SNO fits, a demonstration that the update
 \subsection{Extended Log Likelihood}
 
 The physical observables determined from vertex reconstruction can be used to statistically sort events into different classes of interactions.
-Here the statistical sorting is done with a maximum likelihood fit: QSigEx finds the model parameters best describing the data by varying these parameters and maximizing the Poisson likelihood of the observed data.
-This is done by minimizing the well-known form of the log likelihood:
+Here the statistical sorting is done with a maximum likelihood fit: QSigEx finds the model parameters best describing the data by varying these parameters and maximizing the Poisson likelihood, $\mathscr{L}$ of the observed data.
+This is done by minimizing the well-known form of the negative log likelihood:
 \begin{equation}
-\mathcal{L} = -\nu + \sum_{i=1}^{n_{events}} \log \left[ \nu f(\vec{x_i}) \right],
+\mathcal{L} = -\log{\mathscr{L}} = \nu - \sum_{i=1}^{n_{events}} \log \left[ \nu f(\vec{x_i}) \right],
 \end{equation}
 where $\nu$ is a Poisson mean number of observed events and $f(\vec{x_i})$ is a PDF evaluated $\vec{x_i}$, which is a vector of quantities describing event $i$.
-In the case of many classes of events with Poisson parameters $\nu_j$ described by PDFs $f_j$ this log likelihood this can be written as:
+In the case of many classes of events with Poisson parameters $\nu_j$ described by PDFs $f_j$ this negative log likelihood this can be written as:
 \begin{equation}
-\mathcal{L} = -\sum_{j=1}^{n_{classes}} \nu_j + \sum_{i=1}^{n_{events}} \log \left[ \sum_{j=1}^{n_{classes}} \nu_j f_j(\vec{x_i}) \right].
+\mathcal{L} = \sum_{j=1}^{n_{classes}} \nu_j - \sum_{i=1}^{n_{events}} \log \left[ \sum_{j=1}^{n_{classes}} \nu_j f_j(\vec{x_i}) \right].
 \end{equation}
 In a typical SNO analysis, each type of signal or background for each phase is treated as a separate event class.
 When the rates of these classes are expected to be correlated across phases, the Poisson parameter for those classes are constrained to be the same value.
