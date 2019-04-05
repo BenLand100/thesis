@@ -43,7 +43,7 @@ This visible Cherenkov light is easy to model, allowing for a measurement of det
 
 The decay following \Li in the decay chain (see \Cref{fig:decayscheme}) results in a very fast alpha decay following the production of the beta.
 The chamber in which the decay occurs will be filled with helium gas in which these alphas will produce scintillation light.
-This scintillation light is hard UV, around 80~nm, and impossible for traditional PMTs to detect, so the chamber will contain a wavelength shifter, Tetraphenyl Butadiene (TPB), to convert the UV photons to approximately 420-nm light.
+This scintillation light is hard UV, around 80~nm, and impossible for traditional PMTs to detect, so the chamber will contain a wavelength shifter, tetraphenyl butadiene (TPB), to convert the UV photons to approximately 420-nm light.
 These shifted photons can then be detected by an internal PMT to produce a tag signal for the primary \Li decays.
 
 Because this is source is intended to provide a calibration for absolute light intensity, any other processes that may produce optical photons should be well understood and, where possible, eliminated with design choices.
@@ -117,7 +117,7 @@ The SNO \Li umbilical was re-used to transport \Li into the source during the {\
 The umbilical currently has no connector. 
 Just as was done for SNO, the gas line connection and wiring for the PMT is done by hand while the top of the source (steel housing) is exposed. 
 Then the sealing pressure plates (\Cref{fig:pressureplates}) are slid down and bolted together. 
-The so-called ``lighthouse" attachment (\Cref{fig:connection}) is attached to the top of the source and is used to attach the source to {\snop}'s source deployment hardware.
+The so-called ``lighthouse'' attachment (\Cref{fig:connection}) is attached to the top of the source and is used to attach the source to {\snop}'s source deployment hardware.
 
 \begin{figure}
 \begin{subfigure}{.57\textwidth}
@@ -148,15 +148,15 @@ An adapter then needs to be designed to connect to the Cherenkov source.
 
 The Cherenkov source decay chamber is a hollow acrylic sphere.
 It is formed out of two acrylic slabs that are bonded together.
-The annealing, bonding, decay chamber lining and PMT potting are described in the next sections.
+The annealing, bonding, decay chamber lining, and PMT potting are described in the next sections.
 The bonding, painting and storage of the decay chamber was done inside a class-1000 clean room at LBNL.
 The construction of the Cherenkov source decay chamber has roughly the following steps:
 
 \begin{enumerate}
 \item Pre-anneal: the acrylic is pre-annealed at the production site (RPT).
 \item Machine cycle 1 (see~\cite{wallig:2015}, page 2): hollow out the decay chamber and neck from the two slabs. Machine holes for alignment pins. 
-\item Polish: the inside of the decay chamber is polished using NOVUS heavy and fine scratch remover (Diatomaceous earth/Silica)~\cite{polish}. 
-\item Sand: the bond-plane is sanded to prepare for the bond using NORTON Blue-Bak waterproof paper (Silicon carbide) grit, 220, 320, 400, 600~\cite{sand}.
+\item Polish: the inside of the decay chamber is polished using NOVUS heavy and fine scratch remover (diatomaceous earth/silica)~\cite{polish}. 
+\item Sand: the bond-plane is sanded to prepare for the bond using NORTON Blue-Bak waterproof paper (silicon carbide) grit, 220, 320, 400, 600~\cite{sand}.
 \item Ultra high vacuum cleaning.
 \item Anneal: the two machined slabs are annealed.
 \item Ultra high vacuum cleaning.
@@ -208,7 +208,7 @@ After this step, the source can proceed to the final machining cycle to form the
 
 The hard UV helium scintillation light of the alphas inside the decay chamber is used to tag events with the internal neck PMT. 
 This light must not escape the decay chamber as this would be hard to model and would pollute the dataset with additional non-Cherenkov light. 
-Therefore the lining of the decay chamber must be made opaque while the top (inner most) layer should be reflective enough to ensure sufficient photons reach the tag PMT. 
+Therefore, the lining of the decay chamber must be made opaque while the top (inner most) layer should be reflective enough to ensure sufficient photons reach the tag PMT. 
 This surface should also wavelength shift the hard UV light to more visible wavelengths detectable by the PMT.
 Finally, since the electrons that produce Cherenkov light must travel through this surface, the thickness should be minimal and the effect on the electrons should be easy to model. 
 To accomplish these goals, three thin layers of black paint are deposited for opacity followed by a layer of white paint mixed with TPB for reflectivity and wavelength shifting. 
@@ -288,7 +288,7 @@ To explore the effects of mean thickness and surface roughness on the number of 
 By generating stereolithography (STL) surface definitions, which break an arbitrary surface down into triangles, and importing these into GEANT4, it was possible to simulate how paint roughness or anisotropy would change the peak of the NHits distribution. 
 \Cref{fig:stltests} summarizes the result that the expected roughness and anisotropy had no significant effect on the mean NHits. 
 Since events are uniform in the decay chamber volume, and hence any individual beta sees a distribution of thicknesses of paint based on initial position and direction regardless of surface imperfections, the fact that these effects do not contribute strongly makes sense. 
-Therefore it was only necessary to establish the mean paint thickness accurately to properly simulate the NHits distribution.
+Therefore, it was only necessary to establish the mean paint thickness accurately to properly simulate the NHits distribution.
 
 \begin{figure}
 \begin{subfigure}{.45\textwidth}
@@ -306,7 +306,7 @@ Therefore it was only necessary to establish the mean paint thickness accurately
 \label{fig:weightmeasure}
 \end{figure}
 
-Many options for directly measuring the paint layer thickness were explored and ultimately rejected based on cost or lack of required precision. The final decision was to infer the paint thickness from the change in mass of the source before and after painting each layer. With a total source weight of 8.2~kg and an expected total paint weight of 50~g this required a scale capable of weighing 0.1~g on top of 10~kg so that uncertainty in weight was not a dominant source of error. The densities of the dry paint used in the black and white layers were fit using volume and mass measurements of small dry samples. These density results are summarized in \Cref{fig:paintdensity}, and errors on these densities were the dominate sources of error for the thickness calculation. 
+Many options for directly measuring the paint layer thickness were explored and ultimately rejected based on cost or lack of required precision. The final decision was to infer the paint thickness from the change in mass of the source before and after painting each layer. With a total source weight of 8.2~kg and an expected total paint weight of 50~g this required a scale capable of weighing 0.1~g on top of 10~kg so that uncertainty in weight was not a dominant source of error. The densities of the dry paint used in the black and white layers were fit using volume and mass measurements of small dry samples. These density results are summarized in \Cref{fig:paintdensity}, and errors on these densities were the dominant  sources of error for the thickness calculation. 
 
 \Cref{fig:paintthickness} gives a rough projection of estimated paint thickness for a given change in source mass. To do this conversion the change in mass must be converted to a paint volume, and the volume must be converted into a thickness using some model for how the paint coats the surface of the decay chamber. Using the source designs a model of paint coverage was developed as described in \Cref{fig:surfacemodel}, which ignores surface roughness since this should average out to the mean thickness. Based on small scale tests the expected anisotropy should lead to the neck area being roughly twice as thick as the thinnest section opposite the neck, however, according to this model an uncertainty in anisotropy does not significantly change the inferred mean thickness. Ultimately this measurement procedure for the test source led to an inferred thickness of $1.02\pm0.04$~mm, or approximately a 4\% uncertainty on the peak NHits.
 
@@ -356,7 +356,7 @@ A first pass radon emanation estimate can be calculated by considering the surfa
 Estimates for the radon emanation of the {\snop} calibration hardware used a measurement of $4.60$~$\mu$Bq~m$^{-2}$ for stainless steel~\cite{kormos:2015}. 
 The SNO stainless steel limit was $< 5$~mBq~m$^{-2}$ and for acrylic $< 1.6$~mBq~m$^{-2}$~\cite{Liu:1993}. 
 The source, assuming a full size stainless steel housing, has an exposed stainless steel surface area of $0.15$~m$^2$, and exposed acrylic surface area of 0.20~m$^2$. 
-Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the {\snop} emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$~atoms/day where this limit is grossly dominated by the limit on the acrylic radon emanation. 
+Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the {\snop} emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$~atoms/day, where this limit is grossly dominated by the limit on the acrylic radon emanation. 
 The radon emanation rate for stainless steel is, however, significantly lower in the source used by {\snop} than the source used by SNO, which either means the {\snop} estimation is unrealistic or the SNO limit was very conservative. 
 Using the limits from the SNO measurements we would expect $<92.5$~atoms/day.
 In either case, this is expected to be within the as-yet undefined {\snop} radon budget for scintillator phase.
@@ -410,7 +410,7 @@ For the full technical report of the compatibility test, see~\cite{lina:2015}.
 \subsection{Decay Chamber Opacity}
 \label{sec:liningtest}
 The light tightness of the decay chamber lining was validated on the full scale test source. 
-To do this, the test source was placed in a dark-box with the center of the source 12" away from a 10" Hamamatsu R7081 HQE PMT, which has the SPE peak clearly separated from the noise. 
+To do this, the test source was placed in a dark-box with the center of the source 12 inches away from a 10-inch Hamamatsu R7081 HQE PMT, which has the SPE peak clearly separated from the noise. 
 \begin{figure}
 \begin{subfigure}{0.49\textwidth}
 \includegraphics[width=\textwidth]{led_calibration_raw}
@@ -423,7 +423,7 @@ To do this, the test source was placed in a dark-box with the center of the sour
 \caption{Fit to the peaks of the photon distributions plotted against pulse voltage.}
 \label{fig:ledFit}
 \end{subfigure}
-\caption{Calibration data for the LED used to test the light tightness of the decay chamber lining. LED intensity was measured at 50~cm from a R7081 10" PMT. The LED was pulsed at 50~ns at various voltages.}
+\caption{Calibration data for the LED used to test the light tightness of the decay chamber lining. LED intensity was measured at 50~cm from a R7081 10-inch PMT. The LED was pulsed at 50~ns at various voltages.}
 \label{fig:calibratedled1}
 \end{figure}
 
@@ -450,7 +450,7 @@ This, along with dividing by the total number of events, converts the y-axis of 
 
 \subsection{Decay Chamber Leak Testing}
 \label{sec:heleak}
-The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheckSetup}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s. was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
+The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheckSetup}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
 
 \begin{figure}
 \centering
@@ -500,7 +500,7 @@ Therefore, the source tag rate will be determined during the initial deployment.
 
 The Queen's pressure chamber was used to pressure test all SNO sources and was similarly used to pressure test the Cherenkov source. 
 The purpose of this test is to demonstrate the mechanical stability of the source when exposed to pressures consistent with being submerged in {\snop}.
-This pressure chamber is a 10" diameter aluminum cylinder that is pressurized with tap water pressure. For this test the Cherenkov source was removed from its radon-proof bag and fully assembled in a clean room environment. A 5/8" aluminum plug was used in place of an umbilical. Because of the use of tap water extra care was taken to ensure the source would not be contaminated by isolating it from the bulk volume of water. The source was heat sealed into a bag of DI water and lowered into the pressure chamber, which was also filled with DI water. After sealing the chamber it was pressurized to 60~psi and the source remained at this pressure for one hour. This pressure exceeds the approximately 22~psi pressure differential from mine pressure to the bottom of the acrylic vessel by a very conservative margin. To achieve this pressure approximately $0.5\%$ of the water inside the pressure chamber (but outside the sealed bag) was tap water. After depressurizing, the bagged source was removed from the pressure chamber and the bag was inspected to confirm there were no leaks into the tap water contaminated volume. The Cherenkov source was then removed from the DI water bag and was dried externally with grade 5.0 nitrogen gas in a clean room environment. 
+This pressure chamber is a 10-inch diameter aluminum cylinder that is pressurized with tap water pressure. For this test the Cherenkov source was removed from its radon-proof bag and fully assembled in a clean room environment. A \nicefrac{5}{8}-inch aluminum plug was used in place of an umbilical. Because of the use of tap water, extra care was taken to ensure the source would not be contaminated by isolating it from the bulk volume of water. The source was heat sealed into a bag of DI water and lowered into the pressure chamber, which was also filled with DI water. After sealing the chamber it was pressurized to 60~psi and the source remained at this pressure for one hour. This pressure exceeds the approximately 22~psi pressure differential from mine pressure to the bottom of the acrylic vessel by a very conservative margin. To achieve this pressure approximately $0.5\%$ of the water inside the pressure chamber (but outside the sealed bag) was tap water. After depressurizing, the bagged source was removed from the pressure chamber and the bag was inspected to confirm there were no leaks into the tap water contaminated volume. The Cherenkov source was then removed from the DI water bag and was dried externally with grade 5.0 nitrogen gas in a clean room environment. 
 
 To confirm that the Cherenkov source passed the pressure test, the source was disassembled in a clean room environment and inspected for water ingress. Neither the single o-ring seal at the steel-acrylic interface, the double o-ring seal at the umbilical flange, nor the double o-ring seals at the umbilical showed any sign of a water leak. With this result the source passed the pressure test.
 
@@ -526,14 +526,14 @@ There is some contamination from \Li betas, which clip the PMT prior to exiting 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{data_tagging}
-\caption{\label{fig:chsrc_classify} Shown here are all events where the tag PMT crossed threshold during detector triggers during source deployment. Note the tag threshold was set quite low, resulting in a population of ``other" events inconsistent with true alphas or beta contamination. Red lines show nominal cut values used in classification.}
+\caption{\label{fig:chsrc_classify} Shown here are all events where the tag PMT crossed threshold during detector triggers during source deployment. Note the tag threshold was set quite low, resulting in a population of ``other'' events inconsistent with true alphas or beta contamination. Red lines show nominal cut values used in classification.}
 \end{figure}
 
 These events can be well separated in a 2D histogram of total charge (QHL) vs pulse height from the tag PMT. 
 Classifications of events with nominal cuts are shown in \Cref{fig:chsrc_classify}.
-The population of ``other" events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
+The population of ``other'' events are those in which the detector issued a trigger unrelated to the Cherenkov source, and hence no light was seen by the tag PMT.
 The distribution of number of hit PMTs in the {\snop} detector for each of these classifications is shown in \Cref{fig:chsrc_nhits} while \Cref{fig:chsrc_pmttraces} shows the average digitized Cherenkov source tag PMT signal for each class.
-The alphas have an hit PMT distribution nominally consistent with MC expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
+The alphas have a hit PMT distribution nominally consistent with Monte Carlo (MC) expectations, and a large tag trace with a long tail consistent with alpha scintillation light.
 
 
 \begin{figure}
@@ -554,7 +554,7 @@ The alphas have an hit PMT distribution nominally consistent with MC expectation
 The most straightforward way to extract the correction factor to the MC collection efficiency is to vary that efficiency in MC to maximize the Poisson likelihood of the data.
 MC is generated with an \N calibrated photon collection efficiency $C_{eff_0}$.
 This quantity is scanned over a range of collection efficiencies while a MC model of the source is used to predict a hit PMT distribution.
-To avoid a regime where detector trigger inefficiency is relevant, only events with $>20$ detected photons -- where trigger efficiency is guaranteed to be 100$\%$ -- are included in this analysis.
+To avoid a regime where detector trigger inefficiency is relevant, only events with $>20$ detected photons --- where trigger efficiency is guaranteed to be 100$\%$ --- are included in this analysis.
 At each point in the scan the negative logarithm of the Poisson likelihood of the data is calculated resulting in a best fit at $0.945^{+0.015}_{-0.015}$~$C_{eff}/C_{eff_0}$ where the errors are statistical only.
 The scan itself is shown in \Cref{fig:chsrc_scan} with the best fit hit PMT distribution in \Cref{fig:chsrc_bestfit}.
 This indicates a systematic offset between the light emission of the MC model of the source and the actual source of roughly $5\%$, which should be taken into account when calibrating future phases of {\snop}.

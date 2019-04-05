@@ -11,15 +11,15 @@ Being a low mass, neutral particle, it was some 25 years before the first detect
 Later, the fact that neutrinos come in three flavors was established with the detection of muon neutrinos~\cite{danby} and tau neutrinos~\cite{donut}, with the earlier discovered particles identified as electron (anti-) neutrinos.
 
 As neutrinos were known to be produced in nuclear reactions, the Homestake experiment~\cite{homestake} was proposed in the 1960s to measure the flux of neutrinos produced in the core of the Sun.
-This experiment measured significantly lower flux than was expected from theoretical calculations, becoming the so-called ``solar neutrino problem" (SNP).
+This experiment measured significantly lower flux than was expected from theoretical calculations, becoming the so-called ``solar neutrino problem'' (SNP).
 Many experiments~\cite{sage,gallex,gno} confirmed this deficit.
-The first hints of a solution to the SNP were found in an an up/down anisotropy in atmospheric muon neutrinos observed by Super-Kamiokande~\cite{superk} that would not be expected if muon neutrinos remained muon flavor. 
+The first hints of a solution to the SNP were found in an up/down anisotropy in atmospheric muon neutrinos observed by Super-Kamiokande~\cite{superk} that would not be expected if muon neutrinos remained muon flavor. 
 This flavor change was confirmed for solar neutrinos around the turn of the century when the Sudbury Neutrino Observatory (SNO) experiment~\cite{3phase} made a measurement of the solar neutrino flux including all neutrino flavors, finding that the initially electron-flavor solar neutrinos were transformed into muon- or tau-flavor neutrinos before arriving at Earth.
 This discovery of flavor change implied a nonzero neutrino mass, and a set of massive neutrino states: superpositions of the mass states form the flavor states described earlier.
 
 Determining the parameters of the mixing matrix that relates the flavor and mass basis has been the forefront of neutrino research for the last 20 years, and has seen great success measuring the rotation between the two bases and the magnitude of mass difference between mass states. 
 Currently, the absolute masses of the neutrino states have yet to be determined, with the best constraints coming from cosmology, which still only sets a limit on the sum of the mass states~\cite{pdg}.
-Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as {\snop}~\cite{snop}, CUORE~\cite{cuore}, and LEGEND~\cite{legend}, by searching for a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state -- only possible if neutrinos have Majorana mass terms).
+Further, the origin of neutrino mass, be it Dirac or Majorana, is an open question being explored by the current generation of detectors, such as {\snop}~\cite{snop}, CUORE~\cite{cuore}, and LEGEND~\cite{legend}, by searching for a process called neutrinoless double beta decay (beta decay where the neutrinos, as their own antiparticle annihilate, and do not appear in the final state --- only possible if neutrinos have Majorana mass terms).
 
 In this thesis I describe the experimental efforts to fully characterize the flux of neutrinos from the Sun.
 Included in particular are a physics analysis from both SNO and its upgrade {\snop}, along with calibration and R\&D efforts supporting solar neutrino measurements.
@@ -39,8 +39,8 @@ But first, the theory.
 \section{Standard Model Neutrinos}
 \label{sec:stdmodel}
 
-The Standard Model of particle physics aims to describe all observed particle phenomenon in a self consistent theory within the framework of Quantum Field Theory.
-Notably this theory describes only three of the four fundamental forces -- the strong, weak, and electromagnetic -- leaving gravity for some grander and as yet undetermined theory. 
+The Standard Model of particle physics aims to describe all observed particle phenomenon in a self-consistent theory within the framework of Quantum Field Theory.
+Notably this theory describes only three of the four fundamental forces --- the strong, weak, and electromagnetic --- leaving gravity for some grander and as yet undetermined theory. 
 Allowing for that notable caveat, the Standard Model has been very successful in its description of nature, except in the neutrino sector where the baseline theory predicts massless neutrinos and no flavor change.
 One can, however, augment the Standard Model to include neutrino mass and, from that, flavor change follows naturally.
 
@@ -59,7 +59,7 @@ Notably, only left-handed neutrinos (right-handed anti-neutrinos) have ever been
 This led to a prediction that neutrinos are massless particles, which has now been demonstrated false.
 
 To include neutrino mass in the standard model, one must include right-handed neutrinos.
-This results in both a Dirac mass term for the neutrino -- as with the other fermions -- and a Majorana mass term.
+This results in both a Dirac mass term for the neutrino --- as with the other fermions --- and a Majorana mass term.
 The search for Majorana mass of neutrinos is actively being investigated by the current generation of neutrino experiments, however, solar neutrino experiments are insensitive to the origin of neutrino mass, so I will only consider the Dirac case, which takes the form
 \begin{equation}
 \mathscr{L_D} = m_{ij} \bar{\nu}_{Ri} \nu_{Li} 
@@ -70,8 +70,8 @@ With flavor change demonstrated, however, this matrix can take any form.
 The mass matrix $m_{ij}$ may be diagonalized by some matrix $U$ to find superpositions of neutrino flavor states with definite mass.
 This matrix $U$ is known as the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix.
 
-Many of the degrees of freedom in the PMNS matrix are not observable, and it can be parameterized by three ``mixing angles" $\theta_{12}$, $\theta_{13}$, and $\theta_{23}$, and a complex phase $\delta$.
-Typically this is done as follows:
+Many of the degrees of freedom in the PMNS matrix are not observable, and it can be parameterized by three ``mixing angles'' $\theta_{12}$, $\theta_{13}$, and $\theta_{23}$, and a complex phase $\delta$.
+Typically, this is done as follows:
 \begin{equation}
 U = 
 \left(
@@ -135,7 +135,7 @@ p+p \rightarrow ^2\mathrm{H}+e^++\nu_e,
 \end{equation}
 which produces the most neutrinos, with a flux of roughly $10^{10}$~cm$^{-2}$s$^{-1}$, but has the lowest energy, making $pp$ neutrinos quite hard to detect.
 The $^2$He from this reaction is involved in further reactions in the proton-proton chain, resulting in other neutrino fluxes.
-Notable among these is the $^8$B reaction, which produces neutrinos that are both high energy, around 10~MeV, and relatively high flux, at roughly $10^6$~cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
+Notable among these are the $^8$B reactions, which produces neutrinos that are both high energy, around 10~MeV, and relatively high flux, at roughly $10^6$~cm$^{-2}$s$^{-1}$, making them an ideal candidate for detection in water Cherenkov detectors.
 $hep$ neutrinos are higher energy, but the much lower flux of roughly $10^4$~cm$^{-2}$s$^{-1}$ makes the already rare neutrino interactions much harder to identify on top of backgrounds.
 Beyond the proton-proton chain, there is also the so called CNO process, involving carbon, oxygen, and nitrogen nuclei. 
 Neutrinos produced from the CNO process have energies and fluxes between $pp$ and $^8$B neutrinos.
@@ -218,7 +218,7 @@ With the leading order effects now understood, the door is open for precision me
 The solid lines in \Cref{fig:global_solar} represent the best fit MSW survival probability $P_{ee}$ as determined by combining the measurements of many solar neutrino experiments.
 Notably, the error bars on the measurements, from which the best fits are derived, are quite large, leading to considerable uncertainty in the precise shape of $P_{ee}$.
 This is of interest because new and interesting physics, such as nonstandard neutrino interactions with matter, would result in distortions to the survival probabilities, which would be measurable by solar neutrino experiments.
-Here, ``nonstandard interactions" are any sort of interaction not predicted by the Standard Model that somehow distinguishes between neutrino flavors, and hence influences the propagation of neutrinos in matter.
+Here, ``nonstandard interactions'' are any sort of interaction not predicted by the Standard Model that somehow distinguishes between neutrino flavors, and hence influences the propagation of neutrinos in matter.
 Much like the MSW effect, the influence from nonstandard interactions would be small, except for the very high densities present in the Sun, making solar neutrinos a viable probe of such effects.
 The transition region between vacuum-dominated dynamics below 1~MeV to matter-dominated dynamics above 10~MeV is particularly sensitive to nonstandard interaction, however, this region has not yet been accurately probed by solar neutrino experiments.
 
@@ -247,7 +247,7 @@ This can also be treated as a distortion to the survival probabilities, since th
 An analysis seeking to measure the effect of neutrino decay is discussed further in \Cref{ch:lifetime}, where distortion to the survival probability indicative of neutrino decay is used to set a limit on neutrino lifetime.
 
 Further, the rate of the CNO process in the Sun, which is proportional to the CNO neutrino fluxes, is currently only constrained by analyses done by Borexino.
-A high precision measurement of the CNO neutrino flux will provide information about the abundance of elements heavier than helium (``metallicity") in the core of the Sun that are necessary for the CNO process.
+A high precision measurement of the CNO neutrino flux will provide information about the abundance of elements heavier than helium (``metallicity'') in the core of the Sun that are necessary for the CNO process.
 At the moment there is tension between standard solar model predictions of metallicity and spectroscopic measurements done of the surface of the Sun, and a better understanding of the CNO neutrino fluxes could resolve some of this tension.
 A measurement of the CNO neutrinos is a goal of current and next-generation solar neutrino detectors, however, their low energies and a similarity to the energy spectrum of radioactive contaminates makes this quite difficult.
 
@@ -307,7 +307,7 @@ This was leveraged in analyses of SNO data and is a very beneficial feature when
 
 As a charged particle moves through a scintillator, electronic energy levels in the scintillator are excited, which can subsequently relax by emitting a visible photon.
 In the case of {\labppo} in {\snop}, this results in roughly ten thousand scintillation photons per MeV compared to hundreds of Cherenkov photons.
-The much larger number of photons results in much better energy resolution c.f. a water detector, which is very advantageous to analyses that rely heavily on energy reconstruction.
+The much larger number of photons results in much better energy resolution \textit{c.f.} a water detector, which is very advantageous to analyses that rely heavily on energy reconstruction.
 
 Unlike Cherenkov light, scintillation light is emitted isotropically, since the relaxing of the vibrational state is uncorrelated with the direction of the incident particle.
 Further, scintillators are optically less transparent than water (typically) leading to increased scatter (isotropy) in the emitted light.
@@ -443,7 +443,7 @@ Whenever a PMT detected a photon, a discriminator would fire on the correspondin
 This hit started a voltage ramp on a time-to-amplitude converter (TAC) to track the hit time, and integrated the total charge collected by the PMT.
 Additionally, the PMT readout electronics would emit two  10-mV square pulses of configurable widths, which are summed across the entire detector and act as a count of coincidentally hit PMTs within each window.
 For SNO these windows were set to approximately 20~ns and 100~ns.
-The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400~ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons - typically one).
+The trigger system discriminated the analog sum of each trigger, and, when it crossed a configurable threshold, the trigger system would issue a global trigger (GT) causing all PMTs hit in the last 400~ns to report the value of their TAC (representing the time before the global trigger) and integrated charge (representing the number of detected photons --- typically one).
 For SNO the discriminator threshold on trigger sums corresponded roughly to 17 hit PMTs.
 The hits from each GT are built into a single event for further analysis.
 
@@ -454,15 +454,15 @@ This is done using pattern recognition algorithms, which take into account the g
 Using that information, along with the total number of hits, other algorithms can estimate the energy deposited in the detector. 
 Further quantities can be extracted, such as a measure of the isotropy of the event and the ratio of hits within a prompt time window to all hits, encode additional information about the event that can, for instance, be useful for selecting physics events from instrumental events.
 Cherenkov light has a very specific geometry, so good physics events will have a characteristic spatial distribution of detected photons, allowing isotropy to be used to cut instrumental backgrounds.
-Similarly Cherenkov light is very prompt, meaning all photons from a physics event are expected to arrive within tens of nanoseconds, and making the ratio of in-time hits a useful metric for identifying candidate physics events. 
+Similarly, Cherenkov light is very prompt, meaning all photons from a physics event are expected to arrive within tens of nanoseconds, and making the ratio of in-time hits a useful metric for identifying candidate physics events. 
 
 \subsection{Calibration}
 
-To understand detector response and characterize the algorithms that perform the vertex reconstruction, sources with known energy spectra or well defined photon emission times that can be deployed at known positions within the detector are critical.
+To understand detector response and characterize the algorithms that perform the vertex reconstruction, sources with known energy spectra or well-defined photon emission times that can be deployed at known positions within the detector are critical.
 Two sources were critical in this effort:
 \begin{description}
 \item[\N~\cite{sno_n16}] This isotope is produced with a deuterium-tritium neutron generator by captures on $^{16}$O producing $^{17}$O, which quickly decays by emitting a proton to leave \N. This isotope is transported in gas form to a calibration source within the detector where it beta decays into a metastable state of $^{16}$O that relaxes, releasing a 6.13-MeV gamma. The initial beta decay provides a tag signal within the source, and the gamma escapes into the detector where it deposits its energy. This source provides the energy scale calibration for SNO by calibrating its photon detection efficiency. It is also used to evaluate energy and position reconstruction systematics as a function of position within the detector and throughout the operational time of the detector.
-\item[Laser Ball~\cite{sno_laserball}] A fast dye laser is fiber coupled to an optical diffuser, which work together to produce an isotropic light pulse at a well defined time. This is primarily used to calibrate the time offset of each PMT, and can also be used to measure relative detection efficiencies of the PMTs.
+\item[Laser Ball~\cite{sno_laserball}] A fast dye laser is fiber coupled to an optical diffuser, which work together to produce an isotropic light pulse at a well-defined time. This is primarily used to calibrate the time offset of each PMT, and can also be used to measure relative detection efficiencies of the PMTs.
 \end{description}
 Additional sources were used to provide calibration points at other energies, such as a beta source using \Li~\cite{Tagg:2002} with an endpoint at 14~MeV, and a proton fusion source~\cite{fusion_source} producing a gamma at 19.8~MeV.
 Sources producing the decay chains of $^{238}$U and $^{232}$Th were deployed for low energy calibrations.
@@ -536,7 +536,7 @@ Data taking for this phase began mid 2017 and finished toward the end of 2018.
 
 The change to pure scintillator {\labppo} (linear alkylbenzene with a primary flour 2,5-diphenyloxazole at 2~g/L) started at the end of 2018 with the gradual displacement of water inside the AV.
 This switch was motivated by a need for enhanced energy resolution for the neutrinoless double beta decay measurement, and similar reasoning comes into play in its applicability to solar neutrinos.
-In terms of solar neutrinos, the ES interaction channel is still the only relevant one, however, the observed signals in scintillator phase will be quite different than that of water phase.
+In terms of solar neutrinos, the ES interaction channel is still the only relevant one, however, the observed signals in scintillator phase will be quite different from that of water phase.
 In water all information about the interaction was gathered from the Cherenkov light emitted. 
 Cherenkov light will still be generated in scintillator, however, in {\labppo} it will be insignificant compared to the light emitted by the relaxing of vibrational states of the scintillating medium itself.
 As of the writing of this thesis, scintillator phase is moving forward, but physics data taking is still in the future.
@@ -544,7 +544,7 @@ As of the writing of this thesis, scintillator phase is moving forward, but phys
 \subsubsection{Tellurium Loaded Scintillator}
 As mentioned, the primary goal of {\snop} is to perform a neutrinoless double beta decay measurement using the double beta decay isotope $^{130}$Te.
 This will be done by dissolving $^{130}$Te metal in the {\labppo} scintillator, and searching for an excess of events at the endpoint ($Q \approx 2.6$~MeV) of $^{130}$Te decay.
-The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the the electrons, resulting in a delta function spectrum at the endpoint.
+The basic principle behind this measurement is that a double beta decay with neutrinos should follow a double beta decay energy spectrum, where some fraction of the decay energy is not observed due to being carried away by neutrinos, while a neutrinoless decay would deposit the entire decay energy into the electrons, resulting in a delta function spectrum at the endpoint.
 Since the signature of this process is a sharp feature in energy, {\snop} requires the enhanced energy resolution of scintillators, as such a measurement would not be possible with the energy resolution of Cherenkov light.
 
 \subsection{Calibration}
@@ -565,7 +565,7 @@ Of particular relevance to this thesis is the goal of doing high precision measu
 The detector design is still in the conceptual phase, but lessons learned from {\snop} and other liquid scintillator detectors are being incorporated, and the optical detection scheme remains roughly unchanged except for potential upgrades to technologies similar to PMTs.
 The basic plan is two-fold: build a very large detector to maximize interaction rate and enhance fiducial volume shielding, and develop a novel target medium that combines the advantages of Cherenkov and scintillation light.
 The former is primarily an engineering and/or funding challenge, while the latter presents an interesting research topic that is explored further in \Cref{ch:wbls}.
-The baseline design calls for a right cylinder around 40~m across filled with WbLS and surrounded with fast photo detectors.
+The baseline design calls for a right cylinder around 40~m across filled with WbLS and surrounded with fast photodetectors.
 The optical clarity of WbLS should allow scaling to these sizes without undue loss of photons to attenuation.
 
 \subsection{Sensitivity to Solar Neutrinos}
