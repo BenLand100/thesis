@@ -2,7 +2,7 @@
 \label{ch:lifetime}
 
 Analysis of the SNO data was instrumental in solving the SNP, and with the leading order dynamics of neutrinos established as the MSW effect, one can now explore the SNO data to constrain second order effects. 
-Neutrino decay is one such effect, and was first explored as a possible explanation for the less-than-unity survival probability of electron flavor neutrinos \cite{bachall_stable}.
+Neutrino decay is one such effect, and was first explored as a possible explanation for the less-than-unity survival probability of electron flavor neutrinos~\cite{bachall_stable}.
 Even though neutrino decay is now known not to be the dominant effect behind the SNP, solar neutrinos make an excellent test beam for investigating neutrino decay.
 Roughly speaking, this analysis will be searching for a deficit of neutrinos resulting from decay of neutrinos in flight from the Sun to the Earth.
 As will be shown in the following sections, this produces an energy dependent distortion to the MSW survival probability curves that can be fit for in an analysis of SNO data.
@@ -121,11 +121,11 @@ which would have negligible impact on values quoted for mixing parameters.
 \centering
 \begin{tabular}{c|c|c}
 Parameter & Value & Ref \\ \hline
-$ \Delta m ^2 _{21} $ & $7.58^{+0.14}_{-0.13}(stat)^{+0.15}_{-0.15}(syst) \times 10^{-5}$~eV$^2$ & \cite{kamland} \\ \hline
-$ \tan^2 \theta_{12} $ & $0.56^{+0.10}_{-0.07}(stat)^{+0.10}_{-0.06}(syst) $ & \cite{kamland} \\ \hline
-$ |\Delta m ^2 _{32}| $ & $2.45\pm0.06(stat)\pm0.06(syst) \times 10^{-3}$~ev$^2$ & \cite{dayabay} \\ \hline
-$ \sin^2 2\theta_{13} $ & $0.0841\pm0.0072(stat)\pm0.0019(syst)$ & \cite{dayabay} \\ \hline
-$ \sin^2 \theta_{23} $ & $0.5^{+0.058}_{-0.062}$ & \cite{superkth23} \\ 
+$ \Delta m ^2 _{21} $ & $7.58^{+0.14}_{-0.13}(stat)^{+0.15}_{-0.15}(syst) \times 10^{-5}$~eV$^2$ &~\cite{kamland} \\ \hline
+$ \tan^2 \theta_{12} $ & $0.56^{+0.10}_{-0.07}(stat)^{+0.10}_{-0.06}(syst) $ &~\cite{kamland} \\ \hline
+$ |\Delta m ^2 _{32}| $ & $2.45\pm0.06(stat)\pm0.06(syst) \times 10^{-3}$~ev$^2$ &~\cite{dayabay} \\ \hline
+$ \sin^2 2\theta_{13} $ & $0.0841\pm0.0072(stat)\pm0.0019(syst)$ &~\cite{dayabay} \\ \hline
+$ \sin^2 \theta_{23} $ & $0.5^{+0.058}_{-0.062}$ &~\cite{superkth23} \\ 
 \end{tabular}
 \caption{
 \label{tbl:mixing_params}
@@ -159,7 +159,7 @@ See \Cref{strategy} for further discussion of how the flux is handled.
 \section{Fit Implementation}
 \label{fit_impl}
 
-For this analysis, I have built off the existing QSigEx code \cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data \cite{3phase}.
+For this analysis, I have built off the existing QSigEx code~\cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data~\cite{3phase}.
 This package was modified to use the model described in \Cref{lifetime_model} instead of polynomials used in previous analyses.
 The following sections conceptually describe how to analyze SNO data, the implementation of such an analysis in QSigEx, and the work that was necessary to implement the neutrino lifetime model in this framework.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
@@ -198,7 +198,7 @@ For Phase III, 3D PDFs in energy, radius, and direction were used.
 
 The likelihood fit determines the relative contribution of each event class necessary to best match the observed data.
 To do this, the fit needs the 4D PDF for each type of event, and these PDFs were generated using a MC method.
-SNOMAN \cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
+SNOMAN~\cite{sno_nim} was a FORTRAN simulation package developed by SNO that was adjusted to reproduce calibration data taken with the detector.
 The reconstruction algorithms used on raw data were applied to the simulation results of SNOMAN for known classes of interactions to produce the PDFs used in analysis.
 
 Most PDFs are constructed by directly binning simulated data produced by SNOMAN.
@@ -262,7 +262,7 @@ Ideally all neutrino parameters would be floated with priors in this analysis.
 In practice it has been observed that the fit does not converge with both the $^8$B flux and lifetime parameter floated unless there is a very strong external constraint on the flux.
 This is most easily understood by considering the signature of neutrino decay: a disappearance of neutrino flux.
 Manifestly neutrino decay and the total flux will be highly correlated, however, the energy dependent signature of neutrino decay allows these effects to be disentangled to some extent.
-Previous SNO analyses searching for oscillation to sterile neutrinos \cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced parameter space, performing further fits and statistical studies with the flux fixed, and finally incorporating uncertainty from flux variations as a final step.
+Previous SNO analyses searching for oscillation to sterile neutrinos~\cite{plthesis} have encountered a similar issues and opted for a strategy of finding a preferred $^8$B flux in some reduced parameter space, performing further fits and statistical studies with the flux fixed, and finally incorporating uncertainty from flux variations as a final step.
 In this analysis since there is only one model parameter of interest, $k_2$, a strategy of scanning $k_2$ manually while floating all other parameters seems to be ideal. 
 With that in mind, the fit strategy is:
 \begin{enumerate}
@@ -439,7 +439,7 @@ Comparing the results of these two datasets gives some information on statistica
 If the bias or pull looks particularly bad in one dataset but acceptable in the other, one can conclude that this effect is due to statistical fluctuations and not to errors in the fit procedure.
 The figures of merit for these tests are shown in \Cref{fig:allbg_bias,fig:allbg_pull,fig:allbg_reluncert}. 
 While fluctuations are larger, comparison between the two datasets looks more reasonable. 
-Notably these results are comparable to ensemble testing of the published SNO 3-phase results \cite{3phase}.
+Notably these results are comparable to ensemble testing of the published SNO 3-phase results~\cite{3phase}.
 One can therefore conclude that the fit is unbiased and properly predicting errors.
 
 \begin{figure}
@@ -501,7 +501,7 @@ When summed in quadrature, the total uncertainty on $k_2$ is found to be $^{+13.
 \label{third}
 
 Using 1/3 of the SNO dataset --- the same 1/3 dataset used in testing the historical 3-phase fits --- the fit was run as described in \Cref{strategy}. 
-To reduce computational power required for this test, the central values of scanned nuisance parameters from the 3-phase Pee+Pea fit \cite{3phase} were used. 
+To reduce computational power required for this test, the central values of scanned nuisance parameters from the 3-phase Pee+Pea fit~\cite{3phase} were used. 
 These are nominally uncorrelated with neutrino parameters, and would take a very long time to iteratively scan with little gain.
 This scan will, of course, be done for the full dataset.
 The scan of $k_2$ and the $^8$B flux are shown in \Cref{fig:third_scans}.
@@ -577,7 +577,7 @@ There is some tension between the SNO result and the flux fitted with with $k_2$
 
 \section{Global Solar Neutrino Decay Analysis}
 
-The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis \cite{picoreti}, which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$~s/eV (note order of magnitude).
+The SNO-only $90\%$ confidence lower bound at $>8.08\times10^{-5}$ s/eV from this analysis is not particularly competitive with the best combined analysis~\cite{picoreti}, which sets a $99\%$ confidence lower bound at $>7.2\times10^{-4}$~s/eV (note order of magnitude).
 This result was obtained by combining measurements from many solar experiments, and such an analysis can be repeated while including the SNO result described in previous sections.
 
 Experiments have made measurements of solar neutrino interaction rates and published measured fluxes both assuming oscillations (a mixture of neutrino flavors) and no oscillations (assuming a pure electron neutrino flux). 
@@ -641,7 +641,7 @@ This holds true (to some extent) for the radiochemical gallium and chlorine expe
 The SAGE~\cite{sagecombo} experiment has conveniently combined all gallium solar neutrino measurements into a single value: a rate of solar neutrino interactions on an atom of gallium. 
 This requires a bit more effort than the $^8$B and $^7$Be measurements as this rate combines every type of solar neutrino flux, and is related to the fluxes by the gallium neutrino capture cross section.
 It is most convenient to compute the expected interaction rate for a particular set of neutrino flux values and mixing parameters and compare this to the measured total rate. 
-This follows the analysis described in Section V in \cite{sagecombo} with the notable exception that the survival probability used here includes neutrino decay.
+This follows the analysis described in Section V in~\cite{sagecombo} with the notable exception that the survival probability used here includes neutrino decay.
 
 For each type (that is, originating isotope) of solar neutrino, the average gallium cross section weighted by the energy spectrum and survival probability is calculated for a particular set of neutrino parameters using the appropriate production regions in the Sun for that type.
 The gallium cross section used here is the same modified form used in the SAGE analysis~\cite{sagecombo}.
@@ -675,7 +675,7 @@ With the calculation of the expected rate validated, the remaining step of inclu
 \begin{table}
 \centering
 \begin{tabular}{c|r|r|r}
-Component & \cite{sagecombo} Rate (SNU) & Approximate $P_{ee}$ (SNU) & Numerical $P_{ee}$ (SNU) \\ \hline
+Component &~\cite{sagecombo} Rate (SNU) & Approximate $P_{ee}$ (SNU) & Numerical $P_{ee}$ (SNU) \\ \hline
 $pp$		& 39.35	&	39.34 	&	39.18	\\
 $pep$		& 1.43 	&	1.43 	&	1.35 	\\ 
 $^7$Be		& 18.73	&	18.74	& 	18.78	\\
@@ -686,7 +686,7 @@ $^8$B		& 4.64 	&	4.63	&	4.54	\\
 $hep$		& 0.02 	&	0.02	&	0.02	\\ \hline
 Total		& 66.31	&	66.32 	&	65.80	\\ \hline
 \end{tabular}
-\caption{\label{tbl:gallium}Shown here are the predicted interaction rates of each neutrino flux with Gallium computed with the code developed for this analysis using both the approximate survival probability forms in~\cite{sagecombo} and the numerical forms used elsewhere in this analysis. Results from \cite{sagecombo} are reproduced for reference.}
+\caption{\label{tbl:gallium}Shown here are the predicted interaction rates of each neutrino flux with Gallium computed with the code developed for this analysis using both the approximate survival probability forms in~\cite{sagecombo} and the numerical forms used elsewhere in this analysis. Results from~\cite{sagecombo} are reproduced for reference.}
 \end{table}
 
 \subsection{Chlorine Constraints}
@@ -708,14 +708,14 @@ The Homestake~\cite{homestake} experiment does not go into detail about expected
 Also, the references cited there tend to assume $P_{ee} = 1$ when calculating expected rates, which is not a useful comparison to make with this analysis.
 A more recent paper~\cite{bachall_lma} does a modern calculation of the expected interaction rates per flux component that is directly comparable to the model used here.
 
-Using the fluxes and mixing parameters quoted in Table I of \cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the large mixing angle (LMA) solution from Table I of \cite{bachall_lma}.
-The column showing the `old' parameters are using the fluxes and mixing parameters from \cite{bachall_lma} while the column showing `new' parameters uses the SSM and mixing parameters used elsewhere in this analysis.
+Using the fluxes and mixing parameters quoted in Table I of~\cite{bachall_lma}, I have reproduced the interaction rates central values for Chlorine in \Cref{tbl:chlorine} and compared to the large mixing angle (LMA) solution from Table I of~\cite{bachall_lma}.
+The column showing the `old' parameters are using the fluxes and mixing parameters from~\cite{bachall_lma} while the column showing `new' parameters uses the SSM and mixing parameters used elsewhere in this analysis.
 In all cases there is pretty good agreement with the measured rate from Homestake and between models.
 
 \begin{table}
 \centering
 \begin{tabular}{c|r|r|r}
-Component & \cite{bachall_lma} Rate (SNU) & `Old' Parameters (SNU) & `New' parameters (SNU) \\ \hline
+Component &~\cite{bachall_lma} Rate (SNU) & `Old' Parameters (SNU) & `New' parameters (SNU) \\ \hline
 $pp$		& 0.0	&	0.00 & 0.00		\\
 $pep$		& 0.1 	&	0.13 & 0.12		\\ 
 $^7$Be		& 0.46	&	0.45 & 0.30		\\
@@ -725,7 +725,7 @@ $^8$B		& 1.8 	&	1.82 & 2.20		\\
 $hep$		& 0.1 	&	0.07 & 0.01		\\ \hline
 Total		& 2.6	&	2.69 & 2.75		\\ \hline
 \end{tabular}
-\caption{\label{tbl:chlorine}Shown here are the predicted interaction rates of each neutrino flux with Chlorine both from an independent calculation \cite{bachall_lma}, using this analysis' code with the `old' mixing and flux parameters in that reference, and again with the flux and mixing parameters used elsewhere in this analysis.}
+\caption{\label{tbl:chlorine}Shown here are the predicted interaction rates of each neutrino flux with Chlorine both from an independent calculation~\cite{bachall_lma}, using this analysis' code with the `old' mixing and flux parameters in that reference, and again with the flux and mixing parameters used elsewhere in this analysis.}
 \end{table}
 
 \subsection{Combined Result}
@@ -748,7 +748,7 @@ Borexino and Super-K (I) are handled as described above but with the less-precis
 The SNO 3-phase results are handled in an analogous way to Super-K results using only the flux information.
 
 
-In \Cref{fig:cross_check_profile} I have combined the profiles from these measurements and arrived at a limit of $>7.58\times10^{-4}$~s/eV at $99\%$ C.L., a bit better than \cite{picoreti}'s quoted $>7.2\times10^{-4}$~s/eV at $99\%$ C.L..
+In \Cref{fig:cross_check_profile} I have combined the profiles from these measurements and arrived at a limit of $>7.58\times10^{-4}$~s/eV at $99\%$ C.L., a bit better than~\cite{picoreti}'s quoted $>7.2\times10^{-4}$~s/eV at $99\%$ C.L..
 That this is quite close to the limit set by~\cite{picoreti} indicates that these two analyses are consistent even if the methods presumably differ.
 Unfortunately with the brevity of the previous paper a more direct comparison does not seem possible.
 
@@ -762,6 +762,6 @@ Unfortunately with the brevity of the previous paper a more direct comparison do
 \begin{figure}
 \centering
 \includegraphics[width=0.85\columnwidth]{cross_check_profile}
-\caption{The combined profile intended to reproduce the result in \cite{picoreti} by using the same experimental measurements. Notably the analysis methods are not identical so the results should be similar but do not match exactly.}
+\caption{The combined profile intended to reproduce the result in~\cite{picoreti} by using the same experimental measurements. Notably the analysis methods are not identical so the results should be similar but do not match exactly.}
 \label{fig:cross_check_profile}
 \end{figure}
