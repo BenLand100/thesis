@@ -42,15 +42,15 @@ This directional correlation is not only useful for measurements of solar neutri
 
 In general, the identification of Cherenkov photons in a scintillator can be done in three ways:
 \begin{itemize}
-    \item Wavelength:  Cherenkov and scintillation light have different emission spectra (\Cref{fig:optics}). The very broad Cherenkov spectrum could be selectively detected with optical filters that block scintillation light, or by detectors sensitive only to long wavelength photons.
-	\item Intensity: Cherenkov photons are not isotropic in space, and, with sufficiently dim scintillation light, should have a typical ``Cherenkov ring" geometry that can be identified on top of an isotropic scintillation background.
-	\item Timing: Cherenkov emission is very fast, on the order of tens of picoseconds~\cite{cherenkov}, while scintillation light, originating from molecular de-excitation, is typically delayed by 1-10~ns~\cite{birks} and emitted with a profile of exponential time constants of a few to hundreds of nanoseconds.
+\item Wavelength:  Cherenkov and scintillation light have different emission spectra (\Cref{fig:optics}). The very broad Cherenkov spectrum could be selectively detected with optical filters that block scintillation light, or by detectors sensitive only to long wavelength photons.
+\item Intensity: Cherenkov photons are not isotropic in space, and, with sufficiently dim scintillation light, should have a typical ``Cherenkov ring" geometry that can be identified on top of an isotropic scintillation background.
+\item Timing: Cherenkov emission is very fast, on the order of tens of picoseconds~\cite{cherenkov}, while scintillation light, originating from molecular de-excitation, is typically delayed by 1-10~ns~\cite{birks} and emitted with a profile of exponential time constants of a few to hundreds of nanoseconds.
 \end{itemize}
 
 \begin{figure}
-	\centering
-	\includegraphics[width=.8\textwidth]{optics.pdf}
-	\caption{\label{fig:optics} PMT H11934 quantum efficiency~\cite{h11934} and UVT acrylic absorption length compared to the Cherenkov and scintillation emission spectra for pure LAB~\cite{lab_emission} and LAB loaded with 2~g/L PPO~\cite{snop_private}. The normalization of the emission spectra are shown in arbitrary units. Figure from~\cite{chess_nim}.}
+\centering
+\includegraphics[width=.8\textwidth]{optics.pdf}
+\caption{\label{fig:optics} PMT H11934 quantum efficiency~\cite{h11934} and UVT acrylic absorption length compared to the Cherenkov and scintillation emission spectra for pure LAB~\cite{lab_emission} and LAB loaded with 2~g/L PPO~\cite{snop_private}. The normalization of the emission spectra are shown in arbitrary units. Figure from~\cite{chess_nim}.}
 \end{figure}
 
 Each option has the potential to enhance Cherenkov photon detection, but each comes with a cost.
@@ -220,10 +220,10 @@ The stability of the PMT gains was checked by taking a second set of water calib
 The gains for all PMTs in the array were observed to be very stable within measured uncertainties.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{spe_ring}
-	\caption{SPE charge distribution for a single PMT. Data is shown as black points with error bars, and the red dashed line is the result of the fit used to extract the shape of the SPE distribution. }
-	\label{fig:spe_data}
+\centering
+\includegraphics[width=0.7\columnwidth]{spe_ring}
+\caption{SPE charge distribution for a single PMT. Data is shown as black points with error bars, and the red dashed line is the result of the fit used to extract the shape of the SPE distribution. }
+\label{fig:spe_data}
 \end{figure}
 
 
@@ -243,18 +243,18 @@ A log normal of the form
 \frac{1}{\sigma \sqrt{2\pi}}\exp{\left[\frac{-\left(\log[t-t_0]-\mu\right)^2}{2\sigma^2}\right]}
 \end{eqnarray}
 was fit to the average pulse shape across all 12 PMTs (lower panel of \Cref{fig:spe-pulse-shape}) and the resulting fit parameters were used in the simulation to model PMT pulse shapes.
-	
+
 \begin{figure}
-	\centering
-	\includegraphics[width=0.5\columnwidth]{pulse_shape_ring1}
-	\includegraphics[width=0.5\columnwidth]{pulse_shape_norm_ring}
-	\includegraphics[width=0.5\columnwidth]{pulse_shape_lognorm_fit}
-	\caption{PMT pulse shape characterization.   
-	(a) Mean and RMS spread for one PMT, showing excellent stability in the pulse region.  
-	(b) Averaged pulse shapes for SPE pulses for each individual PMT. 
-	(c) Log-normal fit to the average pulse shape across all PMTs. 
-	In all cases the pulses are normalized to unit area, so the voltage is reported in arbitrary units.}
-	\label{fig:spe-pulse-shape}
+\centering
+\includegraphics[width=0.5\columnwidth]{pulse_shape_ring1}
+\includegraphics[width=0.5\columnwidth]{pulse_shape_norm_ring}
+\includegraphics[width=0.5\columnwidth]{pulse_shape_lognorm_fit}
+\caption{PMT pulse shape characterization.   
+(a) Mean and RMS spread for one PMT, showing excellent stability in the pulse region.  
+(b) Averaged pulse shapes for SPE pulses for each individual PMT. 
+(c) Log-normal fit to the average pulse shape across all PMTs. 
+In all cases the pulses are normalized to unit area, so the voltage is reported in arbitrary units.}
+\label{fig:spe-pulse-shape}
 \end{figure}
 
 
@@ -276,11 +276,11 @@ The MC-corrected LED dataset is used to define the time delays for the final sep
 The difference between the two datasets is taken as a measure of  systematic error in this calibration.  
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.6\columnwidth]{time_delays_ledtop_singlepmt}
-	\includegraphics[width=0.6\columnwidth]{time_delays_ledaverage_muon}
-	\caption{(a) Time distribution for a single channel relative to a reference channel, overlaid with the Gaussian fit used to extract the relative time delay.  (b) Mean and uncertainty on the mean for the per-channel time delays.}
-	\label{fig:time_delay}
+\centering
+\includegraphics[width=0.6\columnwidth]{time_delays_ledtop_singlepmt}
+\includegraphics[width=0.6\columnwidth]{time_delays_ledaverage_muon}
+\caption{(a) Time distribution for a single channel relative to a reference channel, overlaid with the Gaussian fit used to extract the relative time delay.  (b) Mean and uncertainty on the mean for the per-channel time delays.}
+\label{fig:time_delay}
 \end{figure}
 
 
@@ -313,8 +313,8 @@ A charged particle passing through a medium deposits an energy $E$ due to ioniza
 The total number of scintillation photons generated is not expected to behave linearly with $E$ due to quenching effects in the scintillator.
 This is taken into account by GLG4Scint by using Birk's law~\cite{birks} which states that the deposited energy after quenching, $E_{q}$, is:
 \begin{eqnarray}
-	\dfrac{dE_{q}}{dx} = \dfrac{dE/dx}{1+ k_BdE/dx},
-    \label{eq:birk}
+\dfrac{dE_{q}}{dx} = \dfrac{dE/dx}{1+ k_BdE/dx},
+\label{eq:birk}
 \end{eqnarray}
 where $k_B$ is Birk's constant, which must be determined for any particular scintillator. 
 The total number of  photons produced, $N_{\gamma}$, is directly proportional to $E_{q}$, where the proportionality constant is typically called the light yield of the material. 
@@ -339,7 +339,7 @@ For reference, the spectra for LAB~\cite{lab_emission} and {\labppo}~\cite{snop_
 Optical photons are propagated through different media by GEANT4. 
 Absorption, refraction and reflection are taken into account according to the optical properties defined for each material. 
 The absorption length of the UVT acrylic used in CHESS (\Cref{fig:optics}) was measured with a spectrometer and is included directly in the simulation.  
-The refractive indexes for LAB and {\labppo} are considered to be the same and are taken from~\cite{snop_private}. \\
+The refractive indexes for LAB and {\labppo} are considered to be the same and are taken from~\cite{snop_private}.
 Photon reemission from wavelength shifting materials are simulated in a similar fashion as the scintillation process. Once a photon is absorbed in a scintillating medium, there is a finite probability that it will be reemitted by again randomly sampling the emission spectrum.
 
 \subsection{PMT Model \label{sec:pmt_model}}
@@ -490,13 +490,13 @@ The simulation slightly under predicts the width of the higher precision distrib
 This is most likely due to an underestimation of the PMT TTS used in the MC, so an additional time uncertainty of $\sigma=214$~ps is included in the simulation, resulting in the corrected results from \Cref{f:smear}.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.49\columnwidth]{cosmic_water_timeres_trtime_dt_mc}
-	\includegraphics[width=0.49\columnwidth]{cosmic_water_timeres_dt_mc_smear}
-	\caption{Distribution of hit-time residuals for ring candidate events in water for middle PMTs, where the Cherenkov ring is expected. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). 
-	(a) Hit times with respect to the lower muon tag time and (b) hit times with respect to the reconstructed event time.
-	Figure from~\cite{chess_nim}.}
-	\label{f:smear}
+\centering
+\includegraphics[width=0.49\columnwidth]{cosmic_water_timeres_trtime_dt_mc}
+\includegraphics[width=0.49\columnwidth]{cosmic_water_timeres_dt_mc_smear}
+\caption{Distribution of hit-time residuals for ring candidate events in water for middle PMTs, where the Cherenkov ring is expected. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). 
+(a) Hit times with respect to the lower muon tag time and (b) hit times with respect to the reconstructed event time.
+Figure from~\cite{chess_nim}.}
+\label{f:smear}
 \end{figure}
 
 \subsection{Figures of Merit}
@@ -504,7 +504,7 @@ This is most likely due to an underestimation of the PMT TTS used in the MC, so 
 The separation can be quantified by taking the ratio of hit counts between the outer PMTs (fast Cherenkov photons) and the middle and inner PMTs (slower scintillation photons).  
 A time cut ($t < t_c$) is optimized in order to maximize separation.  
 The efficiency of identifying Cherenkov hits is defined as the fraction of outer PMT hits that occur before $t_c$.  
-The scintillation contamination  is given by the fraction of hits occurring before $t_c$ that are due to scintillation \textit{i.e.} hits with $t < t_c$ on inner and middle PMT groupings for pure LAB and {\labppo} targets (inner and outer PMTs for water or WbLS targets). 
+The scintillation contamination  is given by the fraction of hits occurring before $t_c$ that are due to scintillation, \textit{i.e.} hits with $t < t_c$ on inner and middle PMT groupings for pure LAB and {\labppo} targets (inner and outer PMTs for water or WbLS targets). 
 
 Charge separation can be achieved by taking the ratio of charge in a prompt 5~ns window to that in the full event window for each hit PMT and comparing this for the different radial PMT groupings.  
 The separation is defined in an analogous manner to that for time: a threshold is optimized to maximize the Cherenkov hit detection efficiency and minimize scintillation contamination.  
@@ -522,20 +522,20 @@ Both cases show a clear ring structure, indicating that CHESS is imaging Cherenk
 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=7.95cm]{cosmic_water_ringcandidate_npe_dt}
-	\includegraphics[width=8cm]{cosmic_water_ringcandidate_time_dt}
-	\caption{Typical ring event in the water dataset. (a) Estimated number of detected PEs and (b) hit-time residuals. Figure from~\cite{chess_nim}.}
-	\label{fig:cosmics_water_ring_candidate}
+\centering
+\includegraphics[width=7.95cm]{cosmic_water_ringcandidate_npe_dt}
+\includegraphics[width=8cm]{cosmic_water_ringcandidate_time_dt}
+\caption{Typical ring event in the water dataset. (a) Estimated number of detected PEs and (b) hit-time residuals. Figure from~\cite{chess_nim}.}
+\label{fig:cosmics_water_ring_candidate}
 \end{figure}
 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=7.8cm]{cosmic_water_ringnpe_dt}
-	\includegraphics[width=8cm]{cosmic_water_ringtime_dt}
-	\caption{(a) Averaged number of detected PE and (b) averaged first-photon hit-time residual per individual PMT for ring candidates in water data. Figure from~\cite{chess_nim}.}
-	\label{fig:cosmics_water_npes}
+\centering
+\includegraphics[width=7.8cm]{cosmic_water_ringnpe_dt}
+\includegraphics[width=8cm]{cosmic_water_ringtime_dt}
+\caption{(a) Averaged number of detected PE and (b) averaged first-photon hit-time residual per individual PMT for ring candidates in water data. Figure from~\cite{chess_nim}.}
+\label{fig:cosmics_water_npes}
 \end{figure}
 
 
@@ -545,10 +545,10 @@ Importantly, the MC accurately predicts the hit-time residual distribution for t
 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{cosmic_water_25pctpe_time_smear}
-	\caption{Distribution of hit-time residuals for ring candidate events in water for each PMT radial group. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). Figure from~\cite{chess_nim}.}
-	\label{fig:cosmics_water}
+\centering
+\includegraphics[width=0.7\columnwidth]{cosmic_water_25pctpe_time_smear}
+\caption{Distribution of hit-time residuals for ring candidate events in water for each PMT radial group. Data points are shown with statistical errors, with the Monte Carlo prediction overlaid (dashed lines). Figure from~\cite{chess_nim}.}
+\label{fig:cosmics_water}
 \end{figure}
 
 
@@ -569,19 +569,19 @@ An example event is shown in \Cref{fig:lab_ring} for both time and charge, with 
 A clear ring structure can be observed in both cases. 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringcandidate_time_dt}
-	\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringcandidate_npe_dt}
-	\caption{A single ring candidate event in LAB. (Top) Hit-time residual and (Bottom) number of PE versus PMT position. Figure from~\cite{chess_lab}.}
-	\label{fig:lab_ring}
+\centering
+\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringcandidate_time_dt}
+\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringcandidate_npe_dt}
+\caption{A single ring candidate event in LAB. (Top) Hit-time residual and (Bottom) number of PE versus PMT position. Figure from~\cite{chess_lab}.}
+\label{fig:lab_ring}
 \end{figure}
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringtime_dt}
-	\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringnpe_dt}
-	\caption{(Top) Average hit-time residuals and (Bottom) average number of PE versus PMT position for ring candidate events in LAB. Figure from~\cite{chess_lab}.}
-	\label{fig:lab2}
+\centering
+\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringtime_dt}
+\includegraphics[width=0.6\columnwidth]{cosmic_lab_ringnpe_dt}
+\caption{(Top) Average hit-time residuals and (Bottom) average number of PE versus PMT position for ring candidate events in LAB. Figure from~\cite{chess_lab}.}
+\label{fig:lab2}
 \end{figure}
 
 
@@ -595,19 +595,19 @@ The optimal timing cut for LAB is $ t_c = 0.4$~ns,  yielding $83\pm2$(stat)$\pm2
 Better separation might be achieved by eliminating the Cherenkov contamination in the inner and middle PMTs via improvements to CHESS.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{cosmic_lab_time_smear}
-	\caption{Hit-time residual distributions in LAB for data and MC. Figure from~\cite{chess_lab}.}
-	\label{fig:lab}
+\centering
+\includegraphics[width=0.7\columnwidth]{cosmic_lab_time_smear}
+\caption{Hit-time residual distributions in LAB for data and MC. Figure from~\cite{chess_lab}.}
+\label{fig:lab}
 \end{figure}
 
 \Cref{f:labQ} shows threshold of $Q_{\rm ratio}=0.09$ gives a Cherenkov detection efficiency of $96\pm2$(stat)$\pm0$(syst)\% with contamination of $6\pm3$(stat)$\pm0$(syst)\%.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{cosmic_lab_qratio5ns_led_dt}
-	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT  for pure LAB. Figure from~\cite{chess_lab}.}
-	\label{f:labQ}
+\centering
+\includegraphics[width=0.7\columnwidth]{cosmic_lab_qratio5ns_led_dt}
+\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT  for pure LAB. Figure from~\cite{chess_lab}.}
+\label{f:labQ}
 \end{figure}
 
 \clearpage
@@ -621,11 +621,11 @@ The scintillation component of {\labppo} is far too bright to identify remaining
 Like LAB, the Cherenkov photons from {\labppo} should fall on the outermost PMTs.
 The topology of a typical event, and the average across the dataset, are shown in \Cref{fig:labppo_ring}.  Again a clear ring structure can be observed. 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringcandidate_time_dt}
-	\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringtime_dt}	
-	\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in {\labppo}. Figure from~\cite{chess_lab}.}
-	\label{fig:labppo_ring}
+\centering
+\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringcandidate_time_dt}
+\includegraphics[width=0.6\columnwidth]{cosmic_labppo_ringtime_dt}	
+\caption{Hit-time residuals versus PMT position for (Top) a single ring candidate event and (Bottom) the average across all events in {\labppo}. Figure from~\cite{chess_lab}.}
+\label{fig:labppo_ring}
 \end{figure}
 Hit-time residual distributions are shown in \Cref{fig:labppo}, where the early Cherenkov hits on outer PMTs are clear. 
 The separation is less distinct than for pure LAB.
@@ -634,10 +634,10 @@ The MC shows good agreement with data.
 A cut at $ t_c = 0.4$~ns yields Cherenkov detection efficiency of $70 \pm 3 $(stat)$\pm0$(syst)\% with contamination of $36 \pm 3 $(stat)$\pm4$(syst)\%. 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_time_smear_0p75nsrtime}
-	\caption{Hit-time residual distributions in {\labppo} for data and MC. Figure from~\cite{chess_lab}.}
-	\label{fig:labppo}
+\centering
+\includegraphics[width=0.7\columnwidth]{cosmic_labppo_time_smear_0p75nsrtime}
+\caption{Hit-time residual distributions in {\labppo} for data and MC. Figure from~\cite{chess_lab}.}
+\label{fig:labppo}
 \end{figure}
 
 The charge ratio for {\labppo} is shown in \Cref{f:labppoQ}. 
@@ -645,10 +645,10 @@ The separation is more difficult in {\labppo} due to higher scintillation yield.
 Nevertheless, a threshold of $Q_{\rm ratio}=0.038$ gives a Cherenkov detection efficiency of $63\pm4$(stat)$\pm7$(syst)\% with contamination of $38\pm3$(stat)$\pm2$(syst)\%.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\columnwidth]{cosmic_labppo_qratio5ns_led_dt}
-	\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for {\labppo}. Figure from~\cite{chess_lab}.}
-	\label{f:labppoQ}
+\centering
+\includegraphics[width=0.7\columnwidth]{cosmic_labppo_qratio5ns_led_dt}
+\caption{Ratio of charge in a prompt, 5~ns window to the total charge for each hit PMT for {\labppo}. Figure from~\cite{chess_lab}.}
+\label{f:labppoQ}
 \end{figure}
 
 \clearpage
@@ -661,7 +661,7 @@ Shown in this section are timing and charge results for 1\%, 5\%, and 10\% scint
 Because the scintillation component is expected to be very dim for the lower scintillator fractions, the results shown here for charge are directly in units of PE instead of the charge ratio shown for brighter LS in previous sections.
 The refractive index of these low scintillator fraction WbLS materials is very similar to water, so the Cherenkov ring is expected to fall on the middle radial grouping of PMTs.
 
-\subsubsection{1\% WbLS}
+\subsection{1\% WbLS}
 
 After applying selection criteria to the 1\% WbLS dataset, 130 ring candidates are found.
 The average hit-time residuals and average charge observed by each PMT is given in \Cref{fig:wbls1pct_avg_time,fig:wbls1pct_avg_charge}.
@@ -690,12 +690,12 @@ Similarly, the total number of PE distributions shown in \Cref{fig:wbls1pct_tota
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{wbls_1pct_charge}
-\caption{\label{fig:wbls1pct_totalq}A histogram of the total number of PE for all selected events in the 1\% WbLS dataset grouped by PMT radius}
+\caption{\label{fig:wbls1pct_totalq}A histogram of the total number of PE for all selected events in the 1\% WbLS dataset grouped by PMT radius.}
 \end{figure}
 
 \clearpage
 
-\subsubsection{5\% WbLS}
+\subsection{5\% WbLS}
 
 After applying selection criteria to the 10\% WbLS dataset, 83 ring candidates are found.
 The average hit-time residuals and average charge observed by each PMT is given in \Cref{fig:wbls5pct_avg_charge,fig:wbls5pct_avg_time}.
@@ -719,18 +719,18 @@ The middle group of PMTs does observe a slightly higher number of PE on average,
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{wbls_5pct_hittimes}
-\caption{\label{fig:wbls5pct_tresid}A histogram of the hit-time residuals for all selected events in the 5\% WbLS dataset grouped by PMT radius}
+\caption{\label{fig:wbls5pct_tresid}A histogram of the hit-time residuals for all selected events in the 5\% WbLS dataset grouped by PMT radius.}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{wbls_5pct_charge}
-\caption{\label{fig:wbls5pct_totalq}A histogram of the total number of PE for all selected events in the 5\% WbLS dataset grouped by PMT radius}
+\caption{\label{fig:wbls5pct_totalq}A histogram of the total number of PE for all selected events in the 5\% WbLS dataset grouped by PMT radius.}
 \end{figure}
 
 \clearpage
 
-\subsubsection{10\% WbLS}
+\subsection{10\% WbLS}
 
 After applying selection criteria to the 10\% WbLS dataset, 171 ring candidates are found.
 The average hit-time residuals and average charge observed by each PMT is given in \Cref{fig:wbls10pct_avg_charge,fig:wbls10pct_avg_time}.
@@ -755,13 +755,13 @@ However, there may be potential for recovery of directional information on a sta
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{wbls_10pct_hittimes}
-\caption{\label{fig:wbls10pct_tresid}A histogram of the hit-time residuals for all selected events in the 10\% WbLS dataset grouped by PMT radius}
+\caption{\label{fig:wbls10pct_tresid}A histogram of the hit-time residuals for all selected events in the 10\% WbLS dataset grouped by PMT radius.}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{wbls_10pct_charge}
-\caption{\label{fig:wbls10pct_totalq}A histogram of the total number of PE for all selected events in the 10\% WbLS dataset grouped by PMT radius}
+\caption{\label{fig:wbls10pct_totalq}A histogram of the total number of PE for all selected events in the 10\% WbLS dataset grouped by PMT radius.}
 \end{figure}
 
 \section{Prospects}
