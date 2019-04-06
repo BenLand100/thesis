@@ -1,5 +1,5 @@
 \documentclass[12pt,letterpaper,oldfontcommands]{ucbthesis}
-\usepackage[style=numeric,sorting=none]{biblatex}
+\usepackage[style=phys,sorting=none,biblabel=brackets]{biblatex}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -12,6 +12,7 @@
 \usepackage{array,booktabs,tabularx}
 \usepackage[noabbrev]{cleveref}
 \usepackage{mathrsfs}
+\usepackage{scrextend}
 \usepackage{bold-extra}
 
 \hypersetup{
@@ -25,7 +26,6 @@ linktocpage = true
 \graphicspath{{figures/}}
 \bibliography{citations.bib}
 
-\listfiles
 \begin{document}
 
 \newcommand{\Li}{$^{8}$Li }
@@ -72,6 +72,8 @@ linktocpage = true
 \listoffigures
 \clearpage
 \listoftables
+\clearpage
+\include{acronyms}
 
 \begin{acknowledgements}
 

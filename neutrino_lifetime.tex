@@ -159,7 +159,7 @@ See \Cref{strategy} for further discussion of how the flux is handled.
 \section{Fit Implementation}
 \label{fit_impl}
 
-For this analysis, I have built off the existing QSigEx code~\cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data~\cite{3phase}.
+For this analysis, I have built off the existing QSigEx code~\cite{plthesis}, which properly handled nuisance parameters, PDF generation, data binning, and likelihood function implementation for the published 3-phase analysis of SNO data~\cite{sno}.
 This package was modified to use the model described in \Cref{lifetime_model} instead of polynomials used in previous analyses.
 The following sections conceptually describe how to analyze SNO data, the implementation of such an analysis in QSigEx, and the work that was necessary to implement the neutrino lifetime model in this framework.
 Since QSigEx was previously vetted for SNO fits, a demonstration that the updated code produces the same results as previous analyses is given in \Cref{qsigex_validation}.
@@ -302,7 +302,7 @@ Plots of the pull show the expected fluctuations of the mean ($1/\sqrt{n_{sample
 The SNO MC consists of different event classes for each phase of SNO.
 Events from each class and phase are partitioned into $N$ sets with $M$ samples each. 
 The remaining unused MC data for each phase and class is used for PDFs in the fit, so $N$ must be chosen to leave sufficient uncorrelated data for PDF generation.
-$M$ is chosen from a Poisson distribution with a mean equal to the expected number of events for that event class and phase from previous SNO analyses~\cite{leta,ncd,3phase}.
+$M$ is chosen from a Poisson distribution with a mean equal to the expected number of events for that event class and phase from previous SNO analyses~\cite{leta,sno}.
 For solar neutrino signals the BS05(OP)~\cite{bs05op} flux predictions were used in generating these fake datasets.
 These sets can then be combined into fake datasets with realistic statistics containing only the event classes and phases desired.
 
@@ -439,7 +439,7 @@ Comparing the results of these two datasets gives some information on statistica
 If the bias or pull looks particularly bad in one dataset but acceptable in the other, one can conclude that this effect is due to statistical fluctuations and not to errors in the fit procedure.
 The figures of merit for these tests are shown in \Cref{fig:allbg_bias,fig:allbg_pull,fig:allbg_reluncert}. 
 While fluctuations are larger, comparison between the two datasets looks more reasonable. 
-Notably these results are comparable to ensemble testing of the published SNO 3-phase results~\cite{3phase}.
+Notably these results are comparable to ensemble testing of the published SNO 3-phase results~\cite{sno}.
 One can therefore conclude that the fit is unbiased and properly predicting errors.
 
 \begin{figure}
@@ -501,7 +501,7 @@ When summed in quadrature, the total uncertainty on $k_2$ is found to be $^{+13.
 \label{third}
 
 Using 1/3 of the SNO dataset --- the same 1/3 dataset used in testing the historical 3-phase fits --- the fit was run as described in \Cref{strategy}. 
-To reduce computational power required for this test, the central values of scanned nuisance parameters from the 3-phase Pee+Pea fit~\cite{3phase} were used. 
+To reduce computational power required for this test, the central values of scanned nuisance parameters from the 3-phase Pee+Pea fit~\cite{sno} were used. 
 These are nominally uncorrelated with neutrino parameters, and would take a very long time to iteratively scan with little gain.
 This scan will, of course, be done for the full dataset.
 The scan of $k_2$ and the $^8$B flux are shown in \Cref{fig:third_scans}.

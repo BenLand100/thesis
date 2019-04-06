@@ -29,7 +29,7 @@ Using solar neutrino data from SNO and combining with other solar neutrino exper
 The currently operating {\snop} experiment aims to measure the solar neutrino flux at lower energies in its scintillator phase than SNO was able to observe.
 To aid in this effort, \Cref{ch:chsrc} describes the design and evaluation of an optical calibration source for {\snop}, which will be crucial for understanding the photon detection efficiency (energy scale) for solar neutrino measurements.
 The second physics analysis, in \Cref{ch:es}, uses the initial light water phase data from {\snop} to measure the flux of $^8$B solar neutrinos using the kinematics of the elastic scatter of neutrinos off of electrons in the light water.
-Looking toward the future, the \textsc{Theia}~\cite{asdc} experiment aims to make precision measurements of the lower energy solar neutrino fluxes, as well as support a broader platform of neutrino physics.
+Looking toward the future, the \textsc{Theia}~\cite{theia} experiment aims to make precision measurements of the lower energy solar neutrino fluxes, as well as support a broader platform of neutrino physics.
 This would allow \textsc{Theia} to probe open questions about the Sun, such as the concentration of elements heavier than helium in the core, which affects the relative fluxes of different types of solar neutrinos. 
 To achieve such a goal, \textsc{Theia} requires a next-generation target material that combines the positive aspects of experiments like SNO and {\snop}. 
 In \Cref{ch:wbls} a benchtop experiment to evaluate the optical properties of such a target material is described.
@@ -46,7 +46,7 @@ One can, however, augment the Standard Model to include neutrino mass and, from 
 
 The theory includes three massless vector bosons roughly corresponding to the three fundamental forces, $g^a$, $W^b$, and $B$, where $a=1..8$ and $b=1..3$.
 $g^a$ represents the eight colors of gluons, which mediate the strong force.
-Linear combinations of $W^b$ and $B$ are responsible for the weak nuclear force and electromagnetic force, whose bosons are typically written as $Z_0$, $W^{\pm}$, and $\gamma$.
+Linear combinations of $W^b$ and $B$ are responsible for the weak nuclear force and electromagnetic force, whose bosons are typically written as $Z^0$, $W^{\pm}$, and $\gamma$.
 
 Matter is included in the theory as left- and right-handed fermion fields organized into three increasingly massive generations.
 Each generation contains two quarks fields, which can be any of three colors, a charged lepton, and a neutral lepton.
@@ -281,7 +281,7 @@ Some spectral information can be obtained by looking at results from different i
 \section{Real-Time Neutrino Detection}
 
 The next generation of neutrino detectors progressed to real-time detection of neutrino interactions.
-These were the water Cherenkov detectors, the most recent of which include SNO~\cite{3phase} and Super-Kamiokande~\cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neutrino interaction.
+These were the water Cherenkov detectors, the most recent of which include SNO~\cite{sno} and Super-Kamiokande~\cite{superk}, which instrumented a large volume of water with sensitive light detectors that captured flashes of Cherenkov light from energetic particles produced in the neutrino interaction.
 Pure water detectors, like Super-Kamiokande, detect neutrinos through the elastic scatter interaction,
 \begin{equation}
 \nu_e + e^- \rightarrow \nu_e + e^-,
@@ -341,7 +341,7 @@ Further discussion of WbLS and a characterization of low scintillator fractions 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\columnwidth]{sno}
-\caption{\label{fig:sno}The SNO detector as shown in~\cite{3phase}.}
+\caption{\label{fig:sno}The SNO detector as shown in~\cite{sno}.}
 \end{figure}
 
 The SNO~\cite{sno} detector is located deep underground near Sudbury, Canada in the Creighton mine, an active nickle mine.
@@ -424,7 +424,7 @@ Finally, in the third phase, the NaCl was removed from the target, and neutron c
 These were essentially independent detectors, allowing for an independent measure of the neutron production rate.
 A single NCD was a high purity nickel tube containing $^3$He gas, and was instrumented to utilize the $^3$He as a proportional counter for thermal neutrons~\cite{sno_ncd_psa}.
 In total, 40 NCDs were added, two of which were modified to contain $^4$He (insensitive to neutrons) to understand instrumental backgrounds.
-The NCD data is not directly used in the analysis described in the next chapter, however, it was independently analyzed to constrain the analysis of the PMT data~\cite{3phase}.
+The NCD data is not directly used in the analysis described in the next chapter, however, it was independently analyzed to constrain the analysis of the PMT data~\cite{sno}.
 
 \subsection{Detector Design}
 
@@ -494,7 +494,7 @@ Graphically this is shown in \Cref{fig:sno_flavor}, which conclusively demonstra
 \caption{\label{fig:sno_flavor} Direct evidence for flavor change in solar neutrinos from SNO taken from~\cite{sno_direct}.}
 \end{figure}
 
-Later SNO analyses, such as the Low Energy Threshold Analysis (LETA)~\cite{leta} of Phases I and II of SNO data, or the extension of this including Phase III data, aptly referred to as the 3-phase analysis~\cite{3phase}, were able to fit directly for the survival probability $P_{ee}$ as a function of neutrino energy.
+Later SNO analyses, such as the Low Energy Threshold Analysis (LETA)~\cite{leta} of Phases I and II of SNO data, or the extension of this including Phase III data, aptly referred to as the 3-phase analysis~\cite{sno}, were able to fit directly for the survival probability $P_{ee}$ as a function of neutrino energy.
 Since neutrino energy is not something SNO observed directly (the ES and NC interactions give little to no spectral information), a method was developed to determine the impact of $P_{ee}$ on observable quantities.
 Since $P_{ee}$ can be taken as the fraction of neutrinos that are electron flavor as a function of energy, weighting the $^8$B energy spectrum used to describe $\Phi_e$ properly accounts for the energy dependence of $\nu_e$ survival.
 In the same way, the $^8$B energy spectrum for $\Phi_{\mu\tau}$ may be weighted by $1-P_{ee}$ to account for the neutrinos converted to $\nu_\mu$ or $\nu_\tau$.
@@ -558,7 +558,7 @@ Finally, new radioactive sources, such as a $^{48}$Sc and $^{57}$Co, are being d
 
 \section{\textsc{Theia}}
 
-\textsc{Theia}~\cite{asdc_paper} is a proposed large scale (50-100~kT) neutrino detector, which aims to support a diverse platform of neutrino physics. 
+\textsc{Theia}~\cite{theia,asdc} is a proposed large scale (50-100~kT) neutrino detector, which aims to support a diverse platform of neutrino physics. 
 Of particular relevance to this thesis is the goal of doing high precision measurements of solar neutrinos~\cite{theia_solar}.
 
 \subsection{Conceptual Design}
@@ -574,7 +574,7 @@ The presence of a Cherenkov signal means that the direction reconstruction is ag
 In particular, simulations suggest \textsc{Theia} would have good sensitivity to the CNO cycle neutrinos~\cite{theia_solar}.
 
 The WbLS in consideration for \textsc{Theia} would be primarily water, and this allows for easy loading of metals into the detector.
-Of primary interest are isotopes like $^7$Li, which, like the deuterons in the heavy water in SNO, have low enough binding energies for solar neutrinos to participate in a CC interaction~\cite{asdc_paper}.
+Of primary interest are isotopes like $^7$Li, which, like the deuterons in the heavy water in SNO, have low enough binding energies for solar neutrinos to participate in a CC interaction~\cite{asdc}.
 As the CC interaction has a visible energy much better correlated with the incident neutrino than the ES interaction, loading such an isotope in WbLS in \textsc{Theia} would enable high resolution measurements of the solar neutrino spectra. 
 
 
