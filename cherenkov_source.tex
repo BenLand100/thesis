@@ -120,13 +120,13 @@ Then the sealing pressure plates (\Cref{fig:pressureplates}) are slid down and b
 The so-called ``lighthouse'' attachment (\Cref{fig:connection}) is attached to the top of the source and is used to attach the source to {\snop}'s source deployment hardware.
 
 \begin{figure}
-\begin{subfigure}{.57\textwidth}
+\begin{subfigure}[t]{.57\textwidth}
 \center{\includegraphics[width=1.0\textwidth]
 {8Li-Umbilical.png}}
 \caption{\label{fig:sno_umbilical} The SNO \Li umbilical cross-section. Taken from~\cite{Tagg:2001}.}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.35\textwidth}
+\hfill
+\begin{subfigure}[t]{.35\textwidth}
 \includegraphics[width=\textwidth]{HousingTop.png}
 \caption{\label{fig:pressureplates} The sealing pressure plates.}
 \end{subfigure}
@@ -175,12 +175,13 @@ The construction of the Cherenkov source decay chamber has roughly the following
 Before bonding, the acrylic blocks must be annealed to remove any residual stresses. The annealing process raises the temperature of the acrylic in a controlled way so that stress frozen into the cold solid acrylic can relax away, and then lowers the temperature in a controlled way so that new stress is not developed. This is necessary to ensure that there are no residual stresses that will cause reduced optical clarity (crazing) or mechanical failure (poor bond). The blocks were placed in an annealing oven shown in \Cref{fig:oven} that was programmed to follow an annealing curve containing an initial ramp, a soak phase, and a cool-down ramp. Most information for acrylic annealing was obtained from an Air Force / Navy acrylic fabrication specification MIL-P-6997B(ASG) and the Handbook of Acrylics. The thickness of the acrylic during annealing is 152~mm, which is used for calculating the lengths of the annealing stages, and a soak temperature of 80\degree C was chosen to ensure the acrylic can relax without risking deformation of the machined surfaces. The final annealing curve is shown in \Cref{fig:annealing}.
 
 \begin{figure}
-\begin{subfigure}{.53\textwidth}
+\begin{subfigure}[t]{.55\textwidth}
 \includegraphics[width=\textwidth]{annealing_oven.png}
 \caption{Source and reference-block acrylic in oven.}
 \label{fig:oven}
 \end{subfigure}
-\begin{subfigure}{.48\textwidth}
+\hfill
+\begin{subfigure}[t]{.44\textwidth}
 \includegraphics[width=\textwidth]{annealing_curve}
 \caption{51~hour annealing cycle.}
 \label{fig:annealing}
@@ -222,13 +223,15 @@ In small scale tests~\cite{tanner:2014} this was found to produce a nominally un
 
 
 \begin{figure}
-\begin{subfigure}{.28\textwidth}
-\includegraphics[width=\textwidth]{drying_stand.png}
+\begin{subfigure}[t]{.29\textwidth}
+\centering
+\includegraphics[height=2.75in]{drying_stand.png}
 \caption{Test source drying on the drying stand.}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.67\textwidth}
-\includegraphics[width=\textwidth]{paint_drips.png}
+\hfill
+\begin{subfigure}[t]{.67\textwidth}
+\centering
+\includegraphics[height=2.75in]{paint_drips.png}
 \caption{After drying the final black layer, the minimal excess paint dripping is cut away from the aluminum neck sleeve with a scalpel.}
 \end{subfigure}
 \caption{The painting and drying setup was tested with the test source in a class 1000 clean room at LBNL. Note that the neck sleeve used here for the test source was not anodized whereas the final source will have a black anodized aluminum neck sleeve.}
@@ -241,14 +244,14 @@ For the first two of three opaque black layers a Teflon sleeve similar to the al
 The final layer was a mixture of 40~mL of deionized water, 20~mL of Vallejo white paint, and 5~g of TPB. The addition of deionized water made the mixture approximately the same consistency as the black paint, and upon drying the remaining layer is mostly TPB crystals with a white paint binding that adheres well to the black paint surface. 5~g of TPB using this deposition method was shown to give approximately the same scintillation brightness as the SNO \Li source when illuminated under a UV lamp.
 
 \begin{figure}
-\begin{subfigure}{.35\textwidth}
+\begin{subfigure}[t]{.40\textwidth}
 \centering
-\includegraphics[width=0.8\textwidth]{minisource_paint.png}
+\includegraphics[width=0.7\textwidth]{minisource_paint.png}
 \caption{Small scale painting test showing cross-section of paint thickness. The pooling near the bottom was reduced by allowing easier drainage of paint for the first two layers, resulting in less anisotropy than pictured here.}
 \label{fig:minisource_paint}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.55\textwidth}
+\hfill
+\begin{subfigure}[t]{.54\textwidth}
 \includegraphics[width=\textwidth]{100k_realistic_nonoise_hits_vs_thickness}
 \caption{Simulation in scintillator phase {\snop} of \Li beta decays inside the decay chamber volume, with various smooth and isotropic paint layer thicknesses. As expected, the peak of this follows a roughly linear trend with paint thickness, representing the energy loss of the electrons in the paint.}
 \label{fig:meannhits}
@@ -269,13 +272,13 @@ After each layer the surface was visually inspected to ensure no major flaws or 
 To explore the effects of mean thickness and surface roughness on the number of detected photons (NHits), simulations of \Li electrons were done using a source geometry in GEANT4~\cite{geant4} and various different paint layers. Simulations with perfectly smooth paint layers indicated that a 0.1~mm change in mean paint thickness is conservatively a 5\% change in mean NHits (\Cref{fig:meannhits}), so it will be necessary to know the thickness of the paint very well. 
 
 \begin{figure}
-\begin{subfigure}{.53\textwidth}
+\begin{subfigure}[t]{.53\textwidth}
 \includegraphics[width=\textwidth]{paint_uniformity_nhits_hists}
 \caption{Plot of NHit distributions for \Li beta decays inside a decay chamber with various paint surface roughnesses. The sigma value here is roughly the standard deviation of the fluctuations in thickness, which were generated with a feature size of 1~cm. The 0.2~mm and 0.4~mm plots have 10x fewer statistics due to simulation difficulties.}
 \label{fig:simulations}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.38\textwidth}
+\hfill
+\begin{subfigure}[t]{.42\textwidth}
 \centering
 \includegraphics[width=0.85\textwidth]{0p5mm.png}
 \caption{Rendering of an STL defined paint surface imported into GEANT4 using Perlin noise to simulate the expected roughness of the surface based on small scale tests. This is a sigma of 0.5~mm, which exaggerates the roughness enough to be clearly visible.}
@@ -291,13 +294,13 @@ Since events are uniform in the decay chamber volume, and hence any individual b
 Therefore, it was only necessary to establish the mean paint thickness accurately to properly simulate the NHits distribution.
 
 \begin{figure}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}[t]{.46\textwidth}
 \includegraphics[width=\textwidth]{paint_density}
 \caption{Summary of density fit for black and white+TPB paint layers. The uncertainty on the mass of the samples was insignificant, and therefore the largest source of error was the volume measurement, which was done with water displacement in a graduated cylinder with 0.2~mL divisions and a tolerance of 0.2~mL.}
 \label{fig:paintdensity}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.45\textwidth}
+\hfill
+\begin{subfigure}[t]{.46\textwidth}
 \includegraphics[width=\textwidth]{paint_rough_thickness}
 \caption{Assuming a simple uniform coverage model in the geometry of the source, this shows the mean and uncertainty on a thickness prediction for black paint given a measured change in the mass of the source. This can be further refined by taking into account non-uniform coverage. }
 \label{fig:paintthickness}
@@ -313,26 +316,28 @@ Many options for directly measuring the paint layer thickness were explored and 
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{paint_model}
-\caption{The cylindrical profile of the full coverage model is shown here. This was revolved numerically to calculate the volume and hence the mass of the paint for a particular set of parameters to get a mass to thickness lookup table. Anisotropy in the paint thickness is accounted for by offsetting the inner surface of the black paint layer by some amount. In small scale tests this offset was empirically approximately half the mean thickness of the paint, and using this model it was verified that uncertainty in this anisotropy contributed a negligible uncertainty to the estimated mean thickness. The parameters for this profile are a black thickness of 1.0~mm, anisotropy offset of 0.5~mm, and white thickness of 0.5~mm. }
+\caption{The cylindrical profile of the full coverage model is shown here. This was revolved numerically to calculate the volume and thus the mass of the paint for a particular set of parameters to get a mass to thickness lookup table. Anisotropy in the paint thickness is accounted for by offsetting the inner surface of the black paint layer by some amount. In small scale tests this offset was empirically approximately half the mean thickness of the paint, and using this model it was verified that uncertainty in this anisotropy contributed a negligible uncertainty to the estimated mean thickness. The parameters for this profile are a black thickness of 1.0~mm, anisotropy offset of 0.5~mm, and white thickness of 0.5~mm. }
 \label{fig:surfacemodel}
 \end{figure}
 
-\subsection{PMT assembly potting}
+\subsection{PMT Assembly Potting}
 The PMT used for the source is the Hamamatsu H11432-100, which has an integrated high voltage supply that requires only low voltage (+5V) to operate. This is advantageous because there will be helium gas inside the source, which would form a plasma if exposed to high voltage, and this configuration does not require providing high voltage via the umbilical. However, the PMT supply itself does not come potted and helium gas could leak inside resulting in a plasma that would damage the PMT and possibly the source. To prevent this the high voltage supply module was potted into an anodized aluminum potting sleeve with Sylgard~184, a silicone encapsulate, which was also allowed to fill the cavity containing the supply and around the body of the PMT as shown in \Cref{fig:potting}. To ensure the encapsulate fully filled the cavities the assembly was placed in a soft vacuum between applications of encapsulate to assist in removing air that may have been trapped. This entire potted PMT assembly fits directly into the neck sleeve and contains the o-rings that isolate the decay chamber from the rest of the source, so this potting serves the additional purpose of making the PMT assembly into a solid part to isolate the decay chamber from the rest of the source. 
 
 \begin{figure}
-\begin{subfigure}{.385\textwidth}
-\includegraphics[width=\textwidth]{potting_1.png}
+\begin{subfigure}[t]{.36\textwidth}
+\includegraphics[height=2.25in]{potting_1.png}
 \caption{The PMT to be potted inside the anodized aluminum spacer (black) and anodized aluminum potting sleeve (orange).}
 \label{fig:potting_a}
 \end{subfigure}
-\begin{subfigure}{.305\textwidth}
-\includegraphics[width=\textwidth]{potting_2.png}
+\hfill
+\begin{subfigure}[t]{.29\textwidth}
+\includegraphics[height=2.25in]{potting_2.png}
 \caption{Encapsulate added in stages with vacuum between to fill areas with trapped air.}
 \label{fig:potting_b}
 \end{subfigure}
-\begin{subfigure}{.29\textwidth}
-\includegraphics[width=\textwidth]{potting_3.png}
+\hfill
+\begin{subfigure}[t]{.27\textwidth}
+\includegraphics[height=2.25in]{potting_3.png}
 \caption{Finally the encapsulate was allowed to cure in the clean room.}
 \label{fig:potting_c}
 \end{subfigure}
@@ -390,7 +395,7 @@ All the other measurements yielded upper limits meaning the signal was below the
 Except for the UVA acrylic, none of the tested materials are expected to come into contact with the target material, and the lack of a detectable radioactive signal here definitely meets the requirements for deployment.
 Detectable potassium levels from NAA in the materials within the source are not expected to be an issue because the total amount of material present within the detector is small, and the target material should not come in contact with these materials in normal operation.
 
-\subsection{Material compatibility tests}
+\subsection{Material Compatibility Tests}
 \label{sec:comptest}
 Beyond basic concerns of chemical compatibility, the light yield and optical properties of the {\labppo} scintillator used in {\snop} are quite dependent on the exact chemical makeup of the scintillator.
 Additionally, the scintillator itself is a solvent, so there is a very real possibility that a material immersed in {\labppo} could leech into the scintillator resulting in undesirable optical effects.
@@ -412,13 +417,13 @@ For the full technical report of the compatibility test, see~\cite{lina:2015}.
 The light tightness of the decay chamber lining was validated on the full scale test source. 
 To do this, the test source was placed in a dark-box with the center of the source 12 inches away from a 10-inch Hamamatsu R7081 HQE PMT, which has the SPE peak clearly separated from the noise. 
 \begin{figure}
-\begin{subfigure}{0.48\textwidth}
+\begin{subfigure}[t]{0.48\textwidth}
 \includegraphics[width=\textwidth]{led_calibration_raw}
 \caption{Raw detected photon data at various voltages.}
 \label{fig:ledRAW}
 \end{subfigure}
-\hspace{0.2cm}
-\begin{subfigure}{0.48\textwidth}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
 \includegraphics[width=\textwidth]{led_calibration_fit}
 \caption{Fit to the peaks of the photon distributions plotted against pulse voltage.}
 \label{fig:ledFit}
@@ -429,13 +434,13 @@ To do this, the test source was placed in a dark-box with the center of the sour
 
 A calibrated LED (see \Cref{fig:calibratedled1}) around the emission wavelength of TPB was placed in the center of the source with the neck blocked by an opaque rubber plug. This LED was pulsed on for 50~ns intervals at various voltages one million times per LED voltage setting. The signal from the PMT was digitized and integrated with a per event pedestal correction to obtain a signal charge distribution. To cancel out systematics, the same process was repeated with the LED off to obtain a background charge distribution. The leaked light charge distribution was obtained by subtracting the background charge distribution from the signal charge distribution. There were no samples in the background subtracted charge distribution that appeared to correspond to multi-photon events, so each event that registered charge in the leaked light charge distribution was counted as a single leaked photon. The sum of leaked photons for the million events at each voltage are shown in \Cref{fig:lightleak}. 
 \begin{figure}
-\begin{subfigure}{0.47\textwidth}
+\begin{subfigure}[t]{0.48\textwidth}
 \includegraphics[width=\textwidth]{leakedphotons}
 \caption{Raw data showing the total number of photons detected by the PMT at the different led voltages tested where each data point is the sum of 1,000,000 events. Note the expected linear trend after the LED turns on around 2~V. The uncertainties here are statistical measurement error.}
 \label{fig:lightleak}
-\end{subfigure}%
-\hspace{0.2cm}
-\begin{subfigure}{0.49\textwidth}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
 \includegraphics[width=\textwidth]{light_leak}
 \caption{Data showing the expected number of photons to leak per event from the source given some number of thousands of photons produced per event in the source.}
 \label{fig:eventleak}
@@ -450,22 +455,18 @@ This, along with dividing by the total number of events, converts the y-axis of 
 
 \subsection{Decay Chamber Leak Testing}
 \label{sec:heleak}
-The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheckSetup}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
+The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheck}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
 \centering
 \includegraphics[width=\textwidth]{img_0328.jpg}
-\caption{}
-\label{fig:HeLeakCheckSetup}
-\end{subfigure}%
-\vspace{0.2cm}
+\end{subfigure}
+\hfill
 \begin{subfigure}[b]{0.45\textwidth}
 \centering
 \includegraphics[width=\textwidth]{img_0326.jpg}
-\caption{}
-\label{fig:HeLeakCheckResult}
 \end{subfigure}
 \caption{Helium-leak checking of the decay chamber using INFICON UL1000 in the LBNL clean room.}
 \label{fig:HeLeakCheck}
@@ -482,18 +483,19 @@ Only wavelength-shifted photons will be detectable and the wavelength shifting e
 Therefore, the source tag rate will be determined during the initial deployment.
 
 \begin{figure}
-\begin{subfigure}{0.49\textwidth}
-\caption{Before potting.}
-\label{fig:pmttest}
+\begin{subfigure}[t]{0.47\textwidth}
 \includegraphics[width=\textwidth]{pmttest}
-\end{subfigure}%
-\begin{subfigure}{0.49\textwidth}
-\caption{After potting.}
-\label{fig:pmtafterpotting}
+\caption{Response of the tag PMT before potting.}
+\label{fig:pmttest}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.47\textwidth}
 \includegraphics[width=\textwidth]{pmttest_potted}
+\caption{Response of the tag PMT after potting.}
+\label{fig:pmtafterpotting}
 \end{subfigure}
 \caption{Tag PMT response measured at various different gains and photon fluxes. A calibrated LED was placed 50~cm from the face of the PMT and pulsed for 50~ns at various voltages that produced a known photon flux on the PMT.}
-	\label{fig:calibratedled}
+\label{fig:calibratedled}
 \end{figure}
 
 \subsection{Hydrostatic Pressure Test}
@@ -601,21 +603,24 @@ As can be seen, the total number of detected photons (NHits) is a good baseline 
 \end{figure}
 
 
-\subsection{Extracting the light Collection Efficiency}
+\subsection{Extracting the Light Collection Efficiency}
 The distribution of the number of photons exiting the Cherenkov source per non-scintillation event are predicted by simulation, see \Cref{fig:nphotons}. 
 Using this information, the total probability of observing a certain number of hits is fitted to the distribution of the detected number of photons for simulated events as shown in \Cref{fig:fit}.
 This method can extract the total photon detection probability, however, as was discovered in the water phase analysis, the true quantity of interest is the correction to the MC collection efficiency necessary to result in a calibrated simulation.
 The analysis described for water phase in \Cref{sec:water_fit}, with the additional removal of Bremsstrahlung events, can be repeated here to calibrate RAT once scintillator data exists for the Cherenkov source.
 
 \begin{figure}
-\begin{subfigure}{.48\textwidth}
-\includegraphics[width=.92\textwidth]{chsrc_nhit}
+\centering
+\begin{subfigure}[t]{.75\textwidth}
+\centering
+\includegraphics[width=\textwidth]{chsrc_nhit}
 \caption{Distribution of number of Cherenkov photons exiting the source for events without scintillation light.}
 \label{fig:nphotons}
 \end{subfigure}
-\hspace{0.5cm}
-\begin{subfigure}{.48\textwidth}
-\includegraphics[width=.92\textwidth]{chsrc_fit}
+\hfill
+\begin{subfigure}[b]{.75\textwidth}
+\centering
+\includegraphics[width=\textwidth]{chsrc_fit}
 \caption{Fit of NHit-distribution to sum of binomial distributions.}
 \label{fig:fit}
 \end{subfigure}
