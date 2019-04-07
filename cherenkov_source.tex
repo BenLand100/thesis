@@ -324,7 +324,7 @@ Many options for directly measuring the paint layer thickness were explored and 
 The PMT used for the source is the Hamamatsu H11432-100, which has an integrated high voltage supply that requires only low voltage (+5V) to operate. This is advantageous because there will be helium gas inside the source, which would form a plasma if exposed to high voltage, and this configuration does not require providing high voltage via the umbilical. However, the PMT supply itself does not come potted and helium gas could leak inside resulting in a plasma that would damage the PMT and possibly the source. To prevent this the high voltage supply module was potted into an anodized aluminum potting sleeve with Sylgard~184, a silicone encapsulate, which was also allowed to fill the cavity containing the supply and around the body of the PMT as shown in \Cref{fig:potting}. To ensure the encapsulate fully filled the cavities the assembly was placed in a soft vacuum between applications of encapsulate to assist in removing air that may have been trapped. This entire potted PMT assembly fits directly into the neck sleeve and contains the o-rings that isolate the decay chamber from the rest of the source, so this potting serves the additional purpose of making the PMT assembly into a solid part to isolate the decay chamber from the rest of the source. 
 
 \begin{figure}
-\begin{subfigure}[t]{.36\textwidth}
+\begin{subfigure}[t]{.37\textwidth}
 \includegraphics[height=2.25in]{potting_1.png}
 \caption{The PMT to be potted inside the anodized aluminum spacer (black) and anodized aluminum potting sleeve (orange).}
 \label{fig:potting_a}
@@ -336,7 +336,7 @@ The PMT used for the source is the Hamamatsu H11432-100, which has an integrated
 \label{fig:potting_b}
 \end{subfigure}
 \hfill
-\begin{subfigure}[t]{.27\textwidth}
+\begin{subfigure}[t]{.28\textwidth}
 \includegraphics[height=2.25in]{potting_3.png}
 \caption{Finally the encapsulate was allowed to cure in the clean room.}
 \label{fig:potting_c}
@@ -363,7 +363,7 @@ The SNO stainless steel limit was $< 5$~mBq~m$^{-2}$ and for acrylic $< 1.6$~mBq
 The source, assuming a full size stainless steel housing, has an exposed stainless steel surface area of $0.15$~m$^2$, and exposed acrylic surface area of 0.20~m$^2$. 
 Assuming the stainless steel housing remains at its full size and can reach the cleanliness standards assumed in the {\snop} emanation estimate, this leads to a total radon emanation from the exposed surfaces of the source to $<28$~atoms/day, where this limit is grossly dominated by the limit on the acrylic radon emanation. 
 The radon emanation rate for stainless steel is, however, significantly lower in the source used by {\snop} than the source used by SNO, which either means the {\snop} estimation is unrealistic or the SNO limit was very conservative. 
-Using the limits from the SNO measurements we would expect $<92.5$~atoms/day.
+Using the limits from the SNO measurements one would expect $<92.5$~atoms/day.
 In either case, this is expected to be within the as-yet undefined {\snop} radon budget for scintillator phase.
 
 \subsection{Intrinsic Radioactivity}
@@ -455,7 +455,7 @@ This, along with dividing by the total number of events, converts the y-axis of 
 
 \subsection{Decay Chamber Leak Testing}
 \label{sec:heleak}
-The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheck}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. We conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
+The decay chamber for the final source was tested for leaks using ultra-pure Helium as tracer-gas. The Helium-leak checker used was INFICON UL1000, which was calibrated after a one-hour warm-up time. The baseline achieved was 1.4$\times10^{-11}$~Torr~L/s. After mounting the Cherenkov decay chamber on the flange, see \Cref{fig:HeLeakCheck}, a leak rate of 6.2$\times10^{-9}$~Torr~L/s was seen after about 2~minutes. No increase in leak rate was observed when spraying Helium over the source and close to the flange. In a second stage, a clear bag was placed over the source. It was held shut at the bottom using clean-room tape. Then, the helium was injected into the bag. No increase in leak was observed over the course of 2~minutes. After 5~minutes, an increase of the leak rate was noticed, which is expected from permeation through the o-ring inside the flange-attachment. One can conclude that there is no leak in the decay chamber bond. This includes the location where the flange o-ring crosses the bond-plane twice.
 
 \begin{figure}
 \centering
@@ -478,7 +478,7 @@ The H11432-100 PMT efficiency and gain were measured before and after potting in
 This was done by placing the PMT 50~cm away from a calibrated LED inside of a dark box and measuring the PMT response.
 The LED was pulsed for 50~ns at various voltages to change the photon flux. 
 \Cref{fig:pmttest} shows that the PMT is indeed sensitive over a large range of photon fluxes, however, comparing \Cref{fig:pmttest} to \Cref{fig:pmtafterpotting} shows that the potting of the PMT seems to have reduced the PMT efficiency enough to make tagging single or a few photons less reliable. 
-As we are expecting roughly 20,000 primary scintillation photons this should not be an issue. 
+As roughly 20,000 primary scintillation photons are expected, this should not be an issue. 
 Only wavelength-shifted photons will be detectable and the wavelength shifting efficiency is quite difficult to evaluate prior to deployment.
 Therefore, the source tag rate will be determined during the initial deployment.
 
@@ -516,7 +516,7 @@ The following sections describe the deployment effort and the resulting calibrat
 In total 18~hours of data were taken with the source deployed and \Li being injected into the decay chamber.
 The PMT tag signal was connected to an empty PMT channel of the {\snop} electronics (FECD) to integrate the resulting pulses for event tagging.
 In addition, the PMT signal was connected to the trigger signal digitizer (CAEN) in the {\snop} trigger system to record the full pulse.
-During this deployment we discovered the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
+During this deployment it was discovered that the gas connections were not ideal for connecting to SNO umbilicals, which leaves some room for improvement for future deployments.
 
 \subsection{Data Cleaning}
 In water phase there is no expected scintillation contamination from Bremsstrahlung gammas, however, since the detector is self triggering during deployment, tagged events must be identified and separated from other unrelated detector triggers.
