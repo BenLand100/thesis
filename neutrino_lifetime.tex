@@ -167,7 +167,7 @@ Since QSigEx was previously vetted for SNO fits, a demonstration that the update
 \subsection{Extended Log Likelihood}
 
 The physical observables determined from vertex reconstruction can be used to statistically sort events into different classes of interactions.
-Here the statistical sorting is done with a maximum likelihood fit: QSigEx finds the model parameters best describing the data by varying these parameters and maximizing the Poisson likelihood, $\mathscr{L}$ of the observed data.
+Here the statistical sorting is done with a maximum likelihood fit: QSigEx finds the model parameters best describing the data by varying these parameters and maximizing the Poisson likelihood, $\mathscr{L}$, of the observed data.
 This is done by minimizing the well-known form of the negative log likelihood:
 \begin{equation}
 \mathcal{L} = -\log{\mathscr{L}} = \nu - \sum_{i=1}^{n_{events}} \log \left[ \nu f(\vec{x_i}) \right],
@@ -728,15 +728,6 @@ Total		& 2.6	&	2.69 & 2.75		\\ \hline
 \caption{\label{tbl:chlorine}Shown here are the predicted interaction rates of each neutrino flux with Chlorine both from an independent calculation~\cite{bachall_lma}, using this analysis' code with the `old' mixing and flux parameters in that reference, and again with the flux and mixing parameters used elsewhere in this analysis.}
 \end{table}
 
-\subsection{Combined Result}
-\label{sec:combobreaker}
-
-The likelihood profiles of individual experiments are multiplied (negative log likelihoods added) together to arrive at a combined likelihood profile shown in \Cref{fig:combined_profile}. 
-Explicitly this includes: $^8$B measurements from KamLAND, Borexino, Super-Kamiokande (I, II, III, IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
-The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$~s/eV. 
-This is better than the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
-Notably the presence of a relatively significant minimum in the new SNO results is not particularly beneficial here since it occurs near the location of the limit.
-
 \subsection{Cross-Check with Previous Limit}
 
 The analysis that set the best limit~\cite{picoreti} did not go into detail as to how their analysis was performed, or which SSM values were used as a reference.
@@ -754,14 +745,23 @@ Unfortunately with the brevity of the previous paper a more direct comparison do
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\columnwidth]{combined_profile}
-\caption{The combined profiled likelihood described in \Cref{sec:combobreaker}.}
-\label{fig:combined_profile}
-\end{figure}
-
-\begin{figure}
-\centering
 \includegraphics[width=0.85\columnwidth]{cross_check_profile}
 \caption{The combined profile intended to reproduce the result in~\cite{picoreti} by using the same experimental measurements. Notably the analysis methods are not identical so the results should be similar but do not match exactly.}
 \label{fig:cross_check_profile}
+\end{figure}
+
+\subsection{Combined Result}
+\label{sec:combobreaker}
+
+The likelihood profiles of individual experiments are multiplied (negative log likelihoods added) together to arrive at a combined likelihood profile shown in \Cref{fig:combined_profile}. 
+Explicitly this includes: $^8$B measurements from KamLAND, Borexino, Super-Kamiokande (I, II, III, IV) and this analysis of SNO data, $^7$Be measurements from KamLAND and Borexino, and total rate measurements from all gallium experiments (SAGE+GNO+GALLEX) plus the Homestake results on chlorine. 
+The $99\%$ C.L. lower bound for the lifetime of mass state two is $>10.41\times10^{-4}$~s/eV. 
+This is better than the previous analysis for a few reasons: KamLAND results were not previously included, and both Borexino and Super-K published updated analyses compared to the data used in the previous limit. 
+Notably the presence of a relatively significant minimum in the new SNO results is not particularly beneficial here since it occurs near the location of the limit.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\columnwidth]{combined_profile}
+\caption{The combined profiled likelihood described in \Cref{sec:combobreaker}.}
+\label{fig:combined_profile}
 \end{figure}
