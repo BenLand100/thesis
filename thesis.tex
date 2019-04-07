@@ -24,6 +24,23 @@ linktocpage = true,
 bookmarksnumbered = true
 }
 
+\DeclareSourcemap{
+ \maps[datatype=bibtex,overwrite=true]{
+  \map{
+    \step[fieldsource=Collaboration, final=true]
+    \step[fieldset=usera, origfieldval, final=true]
+  }
+ }
+}
+
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+    \printnames{author} (\printfield{usera})%
+  }%
+}%
+
 \graphicspath{{figures/}}
 \bibliography{citations.bib}
 
